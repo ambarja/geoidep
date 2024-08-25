@@ -22,7 +22,7 @@ For more information, you can visit the following page https://ide.inei.gob.pe/#
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/ambarja/geoinei/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/ambarja/geoidep/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -32,7 +32,7 @@ For more information, you can visit the following page https://ide.inei.gob.pe/#
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Download the Province limits of INEI</h1>
-      <small class="dont-index">Source: <a href="https://github.com/ambarja/geoinei/blob/main/R/get_provinces.R" class="external-link"><code>R/get_provinces.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/R/get_provinces.R" class="external-link"><code>R/get_provinces.R</code></a></small>
       <div class="d-none name"><code>get_provinces.Rd</code></div>
     </div>
 
@@ -70,17 +70,11 @@ For more information, you can visit the following page <a href="https://ide.inei
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoinei" class="external-link">geoidep</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">dist</span> <span class="op">&lt;-</span> <span class="fu">get_provinces</span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep">geoidep</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">prov</span> <span class="op">&lt;-</span> <span class="fu">get_provinces</span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in curl::curl_fetch_disk(url, x$path, handle = handle):</span> SSL peer certificate or SSH remote key was not OK: [ide.inei.gob.pe] SSL certificate problem: unable to get local issuer certificate</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dist</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 function (x, method = "euclidean", diag = FALSE, upper = FALSE,   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     p = 2)                                                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 {                                                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     if (!is.na(pmatch(method, "euclidian")))                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5         method &lt;- "euclidean"                                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     METHODS &lt;- c("euclidean", "maximum", "manhattan", "canberra", </span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">prov</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'prov' not found</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
