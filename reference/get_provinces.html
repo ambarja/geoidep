@@ -72,9 +72,26 @@ For more information, you can visit the following page <a href="https://ide.inei
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep">geoidep</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">prov</span> <span class="op">&lt;-</span> <span class="fu">get_provinces</span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in curl::curl_fetch_disk(url, x$path, handle = handle):</span> SSL peer certificate or SSH remote key was not OK: [ide.inei.gob.pe] SSL certificate problem: unable to get local issuer certificate</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">prov</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'prov' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 8 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -78.71089 ymin: -6.986759 xmax: -77.1323 ymax: -2.986125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   id OBJECTID CCDD CCPP  NOMBDEP             NOMBPROV SHAPE_Length SHAPE_Area</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1        1   01   02 AMAZONAS                BAGUA     4.441617  0.4685108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2        2   01   03 AMAZONAS              BONGARA     3.038661  0.2313185</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  3        3   01   01 AMAZONAS          CHACHAPOYAS     3.872238  0.2376054</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4        4   01   04 AMAZONAS         CONDORCANQUI     7.617350  1.4552407</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  5        5   01   05 AMAZONAS                 LUYA     2.868283  0.2701449</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  6        6   01   06 AMAZONAS RODRIGUEZ DE MENDOZA     2.748516  0.2110614</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                             geom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 MULTIPOLYGON (((-78.61909 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 MULTIPOLYGON (((-77.72759 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 MULTIPOLYGON (((-77.72614 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 MULTIPOLYGON (((-77.81399 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 MULTIPOLYGON (((-78.13023 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 MULTIPOLYGON (((-77.44452 -...</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
