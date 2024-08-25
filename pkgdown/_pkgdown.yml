@@ -1,0 +1,21 @@
+url: https://geografo.pe/geoidep/
+home:
+  title: Download Peruvian data managed by the Spatial Data Infrastructure (SDI) of the National Institute of Statistics and Informatics (INEI) of Peru
+
+template:
+  bootstrap: 5
+  bslib:
+    pkgdown-navbar-bg: '#bf0909'
+
+navbar:
+   bg: custom
+   structure:
+    right: [search, github, lightswitch]
+
+
+reference:
+ - title: 'Download of INEI cartographic layer'
+   contents:
+   - get_districts
+   - get_provinces
+   - get_departaments
