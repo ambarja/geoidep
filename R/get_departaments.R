@@ -26,12 +26,14 @@ get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){
   if(isTRUE(show_progress)) {
       rar.download <- httr::GET(
         primary_link,
+        config = httr::config(ssl_verifypeer = FALSE),
         httr::write_disk(dsn,overwrite = TRUE),
         httr::progress()
         )
   }else{
       rar.download <- httr::GET(
         primary_link,
+        config = httr::config(ssl_verifypeer = FALSE),
         httr::write_disk(dsn,overwrite = TRUE))
   }
 

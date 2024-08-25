@@ -25,15 +25,15 @@ get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){
   if(isTRUE(show_progress)) {
       rar.download <- httr::GET(
           primary_link,
+          config = httr::config(ssl_verifypeer = FALSE),
           httr::write_disk(dsn,overwrite = TRUE),
           httr::progress()
           )
   }else{
       rar.download <- httr::GET(
         primary_link,
-        httr::write_disk(
-          dsn,
-          overwrite = TRUE))
+        config = httr::config(ssl_verifypeer = FALSE),
+        httr::write_disk(dsn,overwrite = TRUE))
   }
 
     # Check if the download was successful
