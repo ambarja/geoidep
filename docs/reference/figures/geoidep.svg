@@ -3,7 +3,7 @@
    version="1.1"
    viewBox="0 0 1058.3221 1175.3048"
    id="svg397"
-   sodipodi:docname="logo.svg"
+   sodipodi:docname="geoidep.svg"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    width="1058.3221"
    height="1175.3048"
@@ -17,22 +17,22 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      id="namedview397"
-     pagecolor="#ffffff"
+     pagecolor="#535353"
      bordercolor="#000000"
      borderopacity="0.24705882"
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.51325757"
-     inkscape:cx="531.89668"
-     inkscape:cy="620.54613"
+     inkscape:zoom="0.36292791"
+     inkscape:cx="559.33973"
+     inkscape:cy="690.21972"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="Layer_2" />
+     inkscape:current-layer="g192" />
   <defs
      id="defs1">
     <style
@@ -248,34 +248,34 @@
          style="stroke:#ffffff;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1" />
       <line
          class="cls-12"
-         x1="58.485561"
-         y1="220.88591"
-         x2="81.706802"
-         y2="237.8867"
+         x1="65.967499"
+         y1="225.54112"
+         x2="82.375992"
+         y2="237.25424"
          id="line23"
-         style="stroke:#ffffff;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1" />
+         style="stroke:#ffffff;stroke-width:1.0638;stroke-dasharray:none;stroke-opacity:1" />
       <line
          class="cls-12"
-         x1="69.181847"
-         y1="211.55701"
-         x2="57.573212"
-         y2="246.52939"
+         x1="66.46891"
+         y1="223.06725"
+         x2="54.860275"
+         y2="258.03961"
          id="line24"
          style="stroke:#ffffff;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1" />
       <line
          class="cls-12"
-         x1="79.540001"
-         y1="205.89999"
-         x2="94.18"
-         y2="230.3"
+         x1="83.806335"
+         y1="213.40286"
+         x2="94.378738"
+         y2="230.3752"
          id="line25"
-         style="stroke:#ffffff;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1" />
+         style="stroke:#ffffff;stroke-width:1.06751;stroke-dasharray:none;stroke-opacity:1" />
       <line
          class="cls-12"
-         x1="86.378548"
-         y1="201.77844"
-         x2="124.4105"
-         y2="213.96521"
+         x1="95.354942"
+         y1="205.93454"
+         x2="133.3869"
+         y2="218.12131"
          id="line26"
          style="stroke:#ffffff;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1" />
       <line
@@ -1697,10 +1697,6 @@
          style="stroke:#ffffff;stroke-width:1.79094;stroke-dasharray:none;stroke-opacity:1" />
       <path
          class="cls-7"
-         d="m -293.22047,-81.39013 c 6.06597,8.478351 4.14022,20.55964 -4.73766,26.405119 -9.52749,6.27319 -22.25108,1.520739 -26.69257,-8.418269 -0.12588,-0.28448 -1.38852,0.161751 -1.29859,0.339541 3.5604,7.965424 12.10121,12.527154 20.82946,11.164795 7.70033,-1.201033 14.30599,-6.688011 16.24431,-14.233027 1.39483,-5.409641 0.22969,-11.083081 -3.02831,-15.615514 -0.19799,-0.284383 -1.38863,0.250705 -1.29859,0.339541 v 0 z"
-         id="path177" />
-      <path
-         class="cls-7"
          d="m -17.104262,126.72049 c -0.117256,7.54286 -4.705367,14.55734 -11.99275,17.19882 -7.28737,2.64149 -15.740435,0.0721 -20.547278,-5.91726 -4.806856,-5.98932 -5.301596,-14.38534 -1.38123,-20.88313 3.920379,-6.49778 12.164559,-10.13662 19.879196,-8.24232 8.309461,2.03592 13.925772,9.60755 14.023923,17.93287 -7.57e-4,0.39137 1.316039,0.14071 1.298586,-0.33954 -0.09775,-8.20079 -5.516537,-15.55918 -13.500989,-17.98685 -7.425728,-2.25045 -15.776548,0.10767 -20.904038,5.85975 -5.488591,6.16166 -6.293038,15.39531 -1.938102,22.34581 4.354936,6.95049 12.536785,10.16065 20.435883,8.60359 9.071337,-1.78971 15.751936,-9.62499 15.889128,-18.75112 7.33e-4,-0.5159 -1.297868,-0.24752 -1.298368,0.16165 z"
          id="path178"
          style="stroke:#ffffff;stroke-width:1.79094;stroke-dasharray:none;stroke-opacity:1" />
@@ -1839,16 +1835,7 @@
       </g>
       <g
          id="g192"
-         transform="matrix(1.8030212,-0.00214126,-0.00214126,1.7789437,-509.25521,-398.40773)">
-        <path
-           class="cls-7"
-           d="m 157.76,156.97 c 0.18,0.52 0.28,1.08 0.28,1.67 0,2.85 -2.31,5.15 -5.15,5.15 -1.59,0 -3.02,-0.72 -3.97,-1.86"
-           id="path191" />
-        <path
-           class="cls-7"
-           d="m 157.4,157.06 c 0.7,2.14 -0.05,4.55 -1.98,5.77 -1.93,1.22 -4.65,0.72 -6.17,-1.06 -0.19,-0.23 -0.89,0.05 -0.67,0.31 1.73,2.03 4.7,2.52 7.02,1.22 2.32,-1.3 3.32,-3.95 2.52,-6.42 -0.1,-0.3 -0.82,-0.1 -0.72,0.19 v 0 z"
-           id="path192" />
-      </g>
+         transform="matrix(1.8030212,-0.00214126,-0.00214126,1.7789437,-509.25521,-398.40773)" />
       <g
          id="g193"
          transform="matrix(1.8030212,-0.00214126,-0.00214126,1.7789437,-509.25521,-398.40773)">
@@ -2968,10 +2955,10 @@
      id="Layer_6"
      data-name="Layer 6"
      style="stroke-width:8.6;stroke-dasharray:none"
-     transform="matrix(1.8032102,0,0,1.7787548,-29.945963,-84.393515)">
+     transform="matrix(1.8115469,0,0,1.7786736,-34.950442,-84.362847)">
     <polygon
        class="cls-10"
-       points="312.52,58.26 597.03,222.11 597.03,548.11 313.95,705.26 24.19,551.28 24.19,223.19 "
+       points="597.03,222.11 597.03,548.11 313.95,705.26 24.19,551.28 24.19,223.19 312.52,58.26 "
        id="polygon397"
        style="stroke-width:12;stroke-dasharray:none"
        transform="translate(0.48708487,-3.896679)" />

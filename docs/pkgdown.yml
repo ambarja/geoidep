@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.0.9000
 pkgdown_sha: 020dc44c138193ad0a63a9778bb832ac7afed1f1
 articles: {}
-last_built: 2024-08-25T18:55Z
+last_built: 2024-08-25T19:05Z
 urls:
   reference: https://geografo.pe/geoidep/reference
   article: https://geografo.pe/geoidep/articles
