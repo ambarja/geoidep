@@ -11,8 +11,8 @@ Description: This package offers R users an easy and accessible way to obtain of
  It also includes information provided by regional government entities and technical-scientific institutions,
  managed by the Spatial Data Infrastructure of Peru (IDEP). 
 License: Apache License (>= 2)
-URL: https://geografo.pe/geoinei
-BugReports: https://github.com/ambarja/geoinei/issues
+URL: https://geografo.pe/geoidep
+BugReports: https://github.com/ambarja/geoidep/issues
 LazyData: true
 Imports:
     httr,

@@ -23,6 +23,6 @@ For more information, you can visit the following page \url{https://ide.inei.gob
 }
 \examples{
 library(geoidep)
-dist <- get_departaments(show_progress = FALSE)
-head(dist)
+dep <- get_departaments(show_progress = FALSE)
+head(dep)
 }

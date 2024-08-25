@@ -23,6 +23,6 @@ For more information, you can visit the following page \url{https://ide.inei.gob
 }
 \examples{
 library(geoidep)
-dist <- get_provinces(show_progress = FALSE)
-head(dist)
+prov <- get_provinces(show_progress = FALSE)
+head(prov)
 }

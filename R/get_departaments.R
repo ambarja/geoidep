@@ -11,8 +11,8 @@
 #' @returns A sf or tibble object.
 #' @examples
 #' library(geoidep)
-#' dist <- get_departaments(show_progress = FALSE)
-#' head(dist)
+#' dep <- get_departaments(show_progress = FALSE)
+#' head(dep)
 #' @export
 
 get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){
