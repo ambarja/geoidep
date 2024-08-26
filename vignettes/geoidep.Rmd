@@ -22,7 +22,7 @@ including society, transport, environment, agriculture, cadastral information, a
 It also includes data from regional government entities and technical-scientific institutions,
 all managed by the Spatial Data Infrastructure of Peru (IDEP).
 
-<img src='man/figures/idesep.png' width='100%'/>
+<img src='https://raw.githubusercontent.com/ambarja/geoidep/main/man/figures/idesep.png' width='100%'/>
 
 
 ## Working with R
