@@ -12,10 +12,12 @@
 
 The goal of geoidep is to offers R users an easy and accessible way to
 obtain official cartographic data on various topics, such as society,
-transport, environment, agriculture, catastre, climate, among others. It
-also includes information provided by regional government entities and
-technical-scientific institutions, managed by the Spatial Data
-Infrastructure of Peru (IDEP).
+transport, environment, agriculture, urban and rural cadastral, climate,
+among others.
+
+It also includes information provided by regional government entities
+and technical-scientific institutions,managed by the Spatial Data
+Infrastructure of Peru.
 
 ## Installation
 

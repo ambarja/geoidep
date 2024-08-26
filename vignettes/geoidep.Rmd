@@ -1,8 +1,8 @@
 ---
-title: "Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru (IDE-Peru)"
+title: "Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru (IDE-Peru)}
+  %\VignetteIndexEntry{Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 ## Introducction
 
-This package provides R users with a new way to access Peru's official cartographic data on various topics that are managed by the Spatial Data Infrastructure of Peru (IDEP).
+This package provides R users with a new way to access Peru's official cartographic data on various topics that are managed by the Spatial Data Infrastructure of Peru.
 
 <img src='https://raw.githubusercontent.com/ambarja/geoidep/main/man/figures/idesep.png' width='100%'/>
 
