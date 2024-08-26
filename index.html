@@ -18,8 +18,8 @@
 <link href="deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Download Peruvian data managed by the Spatial Data Infrastructure (SDI) of the National Institute of Statistics and Informatics (INEI) of Peru">
-<meta name="description" content="Provides R users with easy access to official cartographic data from Peru on a range of topics, including society, transport, environment, agriculture, cadastral information, and climate. It also includes data from regional government entities and technical-scientific institutions, all managed by the Spatial Data Infrastructure of Peru (IDEP).">
-<meta property="og:description" content="Provides R users with easy access to official cartographic data from Peru on a range of topics, including society, transport, environment, agriculture, cadastral information, and climate. It also includes data from regional government entities and technical-scientific institutions, all managed by the Spatial Data Infrastructure of Peru (IDEP).">
+<meta name="description" content="Provides R users with easy access to official cartographic data from Peru on a range of topics, including society, transport, environment, agriculture, urban and rural cadastral information, and climate. It also includes data from regional government entities and technical-scientific institutions, all managed by the Spatial Data Infrastructure of Peru.">
+<meta property="og:description" content="Provides R users with easy access to official cartographic data from Peru on a range of topics, including society, transport, environment, agriculture, urban and rural cadastral information, and climate. It also includes data from regional government entities and technical-scientific institutions, all managed by the Spatial Data Infrastructure of Peru.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -59,7 +59,8 @@
 <p><img src="reference/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="20%"></p>
 <!-- badges: start -->
 
-<p>The goal of geoidep is to offers R users an easy and accessible way to obtain official cartographic data on various topics, such as society, transport, environment, agriculture, catastre, climate, among others. It also includes information provided by regional government entities and technical-scientific institutions, managed by the Spatial Data Infrastructure of Peru (IDEP).</p>
+<p>The goal of geoidep is to offers R users an easy and accessible way to obtain official cartographic data on various topics, such as society, transport, environment, agriculture, urban and rural cadastral, climate, among others.</p>
+<p>It also includes information provided by regional government entities and technical-scientific institutions,managed by the Spatial Data Infrastructure of Peru.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -73,7 +74,7 @@
 </h2>
 <p>This is a simple example of how to download Peru’s official administrative boundaries:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep">geoidep</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span>
 <span><span class="va">dep</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_departaments.html">get_departaments</a></span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p>The first 10 rows of the original data are displayed here:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
