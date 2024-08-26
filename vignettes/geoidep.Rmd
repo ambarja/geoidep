@@ -1,0 +1,60 @@
+---
+title: "Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru (IDE-Peru)"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru (IDE-Peru)}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introducction
+
+Provides R users with easy access to official cartographic data from Peru on a range of topics,
+including society, transport, environment, agriculture, cadastral information, and climate.
+It also includes data from regional government entities and technical-scientific institutions,
+all managed by the Spatial Data Infrastructure of Peru (IDEP).
+
+<img src='man/figures/idesep.png' width='100%'/>
+
+
+## Working with R
+
+```{r setup}
+library(geoidep)
+library(ggplot2)
+```
+
+## Official Administrative Boundaries by INEI
+
+```{r}
+departaments <- get_departaments(show_progress = FALSE)
+```
+
+```{r}
+names(departaments)
+```
+
+
+```{r}
+# Display the first 10 rows of the data frame `departaments`
+head(departaments)
+```
+
+## Simple Visualization
+
+```{r}
+ggplot() + 
+  geom_sf(data = departaments) +
+  theme_minimal()
+```
+
+
+

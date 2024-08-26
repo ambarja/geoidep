@@ -1,15 +1,15 @@
 Package: geoidep
 Type: Package
-Title: Download geographic data on various topics provided and managed by the Spatial Data Infrastructure of Peru (IDE-Peru)
+Title: Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru (IDE-Peru)
 Version: 0.1.0
 Authors@R: 
  c(person(given = "antony", family = "barja",email = "geografo.pe@gmail.com", role = c("aut", "cre", "cph"),comment = c(ORCID = "0000-0001-5921-2858"))
            )
 Maintainer: The package maintainer <geografo.pe@gmail.com> 
-Description: This package offers R users an easy and accessible way to obtain official cartographic data on 
- various topics, such as society, transport, environment, agriculture, catastre, climate, among others. 
- It also includes information provided by regional government entities and technical-scientific institutions,
- managed by the Spatial Data Infrastructure of Peru (IDEP). 
+Description: Provides R users with easy access to official cartographic data from Peru on a range of topics,
+  including society, transport, environment, agriculture, cadastral information, and climate.
+  It also includes data from regional government entities and technical-scientific institutions,
+  all managed by the Spatial Data Infrastructure of Peru (IDEP).
 License: Apache License (>= 2)
 URL: https://geografo.pe/geoidep
 BugReports: https://github.com/ambarja/geoidep/issues
@@ -20,3 +20,8 @@ Imports:
     archive
 RoxygenNote: 7.3.2
 Encoding: UTF-8
+Suggests: 
+    knitr,
+    rmarkdown,
+    ggplot2
+VignetteBuilder: knitr
