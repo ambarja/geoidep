@@ -16,10 +16,7 @@ knitr::opts_chunk$set(
 
 ## Introducction
 
-Provides R users with easy access to official cartographic data from Peru on a range of topics,
-including society, transport, environment, agriculture, cadastral information, and climate.
-It also includes data from regional government entities and technical-scientific institutions,
-all managed by the Spatial Data Infrastructure of Peru (IDEP).
+This package provides R users with a new way to access Peru's official cartographic data on various topics that are managed by the Spatial Data Infrastructure of Peru (IDEP).
 
 <img src='https://raw.githubusercontent.com/ambarja/geoidep/main/man/figures/idesep.png' width='100%'/>
 

@@ -30,31 +30,21 @@ managed by the Spatial Data Infrastructure of Peru (IDEP).
 
 You can install the development version of geoidep like so:
 
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```r
+install.packages('pak')
+pak::pkg_install("ambarja/geoidep")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a simple example of how to download Peru's official administrative boundaries:
 
 ```{r example}
 library(geoidep)
 dep <- get_departaments(show_progress = FALSE)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
+The first 10 rows of the original data are displayed here:
 ```{r dep}
 head(dep)
 ```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
