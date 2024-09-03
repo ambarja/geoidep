@@ -4,6 +4,9 @@ on:
   schedule:
     # Runs daily at 4:00 PM UTC (9:00 AM PST)
     - cron: '0 16 * * *'
+  push:
+    branches:
+      - main
   # allows for manually running of the check
   workflow_dispatch:
 
