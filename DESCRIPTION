@@ -5,8 +5,9 @@ Version: 0.1.0
 Authors@R: 
  c(person(given = "antony", family = "barja",email = "geografo.pe@gmail.com", role = c("aut", "cre", "cph"),comment = c(ORCID = "0000-0001-5921-2858"))
            )
-Description: Provides R users with easy access to official cartographic data from Peru on a range of topics, including society, transport, environment, agriculture, climate, among others. 
- It also includes data from regional government entities and technical-scientific institutions,all managed by the Spatial Data Infrastructure of Peru.
+Description: Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more.
+  It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure.
+  For more information, please visit: <https://www.geoidep.gob.pe/catalogos-de-metadatos>.
 License: Apache License (>= 2)
 URL: https://geografo.pe/geoidep/
 BugReports: https://github.com/ambarja/geoidep/issues
