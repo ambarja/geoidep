@@ -24,8 +24,8 @@ This package provides R users with a new way to access Peru's official cartograp
 ## Working with R
 
 ```{r setup}
-library(geoidep)
 library(ggplot2)
+library(geoidep)
 ```
 
 ## Official Administrative Boundaries by INEI

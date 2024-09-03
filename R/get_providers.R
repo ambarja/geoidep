@@ -2,18 +2,18 @@
 #'
 #' @description
 #' Summary of providers
+#' @param query description
 #' @returns A sf or tibble object.
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' dep <- get_departaments(show_progress = FALSE)
-#' head(dep)
+#' get_providers()
 #' }
 #' @export
 
-get_providers <- function(){
+get_providers <- function(query = "provider"){
   providers_count <- get_data_sources() |>
-    subset(select = "provider") |>
+    subset(select = query) |>
     table() |>
     as.data.frame() |>
     tidyr::as_tibble()

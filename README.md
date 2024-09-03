@@ -12,8 +12,7 @@
 
 The goal of geoidep is to offers R users an easy and accessible way to
 obtain official cartographic data on various topics, such as society,
-transport, environment, agriculture, urban and rural cadastral, climate,
-among others.
+transport, environment, agriculture, climate, among others.
 
 It also includes information provided by regional government entities
 and technical-scientific institutions,managed by the Spatial Data
@@ -35,6 +34,18 @@ administrative boundaries:
 
 ``` r
 library(geoidep)
+#> 
+#> ── Welcome to geoidep ──────────────────────────────────────────────────────────
+#> ℹ geoidep is a wrapper that allows you to download cartographic data for Peru from R.
+#> Currently, `geoidep` supports the following providers:
+#> ✔ INEI
+#> ✔ SERNAMP
+#> ✔ MINSA
+#> ✔ MTC
+#> ℹ For more information, please use the `get_providers()` function.
+```
+
+``` r
 dep <- get_departaments(show_progress = FALSE)
 ```
 

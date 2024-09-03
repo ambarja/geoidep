@@ -19,3 +19,8 @@ reference:
    - get_districts
    - get_provinces
    - get_departaments
+
+ - title: 'Utils'
+   contents:
+   - get_providers
+   - get_data_sources

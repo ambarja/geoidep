@@ -7,8 +7,7 @@
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' dep <- get_departaments(show_progress = FALSE)
-#' head(dep)
+#' get_data_sources()
 #' }
 #' @export
 
