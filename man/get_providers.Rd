@@ -4,7 +4,10 @@
 \alias{get_providers}
 \title{List resources and count layers of IDEP}
 \usage{
-get_providers()
+get_providers(query = "provider")
+}
+\arguments{
+\item{query}{description}
 }
 \value{
 A sf or tibble object.
@@ -15,7 +18,6 @@ Summary of providers
 \examples{
 \donttest{
 library(geoidep)
-dep <- get_departaments(show_progress = FALSE)
-head(dep)
+get_providers()
 }
 }

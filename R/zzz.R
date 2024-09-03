@@ -8,7 +8,7 @@
   )
 
   # Lista de proveedores con mensajes de éxito
-  providers <- c("INEI", "SERNAMP", "MINSA", "MTC")
+  providers <- c("INEI", "SERNANP", "MINSA", "MTC")
   for (provider in providers) {
     cli::cli_alert_success(provider)
   }

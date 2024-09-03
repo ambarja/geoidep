@@ -21,5 +21,5 @@ get_inei_link <- function(type = NULL) {
 #' @importFrom utils read.csv
 #' @keywords internal
 get_data <- function(){
-  read.csv("inst/sources-idep/sources_geoidep.csv")
+  read.csv("https://raw.githubusercontent.com/ambarja/geoidep/main/inst/sources-idep/sources_geoidep.csv")
 }
