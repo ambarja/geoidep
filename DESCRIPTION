@@ -15,7 +15,9 @@ LazyData: true
 Imports:
     httr,
     sf,
-    archive
+    archive,
+    cli,
+    tidyr
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 Suggests: 

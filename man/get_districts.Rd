@@ -22,7 +22,9 @@ corresponding to the \bold{official political division} of the district boundari
 For more information, you can visit the following page \url{https://ide.inei.gob.pe/}
 }
 \examples{
+\donttest{
 library(geoidep)
 dist <- get_districts(show_progress = FALSE)
 head(dist)
+}
 }

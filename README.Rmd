@@ -39,8 +39,12 @@ pak::pkg_install("ambarja/geoidep")
 
 This is a simple example of how to download Peru's official administrative boundaries:
 
-```{r example}
+```{r}
 library(geoidep)
+```
+
+
+```{r example}
 dep <- get_departaments(show_progress = FALSE)
 ```
 

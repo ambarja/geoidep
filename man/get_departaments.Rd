@@ -22,7 +22,9 @@ corresponding to the \bold{official political division} of the departament bound
 For more information, you can visit the following page \url{https://ide.inei.gob.pe/}
 }
 \examples{
+\donttest{
 library(geoidep)
 dep <- get_departaments(show_progress = FALSE)
 head(dep)
+}
 }

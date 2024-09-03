@@ -22,7 +22,9 @@ corresponding to the \bold{official political division} of the province boundari
 For more information, you can visit the following page \url{https://ide.inei.gob.pe/}
 }
 \examples{
+\donttest{
 library(geoidep)
 prov <- get_provinces(show_progress = FALSE)
 head(prov)
+}
 }
