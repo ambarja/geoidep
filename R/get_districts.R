@@ -3,7 +3,7 @@
 #' @description
 #' This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
 #' corresponding to the \bold{official political division} of the district boundaries of Peru.
-#' For more information, you can visit the following page \url{https://ide.inei.gob.pe/#capas}
+#' For more information, you can visit the following page \url{https://ide.inei.gob.pe/}
 #'
 #' @param dsn Character. Output filename with the \bold{*.gpkg} format. If missing, a temporary file is created.
 #' @param show_progress Logical. Suppress bar progress.

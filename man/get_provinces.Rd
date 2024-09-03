@@ -19,7 +19,7 @@ A sf or tibble object.
 \description{
 This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
 corresponding to the \bold{official political division} of the province boundaries of Peru.
-For more information, you can visit the following page \url{https://ide.inei.gob.pe/#capas}
+For more information, you can visit the following page \url{https://ide.inei.gob.pe/}
 }
 \examples{
 library(geoidep)
