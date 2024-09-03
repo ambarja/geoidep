@@ -10,9 +10,11 @@
 #' @param quiet Logical. Suppress info message.
 #' @returns A sf object.
 #' @examples
+#' \donttest{
 #' library(geoidep)
 #' dist <- get_districts(show_progress = FALSE)
 #' head(dist)
+#' }
 #' @export
 
 get_districts <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {

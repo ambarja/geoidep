@@ -10,9 +10,11 @@
 #' @param quiet Logical. Suppress info message.
 #' @returns A sf or tibble object.
 #' @examples
+#' \donttest{
 #' library(geoidep)
 #' dep <- get_departaments(show_progress = FALSE)
 #' head(dep)
+#' }
 #' @export
 
 get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){

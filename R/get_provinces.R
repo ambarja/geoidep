@@ -10,9 +10,11 @@
 #' @param quiet Logical. Suppress info message.
 #' @returns A sf or tibble object.
 #' @examples
+#' \donttest{
 #' library(geoidep)
 #' prov <- get_provinces(show_progress = FALSE)
 #' head(prov)
+#' }
 #' @export
 
 get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){
