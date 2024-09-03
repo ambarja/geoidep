@@ -8,6 +8,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/github/ambarja/geoidep/graph/badge.svg?token=0HVS30MQ21)](https://codecov.io/github/ambarja/geoidep)
 <!-- badges: end -->
 
 The goal of geoidep is to offers R users an easy and accessible way to
