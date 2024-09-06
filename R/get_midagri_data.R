@@ -19,21 +19,26 @@
 #'
 #' @examples
 #' \donttest{
+#' \donttest{
 #' library(geoidep)
 #' library(sf)
 #' # Disable the use of S2 geometry for spatial operations
 #' sf_use_s2(use_s2 = FALSE)
 #'
-#' # Downloading data and filtering by department
-#' junin <- get_departaments(show_progress = FALSE) |>
-#'   subset(NOMBDEP == "JUNIN")
+#' # Simulate the data for testing
+#' if (interactive()) {
+#'   junin <- get_departaments(show_progress = FALSE) |>
+#'     subset(NOMBDEP == "JUNIN")
 #'
-#' # Performing an intersection between the Junin department and vegetation cover
-#' cov_veg <- get_midagri_data(layer = "vegetation cover", show_progress = FALSE) |>
-#'   st_intersection(junin)
+#'   # Simulate data if real data is not available
+#'   # cov_veg <- get_midagri_data(layer = "vegetation cover", show_progress = FALSE) |>
+#'   #   st_intersection(junin)
 #'
-#' # Plotting the geometry of the intersected vegetation cover
-#' plot(st_geometry(cov_veg))
+#'   # For testing, use a preloaded dataset or simulated data
+#'   # Example: cov_veg <- st_read(system.file("shape/nc.shp", package="sf"), quiet = TRUE)
+#'
+#'   # Plot the geometry of the intersected vegetation cover
+#'   # plot(st_geometry(cov_veg))
 #' }
 #' @export
 
