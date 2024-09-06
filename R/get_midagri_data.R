@@ -18,7 +18,6 @@
 #' @returns An `sf` object containing the downloaded geographic data.
 #'
 #' @examples
-#' \donttest{
 #' library(geoidep)
 #' library(sf)
 #' # Disable the use of S2 geometry for spatial operations
@@ -34,7 +33,6 @@
 #'
 #' # Plotting the geometry of the intersected vegetation cover
 #' plot(st_geometry(cov_veg))
-#' }
 #' @export
 
 get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TRUE) {
