@@ -17,7 +17,8 @@ Imports:
     sf,
     archive,
     cli,
-    tidyr
+    tidyr,
+    curl
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 Suggests: 

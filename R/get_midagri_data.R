@@ -37,7 +37,7 @@ get_midagri_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TR
   if (is.null(dsn)) {
     dsn <- tempfile(fileext = ".rar")
   }
-  httr::set_config(httr::config(timeout = 300))
+
   if (isTRUE(show_progress)) {
     rar.download <- httr::GET(
       primary_link,
