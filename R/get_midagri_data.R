@@ -47,7 +47,7 @@ get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TR
   if (isTRUE(show_progress)) {
     rar.download <- httr::GET(
       primary_link,
-      httr::timeout(60),
+      httr::timeout(120),
       httr::set_config(httr::config(ssl_verifypeer=0L)),
       httr::write_disk(dsn, overwrite = TRUE),
       httr::progress()
@@ -55,7 +55,7 @@ get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TR
   } else {
     rar.download <- httr::GET(
       primary_link,
-      httr::timeout(60),
+      httr::timeout(120),
       httr::set_config(httr::config(ssl_verifypeer=0L)), 
       httr::write_disk(dsn, overwrite = TRUE)
     )
