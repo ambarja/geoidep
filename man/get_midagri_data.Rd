@@ -7,7 +7,7 @@
 get_midagri_data(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
-\item{dsn}{Character. The output filename in \bold{*.gpkg} format. If not provided, a temporary file will be created.}
+\item{dsn}{Character. The output filename in \bold{*.shp} format. If not provided, a temporary file will be created.}
 
 \item{layer}{Character. Currently, only one layer is available.}
 
