@@ -38,6 +38,8 @@
 #' @export
 
 get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TRUE) {
+
+  options(internet.info = 0)
   primary_link <- get_midagri_link(layer)
 
   if (is.null(dsn)) {
