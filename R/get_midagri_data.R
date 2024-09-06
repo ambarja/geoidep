@@ -38,7 +38,6 @@
 #' @export
 
 get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TRUE) {
-  options(timeout = 100000)
   primary_link <- get_midagri_link(layer)
 
   if (is.null(dsn)) {
@@ -50,7 +49,8 @@ get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TR
       primary_link,
       config = httr::config(ssl_verifypeer = FALSE),
       httr::write_disk(dsn, overwrite = TRUE),
-      httr::progress()
+      httr::progress(),
+      timeout(60)
     )
   } else {
     rar.download <- httr::GET(
