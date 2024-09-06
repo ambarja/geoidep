@@ -23,3 +23,19 @@ get_inei_link <- function(type = NULL) {
 get_data <- function(){
   read.csv("https://raw.githubusercontent.com/ambarja/geoidep/main/inst/sources-idep/sources_geoidep.csv")
 }
+
+
+#' MIDAGRI links for obtaining cartographic information
+#' @param type String. Select  'vegetation cover'. Defaults to NULL.
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+
+get_midagri_link <- function(type = NULL){
+  midagri_link <- c(
+    "vegetation cover" = "https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download"
+  )
+  if (!type %in% names(midagri_link) || is.null(type)) {
+    stop("Invalid type. Please choose from 'vegetation cover'")
+  }
+  return(midagri_link[[type]])
+}

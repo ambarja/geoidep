@@ -20,6 +20,10 @@ reference:
    - get_provinces
    - get_departaments
 
+ - title: 'Download of MIDAGRI cartographic layer'
+   contents:
+   - get_midagri_data
+
  - title: 'Utils'
    contents:
    - get_providers
