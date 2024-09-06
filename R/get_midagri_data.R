@@ -21,23 +21,16 @@
 #' \donttest{
 #' library(geoidep)
 #' library(sf)
-#' # Disable the use of S2 geometry for spatial operations
-#' sf_use_s2(use_s2 = FALSE)
-#'
-#' # Downloading data and filtering by department
-#' junin <- get_departaments(show_progress = FALSE) |>
-#'   subset(NOMBDEP == "JUNIN")
-#'
-#' # Performing an intersection between the Junin department and vegetation cover
+#' # Junin department vegetation cover
 #' cov_veg <- get_midagri_data(layer = "vegetation cover", show_progress = FALSE) |>
-#'   st_intersection(junin)
+#'   subset(NOMBDEP == 'JUNIN')
 #'
-#' # Plotting the geometry of the intersected vegetation cover
+#' # Plotting the geometry of the vegetation cover
 #' plot(st_geometry(cov_veg))
 #' }
 #' @export
 
-get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TRUE) {
+get_midagri_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE) {
 
   primary_link <- get_midagri_link(layer)
 
