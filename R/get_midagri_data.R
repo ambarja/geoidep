@@ -19,30 +19,26 @@
 #'
 #' @examples
 #' \donttest{
-#' \donttest{
 #' library(geoidep)
 #' library(sf)
 #' # Disable the use of S2 geometry for spatial operations
 #' sf_use_s2(use_s2 = FALSE)
 #'
-#' # Simulate the data for testing
-#' if (interactive()) {
-#'   junin <- get_departaments(show_progress = FALSE) |>
-#'     subset(NOMBDEP == "JUNIN")
+#' # Downloading data and filtering by department
+#' junin <- get_departaments(show_progress = FALSE) |>
+#'   subset(NOMBDEP == "JUNIN")
 #'
-#'   # Simulate data if real data is not available
-#'   # cov_veg <- get_midagri_data(layer = "vegetation cover", show_progress = FALSE) |>
-#'   #   st_intersection(junin)
+#' # Performing an intersection between the Junin department and vegetation cover
+#' cov_veg <- get_midagri_data(layer = "vegetation cover", show_progress = FALSE) |>
+#'   st_intersection(junin)
 #'
-#'   # For testing, use a preloaded dataset or simulated data
-#'   # Example: cov_veg <- st_read(system.file("shape/nc.shp", package="sf"), quiet = TRUE)
-#'
-#'   # Plot the geometry of the intersected vegetation cover
-#'   # plot(st_geometry(cov_veg))
+#' # Plotting the geometry of the intersected vegetation cover
+#' plot(st_geometry(cov_veg))
 #' }
 #' @export
 
 get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TRUE) {
+  options(timeout = 100000)
   primary_link <- get_midagri_link(layer)
 
   if (is.null(dsn)) {
@@ -52,14 +48,14 @@ get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TR
   if (isTRUE(show_progress)) {
     rar.download <- httr::GET(
       primary_link,
-      config = httr::config(ssl_verifypeer = FALSE,timeout = 120),
+      config = httr::config(ssl_verifypeer = FALSE),
       httr::write_disk(dsn, overwrite = TRUE),
       httr::progress()
     )
   } else {
     rar.download <- httr::GET(
       primary_link,
-      config = httr::config(ssl_verifypeer = FALSE,timeout = 120),
+      config = httr::config(ssl_verifypeer = FALSE),
       httr::write_disk(dsn, overwrite = TRUE)
     )
   }
