@@ -18,6 +18,7 @@
 #' @returns An `sf` object containing the downloaded geographic data.
 #'
 #' @examples
+#' \donttest{
 #' library(geoidep)
 #' library(sf)
 #' # Disable the use of S2 geometry for spatial operations
@@ -33,11 +34,11 @@
 #'
 #' # Plotting the geometry of the intersected vegetation cover
 #' plot(st_geometry(cov_veg))
+#' }
 #' @export
 
 get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TRUE) {
 
-  options(internet.info = 0)
   primary_link <- get_midagri_link(layer)
 
   if (is.null(dsn)) {
@@ -47,16 +48,14 @@ get_midagri_data <- \(dsn = NULL, layer = NULL, show_progress = TRUE, quiet = TR
   if (isTRUE(show_progress)) {
     rar.download <- httr::GET(
       primary_link,
-      httr::timeout(300),
-      httr::set_config(httr::config(ssl_verifypeer=1L)),
+      httr::set_config(httr::config(ssl_verifypeer=0L)),
       httr::write_disk(dsn, overwrite = TRUE),
       httr::progress()
     )
   } else {
     rar.download <- httr::GET(
       primary_link,
-      httr::timeout(300),
-      httr::set_config(httr::config(ssl_verifypeer=1L)), 
+      httr::set_config(httr::config(ssl_verifypeer=0L)),
       httr::write_disk(dsn, overwrite = TRUE)
     )
   }

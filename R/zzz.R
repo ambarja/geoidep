@@ -1,4 +1,4 @@
-.onAttach <- function(libname, pkgname) {
+.onAttach <- function(...) {
   # Usar `cli` para formatear el mensaje
   cli::cli_h1("Welcome to geoidep")
 
