@@ -18,7 +18,7 @@
 #' @return An `sf` object containing the downloaded geographic data.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(geoidep)
 #' library(sf)
 #' # Junin department vegetation cover
