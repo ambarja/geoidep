@@ -50,7 +50,7 @@ For more details, please visit the following page: <a href="https://siea.midagri
 
 
 <dl><dt id="arg-layer">layer<a class="anchor" aria-label="anchor" href="#arg-layer"></a></dt>
-<dd><p>Character. Currently, only one layer is available.</p></dd>
+<dd><p>Character. Currently, Has three layer available, please review in details sections.</p></dd>
 
 
 <dt id="arg-dsn">dsn<a class="anchor" aria-label="anchor" href="#arg-dsn"></a></dt>
@@ -71,21 +71,20 @@ For more details, please visit the following page: <a href="https://siea.midagri
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Available layer:</p><ul><li><p><b>vegetation cover:</b> The agricultural area of Peru in shapefile format, provided at the national level by SIEA.</p></li>
+    <p>Available layer:</p><ul><li><p><b>vegetation cover:</b> Polygons representing the agricultural areas of Peru, produced with high-resolution satellite images (RapidEye and Sentinel-2).</p></li>
+<li><p><b>agriculture sector:</b> Polygons representing the new national register of agricultural statistical sectors for the year 2024.</p></li>
+<li><p><b>oil palm:</b> Polygons representing the areas cultivated with oil palm in Peru for the period 2016 to 2020.</p></li>
 </ul></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="co"># Junin department vegetation cover</span></span></span>
-<span class="r-in"><span><span class="va">cov_veg</span> <span class="op">&lt;-</span> <span class="fu">get_midagri_data</span><span class="op">(</span>layer <span class="op">=</span> <span class="st">"vegetation cover"</span>, show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">NOMBDEP</span> <span class="op">==</span> <span class="st">'JUNIN'</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/r-spatial/mapview" class="external-link">mapview</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">oil_palm</span> <span class="op">&lt;-</span> <span class="fu">get_midagri_data</span><span class="op">(</span>layer <span class="op">=</span> <span class="st">"oil palm"</span>, show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># Plotting the geometry of the vegetation cover</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_geometry.html" class="external-link">st_geometry</a></span><span class="op">(</span><span class="va">cov_veg</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/mapview/man/mapView.html" class="external-link">mapview</a></span><span class="op">(</span><span class="va">oil_palm</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
