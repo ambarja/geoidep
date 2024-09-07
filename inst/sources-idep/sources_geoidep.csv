@@ -1,9 +1,11 @@
 provider,category,layer,layer_can_be_actived,admin_en,year,link
-INEI,General,Departament,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
-INEI,General,Province,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
+INEI,General,Departaments,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
+INEI,General,Provinces,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
 INEI,General,Districts,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
 sernanp,Enviroment,Zona de Amortiguamiento,FALSE,National Service of Natural Areas Protected by the State,2018,https://geoportal.sernanp.gob.pe/servicios-list/
 sernanp,Enviroment,Zonificacion de ANP,FALSE,National Service of Natural Areas Protected by the State,2024,https://geoportal.sernanp.gob.pe/servicios-list/
 sernanp,Enviroment,Zonificacion de ACR,FALSE,National Service of Natural Areas Protected by the State,2024,https://geoportal.sernanp.gob.pe/servicios-list/
 sernanp,Enviroment,Zonificacion de ACP,FALSE,National Service of Natural Areas Protected by the State,2024,https://geoportal.sernanp.gob.pe/servicios-list/
-midagri,agriculture,Vegetation cover,TRUE,Ministry of Agrarian Development and Irrigation,2018,https://siea.midagri.gob.pe/portal/informativos/superficie-agricola-peruana
+midagri,agriculture,Vegetation cover,TRUE,Ministry of Agrarian Development and Irrigation,2018,https://siea.midagri.gob.pe/portal/
+midagri,agriculture,Agriculture sector,TRUE,Ministry of Agrarian Development and Irrigation,2024,https://siea.midagri.gob.pe/portal/
+midagri,agriculture,Oil palm areas,TRUE,Ministry of Agrarian Development and Irrigation,2016 - 2020,https://siea.midagri.gob.pe/portal/

@@ -7,7 +7,7 @@
 get_midagri_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
-\item{layer}{Character. Currently, only one layer is available.}
+\item{layer}{Character. Currently, Has three layer available, please review in details sections.}
 
 \item{dsn}{Character. The output filename in \bold{*.shp} format. If not provided, a temporary file will be created.}
 
@@ -25,18 +25,17 @@ For more details, please visit the following page: \url{https://siea.midagri.gob
 \details{
 Available layer:
 \itemize{
-\item \bold{vegetation cover:} The agricultural area of Peru in shapefile format, provided at the national level by SIEA.
+\item \bold{vegetation cover:} Polygons representing the agricultural areas of Peru, produced with high-resolution satellite images (RapidEye and Sentinel-2).
+\item \bold{agriculture sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
+\item \bold{oil palm:} Polygons representing the areas cultivated with oil palm in Peru for the period 2016 to 2020.
 }
 }
 \examples{
-\dontrun{
+\donttest{
 library(geoidep)
-library(sf)
-# Junin department vegetation cover
-cov_veg <- get_midagri_data(layer = "vegetation cover", show_progress = FALSE) |>
-  subset(NOMBDEP == 'JUNIN')
-
+library(mapview)
+oil_palm <- get_midagri_data(layer = "oil palm", show_progress = FALSE)
 # Plotting the geometry of the vegetation cover
-plot(st_geometry(cov_veg))
+mapview(oil_palm)
 }
 }

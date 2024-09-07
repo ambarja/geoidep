@@ -5,28 +5,27 @@
 #' For more details, please visit the following page: \url{https://siea.midagri.gob.pe/portal/informativos/superficie-agricola-peruana}.
 #'
 #' @param dsn Character. The output filename in \bold{*.shp} format. If not provided, a temporary file will be created.
-#' @param layer Character. Currently, only one layer is available.
+#' @param layer Character. Currently, Has three layer available, please review in details sections.
 #' @param show_progress Logical. If TRUE, displays a progress bar.
 #' @param quiet Logical. If TRUE, suppresses informational messages.
 #'
 #' @details
 #' Available layer:
 #' \itemize{
-#' \item \bold{vegetation cover:} The agricultural area of Peru in shapefile format, provided at the national level by SIEA.
+#' \item \bold{vegetation cover:} Polygons representing the agricultural areas of Peru, produced with high-resolution satellite images (RapidEye and Sentinel-2).
+#' \item \bold{agriculture sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
+#' \item \bold{oil palm:} Polygons representing the areas cultivated with oil palm in Peru for the period 2016 to 2020.
 #' }
 #'
 #' @return An `sf` object containing the downloaded geographic data.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' library(geoidep)
-#' library(sf)
-#' # Junin department vegetation cover
-#' cov_veg <- get_midagri_data(layer = "vegetation cover", show_progress = FALSE) |>
-#'   subset(NOMBDEP == 'JUNIN')
-#'
+#' library(mapview)
+#' oil_palm <- get_midagri_data(layer = "oil palm", show_progress = FALSE)
 #' # Plotting the geometry of the vegetation cover
-#' plot(st_geometry(cov_veg))
+#' mapview(oil_palm)
 #' }
 #' @export
 
@@ -34,8 +33,18 @@ get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, qui
 
   primary_link <- get_midagri_link(layer)
 
+  # Check the file's format
+  is_zip <- grepl("\\.zip$", primary_link)
+  is_rar <- grepl("\\.rar$", primary_link)
+
   if (is.null(dsn)) {
-    dsn <- tempfile(fileext = ".rar")
+    if (is_rar) {
+      dsn <- tempfile(fileext = ".rar")
+    } else if (is_zip) {
+      dsn <- tempfile(fileext = ".zip")
+    } else {
+      dsn <- tempfile()  # Use a generic temporary file if format is unknown
+    }
   }
 
   # Descargar el archivo
@@ -67,14 +76,14 @@ get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, qui
   extract_dir <- tempfile()
   dir.create(extract_dir)
 
-  # Extraer el primer archivo .rar
+  # Extraer el primer archivo
   archive::archive_extract(
     archive = dsn,
     dir = extract_dir
   )
 
-  # Buscar un segundo archivo .rar
-  second_rar <- list.files(extract_dir, pattern = "\\.rar$", full.names = TRUE, recursive = TRUE)
+  # Buscar un segundo archivo
+  second_rar <- list.files(extract_dir, pattern = "\\.(rar|zip)$", full.names = TRUE, recursive = TRUE)
 
   if (length(second_rar) > 0) {
     # Extraer el segundo archivo .rar
@@ -82,12 +91,10 @@ get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, qui
       archive = second_rar[1],
       dir = extract_dir
     )
-  } else {
-    message("No other .rar file was found to decompress.")
   }
 
   # Buscar archivos .shp
-  shp_file <- list.files(extract_dir, pattern = "\\.shp$", full.names = TRUE, recursive = TRUE)
+  shp_file <- list.files(extract_dir, pattern = "\\.(shp|gpkg)$", full.names = TRUE, recursive = TRUE)[1]
 
   # Validar si existe un archivo .shp
   if (length(shp_file) == 0) {

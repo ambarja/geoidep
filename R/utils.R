@@ -26,16 +26,18 @@ get_data <- function(){
 
 
 #' MIDAGRI links for obtaining cartographic information
-#' @param type String. Select  'vegetation cover'. Defaults to NULL.
+#' @param type String. Select  'vegetation cover', 'agriculture sector', 'oil palm'. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 
 get_midagri_link <- function(type = NULL){
   midagri_link <- c(
-    "vegetation cover" = "https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download"
+    "vegetation cover" = "https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download",
+    "agriculture sector" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/sectores/2024/SectoresEstadisticos_2024_04.zip",
+    "oil palm" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/temas/PALMA_ACEITERA_2016_2020.zip"
   )
   if (!type %in% names(midagri_link) || is.null(type)) {
-    stop("Invalid type. Please choose from 'vegetation cover'")
+    stop("Invalid type. Please choose from 'vegetation cover', 'agriculture sector' or 'oil palm'")
   }
   return(midagri_link[[type]])
 }
