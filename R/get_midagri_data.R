@@ -2,7 +2,7 @@
 #'
 #' @description
 #' This function downloads the latest version of the \bold{geographic data} representing the \bold{agricultural area} of Peru.
-#' For more details, please visit the following page: \url{https://siea.midagri.gob.pe/portal/informativos/superficie-agricola-peruana}.
+#' For more details, please visit the following page: \url{https://siea.midagri.gob.pe/}.
 #'
 #' @param dsn Character. The output filename in \bold{*.shp} format. If not provided, a temporary file will be created.
 #' @param layer Character. Currently, Has three layer available, please review in details sections.
@@ -20,13 +20,11 @@
 #' @return An `sf` object containing the downloaded geographic data.
 #'
 #' @examples
-#' \donttest{
 #' library(geoidep)
 #' library(mapview)
 #' oil_palm <- get_midagri_data(layer = "oil palm", show_progress = FALSE)
 #' # Plotting the geometry of the vegetation cover
 #' mapview(oil_palm)
-#' }
 #' @export
 
 get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE) {

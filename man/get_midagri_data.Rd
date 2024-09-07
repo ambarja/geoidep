@@ -20,7 +20,7 @@ An `sf` object containing the downloaded geographic data.
 }
 \description{
 This function downloads the latest version of the \bold{geographic data} representing the \bold{agricultural area} of Peru.
-For more details, please visit the following page: \url{https://siea.midagri.gob.pe/portal/informativos/superficie-agricola-peruana}.
+For more details, please visit the following page: \url{https://siea.midagri.gob.pe/}.
 }
 \details{
 Available layer:
@@ -31,11 +31,9 @@ Available layer:
 }
 }
 \examples{
-\donttest{
 library(geoidep)
 library(mapview)
 oil_palm <- get_midagri_data(layer = "oil palm", show_progress = FALSE)
 # Plotting the geometry of the vegetation cover
 mapview(oil_palm)
-}
 }
