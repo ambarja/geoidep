@@ -2,16 +2,16 @@
 % Please edit documentation in R/get_midagri_data.R
 \name{get_midagri_data}
 \alias{get_midagri_data}
-\title{Download the geographic information from MIDAGRI}
+\title{Download Geographic Information from MIDAGRI}
 \usage{
 get_midagri_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
-\item{layer}{Character. Currently, Has three layer available, please review in details sections.}
+\item{layer}{Character. Specifies the layer to download. Available layers are detailed in the 'Details' section.}
 
-\item{dsn}{Character. The output filename in \bold{*.shp} format. If not provided, a temporary file will be created.}
+\item{dsn}{Character. The output filename in \bold{.shp or .gpkg} format. If not provided, a temporary file will be created.}
 
-\item{show_progress}{Logical. If TRUE, displays a progress bar.}
+\item{show_progress}{Logical. If TRUE, displays a progress bar during the download.}
 
 \item{quiet}{Logical. If TRUE, suppresses informational messages.}
 }
@@ -19,15 +19,15 @@ get_midagri_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 An `sf` object containing the downloaded geographic data.
 }
 \description{
-This function downloads the latest version of the \bold{geographic data} representing the \bold{agricultural area} of Peru.
-For more details, please visit the following page: \url{https://siea.midagri.gob.pe/}.
+This function downloads the latest version of geographic data representing various types of agricultural areas in Peru. For more details, please visit the following page: \url{https://siea.midagri.gob.pe/}.
 }
 \details{
-Available layer:
+Available layers are:
 \itemize{
-\item \bold{vegetation cover:} Polygons representing the agricultural areas of Peru, produced with high-resolution satellite images (RapidEye and Sentinel-2).
-\item \bold{agriculture sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
-\item \bold{oil palm:} Polygons representing the areas cultivated with oil palm in Peru for the period 2016 to 2020.
+  \item \bold{vegetation cover:} Polygons representing agricultural areas of Peru, produced from high-resolution satellite images (RapidEye and Sentinel-2).
+  \item \bold{agriculture sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
+  \item \bold{oil palm:} Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.
+  \item \bold{experimental stations:} Points representing agricultural experimental stations in Peru.
 }
 }
 \examples{
@@ -51,6 +51,5 @@ oil_palm <- get_midagri_data(
 
 # Visualize the oil palm layer
 plot(st_geometry(oil_palm))
-
 }
 }

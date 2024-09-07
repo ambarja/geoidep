@@ -34,10 +34,11 @@ get_midagri_link <- function(type = NULL){
   midagri_link <- c(
     "vegetation cover" = "https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download",
     "agriculture sector" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/sectores/2024/SectoresEstadisticos_2024_04.zip",
-    "oil palm" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/temas/PALMA_ACEITERA_2016_2020.zip"
+    "oil palm" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/temas/PALMA_ACEITERA_2016_2020.zip",
+    "experimental stations" = "https://pgc-snia.inia.gob.pe:8443/jspui/mapa/data/estaciones_experimentales.js"
   )
   if (!type %in% names(midagri_link) || is.null(type)) {
-    stop("Invalid type. Please choose from 'vegetation cover', 'agriculture sector' or 'oil palm'")
+    stop("Invalid type. Please choose from 'vegetation cover', 'agriculture sector', 'oil palm' or 'experimental stations'")
   }
   return(midagri_link[[type]])
 }
