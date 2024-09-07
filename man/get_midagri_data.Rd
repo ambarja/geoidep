@@ -31,9 +31,26 @@ Available layer:
 }
 }
 \examples{
+\donttest{
 library(geoidep)
-library(mapview)
-oil_palm <- get_midagri_data(layer = "oil palm", show_progress = FALSE)
-# Plotting the geometry of the vegetation cover
-mapview(oil_palm)
+library(sf)
+# Disable the use of S2 geometry for accurate spatial operations
+sf_use_s2(use_s2 = FALSE)
+
+# Retrieve the polygon for Coronel Portillo province
+coronel_portillo <- get_provinces(show_progress = FALSE) |>
+  subset(NOMBPROV == "CORONEL PORTILLO") |>
+  st_transform(crs = 32718)
+
+# Download and extract the oil palm layer for Coronel Portillo
+oil_palm <- get_midagri_data(
+  layer = "oil palm",
+  show_progress = FALSE
+) |>
+  st_intersection(coronel_portillo)
+
+# Visualize the oil palm layer
+plot(st_geometry(oil_palm))
+
+}
 }
