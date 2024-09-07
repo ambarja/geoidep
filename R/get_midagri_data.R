@@ -29,6 +29,7 @@
 #' plot(st_geometry(cov_veg))
 #' }
 #' @export
+#' @export
 
 get_midagri_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE) {
 
