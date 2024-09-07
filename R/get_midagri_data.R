@@ -15,7 +15,7 @@
 #' \item \bold{vegetation cover:} The agricultural area of Peru in shapefile format, provided at the national level by SIEA.
 #' }
 #'
-#' @returns An `sf` object containing the downloaded geographic data.
+#' @return An `sf` object containing the downloaded geographic data.
 #'
 #' @examples
 #' \donttest{
@@ -28,7 +28,6 @@
 #' # Plotting the geometry of the vegetation cover
 #' plot(st_geometry(cov_veg))
 #' }
-#' @export
 #' @export
 
 get_midagri_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE) {

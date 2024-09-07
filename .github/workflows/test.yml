@@ -1,0 +1,3 @@
+- name: Check URL Connectivity
+  run: |
+    curl -I https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download
