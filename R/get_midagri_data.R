@@ -30,7 +30,7 @@
 #' }
 #' @export
 
-get_midagri_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE) {
+get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE) {
 
   primary_link <- get_midagri_link(layer)
 
@@ -38,10 +38,11 @@ get_midagri_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TR
     dsn <- tempfile(fileext = ".rar")
   }
 
+  # Descargar el archivo
   if (isTRUE(show_progress)) {
     rar.download <- httr::GET(
       primary_link,
-      httr::set_config(httr::config(ssl_verifypeer=0L)),
+      httr::set_config(httr::config(ssl_verifypeer = 0L)),
       httr::write_disk(dsn, overwrite = TRUE),
       httr::config(timeout = 600),
       httr::progress()
@@ -49,51 +50,53 @@ get_midagri_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TR
   } else {
     rar.download <- httr::GET(
       primary_link,
-      httr::set_config(httr::config(ssl_verifypeer=0L)),
-      httr::config(timeout = 600),
-      httr::write_disk(dsn, overwrite = TRUE)
+      httr::set_config(httr::config(ssl_verifypeer = 0L)),
+      httr::write_disk(dsn, overwrite = TRUE),
+      httr::config(timeout = 600)
     )
   }
 
-  # Check if the download was successful
+  # Verificar si la descarga fue exitosa
   if (httr::http_error(rar.download)) {
-    stop("Error downloading the file. Check the URL or connection")
+    stop("Error downloading the file. Status code: ", httr::status_code(rar.download))
   }
 
-  if (file.exists(dsn) && dir.exists(dsn)) {
-    extract_dir <- dsn
-  } else {
-    extract_dir <- tempfile()
-    dir.create(extract_dir)
+  # Verificar si el archivo ha sido descargado
+  if (!file.exists(dsn)) {
+    stop("Failed to download the file.")
   }
 
-  # The first rar
+  extract_dir <- tempfile()
+  dir.create(extract_dir)
+
+  # Extraer el primer archivo .rar
   archive::archive_extract(
     archive = dsn,
     dir = extract_dir
   )
 
-  # The second rar
+  # Buscar un segundo archivo .rar
   second_rar <- list.files(extract_dir, pattern = "\\.rar$", full.names = TRUE, recursive = TRUE)
 
-  # Verificar que exista un archivo .rar en el directorio
   if (length(second_rar) > 0) {
-    # Descomprimir el segundo .rar
+    # Extraer el segundo archivo .rar
     archive::archive_extract(
-      archive = second_rar[1], # Lectura unicamente del shapefile
-      dir = extract_dir # Extraer en el mismo directorio o en otro si prefieres
+      archive = second_rar[1],
+      dir = extract_dir
     )
   } else {
     message("No other .rar file was found to decompress.")
   }
 
+  # Buscar archivos .shp
   shp_file <- list.files(extract_dir, pattern = "\\.shp$", full.names = TRUE, recursive = TRUE)
 
-  # Validate if .gpkg file exists
+  # Validar si existe un archivo .shp
   if (length(shp_file) == 0) {
     stop("No .shp file was found after extraction")
   }
 
+  # Leer el archivo .shp usando sf
   sf_data <- sf::st_read(shp_file, quiet = quiet)
 
   return(sf_data)
