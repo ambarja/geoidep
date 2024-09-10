@@ -1,9 +1,9 @@
 #' Retrieve INEI Links of the Basic Cartographic Information
-#' @param type String. One of 'districts', 'provinces', or 'departments'. Defaults to NULL.
+#' @param type A string. Select only one of the following layers; ‘districts’, ‘provinces’, or ‘departments’. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 
-get_inei_link <- function(type = NULL) {
+get_inei_link <- \(type = NULL) {
   inei_links <- c(
     districts = "https://ide.inei.gob.pe/files/Distrito.rar",
     provinces = "https://ide.inei.gob.pe/files/Provincia.rar",
@@ -20,17 +20,16 @@ get_inei_link <- function(type = NULL) {
 #' Reading a csv containing IDEP resources
 #' @importFrom utils read.csv
 #' @keywords internal
-get_data <- function(){
+get_data <- \(){
   read.csv("https://raw.githubusercontent.com/ambarja/geoidep/main/inst/sources-idep/sources_geoidep.csv")
 }
 
 
 #' MIDAGRI links for obtaining cartographic information
-#' @param type String. Select  'vegetation cover', 'agriculture sector', 'oil palm'. Defaults to NULL.
+#' @param type A string. Select only one of the following layers; 'vegetation cover', 'agriculture sector', 'oil palm'. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
-
-get_midagri_link <- function(type = NULL){
+get_midagri_link <- \(type = NULL){
   midagri_link <- c(
     "vegetation cover" = "https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download",
     "agriculture sector" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/sectores/2024/SectoresEstadisticos_2024_04.zip",
@@ -41,4 +40,21 @@ get_midagri_link <- function(type = NULL){
     stop("Invalid type. Please choose from 'vegetation cover', 'agriculture sector', 'oil palm' or 'experimental stations'")
   }
   return(midagri_link[[type]])
+}
+
+
+#' Geobosque links for obtaining cartographic information about loss and g
+#' @param type A string. Select only one of the following layers; 'bpdist', 'bppro', 'bpdep'. Defaults to NULL.
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+get_geobosque_link <- \(type = NULL){
+  geobosque_link <- c(
+    "bpdist" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaDistrito",
+    "bppro" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaProvincia",
+    "bpdep" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaRegion"
+    )
+  if (!type %in% names(geobosque_link) || is.null(type)) {
+    stop("Invalid type. Please choose from 'vegetation cover', 'agriculture sector', 'oil palm' or 'experimental stations'")
+  }
+  return(geobosque_link[[type]])
 }
