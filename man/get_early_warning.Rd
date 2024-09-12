@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_early_warning.R
 \name{get_early_warning}
 \alias{get_early_warning}
-\title{Download information on Geobosque's forest loss hotspots}
+\title{Download information on the latest deforestation alerts detected by Geobosque}
 \usage{
 get_early_warning(region, sf = TRUE, show_progress = TRUE)
 }

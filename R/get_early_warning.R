@@ -1,4 +1,4 @@
-#' Download information on Geobosque's forest loss hotspots
+#' Download information on the latest deforestation alerts detected by Geobosque
 #'
 #' @description
 #' This function allows you to download deforestation alert information detected by Geobosque
