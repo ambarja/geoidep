@@ -3,6 +3,7 @@
 export(get_data_sources)
 export(get_departaments)
 export(get_districts)
+export(get_geobosque_data)
 export(get_midagri_data)
 export(get_providers)
 export(get_provinces)

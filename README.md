@@ -37,15 +37,6 @@ administrative boundaries:
 
 ``` r
 library(geoidep)
-#> 
-#> ── Welcome to geoidep ──────────────────────────────────────────────────────────
-#> ℹ geoidep is a wrapper that allows you to download cartographic data for Peru from R.
-#> Currently, `geoidep` supports the following providers:
-#> ✔ INEI
-#> ✔ SERNAMP
-#> ✔ MINSA
-#> ✔ MTC
-#> ℹ For more information, please use the `get_providers()` function.
 ```
 
 ``` r

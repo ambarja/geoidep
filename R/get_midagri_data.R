@@ -44,7 +44,6 @@
 #' @export
 
 get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE) {
-
   primary_link <- get_midagri_link(layer)
 
   # Check the file's format
@@ -60,7 +59,7 @@ get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, qui
     } else if (is_js) {
       dsn <- tempfile(fileext = ".geojson")
     } else {
-      dsn <- tempfile()  # Use a generic temporary file if format is unknown
+      dsn <- tempfile() # Use a generic temporary file if format is unknown
     }
   }
 
@@ -103,7 +102,6 @@ get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, qui
 
     # Read the GeoJSON file using sf
     sf_data <- sf::st_read(dsn)
-
   } else {
     extract_dir <- tempfile()
     dir.create(extract_dir)

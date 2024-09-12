@@ -7,7 +7,7 @@
 get_midagri_link(type = NULL)
 }
 \arguments{
-\item{type}{String. Select  'vegetation cover', 'agriculture sector', 'oil palm'. Defaults to NULL.}
+\item{type}{A string. Select only one of the following layers; 'vegetation cover', 'agriculture sector', 'oil palm'. Defaults to NULL.}
 }
 \value{
 A string containing the URL of the requested file.

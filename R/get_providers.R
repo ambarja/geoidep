@@ -11,7 +11,7 @@
 #' }
 #' @export
 
-get_providers <- function(query = "provider"){
+get_providers <- \(query = "provider"){
   providers_count <- get_data_sources() |>
     subset(select = query) |>
     table() |>

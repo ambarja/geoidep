@@ -17,14 +17,15 @@ Imports:
     sf,
     archive,
     cli,
-    tidyr
+    tidyr,
+    jsonlite,
+    dplyr
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 Suggests: 
     knitr,
     rmarkdown,
     ggplot2,
-    mapview,
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3

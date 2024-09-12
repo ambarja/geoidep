@@ -49,12 +49,12 @@ get_midagri_link <- \(type = NULL){
 #' @keywords internal
 get_geobosque_link <- \(type = NULL){
   geobosque_link <- c(
-    "bpdist" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaDistrito",
-    "bppro" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaProvincia",
-    "bpdep" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaRegion"
-    )
+    "dist" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaDistrito",
+    "pro" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaProvincia",
+    "dep" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaRegion"
+  )
   if (!type %in% names(geobosque_link) || is.null(type)) {
-    stop("Invalid type. Please choose from 'vegetation cover', 'agriculture sector', 'oil palm' or 'experimental stations'")
+    stop("Invalid type. Please choose from 'dist', 'prov' or 'dep'")
   }
   return(geobosque_link[[type]])
 }

@@ -47,7 +47,7 @@ head(departaments)
 ## Simple Visualization
 
 ```{r}
-ggplot() + 
+ggplot() +
   geom_sf(data = departaments) +
   theme_minimal()
 ```

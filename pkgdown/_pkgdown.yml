@@ -24,6 +24,10 @@ reference:
    contents:
    - get_midagri_data
 
+ - title: 'Download data from Geobosque'
+   contents:
+   - get_geobosque_data
+
  - title: 'Utils'
    contents:
    - get_providers

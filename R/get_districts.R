@@ -18,7 +18,6 @@
 #' @export
 
 get_districts <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {
-
   primary_link <- get_inei_link("districts")
 
   if (is.null(dsn)) {
@@ -68,6 +67,3 @@ get_districts <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {
 
   return(sf_data)
 }
-
-
-

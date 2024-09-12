@@ -11,7 +11,7 @@
 #' }
 #' @export
 
-get_data_sources <- function(){
+get_data_sources <- \(){
   sources <- get_data() |>
     tidyr::as_tibble()
   return(sources)
