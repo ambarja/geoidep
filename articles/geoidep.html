@@ -85,9 +85,9 @@ Spatial Data Infrastructure of Peru.</p>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> geoidep is a wrapper that allows you to download cartographic data for Peru from R.</span></span>
 <span><span class="co">#&gt; Currently, `geoidep` supports the following providers:</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> INEI</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> MINAM</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> MIDAGRI</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> SERNANP</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> MINSA</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> MTC</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> For more information, please use the `get_providers()` function.</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -126,7 +126,7 @@ Spatial Data Infrastructure of Peru.</p>
 <h2 id="simple-visualization">Simple Visualization<a class="anchor" aria-label="anchor" href="#simple-visualization"></a>
 </h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">departaments</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="geoidep_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
