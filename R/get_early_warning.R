@@ -14,7 +14,7 @@
 #' \donttest{
 #' library(geoidep)
 #' amazonas <- get_departaments(show_progress = FALSE) |> subset(NOMBDEP == "AMAZONAS")
-#' warning_point <- get_early_warning(region = amazonas, sf = TRUE, show_progress = TRUE)
+#' warning_point <- get_early_warning(region = amazonas, sf = TRUE, show_progress = FALSE)
 #' head(warning_point)
 #' }
 #' @export
