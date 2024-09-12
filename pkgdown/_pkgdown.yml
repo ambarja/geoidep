@@ -26,7 +26,8 @@ reference:
 
  - title: 'Download data from Geobosque'
    contents:
-   - get_geobosque_data
+   - get_forest_loss_data
+   - get_early_warning
 
  - title: 'Utils'
    contents:

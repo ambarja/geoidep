@@ -43,7 +43,7 @@ get_midagri_link <- \(type = NULL){
 }
 
 
-#' Geobosque links for obtaining cartographic information about loss and g
+#' Geobosque API that returns data on forest stock, forest loss, forest loss by ranges for a given department, province and district.
 #' @param type A string. Select only one of the following layers; 'bpdist', 'bppro', 'bpdep'. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
@@ -58,3 +58,25 @@ get_geobosque_link <- \(type = NULL){
   }
   return(geobosque_link[[type]])
 }
+
+#' Geobosque API to get deforestation hot-spots for the last week
+#' @param type A string. Select only one of the following layer; warning_last_week
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+
+get_early_warning_link <- \(type = NULL){
+  geobosque_early_warning_link <- c(
+    "warning_last_week" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/ALERTAS/ultimasByCobertura"
+  )
+  if (!type %in% names(geobosque_early_warning_link) || is.null(type)) {
+    stop("Invalid type. Please choose 'warning_last_week'")
+  }
+  return(geobosque_early_warning_link[[type]])
+}
+
+
+#' Global variables for get_early_warning
+#' This block declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
+#' @name global-variables
+#' @keywords internal
+utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat"))

@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{get_geobosque_link}
 \alias{get_geobosque_link}
-\title{Geobosque links for obtaining cartographic information about loss and g}
+\title{Geobosque API that returns data on forest stock, forest loss, forest loss by ranges for a given department, province and district.}
 \usage{
 get_geobosque_link(type = NULL)
 }
@@ -13,6 +13,6 @@ get_geobosque_link(type = NULL)
 A string containing the URL of the requested file.
 }
 \description{
-Geobosque links for obtaining cartographic information about loss and g
+Geobosque API that returns data on forest stock, forest loss, forest loss by ranges for a given department, province and district.
 }
 \keyword{internal}

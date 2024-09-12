@@ -2,7 +2,7 @@
 #'
 #' @description
 #' This function allows you to download the \bold{ubigeos} corresponding to the official political division
-#' of the district boundaries of Peru with \bold{forest and loss information}.
+#' of the district, province or region boundaries of Peru with \bold{forest and loss information}.
 #' For more information, you can visit the following website: \url{https://geobosques.minam.gob.pe}
 #'
 #' @param ubigeo Character. Specifies the unique geographical code of interest.
@@ -21,12 +21,12 @@
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' geobosque <- get_geobosque_data(ubigeo = "010101", level = "dist", show_progress = FALSE)
+#' geobosque <- get_forest_loss_data(ubigeo = "010101", level = "dist", show_progress = FALSE)
 #' geobosque
 #' }
 #' @export
 
-get_geobosque_data <- \(level = NULL, ubigeo = NULL, show_progress = TRUE) {
+get_forest_loss_data <- \(level = NULL, ubigeo = NULL, show_progress = TRUE) {
 
   if(level == "dist"){
     url <- get_geobosque_link("dist")
@@ -91,4 +91,3 @@ get_geobosque_data <- \(level = NULL, ubigeo = NULL, show_progress = TRUE) {
 
   return(geobosque)
 }
-
