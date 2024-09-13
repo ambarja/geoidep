@@ -1,3 +1,25 @@
+#' Retrieve links to SERNANP for information on natural protected areas.
+#' @param type A string. Select only one of the following layers; ‘anp_def’, ‘zr’,‘cp’,'zoam','zoanp','zoacp','zoacr'. Defaults to NULL.
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+get_sernanp_link <- \(type = NULL){
+  sernanp_link <- c(
+     "anp_def" = "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/1/query",
+     "zr" = "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/2/query" ,
+     "cr"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/3/query",
+     "cp"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/4/query",
+     "zoam"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/6/query",
+     "zoanp"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/8/query",
+     "zoacp"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/9/query",
+     "zoacr"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/10/query",
+  )
+  if (!type %in% names(sernanp_link) || is.null(type)) {
+    stop("Invalid type. Please choose one layer")
+  }
+
+  return(sernanp_link[[type]])
+}
+
 #' Retrieve INEI Links of the Basic Cartographic Information
 #' @param type A string. Select only one of the following layers; ‘districts’, ‘provinces’, or ‘departments’. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
