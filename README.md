@@ -153,7 +153,7 @@ historico |>
   theme_minimal() + 
   labs(
     title = "Pérdida de bosque durante los años 2001 - 2023",
-    caption = "Fuente: Datos trabajados con el paquete geoidep en R")
+    caption = "Fuente: Geobosque")
 ```
 
 <img src="man/figures/README-unnamed-chunk-11-1.png" width="500" style="display: block; margin: auto;" />
@@ -171,7 +171,7 @@ ggplot() +
   geom_sf(data = loreto,alpha = 0) + 
   geom_sf(data = alerta_deforestacion, alpha = 0.1) +
   labs(title = "Alertas de deforestación detectadas por Geobosques",
-       caption = "Fuente: Datos trabajados con el paquete geoidep en R") + 
+       caption = "Fuente: Geobosque e INEI") + 
   ggspatial::annotation_north_arrow(location = "tr") + 
   ggspatial::annotation_scale()
 ```
