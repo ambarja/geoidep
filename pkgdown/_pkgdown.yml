@@ -30,7 +30,7 @@ reference:
    - get_early_warning
 
  - title: 'Download data from Sernanp'
-   contens:
+   contents:
    - get_sernanp_data
 
  - title: 'Utils'
