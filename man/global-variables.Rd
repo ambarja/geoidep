@@ -3,9 +3,9 @@
 \name{global-variables}
 \alias{global-variables}
 \title{Global variables for get_early_warning
-This block declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.}
+This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.}
 \description{
 Global variables for get_early_warning
-This block declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
+This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
 }
 \keyword{internal}

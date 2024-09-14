@@ -29,6 +29,10 @@ reference:
    - get_forest_loss_data
    - get_early_warning
 
+ - title: 'Download data from Sernanp'
+   contens:
+   - get_sernanp_data
+
  - title: 'Utils'
    contents:
    - get_providers

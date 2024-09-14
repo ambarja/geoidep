@@ -4,13 +4,16 @@
 \alias{get_data_sources}
 \title{List providers, description, year and link}
 \usage{
-get_data_sources()
+get_data_sources(query = NULL)
+}
+\arguments{
+\item{query}{A string. Default is NULL. List of available providers. For more details, use the `get_providers` function.}
 }
 \value{
 A tibble object.
 }
 \description{
-Metadata information
+This function allows you to list the list of available providers of the geoidep package.
 }
 \examples{
 \donttest{

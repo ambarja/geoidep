@@ -67,10 +67,10 @@ get_sernanp_link <- \(type = NULL){
     "ecorregiones_cdc")
   sernanp_service <- "https://geoservicios.sernanp.gob.pe/arcgis/rest/services/sernanp_visor/servicio_descarga/MapServer"
   sernanp_link <- sprintf("%s/%s/%s",sernanp_service,1:61,"query")
-  names(urls) <- sernanp_layer
+  names(sernanp_link) <- sernanp_layer
 
   if (!type %in% names(sernanp_link) || is.null(type)) {
-    stop("Invalid type. Please choose one layer")
+    stop("Invalid type. Please choose one layer according sernanp layer. More information use `get_data_sources(providers = 'Sernanp')`")
   }
 
   return(sernanp_link[[type]])
@@ -154,4 +154,4 @@ get_early_warning_link <- \(type = NULL){
 #' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
 #' @name global-variables
 #' @keywords internal
-utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat"))
+utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers"))

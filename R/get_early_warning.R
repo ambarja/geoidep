@@ -18,7 +18,7 @@
 #' head(warning_point)
 #' }
 #' @export
-get_early_warning <- function(region, sf = TRUE, show_progress = TRUE) {
+get_early_warning <- \(region, sf = TRUE, show_progress = TRUE) {
 
   # Defined URL of API Geobosque
   url <- get_early_warning_link(type = "warning_last_week")

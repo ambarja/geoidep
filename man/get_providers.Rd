@@ -4,10 +4,10 @@
 \alias{get_providers}
 \title{List resources and count layers of IDEP}
 \usage{
-get_providers(query = "provider")
+get_providers(query = NULL)
 }
 \arguments{
-\item{query}{description}
+\item{query}{A string. Default is NULL.}
 }
 \value{
 A sf or tibble object.

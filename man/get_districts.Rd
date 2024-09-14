@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_districts.R
 \name{get_districts}
 \alias{get_districts}
-\title{Download the districts limits of INEI}
+\title{Download INEI district boundaries}
 \usage{
 get_districts(dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }

@@ -2,11 +2,11 @@
 % Please edit documentation in R/utils.R
 \name{get_data}
 \alias{get_data}
-\title{Reading a csv containing IDEP resources}
+\title{Reading a csv containing geoidep resources}
 \usage{
 get_data()
 }
 \description{
-Reading a csv containing IDEP resources
+Reading a csv containing geoidep resources
 }
 \keyword{internal}

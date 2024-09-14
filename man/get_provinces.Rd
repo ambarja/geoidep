@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_provinces.R
 \name{get_provinces}
 \alias{get_provinces}
-\title{Download the Province limits of INEI}
+\title{Download INEI province boundaries}
 \usage{
 get_provinces(dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }

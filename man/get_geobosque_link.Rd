@@ -7,7 +7,7 @@
 get_geobosque_link(type = NULL)
 }
 \arguments{
-\item{type}{A string. Select only one of the following layers; 'bpdist', 'bppro', 'bpdep'. Defaults to NULL.}
+\item{type}{A string. Select only one of the following layers; 'dist', 'pro', 'dep'. Defaults to NULL.}
 }
 \value{
 A string containing the URL of the requested file.

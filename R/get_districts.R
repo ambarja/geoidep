@@ -8,7 +8,9 @@
 #' @param dsn Character. Output filename with the \bold{*.gpkg} format. If missing, a temporary file is created.
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
+#'
 #' @returns A sf object.
+#'
 #' @examples
 #' \donttest{
 #' library(geoidep)

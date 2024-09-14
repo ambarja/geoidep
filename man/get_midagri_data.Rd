@@ -7,7 +7,7 @@
 get_midagri_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
-\item{layer}{Character. Specifies the layer to download. Available layers are detailed in the 'Details' section.}
+\item{layer}{A string. Specifies the layer to download. Available layers are detailed in the 'Details' section.}
 
 \item{dsn}{Character. The output filename in \bold{.shp or .gpkg} format. If not provided, a temporary file will be created.}
 
@@ -19,7 +19,8 @@ get_midagri_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 An `sf` object containing the downloaded geographic data.
 }
 \description{
-This function downloads the latest version of geographic data representing various types of agricultural areas in Peru. For more details, please visit the following page: \url{https://siea.midagri.gob.pe/}.
+This function allows you to download the latest version of MIDAGRI geographic data.
+For more information you can visit the following page  \url{https://siea.midagri.gob.pe/}.
 }
 \details{
 Available layers are:

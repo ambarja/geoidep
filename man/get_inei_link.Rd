@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{get_inei_link}
 \alias{get_inei_link}
-\title{Retrieve INEI Links of the Basic Cartographic Information}
+\title{Gets the links to the INEI's basic cartographic information.}
 \usage{
 get_inei_link(type = NULL)
 }
@@ -13,6 +13,6 @@ get_inei_link(type = NULL)
 A string containing the URL of the requested file.
 }
 \description{
-Retrieve INEI Links of the Basic Cartographic Information
+Gets the links to the INEI's basic cartographic information.
 }
 \keyword{internal}

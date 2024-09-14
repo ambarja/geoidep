@@ -2,21 +2,28 @@
 #'
 #' @description
 #' Summary of providers
-#' @param query description
+#'
+#' @param query A string. Default is NULL.
 #' @returns A sf or tibble object.
+#'
 #' @examples
 #' \donttest{
 #' library(geoidep)
 #' get_providers()
 #' }
 #' @export
+get_providers <- \(query = NULL){
 
-get_providers <- \(query = "provider"){
-  providers_count <- get_data_sources() |>
-    subset(select = query) |>
-    table() |>
-    as.data.frame() |>
-    tidyr::as_tibble()
-  names(providers_count) <- c("provider", "layer_count")
+  if(is.null(query)){
+    providers_count <- get_data() |>
+      subset(select = "provider") |>
+      table() |>
+      as.data.frame() |>
+      tidyr::as_tibble()
+    names(providers_count) <- c("provider", "layer_count")
+
+  } else {
+    stop("Please, only NULL is valid")
+  }
   return(providers_count)
 }

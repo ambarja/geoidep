@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_departaments.R
 \name{get_departaments}
 \alias{get_departaments}
-\title{Download the Departament limits of INEI}
+\title{Download INEI departmental boundaries}
 \usage{
 get_departaments(dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }

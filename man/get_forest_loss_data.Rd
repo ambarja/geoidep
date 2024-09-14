@@ -7,9 +7,9 @@
 get_forest_loss_data(level = NULL, ubigeo = NULL, show_progress = TRUE)
 }
 \arguments{
-\item{level}{Character. Specifies the official administrative division level of interest.}
+\item{level}{A string. Specifies the official administrative division level of interest.}
 
-\item{ubigeo}{Character. Specifies the unique geographical code of interest.}
+\item{ubigeo}{A string Specifies the unique geographical code of interest.}
 
 \item{show_progress}{Logical. Indicates whether to display the progress bar.}
 }

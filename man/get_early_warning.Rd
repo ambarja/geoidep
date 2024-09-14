@@ -7,7 +7,7 @@
 get_early_warning(region, sf = TRUE, show_progress = TRUE)
 }
 \arguments{
-\item{region}{Character. Specifies the unique geographical code of interest.}
+\item{region}{A string Specifies the unique geographical code of interest.}
 
 \item{sf}{Logical. Indicates whether to return the data as an `sf` object.}
 
