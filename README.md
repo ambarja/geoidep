@@ -164,4 +164,4 @@ ggplot() +
   ggspatial::annotation_scale()
 ```
 
-<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-11-1.png" width="500" style="display: block; margin: auto;" />

@@ -105,12 +105,12 @@ historico |>
 
 Also, geoidep allows to obtain the deforestation alert points identified in the last week by Geobosque.
 
-```{r out.width=500,fig.align='center'}
+```{r}
 alerta_deforestacion <- loreto |> 
   get_early_warning(sf = TRUE,show_progress = F)
 ```
 
-```{r}
+```{r out.width=500,fig.align='center'}
 ggplot() + 
   geom_sf(data = loreto,alpha = 0) + 
   geom_sf(data = alerta_deforestacion, alpha = 0.1) +
