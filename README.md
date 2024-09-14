@@ -145,23 +145,3 @@ historico |>
 ```
 
 <img src="man/figures/README-unnamed-chunk-9-1.png" width="500" style="display: block; margin: auto;" />
-
-Also, geoidep allows to obtain the deforestation alert points identified
-in the last week by Geobosque.
-
-``` r
-alerta_deforestacion <- loreto |> 
-  get_early_warning(sf = TRUE,show_progress = F)
-```
-
-``` r
-ggplot() + 
-  geom_sf(data = loreto,alpha = 0) + 
-  geom_sf(data = alerta_deforestacion, alpha = 0.1) +
-  labs(title = "Alertas de deforestación detectadas por Geobosques",
-       caption = "Fuente: Geobosque e INEI") + 
-  ggspatial::annotation_north_arrow(location = "tr") + 
-  ggspatial::annotation_scale()
-```
-
-<img src="man/figures/README-unnamed-chunk-11-1.png" width="500" style="display: block; margin: auto;" />
