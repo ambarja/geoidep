@@ -15,7 +15,7 @@
 #' \donttest{
 #' library(geoidep)
 #' library(sf)
-#' anp <- get_districts(show_progress = FALSE)
+#' anp <- get_sernanp_data(layer = "zonificacion_anp" , show_progress = FALSE)
 #' plot(st_geometry(anp))
 #' }
 #' @export
