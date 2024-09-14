@@ -79,7 +79,7 @@ head(dep)
 ```
 
 Simple visualization 
-```{r}
+```{r out.width=500,fig.align='center'}
 plot(st_geometry(dep))
 ```
 
@@ -113,7 +113,7 @@ historico |>
 
 Also, geoidep allows to obtain the deforestation alert points identified in the last week by Geobosque.
 
-```{r}
+```{r out.width=500,fig.align='center'}
 alerta_deforestacion <- loreto |> 
   get_early_warning(sf = TRUE,show_progress = F)
 ```

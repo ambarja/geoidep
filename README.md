@@ -126,7 +126,7 @@ Simple visualization
 plot(st_geometry(dep))
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="500" style="display: block; margin: auto;" />
 
 ## Example 03: Integration with tidyverse
 
