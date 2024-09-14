@@ -98,6 +98,6 @@ historico |>
   geom_line(linewidth =1) + 
   theme_minimal() + 
   labs(
-    title = "Pérdida de bosque durante los años 2001 - 2023",
+    title = "Pérdida de bosque del departamento de Loreto \ndurante los años 2001 - 2023",
     caption = "Fuente: Geobosque")
 ```
