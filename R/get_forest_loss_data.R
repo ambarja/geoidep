@@ -5,47 +5,50 @@
 #' of the district, province or region boundaries of Peru with \bold{forest and loss information}.
 #' For more information, you can visit the following website: \url{https://geobosques.minam.gob.pe}
 #'
+#' @param layer A string.Specifies one of the following available layers; stock_bosque_perdida_distrito, stock_bosque_perdida_provincia, stock_bosque_perdida_departamento.
 #' @param ubigeo A string Specifies the unique geographical code of interest.
-#' @param level A string. Specifies the official administrative division level of interest.
 #' @param show_progress Logical. Indicates whether to display the progress bar.
 #' @returns A tibble object.
 #'
 #' @details
 #' Available layers are:
 #' \itemize{
-#'   \item \bold{dist:} A 6-character ubigeo representing the administrative boundaries of a district.
-#'   \item \bold{prov:} A 4-character ubigeo representing the administrative boundaries of a province.
-#'   \item \bold{dep:} A 2-character ubigeo representing the administrative boundaries of a region.
+#'   \item \bold{stock_bosque_perdida_distrito:} Returns data on forest stock, forest loss, rank loss for a given district.
+#'   \item \bold{stock_bosque_perdida_provincia:} Returns data on forest stock, forest loss, rank loss for a given province.
+#'   \item \bold{stock_bosque_perdida_departamento:} Returns data on forest stock, forest loss, rank loss for a given region.
 #' }
 #'
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' geobosque <- get_forest_loss_data(ubigeo = "010101", level = "dist", show_progress = FALSE)
-#' geobosque
+#' geobosque <- get_forest_loss_data(
+#'     layer = "stock_bosque_perdida_distrito",
+#'     ubigeo = "010101",
+#'     show_progress = FALSE)
+#' head(geobosque)
 #' }
 #' @export
 
-get_forest_loss_data <- \(level = NULL, ubigeo = NULL, show_progress = TRUE) {
+get_forest_loss_data <- \(layer = NULL, ubigeo = NULL, show_progress = TRUE) {
 
-  if(level == "dist"){
-    url <- get_geobosque_link("dist")
+  if(layer == "stock_bosque_perdida_distrito"){
+    url <- get_geobosque_link("stock_bosque_perdida_distrito")
 
-  } else if (level == "prov") {
-    url <- get_geobosque_link("prov")
+  } else if (layer == "stock_bosque_perdida_provincia") {
+    url <- get_geobosque_link("stock_bosque_perdida_provincia")
 
-  } else if (level == "dep") {
-    url <- get_geobosque_link("dep")
+  } else if (layer == "stock_bosque_perdida_departamento") {
+    url <- get_geobosque_link("stock_bosque_perdida_departamento")
 
   } else {
     stop("Invalid level. Please choose from 'dist', 'prov' or 'dep'")
   }
 
-  if(level == "dist" && is.character(ubigeo) && length(ubigeo) == 1 && nchar(ubigeo) == 6){
+  if(layer == "stock_bosque_perdida_distrito" && is.character(ubigeo) && length(ubigeo) == 1 && nchar(ubigeo) == 6){
     code <- ubigeo
-  } else if(level == "prov" && is.character(ubigeo) && length(ubigeo) == 1 && nchar(ubigeo) == 4){
+  } else if(layer == "stock_bosque_perdida_provincia" && is.character(ubigeo) && length(ubigeo) == 1 && nchar(ubigeo) == 4){
     code <- ubigeo
-  } else if (level == "dep" && is.character(ubigeo) && length(ubigeo) == 1 && nchar(ubigeo) == 2) {
+  } else if (layer == "stock_bosque_perdida_departamento" && is.character(ubigeo) && length(ubigeo) == 1 && nchar(ubigeo) == 2) {
     code <- ubigeo
   } else {
     stop("Invalid ubigeo. Please choose an ubigeo acording to  administrative division level")

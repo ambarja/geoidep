@@ -20,7 +20,7 @@
 #' @export
 
 get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){
-  primary_link <- get_inei_link("provinces")
+  primary_link <- get_inei_link("provincia")
 
   if (is.null(dsn)) {
     dsn <- tempfile(fileext = ".rar")

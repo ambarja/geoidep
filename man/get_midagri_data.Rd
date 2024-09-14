@@ -25,10 +25,10 @@ For more information you can visit the following page  \url{https://siea.midagri
 \details{
 Available layers are:
 \itemize{
-  \item \bold{vegetation cover:} Polygons representing agricultural areas of Peru, produced from high-resolution satellite images (RapidEye and Sentinel-2).
-  \item \bold{agriculture sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
-  \item \bold{oil palm:} Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.
-  \item \bold{experimental stations:} Points representing agricultural experimental stations in Peru.
+  \item \bold{vegetation_cover:} Polygons representing agricultural areas of Peru, produced from high-resolution satellite images (RapidEye and Sentinel-2).
+  \item \bold{agriculture_sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
+  \item \bold{oil_palm_areas:} Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.
+  \item \bold{experimental_stations:} Points representing agricultural experimental stations in Peru.
 }
 }
 \examples{
@@ -45,7 +45,7 @@ coronel_portillo <- get_provinces(show_progress = FALSE) |>
 
 # Download and extract the oil palm layer for Coronel Portillo
 oil_palm <- get_midagri_data(
-  layer = "oil palm",
+  layer = "oil_palm_areas",
   show_progress = FALSE
 ) |>
   st_intersection(coronel_portillo)

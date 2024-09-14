@@ -83,9 +83,9 @@ get_sernanp_link <- \(type = NULL){
 
 get_inei_link <- \(type = NULL) {
   inei_links <- c(
-      districts = "https://ide.inei.gob.pe/files/Distrito.rar",
-      provinces = "https://ide.inei.gob.pe/files/Provincia.rar",
-    departments = "https://ide.inei.gob.pe/files/Departamento.rar"
+      distrito = "https://ide.inei.gob.pe/files/Distrito.rar",
+      provincia = "https://ide.inei.gob.pe/files/Provincia.rar",
+    departamento = "https://ide.inei.gob.pe/files/Departamento.rar"
   )
 
   if (!type %in% names(inei_links) || is.null(type)) {
@@ -108,10 +108,10 @@ get_data <- \(){
 #' @keywords internal
 get_midagri_link <- \(type = NULL){
   midagri_link <- c(
-    "vegetation cover" = "https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download",
-    "agriculture sector" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/sectores/2024/SectoresEstadisticos_2024_04.zip",
-    "oil palm" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/temas/PALMA_ACEITERA_2016_2020.zip",
-    "experimental stations" = "https://pgc-snia.inia.gob.pe:8443/jspui/mapa/data/estaciones_experimentales.js"
+    "vegetation_cover" = "https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download",
+    "agriculture_sector" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/sectores/2024/SectoresEstadisticos_2024_04.zip",
+    "oil_palm_areas" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/temas/PALMA_ACEITERA_2016_2020.zip",
+    "experimental_stations" = "https://pgc-snia.inia.gob.pe:8443/jspui/mapa/data/estaciones_experimentales.js"
   )
   if (!type %in% names(midagri_link) || is.null(type)) {
     stop("Invalid type. Please choose from 'vegetation cover', 'agriculture sector', 'oil palm' or 'experimental stations'")
@@ -126,9 +126,9 @@ get_midagri_link <- \(type = NULL){
 #' @keywords internal
 get_geobosque_link <- \(type = NULL){
   geobosque_link <- c(
-    "dist" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaDistrito",
-    "pro" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaProvincia",
-    "dep" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaRegion"
+    "stock_bosque_perdida_distrito" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaDistrito",
+    "stock_bosque_perdida_provincia" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaProvincia",
+    "stock_bosque_perdida_departamento" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/BOSQUEPERDIDA/stockBosquePerdidaRegion"
   )
   if (!type %in% names(geobosque_link) || is.null(type)) {
     stop("Invalid type. Please choose from 'dist', 'prov' or 'dep'")

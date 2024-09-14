@@ -1,14 +1,74 @@
 provider,category,layer,layer_can_be_actived,admin_en,year,link
-INEI,General,Departaments,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
-INEI,General,Provinces,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
-INEI,General,Districts,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
-Sernanp,Enviroment,Zona de Amortiguamiento,FALSE,National Service of Natural Areas Protected by the State,2018,https://geoportal.sernanp.gob.pe/servicios-list/
-Sernanp,Enviroment,Zonificacion de ANP,FALSE,National Service of Natural Areas Protected by the State,2024,https://geoportal.sernanp.gob.pe/servicios-list/
-Sernanp,Enviroment,Zonificacion de ACR,FALSE,National Service of Natural Areas Protected by the State,2024,https://geoportal.sernanp.gob.pe/servicios-list/
-Sernanp,Enviroment,Zonificacion de ACP,FALSE,National Service of Natural Areas Protected by the State,2024,https://geoportal.sernanp.gob.pe/servicios-list/
-Midagri,Agriculture,Vegetation cover,TRUE,Ministry of Agrarian Development and Irrigation,2018,https://siea.midagri.gob.pe/portal/
-Midagri,Agriculture,Agriculture sector,TRUE,Ministry of Agrarian Development and Irrigation,2024,https://siea.midagri.gob.pe/portal/
-Midagri,Agriculture,Oil palm areas,TRUE,Ministry of Agrarian Development and Irrigation,2016 - 2020,https://siea.midagri.gob.pe/portal/
-Midagri,Institucional,Experimental stations,TRUE,Ministry of Agrarian Development and Irrigation,2024,https://pgc-snia.inia.gob.pe:8443/jspui/
-Geobosque,Forest,Forest and loss,TRUE,Ministry of Environment,2001 -currently,https://geobosques.minam.gob.pe/
-Geobosque,Forest,Early warning,TRUE,Ministry of Environment,last week,https://geobosques.minam.gob.pe/
+INEI,General,departamento,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
+INEI,General,provincia,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
+INEI,General,distritos,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
+Midagri,Agriculture,vegetation_cover,TRUE,Ministry of Agrarian Development and Irrigation,2018,https://siea.midagri.gob.pe/portal/
+Midagri,Agriculture,agriculture_sector,TRUE,Ministry of Agrarian Development and Irrigation,2024,https://siea.midagri.gob.pe/portal/
+Midagri,Agriculture,oil_palm_areas,TRUE,Ministry of Agrarian Development and Irrigation,2016 - 2020,https://siea.midagri.gob.pe/portal/
+Midagri,Institucional,experimental_stations,TRUE,Ministry of Agrarian Development and Irrigation,2024,https://pgc-snia.inia.gob.pe:8443/jspui/
+Geobosque,Forest,stock_bosque_perdida_nacional,FALSE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
+Geobosque,Forest,stock_bosque_perdida_departamento,TRUE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
+Geobosque,Forest,stock_bosque_perdida_provincia,TRUE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
+Geobosque,Forest,stock_bosque_perdida_distrito,TRUE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
+Geobosque,Forest,warning_last_week,TRUE,Ministry of Environment,last week,https://geobosques.minam.gob.pe/
+Sernanp,Enviroment,anp_nacional,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,zona_reservada,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,acr,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,acp,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,zona_amortiguamiento,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,zonificacion_anp,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,zonificacion_acr,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,zonificacion_acp,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,contratos_aprovechamiento,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,acuerdos_actividad_menor,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,concesion,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,contrato_servicio_turistico,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,autorizacion_predio_privado,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,reserva_biosfera_nacional,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,acuerdos,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,reserva_biosfera_transfronterizo,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,diagnostico_recursos,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,planes_manejo_recursos,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,pozos_exploratorios,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,lotes_contrato,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,autoridad_adm_agua,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,acuiferos,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,unidades_hidrograficas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,autoridad_local_agua,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,reservas_indigenas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,cc_pueblos_indigenas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,cn_pueblos_indigenas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,reservas_piaci,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,qhapaqnan,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,mapa_pobreza_2013,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,catastro_minero_17_sur,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,catastro_minero_18_sur,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,catastro_minero_19_sur,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,predio_rural,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,comunidades_nativas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,comunidades_campesinas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,concesiones_mineras,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,concesiones_geotermica,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,lineas_transmision,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,concesiones_hidroelectricas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,concesiones_generacion,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,concesiones_geotermica_autorizada,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,concesiones_distribucion,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,red_vial_nacional,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,aerodromos,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,red_vial_departamental,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,red_vial_vecinal,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,linea_ferrea,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,areas_habilitadas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,areas_derecho_acuicolas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,zonas_pesca,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,derechos_acuicolas,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,clasificacion_climatica,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,red_estaciones,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,bosques_locales,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,concesiones,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,ecosistemas_fragiles,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,bosque_produccion_permanente,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,bosques_protectores,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,mapa_ecosistemas_2018,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Sernanp,Enviroment,ecorregiones_cdc,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
