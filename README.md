@@ -82,11 +82,7 @@ get_providers()
 #> 4 Sernanp            61
 ```
 
-## Example 02: Integration with R spatial ecosystem
-
-``` r
-library(sf)
-```
+## Example 02: Download official INEI administrative boundaries
 
 This is a simple example of how to download Peru’s official
 administrative boundaries:
@@ -120,15 +116,7 @@ head(dep)
 #> 6 MULTIPOLYGON (((-78.70034 -...
 ```
 
-Simple visualization
-
-``` r
-plot(st_geometry(dep))
-```
-
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="500" style="display: block; margin: auto;" />
-
-## Example 03: Integration with tidyverse
+## Example 03: Working with Gebosque data
 
 ``` r
 library(tidyverse)
@@ -156,7 +144,7 @@ historico |>
     caption = "Fuente: Geobosque")
 ```
 
-<img src="man/figures/README-unnamed-chunk-11-1.png" width="500" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="500" style="display: block; margin: auto;" />
 
 Also, geoidep allows to obtain the deforestation alert points identified
 in the last week by Geobosque.
@@ -176,4 +164,4 @@ ggplot() +
   ggspatial::annotation_scale()
 ```
 
-<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />

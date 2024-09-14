@@ -62,11 +62,8 @@ In summary the suppliers and the number of available layers
 get_providers() 
 ```
 
-## Example 02: Integration with R spatial ecosystem
+## Example 02: Download official INEI administrative boundaries
 
-```{r warning=FALSE,message=FALSE}
-library(sf)
-```
 This is a simple example of how to download Peru's official administrative boundaries:
 
 ```{r}
@@ -78,12 +75,7 @@ The first 10 rows of the original data are displayed here:
 head(dep)
 ```
 
-Simple visualization 
-```{r out.width=500,fig.align='center'}
-plot(st_geometry(dep))
-```
-
-## Example 03: Integration with tidyverse
+## Example 03: Working with Gebosque data
 
 ```{r warning=FALSE,message=FALSE}
 library(tidyverse)
