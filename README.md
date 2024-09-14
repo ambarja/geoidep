@@ -3,7 +3,7 @@
 
 # geoidep
 
-<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="25%">
+<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="22%">
 
 <!-- badges: start -->
 

@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 # geoidep
 
-<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="25%">
+<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="22%">
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
