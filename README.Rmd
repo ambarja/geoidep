@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 # geoidep
 
-<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="30%">
+<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="25%">
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
@@ -80,7 +80,7 @@ head(dep)
 
 Simple visualization 
 ```{r}
-plot(dep)
+plot(st_geometry(dep))
 ```
 
 ## Example 03: Integration with tidyverse
@@ -99,7 +99,7 @@ historico <- get_forest_loss_data(
 ```
 
 
-```{r}
+```{r out.width=500,fig.align='center'}
 historico |> 
   ggplot(aes(x = anio,y = perdida )) + 
   # geom_bar(stat = "identity") + 

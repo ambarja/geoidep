@@ -3,7 +3,7 @@
 
 # geoidep
 
-<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="30%">
+<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="25%">
 
 <!-- badges: start -->
 
@@ -123,7 +123,7 @@ head(dep)
 Simple visualization
 
 ``` r
-plot(dep)
+plot(st_geometry(dep))
 ```
 
 <img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
@@ -156,7 +156,7 @@ historico |>
     caption = "Fuente: Datos trabajados con el paquete geoidep en R")
 ```
 
-<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-11-1.png" width="500" style="display: block; margin: auto;" />
 
 Also, geoidep allows to obtain the deforestation alert points identified
 in the last week by Geobosque.
