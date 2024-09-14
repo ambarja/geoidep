@@ -1,18 +1,74 @@
 #' Retrieve links to SERNANP for information on natural protected areas.
-#' @param type A string. Select only one of the following layers; ‘anp_def’, ‘zr’,‘cp’,'zoam','zoanp','zoacp','zoacr'. Defaults to NULL.
+#' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "sernanp")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 get_sernanp_link <- \(type = NULL){
-  sernanp_link <- c(
-     "anp_def" = "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/1/query",
-     "zr" = "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/2/query" ,
-     "cr"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/3/query",
-     "cp"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/4/query",
-     "zoam"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/6/query",
-     "zoanp"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/8/query",
-     "zoacp"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/9/query",
-     "zoacr"= "https://www.idep.gob.pe/geoportal/rest/services/INSTITUCIONALES/SERNANP/FeatureServer/10/query",
-  )
+  sernanp_layer <-  c(
+    "anp_nacional",
+    "zona_reservada",
+    "acr",
+    "acp",
+    "zona_amortiguamiento",
+    "zonificacion_anp",
+    "zonificacion_acr",
+    "zonificacion_acp",
+    "contratos_aprovechamiento",
+    "acuerdos_actividad_menor",
+    "concesion",
+    "contrato_servicio_turistico",
+    "autorizacion_predio_privado",
+    "reserva_biosfera_nacional",
+    "acuerdo",
+    "reserva_biosfera_transfronterizo",
+    "diagnostico_recursos",
+    "planes_manejo_recursos",
+    "pozos_exploratorios",
+    "lotes_contrato",
+    "autoridad_adm_agua",
+    "acuiferos",
+    "unidades_hidrograficas",
+    "autoridad_local_agua",
+    "reservas_indigenas",
+    "cc_pueblos_indigenas",
+    "cn_pueblos_indigenas",
+    "reservas_piaci",
+    "qhapaqnan",
+    "mapa_pobreza_2013",
+    "catastro_minero_17_sur",
+    "catastro_minero_18_sur",
+    "catastro_minero_19_sur",
+    "predio_rural",
+    "comunidades_nativas",
+    "comunidades_campesinas",
+    "concesiones_mineras",
+    "concesiones_geotermica",
+    "lineas_transmision",
+    "concesiones_hidroelectricas",
+    "concesiones_generacion",
+    "concesiones_geotermica_autorizada",
+    "concesiones_distribucion",
+    "red_vial_nacional",
+    "aerodromos",
+    "red_vial_departamental",
+    "red_vial_vecinal",
+    "linea_ferrea",
+    "areas_habilitadas",
+    "areas_derecho_acuicolas",
+    "zonas_pesca",
+    "derechos_acuicolas",
+    "clasificacion_climatica",
+    "red_estaciones",
+    "bosques_locales",
+    "concesiones",
+    "ecosistemas_fragiles",
+    "bosque_produccion_permanente",
+    "bosques_protectores",
+    "mapa_ecosistemas_2018",
+    "ecorregiones_cdc")
+  sernanp_service <- "https://geoservicios.sernanp.gob.pe/arcgis/rest/services/sernanp_visor/servicio_descarga/MapServer"
+  sernanp_link <- sprintf("%s/%s/%s",sernanp_service,1:61,"query")
+  names(urls) <- sernanp_layer
+
   if (!type %in% names(sernanp_link) || is.null(type)) {
     stop("Invalid type. Please choose one layer")
   }
@@ -20,15 +76,15 @@ get_sernanp_link <- \(type = NULL){
   return(sernanp_link[[type]])
 }
 
-#' Retrieve INEI Links of the Basic Cartographic Information
+#' Gets the links to the INEI's basic cartographic information.
 #' @param type A string. Select only one of the following layers; ‘districts’, ‘provinces’, or ‘departments’. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 
 get_inei_link <- \(type = NULL) {
   inei_links <- c(
-    districts = "https://ide.inei.gob.pe/files/Distrito.rar",
-    provinces = "https://ide.inei.gob.pe/files/Provincia.rar",
+      districts = "https://ide.inei.gob.pe/files/Distrito.rar",
+      provinces = "https://ide.inei.gob.pe/files/Provincia.rar",
     departments = "https://ide.inei.gob.pe/files/Departamento.rar"
   )
 
@@ -39,13 +95,12 @@ get_inei_link <- \(type = NULL) {
   return(inei_links[[type]])
 }
 
-#' Reading a csv containing IDEP resources
+#' Reading a csv containing geoidep resources
 #' @importFrom utils read.csv
 #' @keywords internal
 get_data <- \(){
   read.csv("https://raw.githubusercontent.com/ambarja/geoidep/main/inst/sources-idep/sources_geoidep.csv")
 }
-
 
 #' MIDAGRI links for obtaining cartographic information
 #' @param type A string. Select only one of the following layers; 'vegetation cover', 'agriculture sector', 'oil palm'. Defaults to NULL.
@@ -66,7 +121,7 @@ get_midagri_link <- \(type = NULL){
 
 
 #' Geobosque API that returns data on forest stock, forest loss, forest loss by ranges for a given department, province and district.
-#' @param type A string. Select only one of the following layers; 'bpdist', 'bppro', 'bpdep'. Defaults to NULL.
+#' @param type A string. Select only one of the following layers; 'dist', 'pro', 'dep'. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 get_geobosque_link <- \(type = NULL){
@@ -82,14 +137,12 @@ get_geobosque_link <- \(type = NULL){
 }
 
 #' Geobosque API to get deforestation hot-spots for the last week
-#' @param type A string. Select only one of the following layer; warning_last_week
+#' @param type A string. Only one layer; `warning_last_week`
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 
 get_early_warning_link <- \(type = NULL){
-  geobosque_early_warning_link <- c(
-    "warning_last_week" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/ALERTAS/ultimasByCobertura"
-  )
+  geobosque_early_warning_link <- c("warning_last_week" = "http://geobosques.minam.gob.pe/geobosque/ws/rest/ALERTAS/ultimasByCobertura")
   if (!type %in% names(geobosque_early_warning_link) || is.null(type)) {
     stop("Invalid type. Please choose 'warning_last_week'")
   }
@@ -98,7 +151,7 @@ get_early_warning_link <- \(type = NULL){
 
 
 #' Global variables for get_early_warning
-#' This block declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
+#' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
 #' @name global-variables
 #' @keywords internal
 utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat"))
