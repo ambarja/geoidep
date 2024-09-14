@@ -5,7 +5,7 @@
 #' for any polygon located in Peru.
 #' For more details, please visit the following website: \url{https://geobosques.minam.gob.pe}
 #'
-#' @param region Character. Specifies the unique geographical code of interest.
+#' @param region A string Specifies the unique geographical code of interest.
 #' @param sf Logical. Indicates whether to return the data as an `sf` object.
 #' @param show_progress Logical. If TRUE, shows a progress bar during download.
 #' @return A tibble or sf object, depending on the value of `sf`.

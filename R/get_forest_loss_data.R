@@ -5,8 +5,8 @@
 #' of the district, province or region boundaries of Peru with \bold{forest and loss information}.
 #' For more information, you can visit the following website: \url{https://geobosques.minam.gob.pe}
 #'
-#' @param ubigeo Character. Specifies the unique geographical code of interest.
-#' @param level Character. Specifies the official administrative division level of interest.
+#' @param ubigeo A string Specifies the unique geographical code of interest.
+#' @param level A string. Specifies the official administrative division level of interest.
 #' @param show_progress Logical. Indicates whether to display the progress bar.
 #' @returns A tibble object.
 #'

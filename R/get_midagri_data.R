@@ -1,10 +1,11 @@
 #' Download Geographic Information from MIDAGRI
 #'
 #' @description
-#' This function downloads the latest version of geographic data representing various types of agricultural areas in Peru. For more details, please visit the following page: \url{https://siea.midagri.gob.pe/}.
+#' This function allows you to download the latest version of MIDAGRI geographic data.
+#' For more information you can visit the following page  \url{https://siea.midagri.gob.pe/}.
 #'
 #' @param dsn Character. The output filename in \bold{.shp or .gpkg} format. If not provided, a temporary file will be created.
-#' @param layer Character. Specifies the layer to download. Available layers are detailed in the 'Details' section.
+#' @param layer A string. Specifies the layer to download. Available layers are detailed in the 'Details' section.
 #' @param show_progress Logical. If TRUE, displays a progress bar during the download.
 #' @param quiet Logical. If TRUE, suppresses informational messages.
 #'

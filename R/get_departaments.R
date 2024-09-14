@@ -1,4 +1,4 @@
-#' Download the Departament limits of INEI
+#' Download INEI departmental boundaries
 #'
 #' @description
 #' This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
