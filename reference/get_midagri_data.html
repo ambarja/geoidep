@@ -71,10 +71,10 @@ For more information you can visit the following page  <a href="https://siea.mid
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Available layers are:</p><ul><li><p><b>vegetation cover:</b> Polygons representing agricultural areas of Peru, produced from high-resolution satellite images (RapidEye and Sentinel-2).</p></li>
-<li><p><b>agriculture sector:</b> Polygons representing the new national register of agricultural statistical sectors for the year 2024.</p></li>
-<li><p><b>oil palm:</b> Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.</p></li>
-<li><p><b>experimental stations:</b> Points representing agricultural experimental stations in Peru.</p></li>
+    <p>Available layers are:</p><ul><li><p><b>vegetation_cover:</b> Polygons representing agricultural areas of Peru, produced from high-resolution satellite images (RapidEye and Sentinel-2).</p></li>
+<li><p><b>agriculture_sector:</b> Polygons representing the new national register of agricultural statistical sectors for the year 2024.</p></li>
+<li><p><b>oil_palm_areas:</b> Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.</p></li>
+<li><p><b>experimental_stations:</b> Points representing agricultural experimental stations in Peru.</p></li>
 </ul></div>
 
     <div class="section level2">
@@ -94,7 +94,7 @@ For more information you can visit the following page  <a href="https://siea.mid
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Download and extract the oil palm layer for Coronel Portillo</span></span></span>
 <span class="r-in"><span><span class="va">oil_palm</span> <span class="op">&lt;-</span> <span class="fu">get_midagri_data</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  layer <span class="op">=</span> <span class="st">"oil palm"</span>,</span></span>
+<span class="r-in"><span>  layer <span class="op">=</span> <span class="st">"oil_palm_areas"</span>,</span></span>
 <span class="r-in"><span>  show_progress <span class="op">=</span> <span class="cn">FALSE</span></span></span>
 <span class="r-in"><span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html" class="external-link">st_intersection</a></span><span class="op">(</span><span class="va">coronel_portillo</span><span class="op">)</span></span></span>

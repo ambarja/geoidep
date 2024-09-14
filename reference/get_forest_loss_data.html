@@ -45,15 +45,15 @@ For more information, you can visit the following website: <a href="https://geob
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_forest_loss_data</span><span class="op">(</span>level <span class="op">=</span> <span class="cn">NULL</span>, ubigeo <span class="op">=</span> <span class="cn">NULL</span>, show_progress <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_forest_loss_data</span><span class="op">(</span>layer <span class="op">=</span> <span class="cn">NULL</span>, ubigeo <span class="op">=</span> <span class="cn">NULL</span>, show_progress <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg-level">level<a class="anchor" aria-label="anchor" href="#arg-level"></a></dt>
-<dd><p>A string. Specifies the official administrative division level of interest.</p></dd>
+<dl><dt id="arg-layer">layer<a class="anchor" aria-label="anchor" href="#arg-layer"></a></dt>
+<dd><p>A string.Specifies one of the following available layers; stock_bosque_perdida_distrito, stock_bosque_perdida_provincia, stock_bosque_perdida_departamento.</p></dd>
 
 
 <dt id="arg-ubigeo">ubigeo<a class="anchor" aria-label="anchor" href="#arg-ubigeo"></a></dt>
@@ -70,41 +70,27 @@ For more information, you can visit the following website: <a href="https://geob
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Available layers are:</p><ul><li><p><b>dist:</b> A 6-character ubigeo representing the administrative boundaries of a district.</p></li>
-<li><p><b>prov:</b> A 4-character ubigeo representing the administrative boundaries of a province.</p></li>
-<li><p><b>dep:</b> A 2-character ubigeo representing the administrative boundaries of a region.</p></li>
+    <p>Available layers are:</p><ul><li><p><b>stock_bosque_perdida_distrito:</b> Returns data on forest stock, forest loss, rank loss for a given district.</p></li>
+<li><p><b>stock_bosque_perdida_provincia:</b> Returns data on forest stock, forest loss, rank loss for a given province.</p></li>
+<li><p><b>stock_bosque_perdida_departamento:</b> Returns data on forest stock, forest loss, rank loss for a given region.</p></li>
 </ul></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">geobosque</span> <span class="op">&lt;-</span> <span class="fu">get_forest_loss_data</span><span class="op">(</span>ubigeo <span class="op">=</span> <span class="st">"010101"</span>, level <span class="op">=</span> <span class="st">"dist"</span>, show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">geobosque</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    anio perdida rango1 rango2 rango3 rango4 rango5 tipobosque ubigeo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2001    0.54      0      0      0   0.00   0.54          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2002    0.00      0      0      0   0.00   0.00          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2003    1.53      0      0      0   0.00   1.53          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2004    0.00      0      0      0   0.00   0.00          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2005    1.26      0      0      0   0.00   1.26          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2006    1.53      0      0      0   0.00   1.53          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2007    0.27      0      0      0   0.00   0.27          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2008    0.54      0      0      0   0.00   0.54          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2009    0.36      0      0      0   0.00   0.36          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2010    0.27      0      0      0   0.00   0.27          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2011    0.00      0      0      0   0.00   0.00          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2012    0.36      0      0      0   0.00   0.36          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 2013    0.36      0      0      0   0.00   0.36          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2014    2.34      0      0      0   0.00   2.34          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 2015    1.71      0      0      0   0.00   1.71          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 2016    5.76      0      0      0   1.62   4.14          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 2017    8.64      0      0      0   1.26   7.38          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 2018    7.47      0      0      0   1.17   6.30          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 2019    0.45      0      0      0   0.00   0.45          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 2020    3.56      0      0      0   0.00   3.56          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 2021    0.18      0      0      0   0.00   0.18          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 2022    1.26      0      0      0   0.00   1.26          1 010101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 2023    3.24      0      0      0   0.00   3.24          1 010101</span>
+<span class="r-in"><span><span class="va">geobosque</span> <span class="op">&lt;-</span> <span class="fu">get_forest_loss_data</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    layer <span class="op">=</span> <span class="st">"stock_bosque_perdida_distrito"</span>,</span></span>
+<span class="r-in"><span>    ubigeo <span class="op">=</span> <span class="st">"010101"</span>,</span></span>
+<span class="r-in"><span>    show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">geobosque</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   anio perdida rango1 rango2 rango3 rango4 rango5 tipobosque ubigeo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2001    0.54      0      0      0      0   0.54          1 010101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2002    0.00      0      0      0      0   0.00          1 010101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2003    1.53      0      0      0      0   1.53          1 010101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2004    0.00      0      0      0      0   0.00          1 010101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2005    1.26      0      0      0      0   1.26          1 010101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2006    1.53      0      0      0      0   1.53          1 010101</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
