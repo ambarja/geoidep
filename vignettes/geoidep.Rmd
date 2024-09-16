@@ -24,7 +24,7 @@ This package aims to provide R users with a new way of accessing official Peruvi
 
 By offering a new approach to accessing this official data, both from technical-scientific entities and from regional and local governments, it facilitates the automation of processes, thereby optimizing the analysis and use of geospatial information across various fields.
 
-<img src='../man/figures/logo.svg' width='100%'/>
+<img src='../man/figures/testing.svg' width='100%'/>
 
 ## 2. Installation of the package
 
