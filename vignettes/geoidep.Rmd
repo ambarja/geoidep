@@ -95,8 +95,9 @@ head(historico_df)
 
 ```{r ,fig.align='center'}
 library(ggplot2)
+library(dplyr)
 historico_df |> 
-  dplyr::inner_join(y = loreto_prov,by = "ubigeo") |> 
+  inner_join(y = loreto_prov,by = "ubigeo") |> 
   ggplot(aes(x = anio,y = perdida)) + 
   geom_point(size = 1) + 
   geom_line() + 
