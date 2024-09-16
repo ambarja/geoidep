@@ -145,3 +145,4 @@ historico |>
 ```
 
 <img src="man/figures/fig-timeserie-1.png" width="60%" height="270" style="display: block; margin: auto;" />
+
