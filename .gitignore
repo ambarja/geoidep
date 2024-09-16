@@ -7,3 +7,7 @@ docs
 inst/doc
 cran-comments.md
 CRAN-SUBMISSION
+/doc/
+/Meta/
+
+/.quarto/

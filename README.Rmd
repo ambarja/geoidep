@@ -8,7 +8,7 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
+  fig.path = "man/figures/fig-",
   out.width = "100%",
   dpi = 300
 )
@@ -27,6 +27,8 @@ knitr::opts_chunk$set(
 The goal of **geoidep**📦 is to offers R users an easy and accessible way to obtain official cartographic data on various topics, such as **society** 🏛️, **transport**🚗, **environment**🌱, **agriculture**🌾, **climate**⛅️,among others.
 
 This includes information provided by regional government entities and technical-scientific institutions, managed by the **Spatial Data Infrastructure of Peru**.
+
+<img src="./man/figures/logo.svg" width='100%'/>
 
 ## Installation
 
@@ -91,10 +93,10 @@ historico <- get_forest_loss_data(
 ```
 
 
-```{r out.width=500,fig.align='center'}
+```{r timeserie,fig.align='center',out.height=200}
 historico |> 
   ggplot(aes(x = anio,y = perdida )) + 
-  # geom_bar(stat = "identity") + 
+  geom_point(size = 2) + 
   geom_line(linewidth =1) + 
   theme_minimal() + 
   labs(

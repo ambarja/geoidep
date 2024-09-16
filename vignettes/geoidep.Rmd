@@ -1,8 +1,10 @@
 ---
-title: "Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru"
+title: "Introduction to geoidep"
+author: "Antony Barja"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru}
+  %\VignetteIndexEntry{Introduction to geoidep}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,47 +12,103 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  dpi = 300,
+  out.width = "100%" 
 )
 ```
 
-## Introducction
+## 1. Introducction
 
-This package provides R users with a new way to access Peru's official cartographic data on various topics that are managed by the Spatial Data Infrastructure of Peru.
+This package aims to provide R users with a new way of accessing official Peruvian cartographic data on various topics that are managed by the country's Spatial Data Infrastructure.
 
-<img src='https://raw.githubusercontent.com/ambarja/geoidep/main/man/figures/idesep.png' width='100%'/>
+By offering a new approach to accessing this official data, both from technical-scientific entities and from regional and local governments, it facilitates the automation of processes, thereby optimizing the analysis and use of geospatial information across various fields.
 
+<img src='../man/figures/logo.svg' width='100%'/>
 
-## Working with R
+## 2. Installation of the package
 
-```{r setup}
-library(ggplot2)
+```r
+install.packages("geoidep")
+```
+Also, you can install the development version as follows: 
+
+```r
+install.packages('pak')
+pak::pkg_install('ambarja/geoidep')
+```
+
+```{r}
 library(geoidep)
 ```
 
-## Official Administrative Boundaries by INEI
+## 3. Basic usage 
 
 ```{r}
-departaments <- get_departaments(show_progress = FALSE)
+providers <- get_data_sources()
+providers
 ```
 
 ```{r}
-names(departaments)
+layers_available <- get_providers()
+layers_available
 ```
 
+## 4. Download Official Administrative Boundaries by INEI
+```{r}
+# Region boundaries download 
+loreto_prov <- get_provinces(show_progress = FALSE) |> 
+  subset(NOMBDEP == 'LORETO')
+```
 
 ```{r}
 # Display the first 10 rows of the data frame `departaments`
-head(departaments)
+head(loreto_prov)
 ```
 
-## Simple Visualization
 
 ```{r}
-ggplot() +
-  geom_sf(data = departaments) +
-  theme_minimal()
+# Defined Ubigeo 
+loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["CCDD"]],loreto_prov[["CCPP"]])
+loreto_prov
 ```
+
+## 5. Working with Geobosque data
+
+```{r}
+my_fun <- function(x){
+  data <- get_forest_loss_data(
+    layer = 'stock_bosque_perdida_provincia',
+    ubigeo = loreto_prov[["ubigeo"]][x],
+    show_progress = FALSE )
+  return(data)
+}
+historico_list <- lapply(X = 1:nrow(loreto_prov),FUN = my_fun)
+historico_df <- do.call(rbind.data.frame,historico_list)
+```
+
+```{r}
+head(historico_df)
+```
+
+## 6. Simple visualization with ggplot
+
+```{r ,fig.align='center'}
+library(ggplot2)
+historico_df |> 
+  dplyr::inner_join(y = loreto_prov,by = "ubigeo") |> 
+  ggplot(aes(x = anio,y = perdida)) + 
+  geom_point(size = 1) + 
+  geom_line() + 
+  facet_wrap(NOMBPROV~.,ncol = 3) + 
+  theme_minimal(base_size = 5) + 
+  labs(
+    title = "Pérdida de bosque histórico del 2001-2023 \npara las provincias de Loreto",
+    caption = "Fuente: Geobosque",
+    x = "",
+    y = "") 
+```
+
 
 
 

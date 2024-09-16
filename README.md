@@ -136,7 +136,7 @@ historico <- get_forest_loss_data(
 ``` r
 historico |> 
   ggplot(aes(x = anio,y = perdida )) + 
-  # geom_bar(stat = "identity") + 
+  geom_point(size = 2) + 
   geom_line(linewidth =1) + 
   theme_minimal() + 
   labs(
@@ -144,4 +144,4 @@ historico |>
     caption = "Fuente: Geobosque")
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="500" style="display: block; margin: auto;" />
+<img src="man/figures/fig-timeserie-1.png" width="60%" height="270" style="display: block; margin: auto;" />

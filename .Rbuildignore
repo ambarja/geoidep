@@ -1,9 +1,10 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^LICENSE\.md$
-^docs$
-^README.Rmd
 ^CRAN-SUBMISSION$
-^cran-comments.md$
 ^cran-comments\.md$
-^\\.github$
+^LICENSE\.md$
+^README\.Rmd$
+^pkgdown$
+^\.github$
+^doc$
+^Meta$
