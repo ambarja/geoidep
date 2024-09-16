@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru • geoidep</title>
+<title>Introduction to geoidep • geoidep</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru">
+<meta property="og:title" content="Introduction to geoidep">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -56,8 +56,11 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.svg" class="logo" alt=""><h1>Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru</h1>
+      <img src="../logo.svg" class="logo" alt=""><h1>Introduction to geoidep</h1>
+                        <h4 data-toc-skip class="author">Antony
+Barja</h4>
             
+            <h4 data-toc-skip class="date">16 September, 2024</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/vignettes/geoidep.Rmd" class="external-link"><code>vignettes/geoidep.Rmd</code></a></small>
       <div class="d-none name"><code>geoidep.Rmd</code></div>
@@ -66,19 +69,28 @@
     
     
 <div class="section level2">
-<h2 id="introducction">Introducction<a class="anchor" aria-label="anchor" href="#introducction"></a>
+<h2 id="introducction">1. Introducction<a class="anchor" aria-label="anchor" href="#introducction"></a>
 </h2>
-<p>This package provides R users with a new way to access Peru’s
-official cartographic data on various topics that are managed by the
-Spatial Data Infrastructure of Peru.</p>
-<p><img src="https://raw.githubusercontent.com/ambarja/geoidep/main/man/figures/idesep.png" width="100%"></p>
+<p>This package aims to provide R users with a new way of accessing
+official Peruvian cartographic data on various topics that are managed
+by the country’s Spatial Data Infrastructure.</p>
+<p>By offering a new approach to accessing this official data, both from
+technical-scientific entities and from regional and local governments,
+it facilitates the automation of processes, thereby optimizing the
+analysis and use of geospatial information across various fields.</p>
+<p><img src="../reference/figures/logo.svg" width="100%"></p>
 </div>
 <div class="section level2">
-<h2 id="working-with-r">Working with R<a class="anchor" aria-label="anchor" href="#working-with-r"></a>
+<h2 id="installation-of-the-package">2. Installation of the package<a class="anchor" aria-label="anchor" href="#installation-of-the-package"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"geoidep"</span><span class="op">)</span></span></code></pre></div>
+<p>Also, you can install the development version as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'pak'</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">'ambarja/geoidep'</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Welcome to geoidep</span> <span style="color: #00BBBB;">──────────────────────────────────────────────────────────</span></span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> geoidep is a wrapper that allows you to download cartographic data for Peru from R.</span></span>
@@ -90,45 +102,134 @@ Spatial Data Infrastructure of Peru.</p>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> For more information, please use the `get_data_sources()` function.</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="official-administrative-boundaries-by-inei">Official Administrative Boundaries by INEI<a class="anchor" aria-label="anchor" href="#official-administrative-boundaries-by-inei"></a>
+<h2 id="basic-usage">3. Basic usage<a class="anchor" aria-label="anchor" href="#basic-usage"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">departaments</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_departaments.html">get_departaments</a></span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">departaments</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "id"           "OBJECTID"     "CCDD"         "NOMBDEP"      "SHAPE_Length"</span></span>
-<span><span class="co">#&gt; [6] "SHAPE_Area"   "geom"</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Display the first 10 rows of the data frame `departaments`</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">departaments</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Simple feature collection with 6 features and 6 fields</span></span>
-<span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
-<span><span class="co">#&gt; Dimension:     XY</span></span>
-<span><span class="co">#&gt; Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125</span></span>
-<span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
-<span><span class="co">#&gt;   id OBJECTID CCDD   NOMBDEP SHAPE_Length SHAPE_Area</span></span>
-<span><span class="co">#&gt; 1  1        1   01  AMAZONAS    13.059047   3.199147</span></span>
-<span><span class="co">#&gt; 2  2        2   02    ANCASH    11.788249   2.954697</span></span>
-<span><span class="co">#&gt; 3  3        3   03  APURIMAC     7.730154   1.765933</span></span>
-<span><span class="co">#&gt; 4  4        4   04  AREQUIPA    17.459435   5.330125</span></span>
-<span><span class="co">#&gt; 5  5        5   05  AYACUCHO    17.127166   3.643705</span></span>
-<span><span class="co">#&gt; 6  6        6   06 CAJAMARCA    12.540288   2.688386</span></span>
-<span><span class="co">#&gt;                             geom</span></span>
-<span><span class="co">#&gt; 1 MULTIPOLYGON (((-77.81399 -...</span></span>
-<span><span class="co">#&gt; 2 MULTIPOLYGON (((-77.64697 -...</span></span>
-<span><span class="co">#&gt; 3 MULTIPOLYGON (((-73.74655 -...</span></span>
-<span><span class="co">#&gt; 4 MULTIPOLYGON (((-71.98109 -...</span></span>
-<span><span class="co">#&gt; 5 MULTIPOLYGON (((-74.34843 -...</span></span>
-<span><span class="co">#&gt; 6 MULTIPOLYGON (((-78.70034 -...</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">providers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_data_sources.html">get_data_sources</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">providers</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 73 × 7</span></span></span>
+<span><span class="co">#&gt;    provider  category      layer       layer_can_be_actived admin_en year  link </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> INEI      General       departamen… TRUE                 Nationa… 2019  http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> INEI      General       provincia   TRUE                 Nationa… 2019  http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> INEI      General       distritos   TRUE                 Nationa… 2019  http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Midagri   Agriculture   vegetation… TRUE                 Ministr… 2018  http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Midagri   Agriculture   agricultur… TRUE                 Ministr… 2024  http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Midagri   Agriculture   oil_palm_a… TRUE                 Ministr… 2016… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Midagri   Institucional experiment… TRUE                 Ministr… 2024  http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Geobosque Forest        stock_bosq… FALSE                Ministr… 2001… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Geobosque Forest        stock_bosq… TRUE                 Ministr… 2001… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Geobosque Forest        stock_bosq… TRUE                 Ministr… 2001… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 63 more rows</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">layers_available</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_providers.html">get_providers</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">layers_available</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 2</span></span></span>
+<span><span class="co">#&gt;   provider  layer_count</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Geobosque           5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> INEI                3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Midagri             4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Sernanp            61</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="simple-visualization">Simple Visualization<a class="anchor" aria-label="anchor" href="#simple-visualization"></a>
+<h2 id="download-official-administrative-boundaries-by-inei">4. Download Official Administrative Boundaries by INEI<a class="anchor" aria-label="anchor" href="#download-official-administrative-boundaries-by-inei"></a>
 </h2>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">departaments</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="geoidep_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Region boundaries download </span></span>
+<span><span class="va">loreto_prov</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_provinces.html">get_provinces</a></span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">NOMBDEP</span> <span class="op">==</span> <span class="st">'LORETO'</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Display the first 10 rows of the data frame `departaments`</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">loreto_prov</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Simple feature collection with 6 features and 8 fields</span></span>
+<span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
+<span><span class="co">#&gt; Dimension:     XY</span></span>
+<span><span class="co">#&gt; Bounding box:  xmin: -77.82596 ymin: -6.14773 xmax: -69.94904 ymax: -0.03860597</span></span>
+<span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
+<span><span class="co">#&gt;      id OBJECTID CCDD CCPP NOMBDEP                NOMBPROV SHAPE_Length</span></span>
+<span><span class="co">#&gt; 136 136      136   16   02  LORETO           ALTO AMAZONAS     9.955533</span></span>
+<span><span class="co">#&gt; 137 137      137   16   07  LORETO       DATEM DEL MARAÑON    11.493679</span></span>
+<span><span class="co">#&gt; 138 138      138   16   03  LORETO                  LORETO    13.602250</span></span>
+<span><span class="co">#&gt; 139 139      139   16   04  LORETO MARISCAL RAMON CASTILLA    15.113580</span></span>
+<span><span class="co">#&gt; 140 140      140   16   01  LORETO                  MAYNAS    14.501777</span></span>
+<span><span class="co">#&gt; 141 141      141   16   08  LORETO                PUTUMAYO    20.443604</span></span>
+<span><span class="co">#&gt;     SHAPE_Area                           geom</span></span>
+<span><span class="co">#&gt; 136   1.569481 MULTIPOLYGON (((-76.30752 -...</span></span>
+<span><span class="co">#&gt; 137   3.881998 MULTIPOLYGON (((-76.49832 -...</span></span>
+<span><span class="co">#&gt; 138   5.574816 MULTIPOLYGON (((-75.74592 -...</span></span>
+<span><span class="co">#&gt; 139   3.054652 MULTIPOLYGON (((-72.08996 -...</span></span>
+<span><span class="co">#&gt; 140   6.197942 MULTIPOLYGON (((-75.24086 -...</span></span>
+<span><span class="co">#&gt; 141   3.725588 MULTIPOLYGON (((-75.10004 -...</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Defined Ubigeo </span></span>
+<span><span class="va">loreto_prov</span><span class="op">[[</span><span class="st">"ubigeo"</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">loreto_prov</span><span class="op">[[</span><span class="st">"CCDD"</span><span class="op">]</span><span class="op">]</span>,<span class="va">loreto_prov</span><span class="op">[[</span><span class="st">"CCPP"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">loreto_prov</span></span>
+<span><span class="co">#&gt; Simple feature collection with 8 features and 9 fields</span></span>
+<span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
+<span><span class="co">#&gt; Dimension:     XY</span></span>
+<span><span class="co">#&gt; Bounding box:  xmin: -77.82596 ymin: -8.715191 xmax: -69.94904 ymax: -0.03860597</span></span>
+<span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
+<span><span class="co">#&gt;      id OBJECTID CCDD CCPP NOMBDEP                NOMBPROV SHAPE_Length</span></span>
+<span><span class="co">#&gt; 136 136      136   16   02  LORETO           ALTO AMAZONAS     9.955533</span></span>
+<span><span class="co">#&gt; 137 137      137   16   07  LORETO       DATEM DEL MARAÑON    11.493679</span></span>
+<span><span class="co">#&gt; 138 138      138   16   03  LORETO                  LORETO    13.602250</span></span>
+<span><span class="co">#&gt; 139 139      139   16   04  LORETO MARISCAL RAMON CASTILLA    15.113580</span></span>
+<span><span class="co">#&gt; 140 140      140   16   01  LORETO                  MAYNAS    14.501777</span></span>
+<span><span class="co">#&gt; 141 141      141   16   08  LORETO                PUTUMAYO    20.443604</span></span>
+<span><span class="co">#&gt; 142 142      142   16   05  LORETO                 REQUENA    13.934825</span></span>
+<span><span class="co">#&gt; 143 143      143   16   06  LORETO                 UCAYALI    10.879411</span></span>
+<span><span class="co">#&gt;     SHAPE_Area                           geom ubigeo</span></span>
+<span><span class="co">#&gt; 136   1.569481 MULTIPOLYGON (((-76.30752 -...   1602</span></span>
+<span><span class="co">#&gt; 137   3.881998 MULTIPOLYGON (((-76.49832 -...   1607</span></span>
+<span><span class="co">#&gt; 138   5.574816 MULTIPOLYGON (((-75.74592 -...   1603</span></span>
+<span><span class="co">#&gt; 139   3.054652 MULTIPOLYGON (((-72.08996 -...   1604</span></span>
+<span><span class="co">#&gt; 140   6.197942 MULTIPOLYGON (((-75.24086 -...   1601</span></span>
+<span><span class="co">#&gt; 141   3.725588 MULTIPOLYGON (((-75.10004 -...   1608</span></span>
+<span><span class="co">#&gt; 142   4.113391 MULTIPOLYGON (((-73.42087 -...   1605</span></span>
+<span><span class="co">#&gt; 143   2.432388 MULTIPOLYGON (((-74.82778 -...   1606</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="working-with-geobosque-data">5. Working with Geobosque data<a class="anchor" aria-label="anchor" href="#working-with-geobosque-data"></a>
+</h2>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_forest_loss_data.html">get_forest_loss_data</a></span><span class="op">(</span></span>
+<span>    layer <span class="op">=</span> <span class="st">'stock_bosque_perdida_provincia'</span>,</span>
+<span>    ubigeo <span class="op">=</span> <span class="va">loreto_prov</span><span class="op">[[</span><span class="st">"ubigeo"</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="va">x</span><span class="op">]</span>,</span>
+<span>    show_progress <span class="op">=</span> <span class="cn">FALSE</span> <span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="va">historico_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span>X <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">loreto_prov</span><span class="op">)</span>,FUN <span class="op">=</span> <span class="va">my_fun</span><span class="op">)</span></span>
+<span><span class="va">historico_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html" class="external-link">do.call</a></span><span class="op">(</span><span class="va">rbind.data.frame</span>,<span class="va">historico_list</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">historico_df</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   anio perdida rango1 rango2 rango3  rango4  rango5 tipobosque ubigeo</span></span>
+<span><span class="co">#&gt; 1 2001 2081.97      0   0.00  40.05  519.21 1522.71          1   1602</span></span>
+<span><span class="co">#&gt; 2 2002 3923.46      0   0.00 136.71 1254.51 2532.24          1   1602</span></span>
+<span><span class="co">#&gt; 3 2003 1843.92      0   0.00  23.94  584.73 1235.25          1   1602</span></span>
+<span><span class="co">#&gt; 4 2004 4269.33      0   0.00 351.36 1818.00 2099.97          1   1602</span></span>
+<span><span class="co">#&gt; 5 2005 4948.20      0   0.00 351.09 2020.50 2576.61          1   1602</span></span>
+<span><span class="co">#&gt; 6 2006 2274.48      0 209.07 152.64  689.22 1223.55          1   1602</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="simple-visualization-with-ggplot">6. Simple visualization with ggplot<a class="anchor" aria-label="anchor" href="#simple-visualization-with-ggplot"></a>
+</h2>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="va">historico_df</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">loreto_prov</span>,by <span class="op">=</span> <span class="st">"ubigeo"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">anio</span>,y <span class="op">=</span> <span class="va">perdida</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="va">NOMBPROV</span><span class="op">~</span><span class="va">.</span>,ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Pérdida de bosque histórico del 2001-2023 \npara las provincias de Loreto"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Fuente: Geobosque"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">""</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">""</span><span class="op">)</span> </span></code></pre></div>
+<p><img src="geoidep_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
