@@ -37,7 +37,7 @@ or also the official version available on CRAN:
 install.packages('geoidep')
 ```
 
-## Example 01: Introducction
+## Example 01: Introduction
 
 ``` r
 library(geoidep)
