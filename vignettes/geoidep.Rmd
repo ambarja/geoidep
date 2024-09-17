@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## 1. Introducction
+## 1. Introduction
 
 This package aims to provide R users with a new way of accessing official Peruvian cartographic data on various topics that are managed by the country's Spatial Data Infrastructure.
 
