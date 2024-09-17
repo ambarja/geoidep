@@ -26,7 +26,7 @@ By offering a new approach to accessing this official data, both from technical-
 
 <img src='../man/figures/testing.svg' width='100%'/>
 
-## 2. Installation of the package
+## 2. Package installation 
 
 ```r
 install.packages("geoidep")
