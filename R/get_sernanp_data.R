@@ -32,16 +32,16 @@ get_sernanp_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FA
     data.download <- httr::GET(
       primary_link,
       query = list(where = "1=1",outFields = "*",f = "geojson"),
-      config = httr::config(ssl_verifypeer = FALSE),
       httr::write_disk(dsn, overwrite = TRUE),
-      httr::progress()
+      httr::progress(),
+      httr::timeout(60)
     )
   } else {
     data.download <- httr::GET(
       primary_link,
       query = list(where = "1=1",outFields = "*",f = "geojson"),
-      config = httr::config(ssl_verifypeer = FALSE),
-      httr::write_disk(dsn, overwrite = TRUE)
+      httr::write_disk(dsn, overwrite = TRUE),
+      httr::timeout(60)
     )
   }
 

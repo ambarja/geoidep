@@ -10,7 +10,8 @@
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![codecov](https://codecov.io/github/ambarja/geoidep/graph/badge.svg?token=0HVS30MQ21)](https://codecov.io/github/ambarja/geoidep)
+[![Codecov test
+coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
 <!-- badges: end -->
 
 The goal of **geoidep**📦 is to offers R users an easy and accessible
@@ -21,6 +22,8 @@ way to obtain official cartographic data on various topics, such as
 This includes information provided by regional government entities and
 technical-scientific institutions, managed by the **Spatial Data
 Infrastructure of Peru**.
+
+<img src="./man/figures/logo.svg" width='100%'/>
 
 ## Installation
 
@@ -115,34 +118,3 @@ head(dep)
 #> 5 MULTIPOLYGON (((-74.34843 -...
 #> 6 MULTIPOLYGON (((-78.70034 -...
 ```
-
-## Example 03: Working with Gebosque data
-
-``` r
-library(tidyverse)
-```
-
-This is another example of how to obtain historical forest loss data
-according to a given administrative boundary.
-
-``` r
-loreto <- dep |> filter(NOMBDEP == "LORETO")
-historico <- get_forest_loss_data(
-  layer = "stock_bosque_perdida_departamento",
-  ubigeo = loreto[["CCDD"]],
-  show_progress = FALSE)
-```
-
-``` r
-historico |> 
-  ggplot(aes(x = anio,y = perdida )) + 
-  geom_point(size = 2) + 
-  geom_line(linewidth =1) + 
-  theme_minimal() + 
-  labs(
-    title = "Pérdida de bosque del departamento de Loreto \ndurante los años 2001 - 2023",
-    caption = "Fuente: Geobosque")
-```
-
-<img src="man/figures/fig-timeserie-1.png" width="60%" height="270" style="display: block; margin: auto;" />
-
