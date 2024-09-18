@@ -61,6 +61,7 @@
 
 <p>The goal of <strong>geoidep</strong>📦 is to offers R users an easy and accessible way to obtain official cartographic data on various topics, such as <strong>society</strong> 🏛️, <strong>transport</strong>🚗, <strong>environment</strong>🌱, <strong>agriculture</strong>🌾, <strong>climate</strong>⛅️,among others.</p>
 <p>This includes information provided by regional government entities and technical-scientific institutions, managed by the <strong>Spatial Data Infrastructure of Peru</strong>.</p>
+<p><img src="./reference/figures/logo.svg" width="100%"></p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -139,29 +140,6 @@
 <span><span class="co">#&gt; 5 MULTIPOLYGON (((-74.34843 -...</span></span>
 <span><span class="co">#&gt; 6 MULTIPOLYGON (((-78.70034 -...</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="example-03-working-with-gebosque-data">Example 03: Working with Gebosque data<a class="anchor" aria-label="anchor" href="#example-03-working-with-gebosque-data"></a>
-</h2>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
-<p>This is another example of how to obtain historical forest loss data according to a given administrative boundary.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">loreto</span> <span class="op">&lt;-</span> <span class="va">dep</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">NOMBDEP</span> <span class="op">==</span> <span class="st">"LORETO"</span><span class="op">)</span></span>
-<span><span class="va">historico</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_forest_loss_data.html">get_forest_loss_data</a></span><span class="op">(</span></span>
-<span>  layer <span class="op">=</span> <span class="st">"stock_bosque_perdida_departamento"</span>,</span>
-<span>  ubigeo <span class="op">=</span> <span class="va">loreto</span><span class="op">[[</span><span class="st">"CCDD"</span><span class="op">]</span><span class="op">]</span>,</span>
-<span>  show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">historico</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">anio</span>,y <span class="op">=</span> <span class="va">perdida</span> <span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu">geom_line</span><span class="op">(</span>linewidth <span class="op">=</span><span class="fl">1</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu">labs</span><span class="op">(</span></span>
-<span>    title <span class="op">=</span> <span class="st">"Pérdida de bosque del departamento de Loreto \ndurante los años 2001 - 2023"</span>,</span>
-<span>    caption <span class="op">=</span> <span class="st">"Fuente: Geobosque"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/fig-timeserie-1.png" width="60%" height="270" style="display: block; margin: auto;"></p>
-</div>
 </div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
@@ -200,7 +178,7 @@
 <ul class="list-unstyled">
 <li><a href="https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
-<li><a href="https://codecov.io/github/ambarja/geoidep" class="external-link"><img src="https://codecov.io/github/ambarja/geoidep/graph/badge.svg?token=0HVS30MQ21" alt="codecov"></a></li>
+<li><a href="https://app.codecov.io/gh/ambarja/geoidep" class="external-link"><img src="https://codecov.io/gh/ambarja/geoidep/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
@@ -213,7 +191,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
     </footer>
