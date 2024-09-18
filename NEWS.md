@@ -1,12 +1,12 @@
 # geoidep 0.2.0
 
-* New functions for Download Midagri data
+* New functions for download Midagri data
   - [get_midagri_data()](https://geografo.pe/geoidep/reference/get_midagri_data.html)
   
-* New functions for Download Sernanp data
+* New functions for download Sernanp data
   - [get_sernanp_data()](https://geografo.pe/geoidep/reference/get_sernanp_data.html)
 
-* New functions for Download Geobosque data
+* New functions for download Geobosque data
   - [get_forest_loss_data()](https://geografo.pe/geoidep/reference/get_forest_loss_data.html)
   - [get_early_warning](https://geografo.pe/geoidep/reference/get_early_warning.html)
 
