@@ -1,5 +1,28 @@
-# geoidep 1.0.0
-
 # geoidep 0.2.0
 
-* Added a `NEWS.md` file to track changes to the package.
+* New functions for Download Midagri data
+  - [get_midagri_data()](https://geografo.pe/geoidep/reference/get_midagri_data.html)
+  
+* New functions for Download Sernanp data
+  - [get_sernanp_data()](https://geografo.pe/geoidep/reference/get_sernanp_data.html)
+
+* New functions for Download Geobosque data
+  - [get_forest_loss_data()](https://geografo.pe/geoidep/reference/get_forest_loss_data.html)
+  - [get_early_warning](https://geografo.pe/geoidep/reference/get_early_warning.html)
+
+* Add base functions for geoidep
+  - [get_providers](https://geografo.pe/geoidep/reference/get_providers.html)
+  - [get_data_sources](https://geografo.pe/geoidep/reference/get_data_sources.html)
+
+* Updated vignette
+* Fixed GitHub actions 
+
+
+# geoidep 0.1.0
+* Initial CRAN release
+* New functions to download INEI's political administrative boundaries
+   - [get_districts()](https://geografo.pe/geoidep/reference/get_districts.html)
+   - [get_provinces()](https://geografo.pe/geoidep/reference/get_provinces.html)
+   - [get_departaments()](https://geografo.pe/geoidep/reference/get_departaments.html)
+* Simple vignette
+* Construction of a website for geoidep
