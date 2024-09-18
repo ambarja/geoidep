@@ -154,4 +154,4 @@ get_early_warning_link <- \(type = NULL){
 #' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
 #' @name global-variables
 #' @keywords internal
-utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers"))
+utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov"))

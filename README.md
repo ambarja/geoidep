@@ -23,8 +23,6 @@ This includes information provided by regional government entities and
 technical-scientific institutions, managed by the **Spatial Data
 Infrastructure of Peru**.
 
-<img src="./man/figures/logo.svg" width='100%'/>
-
 ## Installation
 
 You can install the development version of geoidep like so:

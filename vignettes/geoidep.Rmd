@@ -24,6 +24,8 @@ This package aims to provide R users with a new way of accessing official Peruvi
 
 By offering a new approach to accessing this official data, both from technical-scientific entities and from regional and local governments, it facilitates the automation of processes, thereby optimizing the analysis and use of geospatial information across various fields.
 
+**However, this project is still under construction, for more information you can visit the GitHub official repository <https://github.com/ambarja/geoidep>.**
+
 <img src='../man/figures/testing.svg' width='100%'/>
 
 ## 2. Package installation 
@@ -61,16 +63,25 @@ loreto_prov <- get_provinces(show_progress = FALSE) |>
   subset(NOMBDEP == 'LORETO')
 ```
 
-```{r}
-# Display the first 10 rows of the data frame `departaments`
-head(loreto_prov)
+```{r out.width='100%', out.height=250}
+library(leaflet)
+library(sf)
+loreto_prov |> 
+  leaflet() |> 
+  addTiles() |> 
+  addPolygons()
 ```
 
 
 ```{r}
 # Defined Ubigeo 
 loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["CCDD"]],loreto_prov[["CCPP"]])
-loreto_prov
+```
+
+
+```{r}
+# The first five rows
+head(loreto_prov)
 ```
 
 ## 5. Working with Geobosque data
@@ -88,6 +99,7 @@ historico_df <- do.call(rbind.data.frame,historico_list)
 ```
 
 ```{r}
+# The first five rows
 head(historico_df)
 ```
 
