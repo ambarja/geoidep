@@ -73,7 +73,7 @@ Barja</h4>
             
             <h4 data-toc-skip class="date">22 September, 2024</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/v.0.3.0/vignettes/article.Rmd" class="external-link"><code>vignettes/article.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/vignettes/article.Rmd" class="external-link"><code>vignettes/article.Rmd</code></a></small>
       <div class="d-none name"><code>article.Rmd</code></div>
     </div>
 
@@ -121,8 +121,8 @@ for my programming moments.</p>
 </h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">incendio.forestal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_forest_fire_data.html">get_forest_fire_data</a></span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Reading layer `file1c8f3c2d3b29' from data source </span></span>
-<span><span class="co">#&gt;   `/tmp/RtmpFPt6v4/file1c8f3c2d3b29.geojson' using driver `GeoJSON'</span></span>
+<span><span class="co">#&gt; Reading layer `file1c6926f43670' from data source </span></span>
+<span><span class="co">#&gt;   `/tmp/RtmpP9uYym/file1c6926f43670.geojson' using driver `GeoJSON'</span></span>
 <span><span class="co">#&gt; Simple feature collection with 5678 features and 34 fields</span></span>
 <span><span class="co">#&gt; Geometry type: POINT</span></span>
 <span><span class="co">#&gt; Dimension:     XY</span></span>
@@ -299,14 +299,6 @@ for my programming moments.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;     providers</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/trafficonese/leaflet.extras" class="external-link">leaflet.extras</a></span><span class="op">)</span></span>
-<span><span class="va">popup</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span></span>
-<span>  <span class="st">"&lt;b&gt;Fecha:&lt;b/&gt; "</span>,<span class="va">ucayali.if</span><span class="op">$</span><span class="va">FECREG</span>,<span class="st">"&lt;br&gt;"</span>,</span>
-<span>  <span class="st">"&lt;b&gt;Hora:&lt;b/&gt; "</span>,<span class="va">ucayali.if</span><span class="op">$</span><span class="va">HORA</span>,<span class="st">"&lt;br&gt;"</span>,</span>
-<span>  <span class="st">"&lt;b&gt;Estado:&lt;b/&gt; "</span>,<span class="va">ucayali.if</span><span class="op">$</span><span class="va">ESTADO</span>,<span class="st">"&lt;br&gt;"</span>,</span>
-<span>  <span class="st">"&lt;b&gt;Lat:&lt;b/&gt; "</span>,<span class="va">ucayali.if</span><span class="op">$</span><span class="va">LATITUD</span>,<span class="st">"&lt;br&gt;"</span>,</span>
-<span>  <span class="st">"&lt;b&gt;Lng:&lt;b/&gt; "</span>,<span class="va">ucayali.if</span><span class="op">$</span><span class="va">LONGITUD</span>,<span class="st">"&lt;br&gt;"</span></span>
-<span><span class="op">)</span></span>
-<span></span>
 <span><span class="va">ucayali.if</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/leaflet/reference/leaflet.html" class="external-link">leaflet</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/leaflet/reference/addProviderTiles.html" class="external-link">addProviderTiles</a></span><span class="op">(</span>provider <span class="op">=</span> <span class="st">"CartoDB.Positron"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
