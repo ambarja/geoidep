@@ -28,6 +28,12 @@ By offering a new approach to accessing this official data, both from technical-
 
 <img src='../man/figures/testing.svg' width='100%'/>
 
+If you want to support this project, you can support me with a coffee for my programming moments.
+
+<center>
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#ff0022', 'B0B56J9J9');kofiwidget2.draw();</script> 
+<center/>
+
 ## 2. Package installation 
 
 ```r
