@@ -149,9 +149,31 @@ get_early_warning_link <- \(type = NULL){
   return(geobosque_early_warning_link[[type]])
 }
 
+#' Geobosque API to get deforestation hot-spots for the last week
+#' @param type A string. Only one layer; `warning_last_week`
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+
+get_fores_fire_link <- \(type = NULL){
+  serfor_forest_fire_link <- c("forest_fire" = "https://geo.serfor.gob.pe/geoservicios/rest/services/Servicios_OGC/Unidad_Monitoreo_Satelital/MapServer/1/query")
+  if (!type %in% names(serfor_forest_fire_link) || is.null(type)) {
+    stop("Invalid type. Please choose 'forest_fire'")
+  }
+  return(serfor_forest_fire_link[[type]])
+}
 
 #' Global variables for get_early_warning
 #' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
 #' @name global-variables
 #' @keywords internal
-utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov"))
+utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date"))
+
+#' Time format units
+#' This code transforms the time from milliseconds to a calendar date format.
+#' @keywords internal
+as_data_time <- \(x){
+  timestamp_ms <- x
+  timestamp_s <- timestamp_ms / 1000
+  fecha <- as.POSIXct(timestamp_s, origin = "1970-01-01", tz = "UTC")
+  return(fecha)
+}

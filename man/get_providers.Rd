@@ -7,10 +7,10 @@
 get_providers(query = NULL)
 }
 \arguments{
-\item{query}{A string. Default is NULL.}
+\item{query}{Character. Default is NULL.}
 }
 \value{
-A sf or tibble object.
+An sf or tibble object.
 }
 \description{
 Summary of providers

@@ -3,8 +3,8 @@
 #' @description
 #' Summary of providers
 #'
-#' @param query A string. Default is NULL.
-#' @returns A sf or tibble object.
+#' @param query Character. Default is NULL.
+#' @returns An sf or tibble object.
 #'
 #' @examples
 #' \donttest{

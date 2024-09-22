@@ -32,6 +32,10 @@ reference:
    contents:
    - get_sernanp_data
 
+ - title: 'Download data from Serfor'
+   contents:
+   - get_forest_fire_data
+
  - title: 'Utils'
    contents:
    - get_providers

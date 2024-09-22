@@ -16,7 +16,7 @@ get_sernanp_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE)
 \item{quiet}{Logical. Suppress info message.}
 }
 \value{
-A sf object.
+An sf object.
 }
 \description{
 This function allows you to download the latest version of data available on the sernanp geoviewer.

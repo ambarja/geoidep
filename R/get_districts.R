@@ -9,7 +9,7 @@
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
 #'
-#' @returns A sf object.
+#' @returns An sf object.
 #'
 #' @examples
 #' \donttest{
