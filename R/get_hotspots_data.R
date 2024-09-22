@@ -1,5 +1,5 @@
-#' Download available forest fire data from Serfor's Satellite Monitoring Unit
-
+#' Download available hot spot data from Serfor's Satellite Monitoring Unit
+#'
 #' @description
 #' This function allows you to download the latest version of forest fire data available from the Satellite Monitoring Unit of the National Forestry and Wildlife Service of Peru.
 #' For more information, please visit the following website: \url{https://sniffs.serfor.gob.pe/monitoreo/sami/index.html}
@@ -14,14 +14,14 @@
 #' \donttest{
 #' library(geoidep)
 #' library(sf)
-#' fire_forest <- get_forest_fire_data(show_progress = FALSE)
-#' head(fire_forest)
+#' hot_spots <- get_hotspots_data(show_progress = FALSE)
+#' head(hot_spots)
 #' }
 #' @export
 
-get_forest_fire_data <- \(dsn = NULL, show_progress = TRUE, quiet = FALSE){
+get_hotspots_data <- \(dsn = NULL, show_progress = TRUE, quiet = FALSE){
 
-  primary_link <- get_forest_fire_link(type = "forest_fire")
+  primary_link <- get_heat_spot_link(type = "heat_spot")
 
   if (is.null(dsn)) {
     dsn <- tempfile(fileext = ".geojson")
@@ -57,10 +57,10 @@ get_forest_fire_data <- \(dsn = NULL, show_progress = TRUE, quiet = FALSE){
           FECHA,
           created_date,
           last_edited_date
-          ),
+        ),
         ~ as_data_time(.)
-        )
       )
+    )
 
   return(sf_data)
 
