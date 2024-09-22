@@ -15,7 +15,7 @@
 
 get_data_sources <- \(query = NULL) {
 
-  available_providers <- get_providers() |> dplyr::select(provider) |> as.vector()
+  available_providers <- get_providers() |> dplyr::select(provider) |> dplyr::pull()
 
   if (is.null(query)) {
     sources <- get_data() |>
