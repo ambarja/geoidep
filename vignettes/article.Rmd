@@ -1,5 +1,5 @@
 ---
-title: "Working on forest fires with geoidep"
+title: "Analyzing forest fires with the geoideo package"
 author: "Antony Barja"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: rmarkdown::html_vignette
