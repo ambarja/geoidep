@@ -1,5 +1,12 @@
-# geoidep 0.2.0
+# geoidep 0.3.0
+* New functions for download Serfor data (#6 y #7)
+  - [get_forest_fire_data()](https://geografo.pe/geoidep/reference/get_forest_fire_data.html)
+  - [get_hotspots_data()](https://geografo.pe/geoidep/reference/get_hotspots_data.html)
 
+* Fixed issue #1 and #2
+* New vigette (#7)
+
+# geoidep 0.2.0
 * New functions for download Midagri data
   - [get_midagri_data()](https://geografo.pe/geoidep/reference/get_midagri_data.html)
   
@@ -8,11 +15,11 @@
 
 * New functions for download Geobosque data
   - [get_forest_loss_data()](https://geografo.pe/geoidep/reference/get_forest_loss_data.html)
-  - [get_early_warning](https://geografo.pe/geoidep/reference/get_early_warning.html)
+  - [get_early_warning()](https://geografo.pe/geoidep/reference/get_early_warning.html)
 
 * Add base functions for geoidep
-  - [get_providers](https://geografo.pe/geoidep/reference/get_providers.html)
-  - [get_data_sources](https://geografo.pe/geoidep/reference/get_data_sources.html)
+  - [get_providers()](https://geografo.pe/geoidep/reference/get_providers.html)
+  - [get_data_sources()](https://geografo.pe/geoidep/reference/get_data_sources.html)
 
 * Updated vignette
 * Fixed GitHub actions 

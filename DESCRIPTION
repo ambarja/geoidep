@@ -1,7 +1,7 @@
 Package: geoidep
 Type: Package
 Title: Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: 
  c(person(given = "antony", family = "barja",email = "geografo.pe@gmail.com", role = c("aut", "cre", "cph"),comment = c(ORCID = "0000-0001-5921-2858"))
            )
