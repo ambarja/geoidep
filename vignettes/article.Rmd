@@ -107,14 +107,6 @@ head(ucayali.if)
 ```{r ,fig.align='center',out.height=500}
 library(leaflet)
 library(leaflet.extras)
-popup <- paste0(
-  "<b>Fecha:<b/> ",ucayali.if$FECREG,"<br>",
-  "<b>Hora:<b/> ",ucayali.if$HORA,"<br>",
-  "<b>Estado:<b/> ",ucayali.if$ESTADO,"<br>",
-  "<b>Lat:<b/> ",ucayali.if$LATITUD,"<br>",
-  "<b>Lng:<b/> ",ucayali.if$LONGITUD,"<br>"
-)
-
 ucayali.if |> 
   leaflet() |> 
   addProviderTiles(provider = "CartoDB.Positron") |> 
