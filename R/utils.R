@@ -114,7 +114,7 @@ get_midagri_link <- \(type = NULL){
     "experimental_stations" = "https://pgc-snia.inia.gob.pe:8443/jspui/mapa/data/estaciones_experimentales.js"
   )
   if (!type %in% names(midagri_link) || is.null(type)) {
-    stop("Invalid type. Please choose from 'vegetation cover', 'agriculture sector', 'oil palm' or 'experimental stations'")
+    stop("Invalid type. Please choose from 'vegetation_cover', 'agriculture_sector', 'oil_palm' or 'experimental_stations'")
   }
   return(midagri_link[[type]])
 }
