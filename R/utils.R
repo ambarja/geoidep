@@ -149,17 +149,29 @@ get_early_warning_link <- \(type = NULL){
   return(geobosque_early_warning_link[[type]])
 }
 
-#' Geobosque API to get deforestation hot-spots for the last week
-#' @param type A string. Only one layer; `warning_last_week`
+#' Serfor API to get forest fire
+#' @param type A string. Only one layer; `forest_fire`
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 
-get_fores_fire_link <- \(type = NULL){
+get_forest_fire_link <- \(type = NULL){
   serfor_forest_fire_link <- c("forest_fire" = "https://geo.serfor.gob.pe/geoservicios/rest/services/Servicios_OGC/Unidad_Monitoreo_Satelital/MapServer/1/query")
   if (!type %in% names(serfor_forest_fire_link) || is.null(type)) {
     stop("Invalid type. Please choose 'forest_fire'")
   }
   return(serfor_forest_fire_link[[type]])
+}
+
+#' Serfor API to get heat spot
+#' @param type A string. Only one layer; `heat_spot`
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+get_heat_spot_link <- \(type = NULL){
+  serfor_heat_spot_link <- c("heat_spot" = "https://geo.serfor.gob.pe/geoservicios/rest/services/Servicios_OGC/Unidad_Monitoreo_Satelital/MapServer/0/query")
+  if (!type %in% names(serfor_heat_spot_link) || is.null(type)) {
+    stop("Invalid type. Please choose 'heat_spot'")
+  }
+  return(serfor_heat_spot_link[[type]])
 }
 
 #' Global variables for get_early_warning

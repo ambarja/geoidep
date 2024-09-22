@@ -72,3 +72,5 @@ Sernanp,Enviroment,bosque_produccion_permanente,TRUE,Ministry of Environment,Not
 Sernanp,Enviroment,bosques_protectores,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
 Sernanp,Enviroment,mapa_ecosistemas_2018,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
 Sernanp,Enviroment,ecorregiones_cdc,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
+Serfor,Hazard,fire_forest,TRUE,Ministry of Environment,Not specified,https://sniffs.serfor.gob.pe/monitoreo/sami/index.html
+Serfor,Hazard,hot_spots,TRUE,Ministry of Environment,Not specified,https://sniffs.serfor.gob.pe/monitoreo/sami/index.html
