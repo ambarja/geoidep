@@ -14,7 +14,7 @@ get_districts(dsn = NULL, show_progress = TRUE, quiet = TRUE)
 \item{quiet}{Logical. Suppress info message.}
 }
 \value{
-A sf object.
+An sf object.
 }
 \description{
 This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}

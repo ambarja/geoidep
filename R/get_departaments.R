@@ -9,7 +9,7 @@
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
 #'
-#' @returns A sf or tibble object.
+#' @returns An sf or tibble object.
 #'
 #' @examples
 #' \donttest{
