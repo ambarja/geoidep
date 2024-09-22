@@ -7,7 +7,7 @@
        Currently, `geoidep` supports the following providers:"
     )
 
-    providers <- get_providers()[["provider"]] |> as.vector()
+    providers <- get_providers()[["provider"]][1:4] |> as.vector()
 
     for (provider in providers) {
       cli::cli_alert_success(provider)
