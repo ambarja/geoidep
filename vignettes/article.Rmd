@@ -54,25 +54,22 @@ providers
 ```
 
 ## 4. Forest fire data collection download
-
 ```{r}
 incendio.forestal <- get_forest_fire_data(show_progress = FALSE)
 head(incendio.forestal)
 ```
 
 ## 5. National Forest Fire Count 
-
 ```{r message=FALSE, warning=FALSE}
 library(sf)
-library(tidyverse)
-
+library(dplyr)
+library(ggplot2)
 stats <- incendio.forestal |> 
   st_drop_geometry() |>
   filter(FECHA >= '2024-09-11') |> 
   group_by(NOMDEP) |> 
   summarise( total = n()) 
 ```
-
 
 ```{r out.height=500,out.width=500,fig.align='center'}
 # Simple visualisation
@@ -84,27 +81,29 @@ stats |>
   labs(x="", y = "", caption = "Unidad de Monitoreo Forestales - SERFOR")
 ```
 
+
 ## 6. Download the official INEI administrative limits of interest 
 ```{r}
 # Region boundaries download 
-ucayali_prov <- get_provinces(show_progress = FALSE) |> 
+ucayali_dep <- get_departaments(show_progress = FALSE) |> 
   subset(NOMBDEP == 'UCAYALI')
 ```
 
 ```{r}
 # The first five rows
-head(ucayali_prov)
+head(ucayali_dep)
 ```
 
 
 ## 7. Forest fire count in the area of interest only
 ```{r warning=FALSE,message=FALSE}
 # Data collection only within the regions of interest.
-ucayali.if <- st_filter(incendio.forestal, ucayali_prov)
+ucayali.if <- st_filter(incendio.forestal, ucayali_dep)
 head(ucayali.if)
 ```
-## 8. Simple visualization with leaflet
 
+
+## 8. Simple visualization with leaflet
 ```{r ,fig.align='center',out.height=500}
 library(leaflet)
 library(leaflet.extras)
@@ -119,6 +118,5 @@ popup <- paste0(
 ucayali.if |> 
   leaflet() |> 
   addProviderTiles(provider = "CartoDB.Positron") |> 
-  addHeatmap(radius = 10,minOpacity = 1) |> 
-  addPolygons(data = ucayali_prov,fill = NA,color = "black",opacity = 1,weight = 0.9) 
+  addHeatmap(radius = 10,minOpacity = 1)
 ```
