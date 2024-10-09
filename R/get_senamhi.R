@@ -136,6 +136,7 @@ senamhi_get_meteorological_table <- \() {
 
 
 #' Retrieve Senamhi's weather alert details using the warning number
+#'
 #' This function obtains a table with the specified weather warning number.
 #' For more information, please visit the following link: \url{https://www.Senamhi.gob.pe/?&p=aviso-meteorologico}
 #'
