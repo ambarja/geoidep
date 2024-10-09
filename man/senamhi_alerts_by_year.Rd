@@ -2,8 +2,7 @@
 % Please edit documentation in R/get_senamhi.R
 \name{senamhi_alerts_by_year}
 \alias{senamhi_alerts_by_year}
-\title{Download Senamhi's Meteorological Alerts by year
-This function downloads the weather forecast table provided by Senamhi according to the specified year.}
+\title{Download Senamhi's Meteorological Alerts by year}
 \usage{
 senamhi_alerts_by_year(year = NULL)
 }
@@ -11,6 +10,12 @@ senamhi_alerts_by_year(year = NULL)
 \item{year}{A numeric value indicating the year of publication of the weather warning.}
 }
 \description{
-Download Senamhi's Meteorological Alerts by year
 This function downloads the weather forecast table provided by Senamhi according to the specified year.
+}
+\examples{
+\donttest{
+library(geoidep)
+data <- senamhi_alerts_by_year(2024)
+head(data)
+}
 }

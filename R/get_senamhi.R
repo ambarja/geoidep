@@ -141,6 +141,7 @@ senamhi_get_meteorological_table <- \() {
 #' For more information, please visit the following link: \url{https://www.Senamhi.gob.pe/?&p=aviso-meteorologico}
 #'
 #' @param nro A numeric value. Represents the number of the weather warning issued by Senamhi.
+#'
 #' @return A tibble object containing the weather alert data.
 #'
 #' @examples
@@ -158,7 +159,9 @@ senamhi_alert_by_number <- function(nro = NULL){
 
 
 #' Download Senamhi's Meteorological Alerts by year
+#'
 #' This function downloads the weather forecast table provided by Senamhi according to the specified year.
+#'
 #' @param year A numeric value indicating the year of publication of the weather warning.
 #'
 #' @returnA tibble object containing the weather alert data.
@@ -166,7 +169,9 @@ senamhi_alert_by_number <- function(nro = NULL){
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' senamhi_alerts_by_year(2024) |>
+#' data <- senamhi_alerts_by_year(2024)
+#' head(data)
+#' }
 #' @export
 senamhi_alerts_by_year <- function(year = NULL) {
   senamhi_get_meteorological_table() |>
