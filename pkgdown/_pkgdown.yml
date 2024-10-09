@@ -37,6 +37,13 @@ reference:
    - get_forest_fire_data
    - get_hotspots_data
 
+ - title: 'Download data from Senamhi'
+   contents:
+   - senamhi_get_spatial_alerts
+   - senamhi_get_meteorological_table
+   - senamhi_alert_by_number
+   - senamhi_alerts_by_year
+
  - title: 'Utils'
    contents:
    - get_providers
