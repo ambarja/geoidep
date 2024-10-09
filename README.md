@@ -12,7 +12,6 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Codecov test
 coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
-[![](https://cranlogs.r-pkg.org/badges/geoidep)](https://cran.r-project.org/package=geoidep)
 <!-- badges: end -->
 
 The goal of **geoidep**📦 is to offers R users an easy and accessible
