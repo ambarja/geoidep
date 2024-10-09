@@ -16,7 +16,7 @@
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' get_meteorological_alerts(nro = 295, year = 2024, show_progress = FALSE ) |>
+#' get_meteorological_alerts(nro = 295, year = 2024, show_progress = FALSE) |>
 #' head()
 #' }
 #' @export
