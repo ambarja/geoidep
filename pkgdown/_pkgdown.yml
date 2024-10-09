@@ -39,10 +39,17 @@ reference:
 
  - title: 'Download data from Senamhi'
    contents:
+<<<<<<< HEAD
    - senamhi_get_spatial_alerts
    - senamhi_get_meteorological_table
    - senamhi_alert_by_number
    - senamhi_alerts_by_year
+=======
+   - extract_meteorological_table
+   - get_nro_emision
+   - get_year
+   - get_meteorological_alerts
+>>>>>>> 42450fbf6fd0874b251c7f25e6c39eb2d496e477
 
  - title: 'Utils'
    contents:

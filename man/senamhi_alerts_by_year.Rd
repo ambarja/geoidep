@@ -14,10 +14,3 @@ senamhi_alerts_by_year(year = NULL)
 Download Senamhi's Meteorological Alerts by year
 This function downloads the weather forecast table provided by Senamhi according to the specified year.
 }
-\examples{
-\donttest{
-library(geoidep)
-senamhi_alerts_by_year(2024) |>
- head()
-}
-}

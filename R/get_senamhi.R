@@ -20,7 +20,6 @@
 #' head(data)
 #' }
 #' @export
-
 senamhi_get_spatial_alerts <- \(data = NULL, nro = NULL, year = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE){
 
   if(is.null(data)){
@@ -96,7 +95,7 @@ senamhi_get_spatial_alerts <- \(data = NULL, nro = NULL, year = NULL, dsn = NULL
 #' head(data)
 #' }
 #' @export
-senamhi_get_meteorological_table  <- \() {
+senamhi_get_meteorological_table <- \() {
   url <- "https://www.Senamhi.gob.pe/?&p=aviso-meteorologico"
 
   # Barra de progreso para la descarga
@@ -137,12 +136,10 @@ senamhi_get_meteorological_table  <- \() {
 
 
 #' Retrieve Senamhi's weather alert details using the warning number
-#'
 #' This function obtains a table with the specified weather warning number.
 #' For more information, please visit the following link: \url{https://www.Senamhi.gob.pe/?&p=aviso-meteorologico}
 #'
 #' @param nro A numeric value. Represents the number of the weather warning issued by Senamhi.
-#'
 #' @return A tibble object containing the weather alert data.
 #'
 #' @examples
@@ -169,10 +166,7 @@ senamhi_alert_by_number <- function(nro = NULL){
 #' \donttest{
 #' library(geoidep)
 #' senamhi_alerts_by_year(2024) |>
-#'  head()
-#' }
 #' @export
-
 senamhi_alerts_by_year <- function(year = NULL) {
   senamhi_get_meteorological_table() |>
     dplyr::filter(substr(emision, 1, 4) == as.character(year))
