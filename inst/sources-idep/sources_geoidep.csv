@@ -74,3 +74,4 @@ Sernanp,Enviroment,mapa_ecosistemas_2018,TRUE,Ministry of Environment,Not specif
 Sernanp,Enviroment,ecorregiones_cdc,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
 Serfor,Hazard,fire_forest,TRUE,Ministry of Environment,Not specified,https://sniffs.serfor.gob.pe/monitoreo/sami/index.html
 Serfor,Hazard,hot_spots,TRUE,Ministry of Environment,Not specified,https://sniffs.serfor.gob.pe/monitoreo/sami/index.html
+Senamhi,Hazard,weather warning,TRUE,Ministry of Environment,Variable over time,https://www.senamhi.gob.pe/?&p=aviso-meteorologico

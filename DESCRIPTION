@@ -19,7 +19,10 @@ Imports:
     tidyr,
     cli,
     jsonlite,
-    dplyr
+    dplyr,
+    glue,
+    rvest,
+    progress
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 Suggests: 
