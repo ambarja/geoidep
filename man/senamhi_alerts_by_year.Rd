@@ -4,9 +4,11 @@
 \alias{senamhi_alerts_by_year}
 \title{Download Senamhi's Meteorological Alerts by year}
 \usage{
-senamhi_alerts_by_year(year = NULL)
+senamhi_alerts_by_year(data = NULL, year = NULL)
 }
 \arguments{
+\item{data}{A tibble object containing the weather alert data.}
+
 \item{year}{A numeric value indicating the year of publication of the weather warning.}
 }
 \description{
@@ -15,7 +17,7 @@ This function downloads the weather forecast table provided by Senamhi according
 \examples{
 \donttest{
 library(geoidep)
-data <- senamhi_alerts_by_year(2024)
+data <- senamhi_alerts_by_year(year = 2024)
 head(data)
 }
 }

@@ -178,7 +178,7 @@ get_heat_spot_link <- \(type = NULL){
 #' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
 #' @name global-variables
 #' @keywords internal
-utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table"))
+utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data"))
 
 #' Time format units
 #' This code transforms the time from milliseconds to a calendar date format.

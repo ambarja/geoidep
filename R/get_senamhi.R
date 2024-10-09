@@ -162,6 +162,7 @@ senamhi_alert_by_number <- function(nro = NULL){
 #'
 #' This function downloads the weather forecast table provided by Senamhi according to the specified year.
 #'
+#' @param data A tibble object containing the weather alert data.
 #' @param year A numeric value indicating the year of publication of the weather warning.
 #'
 #' @returnA tibble object containing the weather alert data.
@@ -169,11 +170,20 @@ senamhi_alert_by_number <- function(nro = NULL){
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' data <- senamhi_alerts_by_year(2024)
+#' data <- senamhi_alerts_by_year(year = 2024)
 #' head(data)
 #' }
 #' @export
-senamhi_alerts_by_year <- function(year = NULL) {
-  senamhi_get_meteorological_table() |>
+senamhi_alerts_by_year <- \(data = NULL, year = NULL) {
+  if (is.null(data)) {
+    data <- senamhi_get_meteorological_table()
+  }
+
+  if (nrow(data) == 0) {
+    stop("The data frame is empty. Please check the source data.")
+  }
+  data_filter <- data |>
     dplyr::filter(substr(emision, 1, 4) == as.character(year))
+
+  return(data_filter)
 }
