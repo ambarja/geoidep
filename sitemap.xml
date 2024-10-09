@@ -8,6 +8,7 @@
 <url><loc>https://geografo.pe/geoidep/index.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/news/index.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/as_data_time.html</loc></url>
+<url><loc>https://geografo.pe/geoidep/reference/extract_meteorological_table.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_data.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_data_sources.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_departaments.html</loc></url>
@@ -21,12 +22,15 @@
 <url><loc>https://geografo.pe/geoidep/reference/get_heat_spot_link.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_hotspots_data.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_inei_link.html</loc></url>
+<url><loc>https://geografo.pe/geoidep/reference/get_meteorological_alerts.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_midagri_data.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_midagri_link.html</loc></url>
+<url><loc>https://geografo.pe/geoidep/reference/get_nro_emision.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_providers.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_provinces.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_sernanp_data.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_sernanp_link.html</loc></url>
+<url><loc>https://geografo.pe/geoidep/reference/get_year.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/global-variables.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/index.html</loc></url>
 </urlset>
