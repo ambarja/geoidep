@@ -71,7 +71,7 @@
                         <h4 data-toc-skip class="author">Antony
 Barja</h4>
             
-            <h4 data-toc-skip class="date">09 October, 2024</h4>
+            <h4 data-toc-skip class="date">18 October, 2024</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/vignettes/article.Rmd" class="external-link"><code>vignettes/article.Rmd</code></a></small>
       <div class="d-none name"><code>article.Rmd</code></div>
@@ -121,26 +121,26 @@ for my programming moments.</p>
 </h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">incendio.forestal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_forest_fire_data.html">get_forest_fire_data</a></span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Reading layer `file1ce822832899' from data source </span></span>
-<span><span class="co">#&gt;   `/tmp/RtmpGjLzLk/file1ce822832899.geojson' using driver `GeoJSON'</span></span>
-<span><span class="co">#&gt; Simple feature collection with 448 features and 34 fields</span></span>
+<span><span class="co">#&gt; Reading layer `file1d0479d8b3e4' from data source </span></span>
+<span><span class="co">#&gt;   `/tmp/RtmpPigekf/file1d0479d8b3e4.geojson' using driver `GeoJSON'</span></span>
+<span><span class="co">#&gt; Simple feature collection with 392 features and 34 fields</span></span>
 <span><span class="co">#&gt; Geometry type: POINT</span></span>
 <span><span class="co">#&gt; Dimension:     XY</span></span>
-<span><span class="co">#&gt; Bounding box:  xmin: -78.77948 ymin: -16.37708 xmax: -69.20894 ymax: -3.28337</span></span>
+<span><span class="co">#&gt; Bounding box:  xmin: -79.49467 ymin: -16.34176 xmax: -69.17239 ymax: -4.79419</span></span>
 <span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">incendio.forestal</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Simple feature collection with 6 features and 34 fields</span></span>
 <span><span class="co">#&gt; Geometry type: POINT</span></span>
 <span><span class="co">#&gt; Dimension:     XY</span></span>
-<span><span class="co">#&gt; Bounding box:  xmin: -74.76679 ymin: -14.32693 xmax: -71.30557 ymax: -8.32145</span></span>
+<span><span class="co">#&gt; Bounding box:  xmin: -74.14829 ymin: -8.60201 xmax: -74.13892 ymax: -8.60107</span></span>
 <span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
 <span><span class="co">#&gt;   OBJECTID                                          FUENTE DOCREG     FECREG</span></span>
-<span><span class="co">#&gt; 1   211588 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 2   211718 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 3   211836 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 4   211939 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 5   211589 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 6   211590 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
+<span><span class="co">#&gt; 1   214053 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 2   214054 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 3   214055 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 4   214056 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 5   214057 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 6   214058 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
 <span><span class="co">#&gt;                                                                                        OBSERV</span></span>
 <span><span class="co">#&gt; 1 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
 <span><span class="co">#&gt; 2 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
@@ -148,55 +148,41 @@ for my programming moments.</p>
 <span><span class="co">#&gt; 4 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
 <span><span class="co">#&gt; 5 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
 <span><span class="co">#&gt; 6 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
-<span><span class="co">#&gt;   ZONUTM ORIGEN  NOMDEP           NOMPRO     NOMDIS      CAPITAL      FECHA</span></span>
-<span><span class="co">#&gt; 1     19      2   CUSCO            CANAS     QUEHUE       QUEHUE 2024-10-08</span></span>
-<span><span class="co">#&gt; 2     18      2 UCAYALI CORONEL PORTILLO    MASISEA      MASISEA 2024-10-08</span></span>
-<span><span class="co">#&gt; 3     18      2 UCAYALI CORONEL PORTILLO   MANANTAY SAN FERNANDO 2024-10-08</span></span>
-<span><span class="co">#&gt; 4     18      2 UCAYALI CORONEL PORTILLO CAMPOVERDE   CAMPOVERDE 2024-10-08</span></span>
-<span><span class="co">#&gt; 5     19      2   CUSCO            CANAS     QUEHUE       QUEHUE 2024-10-08</span></span>
-<span><span class="co">#&gt; 6     19      2   CUSCO          CANCHIS    SICUANI      SICUANI 2024-10-08</span></span>
-<span><span class="co">#&gt;       HORA CATEG</span></span>
-<span><span class="co">#&gt; 1 14:13:00    25</span></span>
-<span><span class="co">#&gt; 2 13:51:00    14</span></span>
-<span><span class="co">#&gt; 3 14:28:00    30</span></span>
-<span><span class="co">#&gt; 4 13:51:00    30</span></span>
-<span><span class="co">#&gt; 5 14:13:00    30</span></span>
-<span><span class="co">#&gt; 6 13:49:00    30</span></span>
-<span><span class="co">#&gt;                                                                            NOMCATEG</span></span>
-<span><span class="co">#&gt; 1                                                                       CHAUPIBAMBA</span></span>
-<span><span class="co">#&gt; 2 Consorcio Industrias G.L.C. San Juan E.I.R.L. - Empresa Forestal Shongfu E.I.R.L.</span></span>
-<span><span class="co">#&gt; 3                                                                                  </span></span>
-<span><span class="co">#&gt; 4                                                                                  </span></span>
-<span><span class="co">#&gt; 5                                                                                  </span></span>
-<span><span class="co">#&gt; 6                                                                                  </span></span>
-<span><span class="co">#&gt;     LATITUD  LONGITUD   COORES  COORNO         CODREP created_user</span></span>
-<span><span class="co">#&gt; 1 -14.32693 -71.55318 224593.8 8414597 PIF_04496_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 2  -9.19567 -73.62495 651069.0 8983225 PIF_04515_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 3  -8.44679 -74.57555 546722.1 9066283 PIF_04527_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 4  -8.32145 -74.76679 525679.1 9080158 PIF_04529_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 5 -14.32504 -71.54449 225529.4 8414817 PIF_04496_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 6 -14.29447 -71.30557 251280.7 8418470 PIF_04497_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt;          created_date last_edited_user    last_edited_date ESTADO</span></span>
-<span><span class="co">#&gt; 1 2024-10-09 02:48:26           UFMS17 2024-10-09 03:51:27      2</span></span>
-<span><span class="co">#&gt; 2 2024-10-09 02:48:26       JMONTALBAN 2024-10-09 02:48:26      1</span></span>
-<span><span class="co">#&gt; 3 2024-10-09 02:48:26           UFMS17 2024-10-09 04:03:02      2</span></span>
-<span><span class="co">#&gt; 4 2024-10-09 02:48:26           UFMS17 2024-10-09 04:47:34      1</span></span>
-<span><span class="co">#&gt; 5 2024-10-09 02:48:26           UFMS17 2024-10-09 03:51:27      2</span></span>
-<span><span class="co">#&gt; 6 2024-10-09 02:48:26           UFMS17 2024-10-09 03:52:36      2</span></span>
+<span><span class="co">#&gt;   ZONUTM ORIGEN  NOMDEP           NOMPRO  NOMDIS CAPITAL      FECHA     HORA</span></span>
+<span><span class="co">#&gt; 1     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 00:36:00</span></span>
+<span><span class="co">#&gt; 2     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 01:27:00</span></span>
+<span><span class="co">#&gt; 3     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 00:53:00</span></span>
+<span><span class="co">#&gt; 4     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 01:46:00</span></span>
+<span><span class="co">#&gt; 5     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 01:27:00</span></span>
+<span><span class="co">#&gt; 6     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 00:53:00</span></span>
+<span><span class="co">#&gt;   CATEG NOMCATEG  LATITUD  LONGITUD   COORES  COORNO         CODREP</span></span>
+<span><span class="co">#&gt; 1    11   Imiria -8.60201 -74.14829 593718.2 9049044 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 2    11   Imiria -8.60177 -74.14085 594537.0 9049069 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 3    11   Imiria -8.60169 -74.13956 594679.0 9049077 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 4    11   Imiria -8.60166 -74.13892 594749.4 9049080 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 5    11   Imiria -8.60117 -74.14487 594094.8 9049136 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 6    11   Imiria -8.60107 -74.14316 594283.0 9049147 PIF_04668_2024</span></span>
+<span><span class="co">#&gt;   created_user        created_date last_edited_user    last_edited_date ESTADO</span></span>
+<span><span class="co">#&gt; 1   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 2   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 3   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 4   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 5   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 6   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
 <span><span class="co">#&gt;               TIPCOB PELIGRO REFESTADO CONF CODRVIF SENSAT CATDEP CATPRO CATDIS</span></span>
-<span><span class="co">#&gt; 1 Cobertura Forestal       0         0    0       0      N     08   0805 080507</span></span>
+<span><span class="co">#&gt; 1 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span></span>
 <span><span class="co">#&gt; 2 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span></span>
-<span><span class="co">#&gt; 3 Cobertura Forestal       0         0    0       0      A     25   2501 250107</span></span>
-<span><span class="co">#&gt; 4 Cobertura Agrícola       0         0    0       0    N21     25   2501 250102</span></span>
-<span><span class="co">#&gt; 5 Cobertura Forestal       0         0    0       0      N     08   0805 080507</span></span>
-<span><span class="co">#&gt; 6 Cobertura Forestal       0         0    0       0    N21     08   0806 080601</span></span>
-<span><span class="co">#&gt;                      geometry</span></span>
-<span><span class="co">#&gt; 1 POINT (-71.55318 -14.32693)</span></span>
-<span><span class="co">#&gt; 2  POINT (-73.62495 -9.19567)</span></span>
-<span><span class="co">#&gt; 3  POINT (-74.57555 -8.44679)</span></span>
-<span><span class="co">#&gt; 4  POINT (-74.76679 -8.32145)</span></span>
-<span><span class="co">#&gt; 5 POINT (-71.54449 -14.32504)</span></span>
-<span><span class="co">#&gt; 6 POINT (-71.30557 -14.29447)</span></span></code></pre></div>
+<span><span class="co">#&gt; 3 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span></span>
+<span><span class="co">#&gt; 4 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span></span>
+<span><span class="co">#&gt; 5 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span></span>
+<span><span class="co">#&gt; 6 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span></span>
+<span><span class="co">#&gt;                     geometry</span></span>
+<span><span class="co">#&gt; 1 POINT (-74.14829 -8.60201)</span></span>
+<span><span class="co">#&gt; 2 POINT (-74.14085 -8.60177)</span></span>
+<span><span class="co">#&gt; 3 POINT (-74.13956 -8.60169)</span></span>
+<span><span class="co">#&gt; 4 POINT (-74.13892 -8.60166)</span></span>
+<span><span class="co">#&gt; 5 POINT (-74.14487 -8.60117)</span></span>
+<span><span class="co">#&gt; 6 POINT (-74.14316 -8.60107)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="national-forest-fire-count">5. National Forest Fire Count<a class="anchor" aria-label="anchor" href="#national-forest-fire-count"></a>
@@ -250,15 +236,15 @@ for my programming moments.</p>
 <span><span class="co">#&gt; Simple feature collection with 6 features and 34 fields</span></span>
 <span><span class="co">#&gt; Geometry type: POINT</span></span>
 <span><span class="co">#&gt; Dimension:     XY</span></span>
-<span><span class="co">#&gt; Bounding box:  xmin: -74.76679 ymin: -9.19567 xmax: -73.62451 ymax: -8.32145</span></span>
+<span><span class="co">#&gt; Bounding box:  xmin: -74.14829 ymin: -8.60201 xmax: -74.13892 ymax: -8.60107</span></span>
 <span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
 <span><span class="co">#&gt;   OBJECTID                                          FUENTE DOCREG     FECREG</span></span>
-<span><span class="co">#&gt; 1   211718 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 2   211836 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 3   211939 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 4   211719 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 5   211720 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
-<span><span class="co">#&gt; 6   211721 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span></span>
+<span><span class="co">#&gt; 1   214053 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 2   214054 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 3   214055 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 4   214056 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 5   214057 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
+<span><span class="co">#&gt; 6   214058 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span></span>
 <span><span class="co">#&gt;                                                                                        OBSERV</span></span>
 <span><span class="co">#&gt; 1 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
 <span><span class="co">#&gt; 2 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
@@ -266,55 +252,41 @@ for my programming moments.</p>
 <span><span class="co">#&gt; 4 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
 <span><span class="co">#&gt; 5 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
 <span><span class="co">#&gt; 6 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span></span>
-<span><span class="co">#&gt;   ZONUTM ORIGEN  NOMDEP           NOMPRO     NOMDIS      CAPITAL      FECHA</span></span>
-<span><span class="co">#&gt; 1     18      2 UCAYALI CORONEL PORTILLO    MASISEA      MASISEA 2024-10-08</span></span>
-<span><span class="co">#&gt; 2     18      2 UCAYALI CORONEL PORTILLO   MANANTAY SAN FERNANDO 2024-10-08</span></span>
-<span><span class="co">#&gt; 3     18      2 UCAYALI CORONEL PORTILLO CAMPOVERDE   CAMPOVERDE 2024-10-08</span></span>
-<span><span class="co">#&gt; 4     18      2 UCAYALI CORONEL PORTILLO    MASISEA      MASISEA 2024-10-08</span></span>
-<span><span class="co">#&gt; 5     18      2 UCAYALI CORONEL PORTILLO    MASISEA      MASISEA 2024-10-08</span></span>
-<span><span class="co">#&gt; 6     18      2 UCAYALI CORONEL PORTILLO    MASISEA      MASISEA 2024-10-08</span></span>
-<span><span class="co">#&gt;       HORA CATEG</span></span>
-<span><span class="co">#&gt; 1 13:51:00    14</span></span>
-<span><span class="co">#&gt; 2 14:28:00    30</span></span>
-<span><span class="co">#&gt; 3 13:51:00    30</span></span>
-<span><span class="co">#&gt; 4 12:58:00    14</span></span>
-<span><span class="co">#&gt; 5 14:28:00    14</span></span>
-<span><span class="co">#&gt; 6 14:28:00    14</span></span>
-<span><span class="co">#&gt;                                                                            NOMCATEG</span></span>
-<span><span class="co">#&gt; 1 Consorcio Industrias G.L.C. San Juan E.I.R.L. - Empresa Forestal Shongfu E.I.R.L.</span></span>
-<span><span class="co">#&gt; 2                                                                                  </span></span>
-<span><span class="co">#&gt; 3                                                                                  </span></span>
-<span><span class="co">#&gt; 4 Consorcio Industrias G.L.C. San Juan E.I.R.L. - Empresa Forestal Shongfu E.I.R.L.</span></span>
-<span><span class="co">#&gt; 5 Consorcio Industrias G.L.C. San Juan E.I.R.L. - Empresa Forestal Shongfu E.I.R.L.</span></span>
-<span><span class="co">#&gt; 6 Consorcio Industrias G.L.C. San Juan E.I.R.L. - Empresa Forestal Shongfu E.I.R.L.</span></span>
-<span><span class="co">#&gt;    LATITUD  LONGITUD   COORES  COORNO         CODREP created_user</span></span>
-<span><span class="co">#&gt; 1 -9.19567 -73.62495 651069.0 8983225 PIF_04515_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 2 -8.44679 -74.57555 546722.1 9066283 PIF_04527_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 3 -8.32145 -74.76679 525679.1 9080158 PIF_04529_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 4 -9.19369 -73.62451 651118.2 8983444 PIF_04515_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 5 -9.18419 -73.63962 649461.8 8984501 PIF_04515_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt; 6 -9.18274 -73.62994 650526.1 8984657 PIF_04515_2024   JMONTALBAN</span></span>
-<span><span class="co">#&gt;          created_date last_edited_user    last_edited_date ESTADO</span></span>
-<span><span class="co">#&gt; 1 2024-10-09 02:48:26       JMONTALBAN 2024-10-09 02:48:26      1</span></span>
-<span><span class="co">#&gt; 2 2024-10-09 02:48:26           UFMS17 2024-10-09 04:03:02      2</span></span>
-<span><span class="co">#&gt; 3 2024-10-09 02:48:26           UFMS17 2024-10-09 04:47:34      1</span></span>
-<span><span class="co">#&gt; 4 2024-10-09 02:48:26       JMONTALBAN 2024-10-09 02:48:26      1</span></span>
-<span><span class="co">#&gt; 5 2024-10-09 02:48:26       JMONTALBAN 2024-10-09 02:48:26      1</span></span>
-<span><span class="co">#&gt; 6 2024-10-09 02:48:26       JMONTALBAN 2024-10-09 02:48:26      1</span></span>
+<span><span class="co">#&gt;   ZONUTM ORIGEN  NOMDEP           NOMPRO  NOMDIS CAPITAL      FECHA     HORA</span></span>
+<span><span class="co">#&gt; 1     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 00:36:00</span></span>
+<span><span class="co">#&gt; 2     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 01:27:00</span></span>
+<span><span class="co">#&gt; 3     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 00:53:00</span></span>
+<span><span class="co">#&gt; 4     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 01:46:00</span></span>
+<span><span class="co">#&gt; 5     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 01:27:00</span></span>
+<span><span class="co">#&gt; 6     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 00:53:00</span></span>
+<span><span class="co">#&gt;   CATEG NOMCATEG  LATITUD  LONGITUD   COORES  COORNO         CODREP</span></span>
+<span><span class="co">#&gt; 1    11   Imiria -8.60201 -74.14829 593718.2 9049044 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 2    11   Imiria -8.60177 -74.14085 594537.0 9049069 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 3    11   Imiria -8.60169 -74.13956 594679.0 9049077 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 4    11   Imiria -8.60166 -74.13892 594749.4 9049080 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 5    11   Imiria -8.60117 -74.14487 594094.8 9049136 PIF_04668_2024</span></span>
+<span><span class="co">#&gt; 6    11   Imiria -8.60107 -74.14316 594283.0 9049147 PIF_04668_2024</span></span>
+<span><span class="co">#&gt;   created_user        created_date last_edited_user    last_edited_date ESTADO</span></span>
+<span><span class="co">#&gt; 1   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 2   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 3   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 4   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 5   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
+<span><span class="co">#&gt; 6   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span></span>
 <span><span class="co">#&gt;               TIPCOB PELIGRO REFESTADO CONF CODRVIF SENSAT CATDEP CATPRO CATDIS</span></span>
-<span><span class="co">#&gt; 1 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span></span>
-<span><span class="co">#&gt; 2 Cobertura Forestal       0         0    0       0      A     25   2501 250107</span></span>
-<span><span class="co">#&gt; 3 Cobertura Agrícola       0         0    0       0    N21     25   2501 250102</span></span>
-<span><span class="co">#&gt; 4 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span></span>
-<span><span class="co">#&gt; 5 Cobertura Forestal       0         0    0       0      A     25   2501 250104</span></span>
-<span><span class="co">#&gt; 6 Cobertura Forestal       0         0    0       0      A     25   2501 250104</span></span>
+<span><span class="co">#&gt; 1 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span></span>
+<span><span class="co">#&gt; 2 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span></span>
+<span><span class="co">#&gt; 3 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span></span>
+<span><span class="co">#&gt; 4 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span></span>
+<span><span class="co">#&gt; 5 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span></span>
+<span><span class="co">#&gt; 6 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span></span>
 <span><span class="co">#&gt;                     geometry</span></span>
-<span><span class="co">#&gt; 1 POINT (-73.62495 -9.19567)</span></span>
-<span><span class="co">#&gt; 2 POINT (-74.57555 -8.44679)</span></span>
-<span><span class="co">#&gt; 3 POINT (-74.76679 -8.32145)</span></span>
-<span><span class="co">#&gt; 4 POINT (-73.62451 -9.19369)</span></span>
-<span><span class="co">#&gt; 5 POINT (-73.63962 -9.18419)</span></span>
-<span><span class="co">#&gt; 6 POINT (-73.62994 -9.18274)</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 POINT (-74.14829 -8.60201)</span></span>
+<span><span class="co">#&gt; 2 POINT (-74.14085 -8.60177)</span></span>
+<span><span class="co">#&gt; 3 POINT (-74.13956 -8.60169)</span></span>
+<span><span class="co">#&gt; 4 POINT (-74.13892 -8.60166)</span></span>
+<span><span class="co">#&gt; 5 POINT (-74.14487 -8.60117)</span></span>
+<span><span class="co">#&gt; 6 POINT (-74.14316 -8.60107)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="simple-visualization-with-leaflet">8. Simple visualization with leaflet<a class="anchor" aria-label="anchor" href="#simple-visualization-with-leaflet"></a>
@@ -332,7 +304,7 @@ for my programming moments.</p>
 <span>  <span class="fu"><a href="https://rstudio.github.io/leaflet/reference/addProviderTiles.html" class="external-link">addProviderTiles</a></span><span class="op">(</span>provider <span class="op">=</span> <span class="st">"CartoDB.Positron"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://trafficonese.github.io/leaflet.extras/reference/heatmap.html" class="external-link">addHeatmap</a></span><span class="op">(</span>radius <span class="op">=</span> <span class="fl">10</span>,minOpacity <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <div class="leaflet html-widget html-fill-item" id="htmlwidget-ac96cb3ee4656e2e9ec3" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-ac96cb3ee4656e2e9ec3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addHeatmap","args":[[[-9.19566999999995,-73.62494999999996],[-8.446789999999964,-74.57554999999996],[-8.32144999999997,-74.76678999999996],[-9.193689999999947,-73.62450999999999],[-9.184189999999944,-73.63961999999998],[-9.182739999999967,-73.62993999999998],[-9.189765356999942,-73.61693753399999],[-9.189765356999942,-73.63490383899995],[-9.07048999999995,-74.20511999999997],[-9.069759999999974,-74.21464999999995],[-9.069609999999955,-74.21622999999994],[-9.06908999999996,-74.21069999999997],[-8.445429999999931,-74.56641999999994],[-8.45314682399993,-74.56915173499993],[-8.471113128999946,-74.56915173499993],[-8.453029999999956,-74.55592999999999],[-8.449179999999956,-74.54680999999994],[-8.444829999999968,-74.54400999999996],[-8.45314682399993,-74.55118542899999],[-8.327382683999929,-74.76678109699998],[-8.560099999999977,-74.43931999999995],[-8.551039999999944,-74.43686999999994],[-8.539619999999957,-74.45188999999993],[-8.538249999999948,-74.44269999999995],[-8.560944657999926,-74.42542128899998],[-8.560944657999926,-74.44338759499993],[-8.560944657999926,-74.46135390099994],[-8.542978351999977,-74.47932020599995],[-8.560944657999926,-74.47932020599995],[-9.06768999999997,-74.21457999999996],[-10.73936999999995,-73.11890999999997],[-9.067189999999925,-74.21518999999995],[-9.065529999999967,-74.21535999999998],[-9.057679999999948,-74.21309999999994],[-9.064159999999958,-75.35302999999993],[-9.063279999999963,-75.35410999999993],[-9.06138999999996,-75.35791999999998],[-9.060679999999934,-75.35233999999997],[-8.323779999999942,-74.77037999999999],[-8.322099999999978,-74.77056999999996],[-10.73880999999994,-73.12726999999995],[-10.73846999999995,-73.12667999999996],[-10.73829999999998,-73.12970999999999],[-10.73770999999994,-73.12225999999998],[-10.73762999999997,-73.12149999999997],[-10.73760999999996,-73.12388999999996],[-10.73486764499995,-73.11388097399998],[-10.73486764499995,-73.13184727999999],[-10.74196999999998,-73.12703999999997],[-10.74130999999994,-73.12120999999996],[-10.73529999999994,-73.12784999999997],[-10.73463999999996,-73.12195999999994],[-9.05935999999997,-75.35478999999998],[-8.319659999999942,-74.77110999999996],[-9.05920999999995,-75.35364999999996],[-8.319349999999929,-74.76952999999997],[-8.319039999999973,-74.76733999999993],[-8.280289999999979,-75.18340999999998],[-8.279559999999947,-75.17806999999993],[-8.279209999999978,-75.17888999999997],[-8.278639999999939,-75.18262999999996],[-8.278069999999957,-75.17911999999995],[-8.277639999999963,-75.18290999999994],[-8.277309999999943,-75.18284999999997],[-8.276809999999955,-75.17828999999995],[-8.27643999999998,-75.17824999999993],[-8.274829999999952,-75.18731999999994],[-8.274729999999977,-75.17869999999994],[-8.274629999999945,-75.18332999999996],[-8.274139999999932,-75.18197999999995],[-8.274049999999932,-75.17979999999994],[-8.273449999999968,-75.17666999999994],[-8.273049999999955,-75.17884999999995],[-7.993449999999939,-74.99829999999997],[-7.992829999999969,-74.99462999999997],[-7.992789999999957,-74.99228999999997],[-7.991969999999981,-75.00091999999995],[-8.965669999999932,-74.21641999999997],[-8.964869999999962,-74.21764999999994],[-8.964839999999981,-74.21658999999994],[-7.991509999999948,-75.00126999999998],[-7.991359999999929,-74.99423999999993],[-7.988749999999925,-74.99531999999994],[-7.982469999999978,-75.00220999999993],[-7.981809999999939,-75.00404999999995],[-7.980749999999944,-75.00612999999998],[-7.980579999999975,-74.99669999999998],[-7.979959999999949,-74.99302999999998],[-7.979859999999974,-75.00128999999998],[-8.728379999999959,-75.34418999999997],[-7.978969999999947,-74.99644999999998],[-8.726899999999944,-75.34768999999994],[-8.724959999999953,-75.34893999999997],[-8.723659999999938,-75.34600999999998],[-8.723459999999932,-75.34482999999994],[-8.723359999999957,-75.34974999999997],[-8.72255999999993,-75.34533999999996],[-8.722641408999948,-75.34170287899997],[-8.593459999999936,-75.28534999999994],[-8.59176999999994,-75.28489999999994],[-8.590919999999926,-75.28364999999997],[-7.977729999999951,-75.00473999999997],[-7.974059999999952,-74.99866999999995],[-7.986022875999936,-75.00034307099997],[-8.590889999999945,-75.28012999999999],[-8.588999999999942,-75.28670999999997],[-8.588419999999928,-75.28319999999997],[-8.587429999999927,-75.28638999999998],[-8.587109999999939,-75.28085999999996],[-8.58651999999995,-75.28162999999995],[-8.58573999999993,-75.28599999999994],[-8.59045999999995,-74.13990999999999],[-8.587339999999926,-74.13939999999997],[-8.586919999999964,-74.14023999999995],[-8.586649999999963,-74.13531999999998],[-8.586559999999963,-74.13699999999994],[-8.585939999999937,-74.14051999999998],[-8.585439999999949,-74.14519999999999],[-8.585339999999974,-74.13595999999995],[-8.583069999999964,-74.14014999999995],[-8.574969999999951,-74.13722999999999],[-8.596877268999947,-74.13796039799996],[-8.587719999999933,-74.46768999999995],[-8.587059999999951,-74.46289999999993],[-8.586269999999956,-74.46681999999998],[-8.53565999999995,-74.46501999999998],[-8.99643999999995,-74.59511999999995],[-8.995129999999961,-74.58523999999994],[-8.99449999999996,-74.58986999999996],[-8.993859999999927,-74.58609999999999],[-8.99109999999996,-74.59080999999998],[-8.990449999999953,-74.58587999999997],[-8.990369999999928,-74.59057999999999],[-9.049349999999947,-74.59809999999999],[-9.048379999999952,-74.59693999999996],[-8.535019999999975,-74.46023999999994],[-9.047139999999956,-74.60007999999993],[-8.534029999999973,-74.46385999999995],[-8.531049999999937,-74.46563999999995],[-8.529839999999979,-74.46457999999996],[-8.542978351999977,-74.46135390099994],[-8.501289999999926,-74.50425999999999],[-8.498149999999953,-74.50595999999996],[-8.497479999999939,-74.50210999999996],[-8.497099999999932,-74.50496999999996],[-8.474969999999928,-74.56489999999997],[-8.473999999999933,-74.55983999999995],[-9.046689999999955,-74.59408999999994],[-9.04651999999993,-74.59630999999996],[-9.044649999999933,-74.59870999999998],[-9.046034910999936,-74.58711803999995],[-9.046034910999936,-74.60508434599996],[-8.473029999999937,-74.55477999999994],[-8.992135993999966,-74.58711803999995],[-8.996009999999956,-74.59298999999999],[-8.995219999999961,-74.58610999999996],[-8.991449999999929,-74.58771999999993],[-8.935909999999978,-74.24626999999998],[-8.935229999999933,-74.24228999999997],[-8.933699999999931,-74.24411999999995],[-10.74212999999997,-73.12152999999995],[-10.74081999999993,-73.12394999999998],[-8.472819999999956,-74.56877999999995],[-8.472049999999967,-74.56096999999994],[-8.471889999999973,-74.56373999999994],[-8.471409999999935,-74.55711999999994],[-8.470959999999934,-74.55866999999995],[-8.469049999999982,-74.55944999999997],[-8.468649999999968,-74.56597999999997],[-8.468399999999974,-74.55460999999997],[-8.46787999999998,-74.56166999999994],[-8.467679999999973,-74.56093999999996],[-8.325569999999971,-74.76829999999995],[-8.323159999999973,-74.76659999999998],[-8.467229999999972,-74.55781999999994],[-9.198679999999968,-73.62826999999999],[-9.198089999999979,-73.62393999999995],[-9.197019999999952,-73.63037999999995],[-9.19593999999995,-73.62476999999996],[-8.466709999999978,-74.55585999999994],[-8.465569999999957,-74.56482999999997],[-8.464639999999974,-74.55976999999996],[-8.464419999999961,-74.56009999999998],[-8.463759999999979,-74.55526999999995],[-8.463709999999935,-74.56236999999999],[-8.463059999999928,-74.55852999999996],[-8.461359999999956,-74.56200999999999],[-8.455739999999935,-74.57418999999999],[-8.454389999999933,-74.56505999999996]],null,null,{"minOpacity":1,"max":1,"radius":10,"blur":15}]}],"limits":{"lat":[-10.74212999999997,-7.974059999999952],"lng":[-75.35791999999998,-73.11388097399998]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-ac96cb3ee4656e2e9ec3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addHeatmap","args":[[[-8.60200999999995,-74.14828999999997],[-8.601769999999931,-74.14084999999994],[-8.601689999999962,-74.13955999999996],[-8.601659999999981,-74.13891999999998],[-8.601169999999968,-74.14486999999997],[-8.601069999999936,-74.14315999999997],[-8.600949999999955,-74.14409999999998],[-8.599659999999972,-74.15716999999995],[-8.598889999999926,-74.14214999999996],[-8.598239999999976,-74.14031999999997],[-8.597619999999949,-74.14728999999994],[-8.597139999999968,-74.14345999999995],[-8.594699999999932,-74.15275999999994],[-8.592259999999953,-74.14237999999995],[-8.588169999999934,-74.14293999999995],[-8.588149999999928,-74.14235999999994],[-8.827399999999955,-74.59457999999995],[-8.826889999999935,-74.59730999999994],[-8.474019999999939,-74.56605999999994],[-8.473679999999945,-74.55654999999996],[-8.473299999999938,-74.55462999999997],[-8.472129999999936,-74.55905999999999],[-8.472129999999936,-74.56229999999994],[-8.471859999999936,-74.56577999999996],[-8.471099999999979,-74.56982999999997],[-8.470669999999927,-74.56715999999994],[-8.469939999999951,-74.57121999999998],[-8.890509999999949,-75.40984999999995],[-8.890139999999974,-75.41176999999993],[-8.889899999999955,-75.40941999999995],[-8.889619999999979,-75.40828999999997],[-8.888539999999978,-75.41310999999996],[-8.887909999999977,-75.40861999999998],[-8.887589999999932,-75.40964999999994],[-8.887539999999944,-75.41353999999995],[-8.886799999999937,-75.40741999999995],[-8.886629999999968,-75.41179999999997],[-8.886299999999949,-75.40879999999999],[-8.886019999999974,-75.41458999999998],[-8.885749999999973,-75.41025999999994],[-8.885429999999928,-75.41009999999994],[-8.885189999999966,-75.41387999999995],[-8.885049999999978,-75.40884999999997],[-8.884069999999952,-75.41376999999994],[-8.883829999999932,-75.41081999999994],[-8.883519999999976,-75.41278999999997],[-8.883449999999925,-75.40928999999994],[-8.88298999999995,-75.40929999999997],[-8.880959999999959,-75.41079999999994],[-8.880839999999978,-75.41446999999994],[-8.880109999999945,-75.40841999999998],[-8.609059999999943,-74.14580999999998],[-8.60469999999998,-74.14540999999997],[-8.60418999999996,-74.14287999999993],[-8.603749999999934,-74.14615999999995],[-8.602689999999939,-74.14454999999998],[-8.47208999999998,-74.55705999999998],[-8.471559999999954,-74.55350999999996],[-8.470769999999959,-74.55380999999994],[-8.471113128999946,-74.56915173499993],[-8.474119999999971,-74.55422999999996],[-8.472579999999937,-74.57597999999996],[-8.471239999999966,-74.55648999999994],[-8.464569999999981,-74.57210999999995],[-8.461659999999938,-74.54869999999994],[-8.507045740999956,-74.56915173499993],[-8.520749999999964,-74.56869999999998],[-8.514079999999979,-74.56973999999997],[-8.510749999999973,-74.57025999999996],[-8.507045740999956,-74.58711803999995],[-8.510129999999947,-74.58841999999999],[-8.509689999999978,-74.58655999999996],[-8.508929999999964,-74.58996999999994],[-8.506249999999966,-74.58539999999994],[-8.505479999999977,-74.58713999999998],[-8.504549999999938,-74.59649999999993],[-8.503329999999949,-74.59572999999995],[-8.502919999999961,-74.58591999999999],[-8.469479999999976,-74.55260999999996],[-8.511579999999981,-74.56684999999999],[-8.475149999999928,-74.55838999999997],[-8.475009999999941,-74.56665999999996],[-8.472539999999981,-74.56199999999995],[-8.472299999999962,-74.56420999999995],[-8.471769999999935,-74.56034999999997],[-8.472829999999931,-74.56807999999995],[-8.471459999999979,-74.55494999999996],[-8.47070999999994,-74.55262999999997],[-8.669119999999964,-75.05850999999996],[-8.669009999999957,-75.06145999999995],[-8.66886999999997,-75.05692999999997],[-8.667879999999968,-75.05990999999995],[-8.667829999999981,-75.05774999999994],[-8.667649999999981,-75.06160999999997],[-8.667239999999936,-75.06253999999996],[-8.666629999999941,-75.06148999999994],[-8.474099999999964,-74.55349999999999],[-8.682519999999954,-75.05888999999996],[-8.677369999999939,-75.06513999999999],[-8.674019999999928,-75.06459999999998],[-8.673919999999953,-75.05788999999999],[-8.673669999999959,-75.05629999999996],[-8.671819999999968,-75.05678999999998],[-8.67113999999998,-75.05607999999995],[-8.596877268999947,-74.13796039799996],[-8.607279999999946,-74.13912999999997],[-8.598689999999976,-74.14450999999997],[-8.51613999999995,-74.56862999999998],[-8.512679999999932,-74.56810999999993],[-8.512099999999975,-74.57193999999998],[-8.508639999999957,-74.57139999999998],[-8.508059999999944,-74.57523999999995],[-8.504599999999925,-74.57470999999998],[-8.474669999999946,-74.55775999999997],[-8.473079999999982,-74.56553999999994],[-8.478009999999927,-74.55723999999998],[-8.47649999999993,-74.56360999999998],[-8.475969999999961,-74.55974999999995],[-8.475219999999979,-74.56128999999999],[-8.501879999999971,-74.60487999999998],[-8.499089999999967,-74.60005999999998],[-8.471113128999946,-74.55118542899999],[-8.475969999999961,-74.56009999999998],[-8.475589999999954,-74.55696999999998],[-8.473189999999931,-74.55804999999998],[-8.473149999999976,-74.56413999999995],[-8.472699999999975,-74.56534999999997],[-8.508069999999975,-74.57493999999997],[-8.507959999999969,-74.57429999999994],[-8.504619999999932,-74.57481999999999],[-8.504079999999931,-74.57128999999998],[-8.500169999999969,-74.57229999999998]],null,null,{"minOpacity":1,"max":1,"radius":10,"blur":15}]}],"limits":{"lat":[-8.890509999999949,-8.461659999999938],"lng":[-75.41458999999998,-74.13796039799996]}},"evals":[],"jsHooks":[]}</script>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

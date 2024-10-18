@@ -78,26 +78,26 @@ For more information, please visit the following website: <a href="https://sniff
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE</span>
 <span class="r-in"><span><span class="va">fire_forest</span> <span class="op">&lt;-</span> <span class="fu">get_forest_fire_data</span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Reading layer `file1a59206127e4' from data source </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   `/tmp/RtmpHSpnbw/file1a59206127e4.geojson' using driver `GeoJSON'</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 448 features and 34 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Reading layer `file1ab7501da463' from data source </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   `/tmp/Rtmpxr6CpH/file1ab7501da463.geojson' using driver `GeoJSON'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 392 features and 34 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -78.77948 ymin: -16.37708 xmax: -69.20894 ymax: -3.28337</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -79.49467 ymin: -16.34176 xmax: -69.17239 ymax: -4.79419</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">fire_forest</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 34 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -74.76679 ymin: -14.32693 xmax: -71.30557 ymax: -8.32145</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -74.14829 ymin: -8.60201 xmax: -74.13892 ymax: -8.60107</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   OBJECTID                                          FUENTE DOCREG     FECREG</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   211588 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   211718 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   211836 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   211939 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   211589 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   211590 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   214053 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   214054 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   214055 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   214056 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   214057 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   214058 Servicio Nacional Forestal y de Fauna Silvestre        2024-10-18</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        OBSERV</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
@@ -105,55 +105,41 @@ For more information, please visit the following website: <a href="https://sniff
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ZONUTM ORIGEN  NOMDEP           NOMPRO     NOMDIS      CAPITAL      FECHA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     19      2   CUSCO            CANAS     QUEHUE       QUEHUE 2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     18      2 UCAYALI CORONEL PORTILLO    MASISEA      MASISEA 2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     18      2 UCAYALI CORONEL PORTILLO   MANANTAY SAN FERNANDO 2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     18      2 UCAYALI CORONEL PORTILLO CAMPOVERDE   CAMPOVERDE 2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     19      2   CUSCO            CANAS     QUEHUE       QUEHUE 2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     19      2   CUSCO          CANCHIS    SICUANI      SICUANI 2024-10-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       HORA CATEG</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 14:13:00    25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 13:51:00    14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 14:28:00    30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 13:51:00    30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 14:13:00    30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 13:49:00    30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                            NOMCATEG</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                       CHAUPIBAMBA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Consorcio Industrias G.L.C. San Juan E.I.R.L. - Empresa Forestal Shongfu E.I.R.L.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     LATITUD  LONGITUD   COORES  COORNO         CODREP created_user</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -14.32693 -71.55318 224593.8 8414597 PIF_04496_2024   JMONTALBAN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  -9.19567 -73.62495 651069.0 8983225 PIF_04515_2024   JMONTALBAN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  -8.44679 -74.57555 546722.1 9066283 PIF_04527_2024   JMONTALBAN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  -8.32145 -74.76679 525679.1 9080158 PIF_04529_2024   JMONTALBAN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 -14.32504 -71.54449 225529.4 8414817 PIF_04496_2024   JMONTALBAN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 -14.29447 -71.30557 251280.7 8418470 PIF_04497_2024   JMONTALBAN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          created_date last_edited_user    last_edited_date ESTADO</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2024-10-09 02:48:26           UFMS17 2024-10-09 03:51:27      2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2024-10-09 02:48:26       JMONTALBAN 2024-10-09 02:48:26      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2024-10-09 02:48:26           UFMS17 2024-10-09 04:03:02      2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2024-10-09 02:48:26           UFMS17 2024-10-09 04:47:34      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2024-10-09 02:48:26           UFMS17 2024-10-09 03:51:27      2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2024-10-09 02:48:26           UFMS17 2024-10-09 03:52:36      2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ZONUTM ORIGEN  NOMDEP           NOMPRO  NOMDIS CAPITAL      FECHA     HORA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 00:36:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 01:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 00:53:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 01:46:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-18 01:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     18      2 UCAYALI CORONEL PORTILLO MASISEA MASISEA 2024-10-17 00:53:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   CATEG NOMCATEG  LATITUD  LONGITUD   COORES  COORNO         CODREP</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    11   Imiria -8.60201 -74.14829 593718.2 9049044 PIF_04668_2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    11   Imiria -8.60177 -74.14085 594537.0 9049069 PIF_04668_2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    11   Imiria -8.60169 -74.13956 594679.0 9049077 PIF_04668_2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    11   Imiria -8.60166 -74.13892 594749.4 9049080 PIF_04668_2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    11   Imiria -8.60117 -74.14487 594094.8 9049136 PIF_04668_2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    11   Imiria -8.60107 -74.14316 594283.0 9049147 PIF_04668_2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   created_user        created_date last_edited_user    last_edited_date ESTADO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   JMONTALBAN 2024-10-18 17:07:23       JMONTALBAN 2024-10-18 17:07:23      1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               TIPCOB PELIGRO REFESTADO CONF CODRVIF SENSAT CATDEP CATPRO CATDIS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Cobertura Forestal       0         0    0       0      N     08   0805 080507</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Cobertura Forestal       0         0    0       0      A     25   2501 250107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 Cobertura Agrícola       0         0    0       0    N21     25   2501 250102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 Cobertura Forestal       0         0    0       0      N     08   0805 080507</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 Cobertura Forestal       0         0    0       0    N21     08   0806 080601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                      geometry</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 POINT (-71.55318 -14.32693)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  POINT (-73.62495 -9.19567)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  POINT (-74.57555 -8.44679)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  POINT (-74.76679 -8.32145)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 POINT (-71.54449 -14.32504)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 POINT (-71.30557 -14.29447)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 Cobertura Forestal       0         0    0       0    N21     25   2501 250104</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 Cobertura Forestal       0         0    0       0    N20     25   2501 250104</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                     geometry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 POINT (-74.14829 -8.60201)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 POINT (-74.14085 -8.60177)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 POINT (-74.13956 -8.60169)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 POINT (-74.13892 -8.60166)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 POINT (-74.14487 -8.60117)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 POINT (-74.14316 -8.60107)</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
