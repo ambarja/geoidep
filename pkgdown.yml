@@ -2,9 +2,8 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
-  article: article.html
   geoidep: geoidep.html
-last_built: 2024-10-18T19:14Z
+last_built: 2025-03-01T16:12Z
 urls:
   reference: https://geografo.pe/geoidep/reference
   article: https://geografo.pe/geoidep/articles

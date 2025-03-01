@@ -1,7 +1,6 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://geografo.pe/geoidep/404.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/LICENSE.html</loc></url>
-<url><loc>https://geografo.pe/geoidep/articles/article.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/articles/geoidep.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/articles/index.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/authors.html</loc></url>
@@ -14,8 +13,6 @@
 <url><loc>https://geografo.pe/geoidep/reference/get_districts.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_early_warning.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_early_warning_link.html</loc></url>
-<url><loc>https://geografo.pe/geoidep/reference/get_forest_fire_data.html</loc></url>
-<url><loc>https://geografo.pe/geoidep/reference/get_forest_fire_link.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_forest_loss_data.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_geobosque_link.html</loc></url>
 <url><loc>https://geografo.pe/geoidep/reference/get_heat_spot_link.html</loc></url>
