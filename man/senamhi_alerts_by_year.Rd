@@ -11,6 +11,9 @@ senamhi_alerts_by_year(data = NULL, year = NULL)
 
 \item{year}{A numeric value indicating the year of publication of the weather warning.}
 }
+\value{
+A tibble object containing the weather alert data.
+}
 \description{
 This function downloads the weather forecast table provided by Senamhi according to the specified year.
 }

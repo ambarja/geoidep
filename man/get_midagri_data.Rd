@@ -25,10 +25,8 @@ For more information you can visit the following page  \url{https://siea.midagri
 \details{
 Available layers are:
 \itemize{
-  \item \bold{vegetation_cover:} Polygons representing agricultural areas of Peru, produced from high-resolution satellite images (RapidEye and Sentinel-2).
   \item \bold{agriculture_sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
   \item \bold{oil_palm_areas:} Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.
-  \item \bold{experimental_stations:} Points representing agricultural experimental stations in Peru.
 }
 }
 \examples{

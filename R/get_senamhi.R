@@ -165,7 +165,7 @@ senamhi_alert_by_number <- function(nro = NULL){
 #' @param data A tibble object containing the weather alert data.
 #' @param year A numeric value indicating the year of publication of the weather warning.
 #'
-#' @returnA tibble object containing the weather alert data.
+#' @return A tibble object containing the weather alert data.
 #'
 #' @examples
 #' \donttest{

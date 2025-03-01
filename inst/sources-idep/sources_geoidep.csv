@@ -2,10 +2,8 @@ provider,category,layer,layer_can_be_actived,admin_en,year,link
 INEI,General,departamento,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
 INEI,General,provincia,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
 INEI,General,distritos,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
-Midagri,Agriculture,vegetation_cover,TRUE,Ministry of Agrarian Development and Irrigation,2018,https://siea.midagri.gob.pe/portal/
 Midagri,Agriculture,agriculture_sector,TRUE,Ministry of Agrarian Development and Irrigation,2024,https://siea.midagri.gob.pe/portal/
 Midagri,Agriculture,oil_palm_areas,TRUE,Ministry of Agrarian Development and Irrigation,2016 - 2020,https://siea.midagri.gob.pe/portal/
-Midagri,Institucional,experimental_stations,TRUE,Ministry of Agrarian Development and Irrigation,2024,https://pgc-snia.inia.gob.pe:8443/jspui/
 Geobosque,Forest,stock_bosque_perdida_nacional,FALSE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
 Geobosque,Forest,stock_bosque_perdida_departamento,TRUE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
 Geobosque,Forest,stock_bosque_perdida_provincia,TRUE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
@@ -72,6 +70,5 @@ Sernanp,Enviroment,bosque_produccion_permanente,TRUE,Ministry of Environment,Not
 Sernanp,Enviroment,bosques_protectores,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
 Sernanp,Enviroment,mapa_ecosistemas_2018,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
 Sernanp,Enviroment,ecorregiones_cdc,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
-Serfor,Hazard,fire_forest,TRUE,Ministry of Environment,Not specified,https://sniffs.serfor.gob.pe/monitoreo/sami/index.html
 Serfor,Hazard,hot_spots,TRUE,Ministry of Environment,Not specified,https://sniffs.serfor.gob.pe/monitoreo/sami/index.html
 Senamhi,Hazard,weather warning,TRUE,Ministry of Environment,Variable over time,https://www.senamhi.gob.pe/?&p=aviso-meteorologico

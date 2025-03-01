@@ -12,10 +12,8 @@
 #' @details
 #' Available layers are:
 #' \itemize{
-#'   \item \bold{vegetation_cover:} Polygons representing agricultural areas of Peru, produced from high-resolution satellite images (RapidEye and Sentinel-2).
 #'   \item \bold{agriculture_sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
 #'   \item \bold{oil_palm_areas:} Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.
-#'   \item \bold{experimental_stations:} Points representing agricultural experimental stations in Peru.
 #' }
 #'
 #' @return An `sf` object containing the downloaded geographic data.
@@ -50,15 +48,15 @@ get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, qui
   # Check the file's format
   is_zip <- grepl("\\.zip$", primary_link)
   is_rar <- grepl("\\.rar$", primary_link)
-  is_js <- grepl("\\.js$", primary_link)
+  # is_js <- grepl("\\.js$", primary_link)
 
   if (is.null(dsn)) {
     if (is_rar) {
       dsn <- tempfile(fileext = ".rar")
     } else if (is_zip) {
       dsn <- tempfile(fileext = ".zip")
-    } else if (is_js) {
-      dsn <- tempfile(fileext = ".geojson")
+    # } else if (is_js) {
+    #   dsn <- tempfile(fileext = ".geojson")
     } else {
       dsn <- tempfile() # Use a generic temporary file if format is unknown
     }
@@ -88,21 +86,20 @@ get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, qui
   # Check if the file was downloaded
   if (!file.exists(dsn)) {
     stop("Failed to download the file.")
-  }
+  # if (is_js) {
+  #   geojson_content <- httr::content(data.download, as = "text", encoding = "UTF-8")
+  #
+  #   # Define the text to remove
+  #   text_to_remove <- "var geojson_estaciones_experimentales = "
+  #
+  #   # Remove the text
+  #   cleaned_content <- gsub(text_to_remove, "", geojson_content, fixed = TRUE)
+  #
+  #   writeLines(cleaned_content, dsn)
+  #
+  #   # Read the GeoJSON file using sf
+  #   sf_data <- sf::st_read(dsn)
 
-  if (is_js) {
-    geojson_content <- httr::content(data.download, as = "text", encoding = "UTF-8")
-
-    # Define the text to remove
-    text_to_remove <- "var geojson_estaciones_experimentales = "
-
-    # Remove the text
-    cleaned_content <- gsub(text_to_remove, "", geojson_content, fixed = TRUE)
-
-    writeLines(cleaned_content, dsn)
-
-    # Read the GeoJSON file using sf
-    sf_data <- sf::st_read(dsn)
   } else {
     extract_dir <- tempfile()
     dir.create(extract_dir)

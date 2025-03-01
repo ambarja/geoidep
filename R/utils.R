@@ -108,13 +108,11 @@ get_data <- \(){
 #' @keywords internal
 get_midagri_link <- \(type = NULL){
   midagri_link <- c(
-    "vegetation_cover" = "https://archivos.midagri.gob.pe/index.php/s/deZQjkzmbodFyG6/download",
     "agriculture_sector" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/sectores/2024/SectoresEstadisticos_2024_04.zip",
-    "oil_palm_areas" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/temas/PALMA_ACEITERA_2016_2020.zip",
-    "experimental_stations" = "https://pgc-snia.inia.gob.pe:8443/jspui/mapa/data/estaciones_experimentales.js"
-  )
+    "oil_palm_areas" = "https://siea.midagri.gob.pe/portal/media/attachments/publicaciones/superficie/temas/PALMA_ACEITERA_2016_2020.zip"
+    )
   if (!type %in% names(midagri_link) || is.null(type)) {
-    stop("Invalid type. Please choose from 'vegetation_cover', 'agriculture_sector', 'oil_palm' or 'experimental_stations'")
+    stop("Invalid type. Please choose from 'agriculture_sector' or 'oil_palm'")
   }
   return(midagri_link[[type]])
 }
@@ -147,19 +145,6 @@ get_early_warning_link <- \(type = NULL){
     stop("Invalid type. Please choose 'warning_last_week'")
   }
   return(geobosque_early_warning_link[[type]])
-}
-
-#' Serfor API to get forest fire
-#' @param type A string. Only one layer; `forest_fire`
-#' @return A string containing the URL of the requested file.
-#' @keywords internal
-
-get_forest_fire_link <- \(type = NULL){
-  serfor_forest_fire_link <- c("forest_fire" = "https://geo.serfor.gob.pe/geoservicios/rest/services/Servicios_OGC/Unidad_Monitoreo_Satelital/MapServer/1/query")
-  if (!type %in% names(serfor_forest_fire_link) || is.null(type)) {
-    stop("Invalid type. Please choose 'forest_fire'")
-  }
-  return(serfor_forest_fire_link[[type]])
 }
 
 #' Serfor API to get heat spot

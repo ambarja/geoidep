@@ -4,7 +4,7 @@ author: "Antony Barja"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{This package aims to provide R users with a new way of accessing official Peruvian cartographic data on various topics that are managed by the country's Spatial Data Infrastructure.}
+  %\VignetteIndexEntry{1.Introducction to geoidep}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

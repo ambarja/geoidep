@@ -34,7 +34,6 @@ reference:
 
  - title: 'Download data from Serfor'
    contents:
-   - get_forest_fire_data
    - get_hotspots_data
 
  - title: 'Download data from Senamhi'
