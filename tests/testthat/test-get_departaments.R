@@ -1,5 +1,5 @@
 test_that("R/get_departaments return a sf object", {
-  resultado <- get_departaments()
+  resultado <- geoidep::get_departaments()
   # Verifica que el resultado sea un objeto de clase 'sf'
   expect_s3_class(resultado, "sf")
 

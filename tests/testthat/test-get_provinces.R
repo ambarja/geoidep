@@ -1,5 +1,5 @@
 test_that("get_provinces return a sf object", {
-  resultado <- get_provinces()
+  resultado <- geoidep::get_provinces()
   # Verifica que el resultado sea un objeto de clase 'sf'
   expect_s3_class(resultado, "sf")
 

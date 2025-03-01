@@ -5,11 +5,11 @@ test_that("get_providers() devuelve un tibble con la columna esperada", {
 })
 
 test_that("get_providers() cuenta correctamente los proveedores", {
-  result <- get_providers(NULL)
+  result <- geoidep::get_providers(NULL)
   expect_equal(factor(result$provider), result$provider)
   expect_equal(as.integer(result$layer_count), result$layer_count)
 })
 
 test_that("get_providers() lanza error si query no es NULL", {
-  expect_error(get_providers("algo"), "Please, only NULL is valid")
+  expect_error(geoidep::get_providers("algo"), "Please, only NULL is valid")
 })

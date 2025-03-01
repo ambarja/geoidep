@@ -1,5 +1,5 @@
 test_that("get_districts return a sf object", {
-  resultado <- get_districts()
+  resultado <- geoidep::get_districts()
   # Verifica que el resultado sea un objeto de clase 'sf'
   expect_s3_class(resultado, "sf")
 
