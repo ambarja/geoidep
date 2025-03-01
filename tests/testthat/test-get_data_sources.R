@@ -5,13 +5,13 @@ test_that("get_data_sources() return a tibble when the query argument es NULL", 
 
 test_that("get_data_sources() return all nrows when the query is NULL", {
   result <- get_data_sources(NULL)
-  original_data <- get_data() |> tidyr::as_tibble()
+  original_data <- geoidep:::get_data()
   expect_equal(nrow(result), nrow(original_data))
 })
 
 test_that("get_data_sources() valid filter", {
   result <- get_data_sources("Sernanp")
-  expect_s3_class(result, "tbl_df")
+  expect_s3_class(result, "data.frame")
   expect_true(all(result$provider == "Sernanp"))
 })
 
