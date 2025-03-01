@@ -19,7 +19,7 @@ An sf object.
 \description{
 This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
 corresponding to the \bold{official political division} of the district boundaries of Peru.
-For more information, you can visit the following page \url{https://ide.inei.gob.pe/}
+For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{GEOINEI Platform}
 }
 \examples{
 \donttest{

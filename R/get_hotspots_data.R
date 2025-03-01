@@ -2,7 +2,7 @@
 #'
 #' @description
 #' This function allows you to download the latest version of forest fire data available from the Satellite Monitoring Unit of the National Forestry and Wildlife Service of Peru.
-#' For more information, please visit the following website: \url{https://sniffs.serfor.gob.pe/monitoreo/sami/index.html}
+#' For more information, please visit the following website: \href{https://sniffs.serfor.gob.pe/monitoreo/sami/index.html}{Serfor Platform}
 #'
 #' @param dsn Character. Output filename with the \bold{spatial format}. If missing, a temporary file is created.
 #' @param show_progress Logical. Suppress bar progress.

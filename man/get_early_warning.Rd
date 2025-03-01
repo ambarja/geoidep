@@ -19,7 +19,7 @@ A tibble or sf object, depending on the value of `sf`.
 \description{
 This function allows you to download deforestation alert information detected by Geobosque
 for any polygon located in Peru.
-For more details, please visit the following website: \url{https://geobosques.minam.gob.pe}
+For more details, please visit the following website: \href{https://geobosques.minam.gob.pe}{Geobosque Platform}
 }
 \examples{
 \donttest{

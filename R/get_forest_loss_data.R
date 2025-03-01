@@ -3,7 +3,7 @@
 #' @description
 #' This function allows you to download the \bold{ubigeos} corresponding to the official political division
 #' of the district, province or region boundaries of Peru with \bold{forest and loss information}.
-#' For more information, you can visit the following website: \url{https://geobosques.minam.gob.pe}
+#' For more information, you can visit the following website: \href{https://geobosques.minam.gob.pe}{Geobosque Platform}
 #'
 #' @param layer A string.Specifies one of the following available layers; stock_bosque_perdida_distrito, stock_bosque_perdida_provincia, stock_bosque_perdida_departamento.
 #' @param ubigeo A string Specifies the unique geographical code of interest.

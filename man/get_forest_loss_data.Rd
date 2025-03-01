@@ -19,7 +19,7 @@ A tibble object.
 \description{
 This function allows you to download the \bold{ubigeos} corresponding to the official political division
 of the district, province or region boundaries of Peru with \bold{forest and loss information}.
-For more information, you can visit the following website: \url{https://geobosques.minam.gob.pe}
+For more information, you can visit the following website: \href{https://geobosques.minam.gob.pe}{Geobosque Platform}
 }
 \details{
 Available layers are:

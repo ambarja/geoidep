@@ -2,7 +2,7 @@
 #'
 #' @description
 #' This function allows you to download the latest version of data available on the sernanp geoviewer.
-#' For more information, you can visit the following web page: \url{https://geo.sernanp.gob.pe/visorsernanp/}
+#' For more information, you can visit the following web page: \href{https://geo.sernanp.gob.pe/visorsernanp/}{Sernanp Platform}
 #'
 #' @param layer Select only one from the list of available layers, for more information please use `get_data_sources(provider = "sernanp")`. Defaults to NULL.
 #' @param dsn Character. Output filename with the \bold{spatial format}. If missing, a temporary file is created.

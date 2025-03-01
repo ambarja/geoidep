@@ -20,7 +20,7 @@ An `sf` object containing the downloaded geographic data.
 }
 \description{
 This function allows you to download the latest version of MIDAGRI geographic data.
-For more information you can visit the following page  \url{https://siea.midagri.gob.pe/}.
+For more information you can visit the following page  \href{https://siea.midagri.gob.pe/}{Midagri Platform}.
 }
 \details{
 Available layers are:

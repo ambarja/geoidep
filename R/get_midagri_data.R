@@ -2,7 +2,7 @@
 #'
 #' @description
 #' This function allows you to download the latest version of MIDAGRI geographic data.
-#' For more information you can visit the following page  \url{https://siea.midagri.gob.pe/}.
+#' For more information you can visit the following page  \href{https://siea.midagri.gob.pe/}{Midagri Platform}.
 #'
 #' @param dsn Character. The output filename in \bold{.shp or .gpkg} format. If not provided, a temporary file will be created.
 #' @param layer A string. Specifies the layer to download. Available layers are detailed in the 'Details' section.

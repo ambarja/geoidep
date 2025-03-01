@@ -3,7 +3,7 @@
 #' @description
 #' This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
 #' corresponding to the \bold{official political division} of the departament boundaries of Peru.
-#' For more information, you can visit the following page \url{https://ide.inei.gob.pe/}
+#' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{GeoINEI Platform}
 #'
 #' @param dsn Character. Output filename. If missing, a temporary file is created.
 #' @param show_progress Logical. Suppress bar progress.

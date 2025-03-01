@@ -20,7 +20,7 @@ An sf object.
 }
 \description{
 This function allows you to download the latest version of data available on the sernanp geoviewer.
-For more information, you can visit the following web page: \url{https://geo.sernanp.gob.pe/visorsernanp/}
+For more information, you can visit the following web page: \href{https://geo.sernanp.gob.pe/visorsernanp/}{Sernanp Platform}
 }
 \examples{
 \donttest{

@@ -3,7 +3,7 @@
 #' @description
 #' This function allows you to download deforestation alert information detected by Geobosque
 #' for any polygon located in Peru.
-#' For more details, please visit the following website: \url{https://geobosques.minam.gob.pe}
+#' For more details, please visit the following website: \href{https://geobosques.minam.gob.pe}{Geobosque Platform}
 #'
 #' @param region A string Specifies the unique geographical code of interest.
 #' @param sf Logical. Indicates whether to return the data as an `sf` object.
