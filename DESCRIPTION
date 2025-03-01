@@ -12,6 +12,8 @@ License: Apache License (>= 2)
 URL: https://geografo.pe/geoidep/
 BugReports: https://github.com/ambarja/geoidep/issues
 LazyData: true
+Depends: 
+      R (>= 4.1.0)
 Imports:
     httr,
     sf,
