@@ -4,7 +4,7 @@ author: "Antony Barja"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{1.Introducction to geoidep}
+  %\VignetteIndexEntry{Introduction to geoidep}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
