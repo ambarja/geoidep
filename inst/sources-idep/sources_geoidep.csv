@@ -72,3 +72,7 @@ Sernanp,Enviroment,mapa_ecosistemas_2018,TRUE,Ministry of Environment,Not specif
 Sernanp,Enviroment,ecorregiones_cdc,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
 Serfor,Hazard,hot_spots,TRUE,Ministry of Environment,Not specified,https://sniffs.serfor.gob.pe/monitoreo/sami/index.html
 Senamhi,Hazard,weather warning,TRUE,Ministry of Environment,Variable over time,https://www.senamhi.gob.pe/?&p=aviso-meteorologico
+INEI,General,Urban Area,FALSE,National Institute of Statistics and Informatics,Not specified,https://geoespacial.inei.gob.pe/geoserver
+INEI,General,Population Center,FALSE,National Institute of Statistics and Informatics,Not specified,https://geoespacial.inei.gob.pe/geoserver
+INEI,General,Block Boundary,FALSE,National Institute of Statistics and Informatics,Not specified,https://geoespacial.inei.gob.pe/geoserver
+INEI,General,Crime Reports,FALSE,National Institute of Statistics and Informatics,2023,https://geoespacial.inei.gob.pe/geoserver
