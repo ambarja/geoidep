@@ -65,7 +65,7 @@
                         <h4 data-toc-skip class="author">Antony
 Barja</h4>
             
-            <h4 data-toc-skip class="date">01 March, 2025</h4>
+            <h4 data-toc-skip class="date">03 March, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/vignettes/geoidep.Rmd" class="external-link"><code>vignettes/geoidep.Rmd</code></a></small>
       <div class="d-none name"><code>geoidep.Rmd</code></div>
@@ -110,7 +110,7 @@ for my programming moments.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">providers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_data_sources.html">get_data_sources</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">providers</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 73 × 7</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 77 × 7</span></span></span>
 <span><span class="co">#&gt;    provider  category    layer         layer_can_be_actived admin_en year  link </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> INEI      General     departamento  TRUE                 Nationa… 2019  http…</span></span>
@@ -123,7 +123,7 @@ for my programming moments.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Geobosque Forest      stock_bosque… TRUE                 Ministr… 2001… http…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Geobosque Forest      stock_bosque… TRUE                 Ministr… 2001… http…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Geobosque Forest      warning_last… TRUE                 Ministr… last… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 63 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 67 more rows</span></span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">layers_available</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_providers.html">get_providers</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">layers_available</span></span>
@@ -131,7 +131,7 @@ for my programming moments.</p>
 <span><span class="co">#&gt;   provider  layer_count</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Geobosque           5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> INEI                3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> INEI                7</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Midagri             2</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Senamhi             1</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Serfor              1</span></span>
