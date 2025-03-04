@@ -3,9 +3,12 @@
 #' @description
 #' This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
 #' corresponding to the \bold{official political division} of the district boundaries of Peru.
-#' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{GEOINEI Platform}
+#' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}
 #'
-#' @param dsn Character. Output filename with the \bold{*.gpkg} format. If missing, a temporary file is created.
+#' @param dsn Character. Path to the output `.gpkg` file or a directory where the file will be saved.
+#' If a directory is provided, the file will be saved as `distrito.gpkg` inside it.
+#' If `NULL`, a temporary file will be created.
+#' If the path contains multiple subdirectories, they will be created automatically if they do not exist.
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
 #'
@@ -21,48 +24,52 @@
 
 get_districts <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {
   primary_link <- get_inei_link("distrito")
-
   if (is.null(dsn)) {
     dsn <- tempfile(fileext = ".rar")
+  } else {
+    if (!dir.exists(dsn)) {
+      dir.create(dsn, recursive = TRUE, showWarnings = FALSE)
+    }
+    dsn <- file.path(dsn, "distrito.rar")
   }
 
-  if (isTRUE(show_progress)) {
-    rar.download <- httr::GET(
+  rar.download <- if (isTRUE(show_progress)) {
+    httr::GET(
       primary_link,
       config = httr::config(ssl_verifypeer = FALSE),
       httr::write_disk(dsn, overwrite = TRUE),
       httr::progress()
     )
   } else {
-    rar.download <- httr::GET(
+    httr::GET(
       primary_link,
       config = httr::config(ssl_verifypeer = FALSE),
       httr::write_disk(dsn, overwrite = TRUE)
     )
   }
 
-  # Check if the download was successful
   if (httr::http_error(rar.download)) {
     stop("Error downloading the file. Check the URL or connection")
   }
 
-  if (file.exists(dsn) && dir.exists(dsn)) {
-    extract_dir <- dsn
+  extract_dir <- if (is.null(dsn)) {
+    tempfile()
   } else {
-    extract_dir <- tempfile()
-    dir.create(extract_dir)
+    dirname(dsn)
   }
 
-  archive::archive_extract(
-    archive = dsn,
-    dir = extract_dir
-  )
+  dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
+  archive::archive_extract(archive = dsn, dir = extract_dir)
 
-  gpkg_file <- list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE)
+  if (file.exists(dsn)) {
+    suppressMessages(invisible(file.remove(dsn)))
+  }
 
-  # Validate if .gpkg file exists
+  gpkg_file <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
+  suppressMessages(invisible(file.rename(from = gpkg_file, to = tolower(gpkg_file))))
+
   if (length(gpkg_file) == 0) {
-    stop("No .gpkg file was found after extraction")
+    stop("No .gpkg file was found after extraction. Check the extracted files.")
   }
 
   sf_data <- sf::st_read(gpkg_file, quiet = quiet)
