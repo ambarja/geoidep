@@ -89,6 +89,7 @@ For more information you can visit the following page  <a href="https://siea.mid
 <span class="r-in"><span><span class="va">coronel_portillo</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_provinces.html">get_provinces</a></span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">NOMBPROV</span> <span class="op">==</span> <span class="st">"CORONEL PORTILLO"</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_transform.html" class="external-link">st_transform</a></span><span class="op">(</span>crs <span class="op">=</span> <span class="fl">32718</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot rename file '/tmp/Rtmp2D4f4G/DISTRITO.gpkg' to '/tmp/rtmp2d4f4g/distrito.gpkg', reason 'No such file or directory'</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Download and extract the oil palm layer for Coronel Portillo</span></span></span>
 <span class="r-in"><span><span class="va">oil_palm</span> <span class="op">&lt;-</span> <span class="fu">get_midagri_data</span><span class="op">(</span></span></span>
