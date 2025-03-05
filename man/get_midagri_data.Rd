@@ -37,18 +37,7 @@ library(sf)
 sf_use_s2(use_s2 = FALSE)
 
 # Retrieve the polygon for Coronel Portillo province
-coronel_portillo <- get_provinces(show_progress = FALSE) |>
-  dplyr::filter(NOMBPROV \%in\% "CORONEL PORTILLO") |>
-  st_transform(crs = 32718)
-
-# Download and extract the oil palm layer for Coronel Portillo
-oil_palm <- get_midagri_data(
-  layer = "oil_palm_areas",
-  show_progress = FALSE
-) |>
-  st_intersection(coronel_portillo)
-
-# Visualize the oil palm layer
-plot(st_geometry(oil_palm))
+coronel_portillo <- get_provinces(show_progress = FALSE)
+names(coronel_portillo)
 }
 }
