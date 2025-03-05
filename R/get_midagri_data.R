@@ -28,6 +28,16 @@
 #' # Retrieve the polygon for Coronel Portillo province
 #' coronel_portillo <- get_provinces(show_progress = FALSE)
 #' names(coronel_portillo)
+#'
+#' roi <- coronel_portillo |>
+#'  subset(NOMBPROV == "CORONEL PORTILLO") |>
+#'  st_transform(crs = 32718)
+#'
+#' oil_palm_areas <- get_midagri_data(layer = "oil_palm_areas") |>
+#'  st_intersection(roi)
+#'
+#' head(oil_palm_areas)
+#' plot(st_geometry(oil_palm_areas))
 #' }
 #' @export
 
