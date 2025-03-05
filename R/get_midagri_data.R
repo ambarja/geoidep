@@ -121,6 +121,5 @@ get_midagri_data <- function(layer = NULL, dsn = NULL, show_progress = TRUE, qui
     # Read the .shp file using sf
     sf_data <- sf::st_read(shp_file, quiet = quiet)
   }
-
   return(sf_data)
 }
