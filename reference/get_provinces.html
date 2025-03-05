@@ -61,7 +61,7 @@ For more information, you can visit the following page <a href="https://ide.inei
 
 <dl><dt id="arg-dsn">dsn<a class="anchor" aria-label="anchor" href="#arg-dsn"></a></dt>
 <dd><p>Character. Path to the output <code>.gpkg</code> file or a directory where the file will be saved.
-If a directory is provided, the file will be saved as <code>provincia.gpkg</code> inside it.
+If a directory is provided, the file will be saved as <code>PROVINCIA.gpkg</code> inside it.
 If <code>NULL</code>, a temporary file will be created.
 If the path contains multiple subdirectories, they will be created automatically if they do not exist.</p></dd>
 
@@ -84,34 +84,27 @@ If the path contains multiple subdirectories, they will be created automatically
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">prov</span> <span class="op">&lt;-</span> <span class="fu">get_provinces</span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot rename file '/tmp/RtmpAcR5cM/DISTRITO.gpkg' to '/tmp/rtmpacr5cm/distrito.gpkg', reason 'No such file or directory'</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot rename file '/tmp/Rtmp4kqoPW/geoidep_data/DEPARTAMENTO.gpkg' to '/tmp/rtmp4kqopw/geoidep_data/departamento.gpkg', reason 'No such file or directory'</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">prov</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 12 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 6 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -73.6546 ymin: -14.08649 xmax: -73.02175 ymax: -13.70798</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   id OBJECTID UBIGEO CCDD CCPP CCDI  NOMBDEP    NOMBPROV</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1        1 030220   03   02   20 APURIMAC ANDAHUAYLAS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2        2 030415   03   04   15 APURIMAC    AYMARAES</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  3        3 030409   03   04   09 APURIMAC    AYMARAES</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4        4 030214   03   02   14 APURIMAC ANDAHUAYLAS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  5        5 030206   03   02   06 APURIMAC ANDAHUAYLAS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  6        6 030404   03   04   04 APURIMAC    AYMARAES</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   NOMBDIST     CAPITAL SHAPE_Length  SHAPE_Area</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      JOSE MARIA ARGUEDAS HUANCABAMBA    0.5703507 0.014648915</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   TINTAY      TINTAY    0.7063312 0.011908124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    LUCRE       LUCRE    0.5536897 0.008678206</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 SAN MIGUEL DE CHACCRAMPA  CHACCRAMPA    0.4027041 0.007104229</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                  HUAYANA     HUAYANA    0.5634482 0.007974308</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6               CHAPIMARCA  CHAPIMARCA    0.6308316 0.017072690</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   id OBJECTID CCDD   NOMBDEP SHAPE_Length SHAPE_Area</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1        1   01  AMAZONAS    13.059047   3.199147</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2        2   02    ANCASH    11.788249   2.954697</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  3        3   03  APURIMAC     7.730154   1.765933</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4        4   04  AREQUIPA    17.459435   5.330125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  5        5   05  AYACUCHO    17.127166   3.643705</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  6        6   06 CAJAMARCA    12.540288   2.688386</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                             geom</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 MULTIPOLYGON (((-73.37071 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 MULTIPOLYGON (((-73.17529 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 MULTIPOLYGON (((-73.24364 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 MULTIPOLYGON (((-73.63057 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 MULTIPOLYGON (((-73.51096 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 MULTIPOLYGON (((-73.04322 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 MULTIPOLYGON (((-77.81399 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 MULTIPOLYGON (((-77.64697 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 MULTIPOLYGON (((-73.74655 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 MULTIPOLYGON (((-71.98109 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 MULTIPOLYGON (((-74.34843 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 MULTIPOLYGON (((-78.70034 -...</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

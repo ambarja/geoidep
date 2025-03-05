@@ -61,7 +61,7 @@ For more information, you can visit the following page <a href="https://ide.inei
 
 <dl><dt id="arg-dsn">dsn<a class="anchor" aria-label="anchor" href="#arg-dsn"></a></dt>
 <dd><p>Character. Path to the output <code>.gpkg</code> file or a directory where the file will be saved.
-If a directory is provided, the file will be saved as <code>departamento.gpkg</code> inside it.
+If a directory is provided, the file will be saved as <code>DEPARTAMENTO.gpkg</code> inside it.
 If <code>NULL</code>, a temporary file will be created.
 If the path contains multiple subdirectories, they will be created automatically if they do not exist.</p></dd>
 
@@ -84,11 +84,27 @@ If the path contains multiple subdirectories, they will be created automatically
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">dep</span> <span class="op">&lt;-</span> <span class="fu">get_departaments</span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot rename file '/tmp/RtmpAcR5cM/DEPARTAMENTO.gpkg' to '/tmp/rtmpacr5cm/departamento.gpkg', reason 'No such file or directory'</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot rename file '/tmp/RtmpAcR5cM/DEPARTAMENTO.gpkg' to '/tmp/rtmpacr5cm/departamento.gpkg', reason 'No such file or directory'</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> Cannot open "/tmp/RtmpAcR5cM/DEPARTAMENTO.gpkg"; The file doesn't seem to exist.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot rename file '/tmp/Rtmp4kqoPW/geoidep_data/DEPARTAMENTO.gpkg' to '/tmp/rtmp4kqopw/geoidep_data/departamento.gpkg', reason 'No such file or directory'</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dep</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'dep' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 6 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   id OBJECTID CCDD   NOMBDEP SHAPE_Length SHAPE_Area</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1        1   01  AMAZONAS    13.059047   3.199147</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2        2   02    ANCASH    11.788249   2.954697</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  3        3   03  APURIMAC     7.730154   1.765933</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4        4   04  AREQUIPA    17.459435   5.330125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  5        5   05  AYACUCHO    17.127166   3.643705</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  6        6   06 CAJAMARCA    12.540288   2.688386</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                             geom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 MULTIPOLYGON (((-77.81399 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 MULTIPOLYGON (((-77.64697 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 MULTIPOLYGON (((-73.74655 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 MULTIPOLYGON (((-71.98109 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 MULTIPOLYGON (((-74.34843 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 MULTIPOLYGON (((-78.70034 -...</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
