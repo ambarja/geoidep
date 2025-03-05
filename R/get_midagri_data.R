@@ -33,7 +33,7 @@
 #'  subset(NOMBPROV == "CORONEL PORTILLO") |>
 #'  st_transform(crs = 32718)
 #'
-#' oil_palm_areas <- get_midagri_data(layer = "oil_palm_areas") |>
+#' oil_palm_areas <- get_midagri_data(layer = "oil_palm_areas", show_progress = FALSE) |>
 #'  st_intersection(roi)
 #'
 #' head(oil_palm_areas)

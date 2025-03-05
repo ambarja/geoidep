@@ -1,6 +1,6 @@
 test_that("get_providers() devuelve un tibble con la columna esperada", {
   result <- geoidep:::get_data()
-  expect_s3_class(result, "data.frame")           # Verifica que la salida es un tibble
+  expect_s3_class(result, "data.frame")       # Verifica que la salida es un tibble
   expect_true("provider" %in% names(result))  # Verifica que tiene la columna "provider"
 })
 
