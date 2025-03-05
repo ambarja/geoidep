@@ -5,9 +5,9 @@
 #' corresponding to the \bold{official political division} of the province boundaries of Peru.
 #' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}
 #'
-#' @param dsn Character. Path to the output `.gpkg` file or a directory where the file will be saved.
-#' If a directory is provided, the file will be saved as `provincia.gpkg` inside it.
-#' If `NULL`, a temporary file will be created.
+#' @param dsn Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
+#' If a directory is provided, the file will be saved as \code{provincia.gpkg} inside it.
+#' If \code{NULL}, a temporary file will be created.
 #' If the path contains multiple subdirectories, they will be created automatically if they do not exist.
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
@@ -66,9 +66,11 @@ get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){
   }
 
   gpkg_file <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
-  suppressMessages(invisible(file.rename(from = gpkg_file, to = tolower(gpkg_file))))
 
-  if (length(gpkg_file) == 0) {
+  if (file.exists(gpkg_file)) {
+    new_gpkg_file <- file.path(dirname(gpkg_file), tolower(basename(gpkg_file)))
+    file.rename(from = gpkg_file, to = new_gpkg_file)
+  } else {
     stop("No .gpkg file was found after extraction. Check the extracted files.")
   }
 
