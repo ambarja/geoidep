@@ -8,7 +8,7 @@ get_districts(dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
 \item{dsn}{Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
-If a directory is provided, the file will be saved as \code{distrito.gpkg} inside it.
+If a directory is provided, the file will be saved as \code{DISTRITO.gpkg} inside it.
 If \code{NULL}, a temporary file will be created.
 If the path contains multiple subdirectories, they will be created automatically if they do not exist.}
 

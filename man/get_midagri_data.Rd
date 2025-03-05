@@ -38,7 +38,7 @@ sf_use_s2(use_s2 = FALSE)
 
 # Retrieve the polygon for Coronel Portillo province
 coronel_portillo <- get_provinces(show_progress = FALSE) |>
-  subset(NOMBPROV == "CORONEL PORTILLO") |>
+  subset(NOMBPROV \%in\% "CORONEL PORTILLO") |>
   st_transform(crs = 32718)
 
 # Download and extract the oil palm layer for Coronel Portillo

@@ -8,7 +8,7 @@ get_provinces(dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
 \item{dsn}{Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
-If a directory is provided, the file will be saved as \code{provincia.gpkg} inside it.
+If a directory is provided, the file will be saved as \code{PROVINCIA.gpkg} inside it.
 If \code{NULL}, a temporary file will be created.
 If the path contains multiple subdirectories, they will be created automatically if they do not exist.}
 

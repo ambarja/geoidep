@@ -6,7 +6,7 @@
 #' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}.
 #'
 #' @param dsn Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
-#' If a directory is provided, the file will be saved as \code{provincia.gpkg} inside it.
+#' If a directory is provided, the file will be saved as \code{PROVINCIA.gpkg} inside it.
 #' If \code{NULL}, a temporary file will be created.
 #' If the path contains multiple subdirectories, they will be created automatically if they do not exist.
 #' @param show_progress Logical. Suppress bar progress.
@@ -23,56 +23,54 @@
 #' @export
 
 get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){
-  primary_link <- get_inei_link("provincia")
-  if (is.null(dsn)) {
-    dsn <- tempfile(fileext = ".rar")
-  } else {
-    if (!dir.exists(dsn)) {
-      dir.create(dsn, recursive = TRUE, showWarnings = FALSE)
+    primary_link <- get_inei_link("provincia")
+
+    if (is.null(dsn)) {
+      dsn <- tempfile(fileext = ".rar")
+    } else {
+      if (!dir.exists(dsn)) {
+        dir.create(dsn, recursive = TRUE, showWarnings = FALSE)
+      }
+      dsn <- file.path(dsn, "provincia.rar")
     }
-    dsn <- file.path(dsn, "provincia.rar")
-  }
 
-  rar.download <- if (isTRUE(show_progress)) {
-    httr::GET(
-      primary_link,
-      config = httr::config(ssl_verifypeer = FALSE),
-      httr::write_disk(dsn, overwrite = TRUE),
-      httr::progress()
-    )
-  } else {
-    httr::GET(
-      primary_link,
-      config = httr::config(ssl_verifypeer = FALSE),
-      httr::write_disk(dsn, overwrite = TRUE)
-    )
-  }
+    if (isTRUE(show_progress)) {
+      rar.download <- httr::GET(
+        primary_link,
+        config = httr::config(ssl_verifypeer = FALSE),
+        httr::write_disk(dsn, overwrite = TRUE),
+        httr::progress()
+      )
+    } else {
+      rar.download <- httr::GET(
+        primary_link,
+        config = httr::config(ssl_verifypeer = FALSE),
+        httr::write_disk(dsn, overwrite = TRUE)
+      )
+    }
 
-  if (httr::http_error(rar.download)) {
-    stop("Error downloading the file. Check the URL or connection")
-  }
+    # Check if the download was successful
+    if (httr::http_error(rar.download)) {
+      stop("Error downloading the file. Check the URL or connection")
+    }
 
-  extract_dir <- if (is.null(dsn)) {
-    tempfile()
-  } else {
-    dirname(dsn)
-  }
+    extract_dir <- file.path(tempdir(), "geoidep_data")
+    dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
+    archive::archive_extract(archive = dsn, dir = extract_dir)
 
-  dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
-  archive::archive_extract(archive = dsn, dir = extract_dir)
+    if (file.exists(dsn)) {
+      suppressMessages(invisible(file.remove(dsn)))
+    }
 
-  if (file.exists(dsn)) {
-    suppressMessages(invisible(file.remove(dsn)))
-  }
+    gpkg_file <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
+    suppressMessages(invisible(file.rename(from = gpkg_file, to = tolower(gpkg_file))))
 
-  gpkg_file <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
-  suppressMessages(invisible(file.rename(from = gpkg_file, to = tolower(gpkg_file))))
+    # Validate if .gpkg file exists
+    if (length(gpkg_file) == 0) {
+      stop("No .gpkg file was found after extraction")
+    }
 
-  if (length(gpkg_file) == 0) {
-    stop("No .gpkg file was found after extraction. Check the extracted files.")
-  }
+    sf_data <- sf::st_read(gpkg_file, quiet = quiet)
 
-  sf_data <- sf::st_read(gpkg_file, quiet = quiet)
-
-  return(sf_data)
+    return(sf_data)
 }
