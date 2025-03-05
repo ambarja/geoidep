@@ -6,18 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Download Peruvian data managed by the Spatial Data Infrastructure (SDI) of the National Institute of Statistics and Informatics (INEI) of Peru • geoidep</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="lightswitch.js"></script><script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
-<meta property="og:title" content="Download Peruvian data managed by the Spatial Data Infrastructure (SDI) of the National Institute of Statistics and Informatics (INEI) of Peru">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Download Peruvian data managed by the Spatial Data Infrastructure (SDI) of the National Institute of Statistics and Informatics (INEI) of Peru">
 <meta name="description" content="Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more. It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure. For more information, please visit: &lt;https://www.geoidep.gob.pe/catalogos-de-metadatos&gt;.">
 <meta property="og:description" content="Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more. It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure. For more information, please visit: &lt;https://www.geoidep.gob.pe/catalogos-de-metadatos&gt;.">
 </head>
@@ -25,11 +18,11 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-custom" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
     <a class="navbar-brand me-2" href="index.html">geoidep</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,6 +40,14 @@
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/ambarja/geoidep/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
+<li><button class="dropdown-item" data-bs-theme-value="light"><span class="fa fa-sun"></span> Light</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="dark"><span class="fa fa-moon"></span> Dark</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="auto"><span class="fa fa-adjust"></span> Auto</button></li>
+  </ul>
+</li>
       </ul>
 </div>
 
@@ -55,9 +56,9 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="geoidep">geoidep<a class="anchor" aria-label="anchor" href="#geoidep"></a>
+<div class="page-header"><h1 id="geoidep-download-geographic-data-managed-by-perus-spatial-data-infrastructure">geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure<a class="anchor" aria-label="anchor" href="#geoidep-download-geographic-data-managed-by-perus-spatial-data-infrastructure"></a>
 </h1></div>
-<p><img src="reference/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="22%"></p>
+<p><img src="reference/figures/geoidep_v2.png" align="right" hspace="55" vspace="0" width="50%"></p>
 <!-- badges: start -->
 
 <p>The goal of <strong>geoidep</strong>📦 is to offers R users an easy and accessible way to obtain official cartographic data on various topics, such as <strong>society</strong> 🏛️, <strong>transport</strong>🚗, <strong>environment</strong>🌱, <strong>agriculture</strong>🌾, <strong>climate</strong>⛅️,among others.</p>
@@ -77,39 +78,32 @@
 <h2 id="example-01-introduction">Example 01: Introduction<a class="anchor" aria-label="anchor" href="#example-01-introduction"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; ── Welcome to geoidep ──────────────────────────────────────────────────────────</span></span>
-<span><span class="co">#&gt; ℹ geoidep is a wrapper that allows you to download cartographic data for Peru from R.</span></span>
-<span><span class="co">#&gt; Currently, `geoidep` supports the following providers:</span></span>
-<span><span class="co">#&gt; ✔ Geobosque</span></span>
-<span><span class="co">#&gt; ✔ INEI</span></span>
-<span><span class="co">#&gt; ✔ Midagri</span></span>
-<span><span class="co">#&gt; ✔ Sernanp</span></span>
-<span><span class="co">#&gt; ℹ For more information, please use the `get_data_sources()` function.</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span></code></pre></div>
 <p>In this example, we can identify the list of providers available in geoidep and the layers they present.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_data_sources.html">get_data_sources</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 6 × 7</span></span>
-<span><span class="co">#&gt;   provider category    layer           layer_can_be_actived admin_en year  link </span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;           &lt;lgl&gt;                &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;</span></span>
-<span><span class="co">#&gt; 1 INEI     General     departamento    TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; 2 INEI     General     provincia       TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; 3 INEI     General     distritos       TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; 4 Midagri  Agriculture vegetation_cov… TRUE                 Ministr… 2018  http…</span></span>
-<span><span class="co">#&gt; 5 Midagri  Agriculture agriculture_se… TRUE                 Ministr… 2024  http…</span></span>
-<span><span class="co">#&gt; 6 Midagri  Agriculture oil_palm_areas  TRUE                 Ministr… 2016… http…</span></span></code></pre></div>
+<span><span class="co">#&gt;   provider  category    layer          layer_can_be_actived admin_en year  link </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;          &lt;lgl&gt;                &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;</span></span>
+<span><span class="co">#&gt; 1 INEI      General     departamento   TRUE                 Nationa… 2019  http…</span></span>
+<span><span class="co">#&gt; 2 INEI      General     provincia      TRUE                 Nationa… 2019  http…</span></span>
+<span><span class="co">#&gt; 3 INEI      General     distritos      TRUE                 Nationa… 2019  http…</span></span>
+<span><span class="co">#&gt; 4 Midagri   Agriculture agriculture_s… TRUE                 Ministr… 2024  http…</span></span>
+<span><span class="co">#&gt; 5 Midagri   Agriculture oil_palm_areas TRUE                 Ministr… 2016… http…</span></span>
+<span><span class="co">#&gt; 6 Geobosque Forest      stock_bosque_… FALSE                Ministr… 2001… http…</span></span></code></pre></div>
 <p>In summary the suppliers and the number of available layers</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_providers.html">get_providers</a></span><span class="op">(</span><span class="op">)</span> </span>
-<span><span class="co">#&gt; # A tibble: 4 × 2</span></span>
+<span><span class="co">#&gt; # A tibble: 6 × 2</span></span>
 <span><span class="co">#&gt;   provider  layer_count</span></span>
 <span><span class="co">#&gt;   &lt;fct&gt;           &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1 Geobosque           5</span></span>
-<span><span class="co">#&gt; 2 INEI                3</span></span>
-<span><span class="co">#&gt; 3 Midagri             4</span></span>
-<span><span class="co">#&gt; 4 Sernanp            61</span></span></code></pre></div>
+<span><span class="co">#&gt; 2 INEI                7</span></span>
+<span><span class="co">#&gt; 3 Midagri             2</span></span>
+<span><span class="co">#&gt; 4 Senamhi             1</span></span>
+<span><span class="co">#&gt; 5 Serfor              1</span></span>
+<span><span class="co">#&gt; 6 Sernanp            61</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example-02-download-official-inei-administrative-boundaries">Example 02: Download official INEI administrative boundaries<a class="anchor" aria-label="anchor" href="#example-02-download-official-inei-administrative-boundaries"></a>
@@ -173,14 +167,7 @@
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
-<li><a href="https://app.codecov.io/gh/ambarja/geoidep" class="external-link"><img src="https://codecov.io/gh/ambarja/geoidep/graph/badge.svg" alt="Codecov test coverage"></a></li>
-</ul>
-</div>
+
 
   </aside>
 </div>
