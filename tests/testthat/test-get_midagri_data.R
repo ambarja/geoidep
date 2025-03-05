@@ -1,5 +1,5 @@
-test_that("R/get_departament return a sf object", {
-  resultado <- geoidep::get_departaments()
+test_that("R/get_midagri_data return a sf object", {
+  resultado <- geoidep::get_midagri_data(layer = "oil_palm_areas" , show_progress = FALSE)
   # Verifica que el resultado sea un objeto de clase 'sf'
   expect_s3_class(resultado, "sf")
 
@@ -12,6 +12,3 @@ test_that("R/get_departament return a sf object", {
   # Verifica que el número de filas sea mayor que cero
   expect_gt(nrow(resultado), 0)
 })
-
-
-
