@@ -68,13 +68,9 @@ get_districts <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {
   gpkg_file <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
   suppressMessages(invisible(file.rename(from = gpkg_file, to = tolower(gpkg_file))))
 
-  if (file.exists(gpkg_file)) {
-    new_gpkg_file <- file.path(dirname(gpkg_file), tolower(basename(gpkg_file)))
-    file.rename(from = gpkg_file, to = new_gpkg_file)
-  } else {
+  if (length(gpkg_file) == 0) {
     stop("No .gpkg file was found after extraction. Check the extracted files.")
   }
-
   sf_data <- sf::st_read(gpkg_file, quiet = quiet)
 
   return(sf_data)
