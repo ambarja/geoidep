@@ -56,19 +56,29 @@ get_districts <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {
   extract_dir <- file.path(tempdir(), "geoidep_data")
   dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
   archive::archive_extract(archive = dsn, dir = extract_dir)
-  gpkg_file <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
-  suppressMessages(invisible(file.rename(from = gpkg_file, to = tolower(gpkg_file))))
+  gpkg_files <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
 
-  # Validate if .gpkg file exists
-  if (length(gpkg_file) == 0) {
-    stop("No .gpkg file was found after extraction")
+  if (length(gpkg_files) == 0) {
+    stop("No .gpkg file was found after extraction in: ", extract_dir)
+  }
+
+  gpkg_file <- dplyr::first(gpkg_files)
+
+  if (!file.exists(gpkg_file)) {
+    stop("Extracted file does not exist: ", gpkg_file)
+  }
+
+  new_gpkg_file <- file.path(dirname(gpkg_file), tolower(basename(gpkg_file)))
+
+  if (!file.rename(from = gpkg_file, to = new_gpkg_file)) {
+    stop("Error renaming file from: ", gpkg_file, " to: ", new_gpkg_file)
   }
 
   if (file.exists(dsn)) {
     suppressMessages(invisible(file.remove(dsn)))
   }
 
-  sf_data <- sf::st_read(gpkg_file, quiet = quiet)
+  sf_data <- sf::st_read(new_gpkg_file, quiet = quiet)
 
   return(sf_data)
 }
