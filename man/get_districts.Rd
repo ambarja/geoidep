@@ -7,7 +7,10 @@
 get_districts(dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
-\item{dsn}{Character. Output filename with the \bold{*.gpkg} format. If missing, a temporary file is created.}
+\item{dsn}{Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
+If a directory is provided, the file will be saved as \code{distrito.gpkg} inside it.
+If \code{NULL}, a temporary file will be created.
+If the path contains multiple subdirectories, they will be created automatically if they do not exist.}
 
 \item{show_progress}{Logical. Suppress bar progress.}
 
@@ -19,7 +22,7 @@ An sf object.
 \description{
 This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
 corresponding to the \bold{official political division} of the district boundaries of Peru.
-For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{GEOINEI Platform}
+For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}
 }
 \examples{
 \donttest{

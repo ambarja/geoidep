@@ -3,7 +3,7 @@
 #' @description
 #' This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
 #' corresponding to the \bold{official political division} of the province boundaries of Peru.
-#' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}
+#' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}.
 #'
 #' @param dsn Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
 #' If a directory is provided, the file will be saved as \code{provincia.gpkg} inside it.

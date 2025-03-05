@@ -14,9 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-# geoidep
+# geoidep: Download Geographic Data Managed by Peru's Spatial Data Infrastructure
 
-<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="22%">
+<img src="man/figures/geoidep_v2.png" align="right" hspace="55" vspace="0" width="50%">
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)

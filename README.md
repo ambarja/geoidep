@@ -1,9 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# geoidep
+# geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
 
-<img src="man/figures/geoidep.svg" align="right" hspace="10" vspace="0" width="22%">
+<img src="man/figures/geoidep_v2.png" align="right" hspace="55" vspace="0" width="50%">
 
 <!-- badges: start -->
 
@@ -42,15 +42,6 @@ install.packages('geoidep')
 
 ``` r
 library(geoidep)
-#> 
-#> ── Welcome to geoidep ──────────────────────────────────────────────────────────
-#> ℹ geoidep is a wrapper that allows you to download cartographic data for Peru from R.
-#> Currently, `geoidep` supports the following providers:
-#> ✔ Geobosque
-#> ✔ INEI
-#> ✔ Midagri
-#> ✔ Sernanp
-#> ℹ For more information, please use the `get_data_sources()` function.
 ```
 
 In this example, we can identify the list of providers available in
@@ -60,27 +51,29 @@ geoidep and the layers they present.
 get_data_sources() |> 
   head()
 #> # A tibble: 6 × 7
-#>   provider category    layer           layer_can_be_actived admin_en year  link 
-#>   <chr>    <chr>       <chr>           <lgl>                <chr>    <chr> <chr>
-#> 1 INEI     General     departamento    TRUE                 Nationa… 2019  http…
-#> 2 INEI     General     provincia       TRUE                 Nationa… 2019  http…
-#> 3 INEI     General     distritos       TRUE                 Nationa… 2019  http…
-#> 4 Midagri  Agriculture vegetation_cov… TRUE                 Ministr… 2018  http…
-#> 5 Midagri  Agriculture agriculture_se… TRUE                 Ministr… 2024  http…
-#> 6 Midagri  Agriculture oil_palm_areas  TRUE                 Ministr… 2016… http…
+#>   provider  category    layer          layer_can_be_actived admin_en year  link 
+#>   <chr>     <chr>       <chr>          <lgl>                <chr>    <chr> <chr>
+#> 1 INEI      General     departamento   TRUE                 Nationa… 2019  http…
+#> 2 INEI      General     provincia      TRUE                 Nationa… 2019  http…
+#> 3 INEI      General     distritos      TRUE                 Nationa… 2019  http…
+#> 4 Midagri   Agriculture agriculture_s… TRUE                 Ministr… 2024  http…
+#> 5 Midagri   Agriculture oil_palm_areas TRUE                 Ministr… 2016… http…
+#> 6 Geobosque Forest      stock_bosque_… FALSE                Ministr… 2001… http…
 ```
 
 In summary the suppliers and the number of available layers
 
 ``` r
 get_providers() 
-#> # A tibble: 4 × 2
+#> # A tibble: 6 × 2
 #>   provider  layer_count
 #>   <fct>           <int>
 #> 1 Geobosque           5
-#> 2 INEI                3
-#> 3 Midagri             4
-#> 4 Sernanp            61
+#> 2 INEI                7
+#> 3 Midagri             2
+#> 4 Senamhi             1
+#> 5 Serfor              1
+#> 6 Sernanp            61
 ```
 
 ## Example 02: Download official INEI administrative boundaries

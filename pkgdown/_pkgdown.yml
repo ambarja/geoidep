@@ -4,8 +4,10 @@ home:
 
 template:
   bootstrap: 5
-  bslib:
-    pkgdown-navbar-bg: '#bf0909'
+  light-switch: true
+
+development:
+  mode: auto
 
 navbar:
    bg: custom

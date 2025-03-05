@@ -26,8 +26,6 @@ By offering a new approach to accessing this official data, both from technical-
 
 **However, this project is still under construction, for more information you can visit the GitHub official repository <https://github.com/ambarja/geoidep>.**
 
-<img src='../man/figures/testing.svg' width='100%'/>
-
 If you want to support this project, you can support me with a coffee for my programming moments.
 
 <center>

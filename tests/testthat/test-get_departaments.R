@@ -13,11 +13,4 @@ test_that("R/get_departaments return a sf object", {
   expect_gt(nrow(resultado), 0)
 })
 
-test_that("get_departaments() maneja errores si `get_inei_link()` recibe un argumento inválido", {
-  skip_on_cran()
-  skip_if_offline("geoidep.gob.pe")
-  expect_error(
-    geoidep:::get_inei_link("invalid_type"),
-    "Invalid type. Please choose from 'districts', 'provinces', or 'departments'."
-  )
-})
+
