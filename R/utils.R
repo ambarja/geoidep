@@ -77,7 +77,7 @@ get_sernanp_link <- \(type = NULL){
 }
 
 #' Gets the links to the INEI's basic cartographic information.
-#' @param type A string. Select only one of the following layers; ‘districts’, ‘provinces’, or ‘departments’. Defaults to NULL.
+#' @param type A string. Select only one of the following layers; ‘distrito’, ‘provincia’, or ‘departamento’. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 
@@ -89,7 +89,7 @@ get_inei_link <- \(type = NULL) {
   )
 
   if (!type %in% names(inei_links) || is.null(type)) {
-    stop("Invalid type. Please choose from 'districts', 'provinces', or 'departments'.")
+    stop("Invalid type. Please choose from 'districto', 'provincia', or 'departmento'.")
   }
 
   return(inei_links[[type]])

@@ -7,7 +7,7 @@
 get_inei_link(type = NULL)
 }
 \arguments{
-\item{type}{A string. Select only one of the following layers; ‘districts’, ‘provinces’, or ‘departments’. Defaults to NULL.}
+\item{type}{A string. Select only one of the following layers; ‘distrito’, ‘provincia’, or ‘departamento’. Defaults to NULL.}
 }
 \value{
 A string containing the URL of the requested file.

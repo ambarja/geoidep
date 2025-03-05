@@ -54,7 +54,7 @@ get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {
     stop("Error downloading the file. Check the URL or connection")
   }
 
-  extract_dir <- file.path(tempdir(), "geoidep_data")
+  extract_dir <- file.path(tempdir(), "geoidep_data_dep")
   dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
   archive::archive_extract(archive = dsn, dir = extract_dir)
   gpkg_files <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
