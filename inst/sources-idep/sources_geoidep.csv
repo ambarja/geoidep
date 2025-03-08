@@ -76,3 +76,31 @@ INEI,General,Urban Area,FALSE,National Institute of Statistics and Informatics,N
 INEI,General,Population Center,FALSE,National Institute of Statistics and Informatics,Not specified,https://geoespacial.inei.gob.pe/geoserver
 INEI,General,Block Boundary,FALSE,National Institute of Statistics and Informatics,Not specified,https://geoespacial.inei.gob.pe/geoserver
 INEI,General,Crime Reports,FALSE,National Institute of Statistics and Informatics,2023,https://geoespacial.inei.gob.pe/geoserver
+MTC,Transport,aerodromos,FALSE,Ministry of Transport and Telecommunications,2023,https://geoportal.mtc.gob.pe/
+MTC,Transport,aerodromos,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,campamentos_pvn,FALSE,Ministry of Transport and Telecommunications,2018,https://geoportal.mtc.gob.pe/
+MTC,Transport,concesiones_viales,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,emergencias_viales,FALSE,Ministry of Transport and Telecommunications,2018,https://geoportal.mtc.gob.pe/
+MTC,Transport,estaciones_pesaje,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,estaciones_ferroviarias,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,localidades_telecomunicaciones,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,puentes,FALSE,Ministry of Transport and Telecommunications,2014,https://geoportal.mtc.gob.pe/
+MTC,Transport,puntos_serpost,FALSE,Ministry of Transport and Telecommunications,2018,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_ferroviaria,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_departamental,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_departamental,FALSE,Ministry of Transport and Telecommunications,2024,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_departamental,FALSE,Ministry of Transport and Telecommunications,2023,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_nacional,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_nacional,FALSE,Ministry of Transport and Telecommunications,2023,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_nacional,FALSE,Ministry of Transport and Telecommunications,2024,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_urbana_lima_callao,FALSE,Ministry of Transport and Telecommunications,2018,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_vecinal,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,red_vial_vecinal,FALSE,Ministry of Transport and Telecommunications,2023,https://geoportal.mtc.gob.pe/
+MTC,Transport,rios_selva,FALSE,Ministry of Transport and Telecommunications,2018,https://geoportal.mtc.gob.pe/
+MTC,Transport,terminales_portuarios,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,terminales_portuarios,FALSE,Ministry of Transport and Telecommunications,2023,https://geoportal.mtc.gob.pe/
+MTC,Transport,terminales_terrestres,FALSE,Ministry of Transport and Telecommunications,2018,https://geoportal.mtc.gob.pe/
+MTC,Transport,truck_centers,FALSE,Ministry of Transport and Telecommunications,2018,https://geoportal.mtc.gob.pe/
+MTC,Transport,tuneles,FALSE,Ministry of Transport and Telecommunications,2014,https://geoportal.mtc.gob.pe/
+MTC,Transport,unidades_peaje,FALSE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
+MTC,Transport,unidades_peaje,FALSE,Ministry of Transport and Telecommunications,2023,https://geoportal.mtc.gob.pe/
