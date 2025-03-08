@@ -11,7 +11,7 @@
 #' If the path contains multiple subdirectories, they will be created automatically if they do not exist.
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
-#' @param timeout Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 10.
+#' @param timeout Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 60.
 #'
 #' @returns An sf or tibble object.
 #'
@@ -23,7 +23,7 @@
 #' }
 #' @export
 
-get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 10){
+get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60){
     primary_link <- get_inei_link("provincia")
 
     if (is.null(dsn)) {

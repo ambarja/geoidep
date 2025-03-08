@@ -4,7 +4,7 @@
 \alias{get_provinces}
 \title{Download INEI province boundaries}
 \usage{
-get_provinces(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 10)
+get_provinces(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60)
 }
 \arguments{
 \item{dsn}{Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
@@ -16,7 +16,7 @@ If the path contains multiple subdirectories, they will be created automatically
 
 \item{quiet}{Logical. Suppress info message.}
 
-\item{timeout}{Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 10.}
+\item{timeout}{Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 60.}
 }
 \value{
 An sf or tibble object.
