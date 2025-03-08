@@ -90,7 +90,7 @@ get_districts <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60)
 
   sf_data <- sf::st_read(new_gpkg_file, quiet = quiet)
   non_geom_idx <- which(!grepl("^(geom|geometry)$", names(sf_data), ignore.case = TRUE))
-  names(sf_data)[non_geom_idx] <- toupper(names(sf_data)[non_geom_idx])
+  names(sf_data)[non_geom_idx] <- tolower(names(sf_data)[non_geom_idx])
 
   return(sf_data)
 }

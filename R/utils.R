@@ -174,3 +174,48 @@ as_data_time <- \(x){
   fecha <- as.POSIXct(timestamp_s, origin = "1970-01-01", tz = "UTC")
   return(fecha)
 }
+
+#' Retrieve links to MTC for information on transport and telecomunication.
+#' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "mtc")`. Defaults to NULL.
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+get_mtc_link <- \(type = NULL){
+  mtc_layer <- c(
+    "aerodromos_2023" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_aerodromos_dic23&%20target=",
+    "aerodromos_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_aerodromos_dic22&%20target=",
+    "campamentos_pvn" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_campamento_emergencia&maxFeatures=500&%20target=",
+    "centros_acopio" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_centro_acopio&maxFeatures=500&%20target=",
+    "concesiones_viales" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=geoportal:vw_gli_ogpp_concesion_vial&maxFeatures=500&%20target=",
+    "emergencias_viales" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_emergencia_vial&maxFeatures=500&%20target=",
+    "estaciones_pesaje" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_pesajes_dic22&%20target=",
+    "estaciones_ferroviarias" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_estaciones_ferroviarias&%20target=",
+    "localidades_telecomunicaciones" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_poblado_cobertura_telecomunicacion&maxFeatures=500&%20target=",
+    "puentes" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_puente&maxFeatures=500&%20target=",
+    "puntos_serpost" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_serpost&maxFeatures=500&%20target=",
+    "red_ferroviaria" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_ferroviaria_dic22&%20target=",
+    "red_vial_departamental_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_departamental_dic22&maxFeatures=1000&%20target=",
+    "red_vial_departamental_2023" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_departamental_dic23&maxFeatures=1000&%20target=",
+    "red_vial_departamental_2024" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_departamental_dic24&maxFeatures=1000&%20target=",
+    "red_vial_nacional_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_nacional_dic22&maxFeatures=1000&%20target=",
+    "red_vial_nacional_2023" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_nacional_dic23&maxFeatures=1000&%20target=",
+    "red_vial_nacional_2024" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_nacional_dic24&maxFeatures=1000&%20target=",
+    "red_vial_vecinal_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_vecinal_dic22&maxFeatures=1000&%20target=",
+    "red_vial_vecinal_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_vecinal_dic23&maxFeatures=1000&%20target=",
+    "rios_selva" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gli_ogpp_hidrovia&maxFeatures=500&%20target=",
+    "terminales_portuarios_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_terminales_portuarios_dic22&%20target=",
+    "terminales_portuarios_2023" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_terminales_portuarios_dic23&%20target=",
+    "terminales_terrestres" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_terminal_terrestre&maxFeatures=500&%20target=",
+    "truck_centers" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_truck_center&maxFeatures=500&%20target=",
+    "tuneles" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gpt_ogpp_tunel&maxFeatures=500&%20target=",
+    "unidades_peaje_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_peajes_dic22&%20target=",
+    "unidades_peaje_2023" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_peajes_dic23&%20target="
+    )
+  if (!type %in% names(mtc_layer) || is.null(type)) {
+    stop("Invalid type. Please choose one layer according sernanp layer. More information use `get_data_sources(providers = 'mtc')`")
+  }
+
+  return(mtc_layer[[type]])
+
+}
+
+

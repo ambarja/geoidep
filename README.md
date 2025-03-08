@@ -3,8 +3,8 @@
 
 # geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
 
-<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140">
 <img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="140">
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140">
 <p align="justify">
 The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible
 way to obtain official cartographic data on various topics, such as
@@ -65,15 +65,16 @@ In summary the suppliers and the number of available layers
 
 ``` r
 get_providers() 
-#> # A tibble: 6 × 2
+#> # A tibble: 7 × 2
 #>   provider  layer_count
 #>   <fct>           <int>
 #> 1 Geobosque           5
 #> 2 INEI                7
 #> 3 Midagri             2
-#> 4 Senamhi             1
-#> 5 Serfor              1
-#> 6 Sernanp            61
+#> 4 MTC                28
+#> 5 Senamhi             1
+#> 6 Serfor              1
+#> 7 Sernanp            61
 ```
 
 ## Example 02: Download official INEI administrative boundaries
@@ -94,7 +95,7 @@ head(dep)
 #> Dimension:     XY
 #> Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125
 #> Geodetic CRS:  WGS 84
-#>   ID OBJECTID CCDD   NOMBDEP SHAPE_LENGTH SHAPE_AREA
+#>   id objectid ccdd   nombdep shape_length shape_area
 #> 1  1        1   01  AMAZONAS    13.059047   3.199147
 #> 2  2        2   02    ANCASH    11.788249   2.954697
 #> 3  3        3   03  APURIMAC     7.730154   1.765933

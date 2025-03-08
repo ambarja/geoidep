@@ -64,7 +64,7 @@ layers_available
 ```{r}
 # Region boundaries download 
 loreto_prov <- get_provinces(show_progress = FALSE) |> 
-  subset(NOMBDEP == 'LORETO')
+  subset(nombdep == 'LORETO')
 ```
 
 ```{r out.width='100%', out.height=250}
@@ -79,7 +79,7 @@ loreto_prov |>
 
 ```{r}
 # Defined Ubigeo 
-loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["CCDD"]],loreto_prov[["CCPP"]])
+loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["ccdd"]],loreto_prov[["ccpp"]])
 ```
 
 
@@ -117,7 +117,7 @@ historico_df |>
   ggplot(aes(x = anio,y = perdida)) + 
   geom_point(size = 1) + 
   geom_line() + 
-  facet_wrap(NOMBPROV~.,ncol = 3) + 
+  facet_wrap(nombprov~.,ncol = 3) + 
   theme_minimal(base_size = 5) + 
   labs(
     title = "Pérdida de bosque histórico del 2001-2023 \npara las provincias de Loreto",

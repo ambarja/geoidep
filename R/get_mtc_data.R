@@ -1,42 +1,36 @@
-#' Download INEI departmental boundaries
+#' Download the available data from MTC
 #'
 #' @description
-#' This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
-#' corresponding to the \bold{official political division} of the departament boundaries of Peru.
-#' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}.
+#' This function allows you to download the latest version of data available on the MTC geoportal.
+#' For more information, you can visit the following web page: \href{https://geoportal.mtc.gob.pe/}{MTC Geoportal}
 #'
-#' @param dsn Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
-#' If a directory is provided, the file will be saved as \code{DEPARTAMENTO.gpkg} inside it.
-#' If \code{NULL}, a temporary file will be created.
-#' If the path contains multiple subdirectories, they will be created automatically if they do not exist.
+#' @param layer Select only one from the list of available layers, for more information please use `get_data_sources(provider = "mtc")`. Defaults to NULL.
+#' @param dsn Character. Output filename with the \bold{spatial format}. If missing, a temporary file is created.
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
 #' @param timeout Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 60.
 #'
-#' @returns An sf or tibble object.
+#' @returns An sf object.
 #'
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' dep <- get_departaments(show_progress = FALSE)
-#' head(dep)
+#' library(sf)
+#' aerodromo <- get_mtc_data(layer = "aerodromos_2023" , show_progress = FALSE)
+#' head(aerodromo)
+#' plot(st_geometry(aerodromo))
 #' }
 #' @export
 
-get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60) {
-  primary_link <- get_inei_link("departamento")
+get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE, timeout = 60){
+
+  primary_link <- get_mtc_link(type = layer)
 
   if (is.null(dsn)) {
-    dsn <- tempfile(fileext = ".rar")
-  }
-  else {
-    if (!dir.exists(dsn)) {
-      dir.create(dsn, recursive = TRUE, showWarnings = FALSE)
-    }
-    dsn <- file.path(dsn, "departamento.rar")
+    dsn <- tempfile(fileext = ".gpkg")
   }
 
-  rar.download <- tryCatch({
+  data.download <- tryCatch({
     if (isTRUE(show_progress)) {
       httr::GET(
         primary_link,
@@ -56,18 +50,17 @@ get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 
       )
     }
   },error = function(e){
-    stop("Error during download:", conditionMessage(e))
-    }
+    stop("Error during download:", conditionMessage(e))}
   )
 
-
-  if (httr::http_error(rar.download)) {
+  # Check if the download was successful
+  if (httr::http_error(data.download)) {
     stop("Error downloading the file. Check the URL or connection")
   }
 
-  extract_dir <- file.path(tempdir(), "geoidep_data_dep")
+  extract_dir <- file.path(tempdir(), "geoidep_data_mtc")
   dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
-  archive::archive_extract(archive = dsn, dir = extract_dir)
+  suppressMessages(invisible(file.copy(from = dsn, to = extract_dir)))
   gpkg_files <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
 
   if (length(gpkg_files) == 0) {
@@ -97,3 +90,22 @@ get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 
   return(sf_data)
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# library(sf)
+#
+# mtc_wfs <- "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_aerodromos_dic23&%20target="
+# wfs_layers <- st_layers(mtc_wfs)

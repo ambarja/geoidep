@@ -13,7 +13,7 @@
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' amazonas <- get_departaments(show_progress = FALSE) |> subset(NOMBDEP == "AMAZONAS")
+#' amazonas <- get_departaments(show_progress = FALSE) |> subset(nombdep == "AMAZONAS")
 #' warning_point <- get_early_warning(region = amazonas, sf = TRUE, show_progress = FALSE)
 #' head(warning_point)
 #' }

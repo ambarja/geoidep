@@ -17,8 +17,8 @@ knitr::opts_chunk$set(
 
 # geoidep: Download Geographic Data Managed by Peru's Spatial Data Infrastructure
 
-<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140"> 
-<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="140">
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="140"> 
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140">
 <p align="justify">The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible way to obtain official cartographic data on various topics, such as <b>society</b>🏛️,<b> transport</b>🚗, <b>environment</b>🌱, <b>agriculture</b>🌾, <b>climate</b>⛅️,among others.This includes information provided by regional government entities and technical-scientific institutions, managed by the <b>Spatial Data Infrastructure of Peru</b>. </p> 
 
 

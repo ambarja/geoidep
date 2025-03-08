@@ -45,6 +45,10 @@ reference:
    - senamhi_alert_by_number
    - senamhi_alerts_by_year
 
+ - title: 'Download data from MTC'
+   contents:
+   - get_mtc_data
+
  - title: 'Utils'
    contents:
    - get_providers

@@ -41,7 +41,7 @@ coronel_portillo <- get_provinces(show_progress = FALSE)
 names(coronel_portillo)
 
 roi <- coronel_portillo |>
- subset(NOMBPROV == "CORONEL PORTILLO") |>
+ subset(nombprov == "CORONEL PORTILLO") |>
  st_transform(crs = 32718)
 
 oil_palm_areas <- get_midagri_data(layer = "oil_palm_areas", show_progress = FALSE) |>

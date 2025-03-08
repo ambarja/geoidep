@@ -1,5 +1,5 @@
 test_that("R/get_early_warning return a sf object", {
-  amazonas <- get_departaments(show_progress = FALSE) |> subset(NOMBDEP == "AMAZONAS")
+  amazonas <- get_departaments(show_progress = FALSE) |> subset(nombdep == "AMAZONAS")
   resultado <- geoidep::get_early_warning(region = amazonas, sf = TRUE, show_progress = FALSE)
   # Verifica que el resultado sea un objeto de clase 'sf'
   expect_s3_class(resultado, "sf")
