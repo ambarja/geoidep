@@ -52,7 +52,7 @@ For more information, you can visit the following page <a href="https://ide.inei
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_districts</span><span class="op">(</span>dsn <span class="op">=</span> <span class="cn">NULL</span>, show_progress <span class="op">=</span> <span class="cn">TRUE</span>, quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_districts</span><span class="op">(</span>dsn <span class="op">=</span> <span class="cn">NULL</span>, show_progress <span class="op">=</span> <span class="cn">TRUE</span>, quiet <span class="op">=</span> <span class="cn">TRUE</span>, timeout <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -73,6 +73,10 @@ If the path contains multiple subdirectories, they will be created automatically
 <dt id="arg-quiet">quiet<a class="anchor" aria-label="anchor" href="#arg-quiet"></a></dt>
 <dd><p>Logical. Suppress info message.</p></dd>
 
+
+<dt id="arg-timeout">timeout<a class="anchor" aria-label="anchor" href="#arg-timeout"></a></dt>
+<dd><p>Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 10.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -84,33 +88,15 @@ If the path contains multiple subdirectories, they will be created automatically
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">dist</span> <span class="op">&lt;-</span> <span class="fu">get_districts</span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in value[[3L]](cond):</span> Error during download:Timeout was reached [ide.inei.gob.pe]: Operation timed out after 10000 milliseconds with 10018396 out of 12733258 bytes received</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dist</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 12 fields</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -73.6546 ymin: -14.08649 xmax: -73.02175 ymax: -13.70798</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ID OBJECTID UBIGEO CCDD CCPP CCDI  NOMBDEP    NOMBPROV</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1        1 030220   03   02   20 APURIMAC ANDAHUAYLAS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2        2 030415   03   04   15 APURIMAC    AYMARAES</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  3        3 030409   03   04   09 APURIMAC    AYMARAES</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4        4 030214   03   02   14 APURIMAC ANDAHUAYLAS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  5        5 030206   03   02   06 APURIMAC ANDAHUAYLAS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  6        6 030404   03   04   04 APURIMAC    AYMARAES</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   NOMBDIST     CAPITAL SHAPE_LENGTH  SHAPE_AREA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      JOSE MARIA ARGUEDAS HUANCABAMBA    0.5703507 0.014648915</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   TINTAY      TINTAY    0.7063312 0.011908124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    LUCRE       LUCRE    0.5536897 0.008678206</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 SAN MIGUEL DE CHACCRAMPA  CHACCRAMPA    0.4027041 0.007104229</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                  HUAYANA     HUAYANA    0.5634482 0.007974308</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6               CHAPIMARCA  CHAPIMARCA    0.6308316 0.017072690</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             geom</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 MULTIPOLYGON (((-73.37071 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 MULTIPOLYGON (((-73.17529 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 MULTIPOLYGON (((-73.24364 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 MULTIPOLYGON (((-73.63057 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 MULTIPOLYGON (((-73.51096 -...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 MULTIPOLYGON (((-73.04322 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 function (x, method = "euclidean", diag = FALSE, upper = FALSE,   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     p = 2)                                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 {                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     if (!is.na(pmatch(method, "euclidian")))                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         method &lt;- "euclidean"                                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     METHODS &lt;- c("euclidean", "maximum", "manhattan", "canberra", </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
