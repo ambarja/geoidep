@@ -11,6 +11,7 @@
 #' If the path contains multiple subdirectories, they will be created automatically if they do not exist.
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
+#' @param timeout Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 10.
 #'
 #' @returns An sf or tibble object.
 #'
@@ -22,7 +23,7 @@
 #' }
 #' @export
 
-get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {
+get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 10) {
   primary_link <- get_inei_link("departamento")
 
   if (is.null(dsn)) {
@@ -35,20 +36,30 @@ get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE) {
     dsn <- file.path(dsn, "departamento.rar")
   }
 
-  if (isTRUE(show_progress)) {
-    rar.download <- httr::GET(
-      primary_link,
-      config = httr::config(ssl_verifypeer = FALSE),
-      httr::write_disk(dsn, overwrite = TRUE),
-      httr::progress()
-    )
-  } else {
-    rar.download <- httr::GET(
-      primary_link,
-      config = httr::config(ssl_verifypeer = FALSE),
-      httr::write_disk(dsn, overwrite = TRUE)
-    )
-  }
+  rar.download <- tryCatch({
+    if (isTRUE(show_progress)) {
+      httr::GET(
+        primary_link,
+        config = c(
+          httr::config(ssl_verifypeer = FALSE),
+          httr::timeout(seconds = timeout)),
+        httr::write_disk(dsn, overwrite = TRUE),
+        httr::progress()
+      )
+    } else {
+      httr::GET(
+        primary_link,
+        config = c(
+          httr::config(ssl_verifypeer = FALSE),
+          httr::timeout(seconds = timeout)),
+        httr::write_disk(dsn, overwrite = TRUE)
+      )
+    }
+  },error = function(e){
+    stop("Error during download:", conditionMessage(e))
+    }
+  )
+
 
   if (httr::http_error(rar.download)) {
     stop("Error downloading the file. Check the URL or connection")
