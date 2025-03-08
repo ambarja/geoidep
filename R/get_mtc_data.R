@@ -89,23 +89,3 @@ get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE,
 
   return(sf_data)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# library(sf)
-#
-# mtc_wfs <- "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_aerodromos_dic23&%20target="
-# wfs_layers <- st_layers(mtc_wfs)
