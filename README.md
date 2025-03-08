@@ -3,8 +3,17 @@
 
 # geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
 
-<img src="man/figures/geoidep_v2.png" align="right" hspace="55" vspace="0" width="50%">
-
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140">
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="140">
+<p align="justify">
+The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible
+way to obtain official cartographic data on various topics, such as
+<b>society</b>🏛️,<b> transport</b>🚗, <b>environment</b>🌱,
+<b>agriculture</b>🌾, <b>climate</b>⛅️,among others.This includes
+information provided by regional government entities and
+technical-scientific institutions, managed by the <b>Spatial Data
+Infrastructure of Peru</b>.
+</p>
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
@@ -14,16 +23,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
 <!-- badges: end -->
 
-The goal of **geoidep**📦 is to offers R users an easy and accessible
-way to obtain official cartographic data on various topics, such as
-**society** 🏛️, **transport**🚗, **environment**🌱, **agriculture**🌾,
-**climate**⛅️,among others.
-
-This includes information provided by regional government entities and
-technical-scientific institutions, managed by the **Spatial Data
-Infrastructure of Peru**.
-
-## Installation
+## Installation R
 
 You can install the development version of geoidep like so:
 
@@ -94,7 +94,7 @@ head(dep)
 #> Dimension:     XY
 #> Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125
 #> Geodetic CRS:  WGS 84
-#>   id OBJECTID CCDD   NOMBDEP SHAPE_Length SHAPE_Area
+#>   ID OBJECTID CCDD   NOMBDEP SHAPE_LENGTH SHAPE_AREA
 #> 1  1        1   01  AMAZONAS    13.059047   3.199147
 #> 2  2        2   02    ANCASH    11.788249   2.954697
 #> 3  3        3   03  APURIMAC     7.730154   1.765933
