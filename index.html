@@ -58,7 +58,7 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="geoidep-download-geographic-data-managed-by-perus-spatial-data-infrastructure">geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure<a class="anchor" aria-label="anchor" href="#geoidep-download-geographic-data-managed-by-perus-spatial-data-infrastructure"></a>
 </h1></div>
-<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140"><img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="140"><p align="justify">
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="140"><img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140"><p align="justify">
 The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible way to obtain official cartographic data on various topics, such as <b>society</b>🏛️,<b> transport</b>🚗, <b>environment</b>🌱, <b>agriculture</b>🌾, <b>climate</b>⛅️,among others.This includes information provided by regional government entities and technical-scientific institutions, managed by the <b>Spatial Data Infrastructure of Peru</b>.
 </p>
 <!-- badges: start -->
@@ -95,15 +95,16 @@ The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible way t
 <p>In summary the suppliers and the number of available layers</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_providers.html">get_providers</a></span><span class="op">(</span><span class="op">)</span> </span>
-<span><span class="co">#&gt; # A tibble: 6 × 2</span></span>
+<span><span class="co">#&gt; # A tibble: 7 × 2</span></span>
 <span><span class="co">#&gt;   provider  layer_count</span></span>
 <span><span class="co">#&gt;   &lt;fct&gt;           &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1 Geobosque           5</span></span>
 <span><span class="co">#&gt; 2 INEI                7</span></span>
 <span><span class="co">#&gt; 3 Midagri             2</span></span>
-<span><span class="co">#&gt; 4 Senamhi             1</span></span>
-<span><span class="co">#&gt; 5 Serfor              1</span></span>
-<span><span class="co">#&gt; 6 Sernanp            61</span></span></code></pre></div>
+<span><span class="co">#&gt; 4 MTC                28</span></span>
+<span><span class="co">#&gt; 5 Senamhi             1</span></span>
+<span><span class="co">#&gt; 6 Serfor              1</span></span>
+<span><span class="co">#&gt; 7 Sernanp            61</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example-02-download-official-inei-administrative-boundaries">Example 02: Download official INEI administrative boundaries<a class="anchor" aria-label="anchor" href="#example-02-download-official-inei-administrative-boundaries"></a>
@@ -119,7 +120,7 @@ The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible way t
 <span><span class="co">#&gt; Dimension:     XY</span></span>
 <span><span class="co">#&gt; Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125</span></span>
 <span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
-<span><span class="co">#&gt;   ID OBJECTID CCDD   NOMBDEP SHAPE_LENGTH SHAPE_AREA</span></span>
+<span><span class="co">#&gt;   id objectid ccdd   nombdep shape_length shape_area</span></span>
 <span><span class="co">#&gt; 1  1        1   01  AMAZONAS    13.059047   3.199147</span></span>
 <span><span class="co">#&gt; 2  2        2   02    ANCASH    11.788249   2.954697</span></span>
 <span><span class="co">#&gt; 3  3        3   03  APURIMAC     7.730154   1.765933</span></span>
