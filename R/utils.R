@@ -142,7 +142,7 @@ as_data_time <- \(x){
 }
 
 #' Retrieve links to MTC for information on transport and telecomunication.
-#' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "mtc")`. Defaults to NULL.
+#' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "MTC")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 get_mtc_link <- \(type = NULL){
@@ -177,11 +177,27 @@ get_mtc_link <- \(type = NULL){
     "unidades_peaje_2023" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_peajes_dic23&%20target="
     )
   if (!type %in% names(mtc_layer) || is.null(type)) {
-    stop("Invalid type. Please choose one layer according sernanp layer. More information use `get_data_sources(providers = 'mtc')`")
+    stop("Invalid type. Please choose one layer according sernanp layer. More information use `get_data_sources(providers = 'MTC')`")
   }
 
   return(mtc_layer[[type]])
 
 }
 
+#' Retrieve links to INAIGEM for information on Mountain High Ecosystems.
+#' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "INAIGEM")`. Defaults to NULL.
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+
+get_inaigem_link <-  \(type = NULL){
+  inaigem_layer <- c(
+    "glaciares_1989" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_1989/FeatureServer/22/query",
+    "glaciares_2018" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_2018/FeatureServer/20/query",
+    "glaciares_2020" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_2020/FeatureServer/20/query")
+  if (!type %in% names(inaigem_layer) || is.null(type)) {
+    stop("Invalid type. Please choose one layer according INAIGEM layer. More information use `get_data_sources(providers = 'INAIGEM')`")
+  }
+
+  return(inaigem_layer[[type]])
+}
 

@@ -65,16 +65,17 @@ In summary the suppliers and the number of available layers
 
 ``` r
 get_providers() 
-#> # A tibble: 7 × 2
+#> # A tibble: 8 × 2
 #>   provider  layer_count
 #>   <fct>           <int>
 #> 1 Geobosque           5
-#> 2 INEI                7
-#> 3 Midagri             2
-#> 4 MTC                28
-#> 5 Senamhi             1
-#> 6 Serfor              1
-#> 7 Sernanp            61
+#> 2 INAIGEM             3
+#> 3 INEI                7
+#> 4 Midagri             2
+#> 5 MTC                27
+#> 6 Senamhi             1
+#> 7 Serfor              1
+#> 8 Sernanp            61
 ```
 
 ## Example 02: Download official INEI administrative boundaries
