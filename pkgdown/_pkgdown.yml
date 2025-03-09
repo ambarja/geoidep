@@ -49,6 +49,10 @@ reference:
    contents:
    - get_mtc_data
 
+   - title: 'Download data from INAIGEM'
+   contents:
+   - get_inaigem_data
+
  - title: 'Utils'
    contents:
    - get_providers
