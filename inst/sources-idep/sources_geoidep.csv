@@ -103,3 +103,6 @@ MTC,Transport,truck_centers,TRUE,Ministry of Transport and Telecommunications,20
 MTC,Transport,tuneles,TRUE,Ministry of Transport and Telecommunications,2014,https://geoportal.mtc.gob.pe/
 MTC,Transport,unidades_peaje,TRUE,Ministry of Transport and Telecommunications,2022,https://geoportal.mtc.gob.pe/
 MTC,Transport,unidades_peaje,TRUE,Ministry of Transport and Telecommunications,2023,https://geoportal.mtc.gob.pe/
+INAIGEM,Enviroment,glaciares_1989,TRUE,Ministry of Environment,1989,https://geoportal.inaigem.gob.pe/
+INAIGEM,Enviroment,glaciares_2018,TRUE,Ministry of Environment,2018,https://geoportal.inaigem.gob.pe/
+INAIGEM,Enviroment,glaciares_2020,TRUE,Ministry of Environment,2018,https://geoportal.inaigem.gob.pe/
