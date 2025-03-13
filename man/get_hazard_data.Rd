@@ -4,7 +4,7 @@
 \alias{get_hazard_data}
 \title{Downloading available hazard data from the SIGRID platform}
 \usage{
-get_hazard_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE)
+get_hazard_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
 \item{layer}{Select only one from the list of available layers, for more information please use `get_data_sources(provider = "SIGRID")`. Defaults to NULL.}

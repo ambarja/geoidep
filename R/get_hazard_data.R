@@ -21,7 +21,7 @@
 #' }
 #' @export
 
-get_hazard_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE){
+get_hazard_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE){
 
   primary_link <- get_hazard_link(type = layer)
 
@@ -52,6 +52,5 @@ get_hazard_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FAL
   }
 
   sf_data <- sf::st_read(dsn, quiet = quiet)
-
   return(sf_data)
 }
