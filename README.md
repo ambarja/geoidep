@@ -3,8 +3,8 @@
 
 # geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
 
-<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="140">
-<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140">
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="120" style="margin-left: 5px;margin-right: 5px;">
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="120" style="margin-left: 5px;margin-right: 5px;">
 <p align="justify">
 The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible
 way to obtain official cartographic data on various topics, such as
