@@ -27,7 +27,7 @@ get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 
   primary_link <- get_inei_link("departamento")
 
   if (is.null(dsn)) {
-    dsn <- tempfile(fileext = ".rar")
+    dsn <-  tempfile(pattern = "departamento", fileext = ".rar")
   }
   else {
     if (!dir.exists(dsn)) {
@@ -64,8 +64,7 @@ get_departaments <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 
   if (httr::http_error(rar.download)) {
     stop("Error downloading the file. Check the URL or connection")
   }
-
-  extract_dir <- file.path(tempdir(), "geoidep_data_dep")
+  extract_dir <- file.path(tempdir(), paste0("geoidep_data_","departamento"))
   dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
   archive::archive_extract(archive = dsn, dir = extract_dir)
   gpkg_files <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))

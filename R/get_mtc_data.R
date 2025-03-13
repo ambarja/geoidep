@@ -22,12 +22,12 @@
 #' }
 #' @export
 
-get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE, timeout = 60){
+get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60){
 
   primary_link <- get_mtc_link(type = layer)
 
   if (is.null(dsn)) {
-    dsn <- tempfile(fileext = ".gpkg")
+    dsn <- tempfile(pattern = layer, fileext = ".gpkg")
   }
 
   data.download <- tryCatch({
@@ -58,7 +58,7 @@ get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE,
     stop("Error downloading the file. Check the URL or connection")
   }
 
-  extract_dir <- file.path(tempdir(), "geoidep_data_mtc")
+  extract_dir <- file.path(tempdir(), paste0("geoidep_data_mtc_", layer))
   dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
   suppressMessages(invisible(file.copy(from = dsn, to = extract_dir)))
   gpkg_files <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
@@ -86,6 +86,7 @@ get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE,
   sf_data <- sf::st_read(new_gpkg_file, quiet = quiet)
   non_geom_idx <- which(!grepl("^(geom|geometry)$", names(sf_data), ignore.case = TRUE))
   names(sf_data)[non_geom_idx] <- tolower(names(sf_data)[non_geom_idx])
+  sf::st_crs(sf_data) <- 4326
 
   return(sf_data)
 }

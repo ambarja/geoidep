@@ -141,7 +141,7 @@ as_data_time <- \(x){
   return(fecha)
 }
 
-#' Retrieve links to MTC for information on transport and telecomunication.
+#' Retrieve the links to MTC for information on transport and telecomunication.
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "MTC")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
@@ -164,7 +164,6 @@ get_mtc_link <- \(type = NULL){
     "red_vial_departamental_2024" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_departamental_dic24&maxFeatures=1000&%20target=",
     "red_vial_nacional_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_nacional_dic22&maxFeatures=1000&%20target=",
     "red_vial_nacional_2023" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_nacional_dic23&maxFeatures=1000&%20target=",
-    "red_vial_nacional_2024" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_nacional_dic24&maxFeatures=1000&%20target=",
     "red_vial_vecinal_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_vecinal_dic22&maxFeatures=1000&%20target=",
     "red_vial_vecinal_2022" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=pe_mtc_018_red_vial_vecinal_dic23&maxFeatures=1000&%20target=",
     "rios_selva" = "https://swmapas.mtc.gob.pe:8443/geoserver/geoportal/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=gli_ogpp_hidrovia&maxFeatures=500&%20target=",
@@ -184,7 +183,7 @@ get_mtc_link <- \(type = NULL){
 
 }
 
-#' Retrieve links to INAIGEM for information on Mountain High Ecosystems.
+#' Retrieve the links to INAIGEM for information on Mountain High Ecosystems.
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "INAIGEM")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
@@ -193,7 +192,7 @@ get_inaigem_link <-  \(type = NULL){
   inaigem_layer <- c(
     "glaciares_1989" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_1989/FeatureServer/22/query",
     "glaciares_2018" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_2018/FeatureServer/20/query",
-    "glaciares_2020" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_2020/FeatureServer/20/query")
+    "glaciares_2020" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_2020/FeatureServer/0/query")
   if (!type %in% names(inaigem_layer) || is.null(type)) {
     stop("Invalid type. Please choose one layer according INAIGEM layer. More information use `get_data_sources(providers = 'INAIGEM')`")
   }
@@ -201,3 +200,18 @@ get_inaigem_link <-  \(type = NULL){
   return(inaigem_layer[[type]])
 }
 
+#' Retrieve the links of the SIGRID for information on Disaster Risk Management.
+#' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "INAIGEM")`. Defaults to NULL.
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+
+get_sigrid_link <-  \(type = NULL){
+  peligros_layer <- c(
+    "inundacion_inventario" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5010100/query"
+    )
+  if (!type %in% names(peligros_layer) || is.null(type)) {
+    stop("Invalid type. Please choose one layer according INAIGEM layer. More information use `get_data_sources(providers = 'SIGRID')`")
+  }
+
+  return(peligros_layer[[type]])
+}

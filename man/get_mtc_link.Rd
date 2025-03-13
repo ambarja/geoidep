@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{get_mtc_link}
 \alias{get_mtc_link}
-\title{Retrieve links to MTC for information on transport and telecomunication.}
+\title{Retrieve the links to MTC for information on transport and telecomunication.}
 \usage{
 get_mtc_link(type = NULL)
 }
@@ -13,6 +13,6 @@ get_mtc_link(type = NULL)
 A string containing the URL of the requested file.
 }
 \description{
-Retrieve links to MTC for information on transport and telecomunication.
+Retrieve the links to MTC for information on transport and telecomunication.
 }
 \keyword{internal}

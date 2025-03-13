@@ -8,7 +8,7 @@ get_mtc_data(
   layer = NULL,
   dsn = NULL,
   show_progress = TRUE,
-  quiet = FALSE,
+  quiet = TRUE,
   timeout = 60
 )
 }
