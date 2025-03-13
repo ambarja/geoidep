@@ -1,7 +1,7 @@
-#' Download the available data from SIGRID
+#' Downloading available hazard data from the SIGRID platform
 #'
 #' @description
-#' This function allows you to download the latest version of data available on the SIGRID geoportal.
+#' This function allows you to download the latest version of the harzards data available on the SIGRID geoportal.
 #' For more information, you can visit the following web page: \href{https://sigrid.cenepred.gob.pe/sigridv3/}{SIGRID Geoportal}
 #'
 #' @param layer Select only one from the list of available layers, for more information please use `get_data_sources(provider = "mtc")`. Defaults to NULL.
@@ -15,15 +15,15 @@
 #' \donttest{
 #' library(geoidep)
 #' library(sf)
-#' inundaciones <- get_sigrid_data(layer = "inundacion_inventario" , show_progress = FALSE)
+#' inundaciones <- get_hazard_data(layer = "inundacion_inventario" , show_progress = FALSE)
 #' head(inundaciones)
 #' plot(st_geometry(inundaciones))
 #' }
 #' @export
 
-get_sigrid_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE){
+get_hazard_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE){
 
-  primary_link <- get_sigrid_link(type = layer)
+  primary_link <- get_hazard_link(type = layer)
 
   if (is.null(dsn)) {
     dsn <- tempfile(fileext = ".geojson")

@@ -205,7 +205,7 @@ get_inaigem_link <-  \(type = NULL){
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 
-get_sigrid_link <-  \(type = NULL){
+get_hazard_link <-  \(type = NULL){
   peligros_layer <- c(
     "inundacion_inventario" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5010100/query"
     )
