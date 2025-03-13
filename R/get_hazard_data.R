@@ -4,7 +4,7 @@
 #' This function allows you to download the latest version of the harzards data available on the SIGRID geoportal.
 #' For more information, you can visit the following web page: \href{https://sigrid.cenepred.gob.pe/sigridv3/}{SIGRID Geoportal}
 #'
-#' @param layer Select only one from the list of available layers, for more information please use `get_data_sources(provider = "mtc")`. Defaults to NULL.
+#' @param layer Select only one from the list of available layers, for more information please use `get_data_sources(provider = "SIGRID")`. Defaults to NULL.
 #' @param dsn Character. Output filename with the \bold{spatial format}. If missing, a temporary file is created.
 #' @param show_progress Logical. Suppress bar progress.
 #' @param quiet Logical. Suppress info message.
