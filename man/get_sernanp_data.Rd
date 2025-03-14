@@ -4,7 +4,7 @@
 \alias{get_sernanp_data}
 \title{Download the available data from Sernanp}
 \usage{
-get_sernanp_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE)
+get_sernanp_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
 \item{layer}{Select only one from the list of available layers, for more information please use `get_data_sources(provider = "sernanp")`. Defaults to NULL.}

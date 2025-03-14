@@ -22,7 +22,7 @@
 #' }
 #' @export
 
-get_inaigem_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE, timeout = 60){
+get_inaigem_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60){
 
   primary_link <- get_inaigem_link(type = layer)
 

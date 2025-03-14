@@ -20,7 +20,7 @@
 #' }
 #' @export
 
-get_sernanp_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = FALSE){
+get_sernanp_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE){
 
   primary_link <- get_sernanp_link(type = layer)
 
