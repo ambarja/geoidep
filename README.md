@@ -3,6 +3,13 @@
 
 # geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Codecov test
+coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
+<!-- badges: end -->
 <img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="124" style="margin-left: 5px;margin-right: 5px;">
 <img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="124" style="margin-left: 5px;margin-right: 5px;">
 <p align="justify">
@@ -17,14 +24,7 @@ Infrastructure of Peru</b>.
 
 The package is currently available in **R** and Python (coming soon).
 
-<!-- badges: start -->
-
-[![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![Codecov test
-coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
-<!-- badges: end -->
+<hr>
 
 ## Installation R
 
@@ -45,6 +45,18 @@ install.packages('geoidep')
 
 ``` r
 library(geoidep)
+```
+
+``` r
+── Welcome to geoidep ───────────────────────────────────────────────────────────────────
+ℹ geoidep is a wrapper that enables you to download cartographic data for Peru directly from R.
+ℹ Currently, `geoidep` supports data from the following providers:
+✔ Geobosque
+✔ INAIGEM
+✔ INEI
+✔ Midagri
+✔ and more!
+ℹ For more information, please use the `get_data_sources()` function.
 ```
 
 In this example, we can identify the list of providers available in
