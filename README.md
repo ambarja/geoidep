@@ -86,14 +86,14 @@ get_providers()
 #>   provider  layer_count
 #>   <fct>           <int>
 #> 1 Geobosque           5
-#> 2 INAIGEM             3
+#> 2 INAIGEM             5
 #> 3 INEI                7
 #> 4 Midagri             2
 #> 5 MTC                26
 #> 6 Senamhi             1
 #> 7 Serfor              1
-#> 8 Sernanp            61
-#> 9 SIGRID              1
+#> 8 Sernanp            31
+#> 9 SIGRID              2
 ```
 
 ## Example 02: Download official INEI administrative boundaries
