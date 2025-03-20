@@ -7,7 +7,7 @@
 get_heat_spot_link(type = NULL)
 }
 \arguments{
-\item{type}{A string. Only one layer; `heat_spot`}
+\item{type}{A string. Only one layer; \code{heat_spot}}
 }
 \value{
 A string containing the URL of the requested file.

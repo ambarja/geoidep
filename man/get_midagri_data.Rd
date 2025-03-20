@@ -14,20 +14,24 @@ get_midagri_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 \item{show_progress}{Logical. If TRUE, displays a progress bar during the download.}
 
 \item{quiet}{Logical. If TRUE, suppresses informational messages.}
+
+\item{...}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+Available layers are:
+\itemize{
+\item \bold{agriculture_sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
+\item \bold{oil_palm_areas:} Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.
+}}
 }
 \value{
-An `sf` object containing the downloaded geographic data.
+An \code{sf} object containing the downloaded geographic data.
 }
 \description{
 This function allows you to download the latest version of MIDAGRI geographic data.
 For more information you can visit the following page  \href{https://siea.midagri.gob.pe/}{Midagri Platform}.
 }
 \details{
-Available layers are:
-\itemize{
-  \item \bold{agriculture_sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.
-  \item \bold{oil_palm_areas:} Polygons representing areas cultivated with oil palm in Peru for the period 2016 to 2020.
-}
+\strong{Note:} This function is experimental and its API may change in future versions.
 }
 \examples{
 \donttest{

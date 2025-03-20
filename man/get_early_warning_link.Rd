@@ -7,7 +7,7 @@
 get_early_warning_link(type = NULL)
 }
 \arguments{
-\item{type}{A string. Only one layer; `warning_last_week`}
+\item{type}{A string. Only one layer; \code{warning_last_week}}
 }
 \value{
 A string containing the URL of the requested file.

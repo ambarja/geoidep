@@ -13,8 +13,8 @@
 #' @examples
 #' \donttest{
 #' library(geoidep)
-#' amazonas <- get_departaments(show_progress = FALSE) |> subset(nombdep == "AMAZONAS")
-#' warning_point <- get_early_warning(region = amazonas, sf = TRUE, show_progress = FALSE)
+#' loreto <- get_departaments(show_progress = FALSE) |> subset(nombdep == "LORETO")
+#' warning_point <- get_early_warning(region = loreto, sf = TRUE, show_progress = FALSE)
 #' head(warning_point)
 #' }
 #' @export
@@ -72,7 +72,10 @@ get_early_warning <- \(region, sf = TRUE, show_progress = TRUE) {
   tidydata <- tidydata[["datos"]]
   names(tidydata) <- gsub("_$", "", names(tidydata))
 
-  # Format the final data and return
+  if (length(unlist(tidydata)) == 0) {
+    cli::cli_abort("No coordinate points corresponding to the latest deforestation alerts detected by {.strong Geobosques} have been found.")
+  }
+
   geobosque <- tidydata |>
     as.data.frame() |>
     dplyr::mutate_if(is.character, as.numeric)

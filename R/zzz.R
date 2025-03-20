@@ -12,7 +12,7 @@
     } else character(),"and more!")
 
     for (provider in providers) {
-      cli::cli_alert_success(provider)
+      cli::cli_li("{.strong {provider}}")
     }
 
     cli::cli_alert_info("For more information, please use the `get_data_sources()` function.")

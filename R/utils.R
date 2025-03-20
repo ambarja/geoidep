@@ -1,3 +1,16 @@
+#' Reading a csv containing geoidep resources
+#' @importFrom utils read.csv
+#' @keywords internal
+get_data <- \(){
+  read.csv("https://raw.githubusercontent.com/ambarja/geoidep/main/inst/sources-idep/sources_geoidep.csv")
+}
+
+#' Global variables for get_early_warning
+#' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
+#' @name global-variables
+#' @keywords internal
+utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data"))
+
 #' Retrieve links to SERNANP for information on natural protected areas.
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "sernanp")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
@@ -20,12 +33,16 @@ get_sernanp_link <- \(type = NULL){
     "reserva_biosfera_transfronterizo",
     "diagnostico_recursos",
     "planes_manejo_recursos",
+    "acuiferos",
+    "unidades_hidrograficas",
+    "autoridad_local_agua",
     "reservas_indigenas",
     "cc_pueblos_indigenas",
     "cn_pueblos_indigenas",
     "reservas_piaci",
     "clasificacion_climatica",
     "red_estaciones",
+    "bosque_locales",
     "ecosistemas_fragiles",
     "bosque_produccion_permanente",
     "bosques_protectores",
@@ -61,13 +78,6 @@ get_inei_link <- \(type = NULL) {
   return(inei_links[[type]])
 }
 
-#' Reading a csv containing geoidep resources
-#' @importFrom utils read.csv
-#' @keywords internal
-get_data <- \(){
-  read.csv("https://raw.githubusercontent.com/ambarja/geoidep/main/inst/sources-idep/sources_geoidep.csv")
-}
-
 #' MIDAGRI links for obtaining cartographic information
 #' @param type A string. Select only one of the following layers; 'vegetation cover', 'agriculture sector', 'oil palm'. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
@@ -82,7 +92,6 @@ get_midagri_link <- \(type = NULL){
   }
   return(midagri_link[[type]])
 }
-
 
 #' Geobosque API that returns data on forest stock, forest loss, forest loss by ranges for a given department, province and district.
 #' @param type A string. Select only one of the following layers; 'dist', 'pro', 'dep'. Defaults to NULL.
@@ -124,12 +133,6 @@ get_heat_spot_link <- \(type = NULL){
   }
   return(serfor_heat_spot_link[[type]])
 }
-
-#' Global variables for get_early_warning
-#' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
-#' @name global-variables
-#' @keywords internal
-utils::globalVariables(c("X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data"))
 
 #' Time format units
 #' This code transforms the time from milliseconds to a calendar date format.
@@ -192,7 +195,10 @@ get_inaigem_link <-  \(type = NULL){
   inaigem_layer <- c(
     "glaciares_1989" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_1989/FeatureServer/22/query",
     "glaciares_2018" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_2018/FeatureServer/20/query",
-    "glaciares_2020" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_2020/FeatureServer/0/query")
+    "glaciares_2020" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Glaciares_2020/FeatureServer/0/query",
+    "glaciares_2023" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/Inventario_Nacional_de_Glaciares_y_Lagunas_de_Origen_Glaciar_Actualizado_al_a%c3%b1o_2020/FeatureServer/1/query",
+    "lagunas_con_riesgo_desborde" = "https://services6.arcgis.com/c9GFTG11debu0wsH/ArcGIS/rest/services/LGRD2024_/FeatureServer/0/query")
+
   if (!type %in% names(inaigem_layer) || is.null(type)) {
     stop("Invalid type. Please choose one layer according INAIGEM layer. More information use `get_data_sources(providers = 'INAIGEM')`")
   }
@@ -207,7 +213,8 @@ get_inaigem_link <-  \(type = NULL){
 
 get_hazard_link <-  \(type = NULL){
   peligros_layer <- c(
-    "inundacion_inventario" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5010100/query"
+    "inundacion_inventario" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5010100/query",
+    "movimiento_masa_inventario" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5020100/query"
     )
   if (!type %in% names(peligros_layer) || is.null(type)) {
     stop("Invalid type. Please choose one layer according INAIGEM layer. More information use `get_data_sources(providers = 'SIGRID')`")

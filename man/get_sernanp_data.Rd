@@ -7,7 +7,7 @@
 get_sernanp_data(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE)
 }
 \arguments{
-\item{layer}{Select only one from the list of available layers, for more information please use `get_data_sources(provider = "sernanp")`. Defaults to NULL.}
+\item{layer}{Select only one from the list of available layers, for more information please use \code{get_data_sources(provider = "sernanp")}. Defaults to NULL.}
 
 \item{dsn}{Character. Output filename with the \bold{spatial format}. If missing, a temporary file is created.}
 

@@ -10,6 +10,9 @@
 #' @param quiet Logical. If TRUE, suppresses informational messages.
 #'
 #' @details
+#' **Note:** This function is experimental and its API may change in future versions.
+#' @param ... `r lifecycle::badge("deprecated")`
+#'
 #' Available layers are:
 #' \itemize{
 #'   \item \bold{agriculture_sector:} Polygons representing the new national register of agricultural statistical sectors for the year 2024.

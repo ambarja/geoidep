@@ -9,12 +9,12 @@ get_early_warning(region, sf = TRUE, show_progress = TRUE)
 \arguments{
 \item{region}{A string Specifies the unique geographical code of interest.}
 
-\item{sf}{Logical. Indicates whether to return the data as an `sf` object.}
+\item{sf}{Logical. Indicates whether to return the data as an \code{sf} object.}
 
 \item{show_progress}{Logical. If TRUE, shows a progress bar during download.}
 }
 \value{
-A tibble or sf object, depending on the value of `sf`.
+A tibble or sf object, depending on the value of \code{sf}.
 }
 \description{
 This function allows you to download deforestation alert information detected by Geobosque
@@ -24,8 +24,8 @@ For more details, please visit the following website: \href{https://geobosques.m
 \examples{
 \donttest{
 library(geoidep)
-amazonas <- get_departaments(show_progress = FALSE) |> subset(nombdep == "AMAZONAS")
-warning_point <- get_early_warning(region = amazonas, sf = TRUE, show_progress = FALSE)
+loreto <- get_departaments(show_progress = FALSE) |> subset(nombdep == "LORETO")
+warning_point <- get_early_warning(region = loreto, sf = TRUE, show_progress = FALSE)
 head(warning_point)
 }
 }

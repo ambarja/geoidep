@@ -7,7 +7,7 @@
 get_data_sources(query = NULL)
 }
 \arguments{
-\item{query}{A string. Default is NULL. List of available providers. For more details, use the `get_providers` function.}
+\item{query}{A string. Default is NULL. List of available providers. For more details, use the \code{get_providers} function.}
 }
 \value{
 A tibble object.

@@ -35,7 +35,7 @@ test_that("get_sernanp_link returns the correct URL or raises an error", {
 
   expect_equal(
     get_sernanp_link("ecorregiones_cdc"),
-    "https://geoservicios.sernanp.gob.pe/arcgis/rest/services/sernanp_visor/servicio_descarga/MapServer/27/query"
+    "https://geoservicios.sernanp.gob.pe/arcgis/rest/services/sernanp_visor/servicio_descarga/MapServer/31/query"
   )
 
   expect_error(

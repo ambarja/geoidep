@@ -7,7 +7,7 @@
 get_mtc_link(type = NULL)
 }
 \arguments{
-\item{type}{A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "MTC")`. Defaults to NULL.}
+\item{type}{A string. Select only one from the list of available layers, for more information please use \code{get_data_sources(provider = "MTC")}. Defaults to NULL.}
 }
 \value{
 A string containing the URL of the requested file.

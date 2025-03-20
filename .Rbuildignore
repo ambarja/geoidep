@@ -11,3 +11,5 @@
 .docs/*
 ^doc$
 ^ideas$
+^\.circleci$
+^\.circleci/config\.yml$

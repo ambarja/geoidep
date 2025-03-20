@@ -24,9 +24,9 @@ For more information, you can visit the following website: \href{https://geobosq
 \details{
 Available layers are:
 \itemize{
-  \item \bold{stock_bosque_perdida_distrito:} Returns data on forest stock, forest loss, rank loss for a given district.
-  \item \bold{stock_bosque_perdida_provincia:} Returns data on forest stock, forest loss, rank loss for a given province.
-  \item \bold{stock_bosque_perdida_departamento:} Returns data on forest stock, forest loss, rank loss for a given region.
+\item \bold{stock_bosque_perdida_distrito:} Returns data on forest stock, forest loss, rank loss for a given district.
+\item \bold{stock_bosque_perdida_provincia:} Returns data on forest stock, forest loss, rank loss for a given province.
+\item \bold{stock_bosque_perdida_departamento:} Returns data on forest stock, forest loss, rank loss for a given region.
 }
 }
 \examples{
