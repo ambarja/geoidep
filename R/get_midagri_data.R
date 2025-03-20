@@ -10,8 +10,7 @@
 #' @param quiet Logical. If TRUE, suppresses informational messages.
 #'
 #' @details
-#' **Note:** This function is experimental and its API may change in future versions.
-#' @param ... `r lifecycle::badge("deprecated")`
+#' **Note:** `r lifecycle::badge("deprecated")`. This function is experimental and its API may change in future versions.
 #'
 #' Available layers are:
 #' \itemize{
