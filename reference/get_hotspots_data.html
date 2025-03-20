@@ -79,33 +79,33 @@ For more information, please visit the following website: <a href="https://sniff
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">hot_spots</span> <span class="op">&lt;-</span> <span class="fu">get_hotspots_data</span><span class="op">(</span>show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Reading layer `file1fa4357202d3' from data source </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   `/tmp/RtmpIAxeut/file1fa4357202d3.geojson' using driver `GeoJSON'</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 129 features and 29 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Reading layer `file1fe478c12088' from data source </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   `/tmp/RtmpxQFrFA/file1fe478c12088.geojson' using driver `GeoJSON'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 277 features and 29 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -80.67886 ymin: -16.64227 xmax: -71.54703 ymax: -3.55729</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -80.7163 ymin: -16.74061 xmax: -69.10822 ymax: -3.03402</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hot_spots</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 29 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -72.73919 ymin: -16.64227 xmax: -72.7178 ymax: -16.61779</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -72.76051 ymin: -16.74061 xmax: -71.29153 ymax: -16.62221</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   OBJECTID                                          FUENTE DOCREG</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 11001597 Servicio Nacional Forestal y de Fauna Silvestre       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 11001598 Servicio Nacional Forestal y de Fauna Silvestre       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 11001599 Servicio Nacional Forestal y de Fauna Silvestre       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 11001600 Servicio Nacional Forestal y de Fauna Silvestre       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 11001601 Servicio Nacional Forestal y de Fauna Silvestre       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 11001602 Servicio Nacional Forestal y de Fauna Silvestre       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 11013191 Servicio Nacional Forestal y de Fauna Silvestre       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 11013192 Servicio Nacional Forestal y de Fauna Silvestre       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 11013193 Servicio Nacional Forestal y de Fauna Silvestre       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 11013194 Servicio Nacional Forestal y de Fauna Silvestre       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 11013195 Servicio Nacional Forestal y de Fauna Silvestre       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 11013196 Servicio Nacional Forestal y de Fauna Silvestre       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                FECREG</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-03-13 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2025-03-13 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2025-03-13 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2025-03-13 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2025-03-13 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2025-03-13 05:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-03-19 05:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2025-03-19 05:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2025-03-19 05:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2025-03-19 05:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2025-03-19 05:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2025-03-19 05:00:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        OBSERV</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
@@ -113,34 +113,41 @@ For more information, please visit the following website: <a href="https://sniff
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ZONUTM ORIGEN   NOMDEP NOMPRO           NOMDIS  CAPITAL               FECHA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     18      2 AREQUIPA CAMANA           CAMANA   CAMANA 2025-03-12 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     18      2 AREQUIPA CAMANA           CAMANA   CAMANA 2025-03-12 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     18      2 AREQUIPA CAMANA           CAMANA   CAMANA 2025-03-12 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     18      2 AREQUIPA CAMANA           CAMANA   CAMANA 2025-03-13 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     18      2 AREQUIPA CAMANA MARISCAL CACERES SAN JOSE 2025-03-13 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     18      2 AREQUIPA CAMANA MARISCAL CACERES SAN JOSE 2025-03-13 05:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       HORA CATEG NOMCATEG   LATITUD  LONGITUD   COORES  COORNO created_user</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 14:08:00    30          -16.64227 -72.71780 743435.1 8158629       USUFMS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 12:49:00    30          -16.64142 -72.71780 743436.2 8158723       USUFMS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 13:41:00    30          -16.64045 -72.71801 743415.0 8158831       USUFMS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 13:24:00    30          -16.62228 -72.72361 742840.3 8160849       USUFMS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 13:24:00    30          -16.61950 -72.72778 742398.7 8161162       USUFMS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 13:24:00    30          -16.61779 -72.73919 741183.1 8161365       USUFMS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          created_date last_edited_user    last_edited_date             TIPCOB</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-03-14 08:05:54           USUFMS 2025-03-14 08:05:54 Cobertura Agrícola</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2025-03-14 08:05:54           USUFMS 2025-03-14 08:05:54 Cobertura Agrícola</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2025-03-14 08:05:54           USUFMS 2025-03-14 08:05:54 Cobertura Agrícola</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2025-03-14 08:05:54           USUFMS 2025-03-14 08:05:54 Cobertura Agrícola</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2025-03-14 08:05:54           USUFMS 2025-03-14 08:05:54 Cobertura Agrícola</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2025-03-14 08:05:54           USUFMS 2025-03-14 08:05:54 Cobertura Agrícola</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   SENSAT PELIGRO CATDEP CATPRO CATDIS                    geometry</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      N       0     04   0402 040201  POINT (-72.7178 -16.64227)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    N20       0     04   0402 040201  POINT (-72.7178 -16.64142)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    N21       0     04   0402 040201 POINT (-72.71801 -16.64045)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    N21       0     04   0402 040201 POINT (-72.72361 -16.62228)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    N21       0     04   0402 040204  POINT (-72.72778 -16.6195)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    N21       0     04   0402 040204 POINT (-72.73919 -16.61779)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ZONUTM ORIGEN   NOMDEP                NOMPRO           NOMDIS    CAPITAL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     19      2 MOQUEGUA GENERAL SANCHEZ CERRO       LA CAPILLA LA CAPILLA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     18      2 AREQUIPA                CAMANA           QUILCA     QUILCA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     18      2 AREQUIPA                CAMANA    SAMUEL PASTOR   LA PAMPA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     18      2 AREQUIPA                CAMANA    SAMUEL PASTOR   LA PAMPA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     18      2 AREQUIPA                CAMANA MARISCAL CACERES   SAN JOSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     18      2 AREQUIPA                CAMANA MARISCAL CACERES   SAN JOSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 FECHA     HORA CATEG NOMCATEG   LATITUD  LONGITUD   COORES</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-03-19 05:00:00 13:36:00    30          -16.74061 -71.29153 255694.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2025-03-19 05:00:00 13:36:00    30          -16.70514 -72.20479 798091.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2025-03-19 05:00:00 13:58:00    30          -16.64081 -72.69307 746076.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2025-03-19 05:00:00 13:58:00    30          -16.64024 -72.69013 746390.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2025-03-19 05:00:00 13:36:00    30          -16.62437 -72.76051 738899.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2025-03-19 05:00:00 13:58:00    30          -16.62221 -72.73139 742010.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    COORNO created_user        created_date last_edited_user    last_edited_date</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 8147732       USUFMS 2025-03-20 03:08:38           USUFMS 2025-03-20 03:08:38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 8150972       USUFMS 2025-03-20 03:08:38           USUFMS 2025-03-20 03:08:38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 8158760       USUFMS 2025-03-20 03:08:38           USUFMS 2025-03-20 03:08:38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 8158820       USUFMS 2025-03-20 03:08:38           USUFMS 2025-03-20 03:08:38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 8160662       USUFMS 2025-03-20 03:08:38           USUFMS 2025-03-20 03:08:38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 8160866       USUFMS 2025-03-20 03:08:38           USUFMS 2025-03-20 03:08:38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               TIPCOB SENSAT PELIGRO CATDEP CATPRO CATDIS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Cobertura Forestal      N       0     18   1802 180205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Cobertura Forestal      N       0     04   0402 040207</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Cobertura Agrícola    N20       0     04   0402 040208</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 Cobertura Agrícola    N20       0     04   0402 040208</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 Cobertura Agrícola      N       0     04   0402 040204</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 Cobertura Agrícola    N20       0     04   0402 040204</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                      geometry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 POINT (-71.29153 -16.74061)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 POINT (-72.20479 -16.70514)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 POINT (-72.69307 -16.64081)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 POINT (-72.69013 -16.64024)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 POINT (-72.76051 -16.62437)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 POINT (-72.73139 -16.62221)</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
