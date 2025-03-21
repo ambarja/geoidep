@@ -80,28 +80,28 @@ The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible way t
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://geografo.pe/geoidep/">geoidep</a></span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>── Welcome to geoidep ───────────────────────────────────────────────────────────────────</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>── Welcome to geoidep ─────────────────────────────────────────────────────────────────</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>ℹ geoidep is a wrapper that enables you to download cartographic data <span class="cf">for</span> Peru directly from R.</span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>ℹ Currently, <span class="st">`</span><span class="at">geoidep</span><span class="st">`</span> supports data from the following providers<span class="sc">:</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>✔ Geobosque</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>✔ INAIGEM</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>✔ INEI</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>✔ Midagri</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>✔ and more<span class="sc">!</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>• Geobosque</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>• INAIGEM</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>• INEI</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>• Midagri</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>• and more<span class="sc">!</span></span>
 <span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>ℹ For more information, please use the <span class="st">`</span><span class="at">get_data_sources()</span><span class="st">`</span> function.</span></code></pre></div>
 <p>In this example, we can identify the list of providers available in geoidep and the layers they present.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_data_sources.html">get_data_sources</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 6 × 7</span></span>
-<span><span class="co">#&gt;   provider  category    layer          layer_can_be_actived admin_en year  link </span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;          &lt;lgl&gt;                &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;</span></span>
-<span><span class="co">#&gt; 1 INEI      General     departamento   TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; 2 INEI      General     provincia      TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; 3 INEI      General     distritos      TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; 4 Midagri   Agriculture agriculture_s… TRUE                 Ministr… 2024  http…</span></span>
-<span><span class="co">#&gt; 5 Midagri   Agriculture oil_palm_areas TRUE                 Ministr… 2016… http…</span></span>
-<span><span class="co">#&gt; 6 Geobosque Forest      stock_bosque_… FALSE                Ministr… 2001… http…</span></span></code></pre></div>
+<span><span class="co">#&gt;   provider  category    layer layer_can_be_actived admin_en year  link_geoportal</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;lgl&gt;                &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;         </span></span>
+<span><span class="co">#&gt; 1 INEI      General     depa… TRUE                 Nationa… 2019  https://ide.i…</span></span>
+<span><span class="co">#&gt; 2 INEI      General     prov… TRUE                 Nationa… 2019  https://ide.i…</span></span>
+<span><span class="co">#&gt; 3 INEI      General     dist… TRUE                 Nationa… 2019  https://ide.i…</span></span>
+<span><span class="co">#&gt; 4 Midagri   Agriculture agri… TRUE                 Ministr… 2024  https://siea.…</span></span>
+<span><span class="co">#&gt; 5 Midagri   Agriculture oil_… TRUE                 Ministr… 2016… https://siea.…</span></span>
+<span><span class="co">#&gt; 6 Geobosque Forest      stoc… FALSE                Ministr… 2001… https://geobo…</span></span></code></pre></div>
 <p>In summary the suppliers and the number of available layers</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_providers.html">get_providers</a></span><span class="op">(</span><span class="op">)</span> </span>
@@ -116,7 +116,7 @@ The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible way t
 <span><span class="co">#&gt; 6 Senamhi             1</span></span>
 <span><span class="co">#&gt; 7 Serfor              1</span></span>
 <span><span class="co">#&gt; 8 Sernanp            31</span></span>
-<span><span class="co">#&gt; 9 SIGRID              2</span></span></code></pre></div>
+<span><span class="co">#&gt; 9 SIGRID              4</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example-02-download-official-inei-administrative-boundaries">Example 02: Download official INEI administrative boundaries<a class="anchor" aria-label="anchor" href="#example-02-download-official-inei-administrative-boundaries"></a>
