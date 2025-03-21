@@ -66,7 +66,7 @@
                         <h4 data-toc-skip class="author">Antony
 Barja</h4>
             
-            <h4 data-toc-skip class="date">20 March, 2025</h4>
+            <h4 data-toc-skip class="date">21 March, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/vignettes/geoidep.Rmd" class="external-link"><code>vignettes/geoidep.Rmd</code></a></small>
       <div class="d-none name"><code>geoidep.Rmd</code></div>
@@ -110,20 +110,20 @@ for my programming moments.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">providers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_data_sources.html">get_data_sources</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">providers</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 80 × 7</span></span></span>
-<span><span class="co">#&gt;    provider  category    layer         layer_can_be_actived admin_en year  link </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> INEI      General     departamento  TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> INEI      General     provincia     TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> INEI      General     distritos     TRUE                 Nationa… 2019  http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Midagri   Agriculture agriculture_… TRUE                 Ministr… 2024  http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Midagri   Agriculture oil_palm_are… TRUE                 Ministr… 2016… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Geobosque Forest      stock_bosque… FALSE                Ministr… 2001… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Geobosque Forest      stock_bosque… TRUE                 Ministr… 2001… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Geobosque Forest      stock_bosque… TRUE                 Ministr… 2001… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Geobosque Forest      stock_bosque… TRUE                 Ministr… 2001… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Geobosque Forest      warning_last… TRUE                 Ministr… last… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 70 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 82 × 7</span></span></span>
+<span><span class="co">#&gt;    provider  category   layer layer_can_be_actived admin_en year  link_geoportal</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> INEI      General    depa… TRUE                 Nationa… 2019  https://ide.i…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> INEI      General    prov… TRUE                 Nationa… 2019  https://ide.i…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> INEI      General    dist… TRUE                 Nationa… 2019  https://ide.i…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Midagri   Agricultu… agri… TRUE                 Ministr… 2024  https://siea.…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Midagri   Agricultu… oil_… TRUE                 Ministr… 2016… https://siea.…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Geobosque Forest     stoc… FALSE                Ministr… 2001… https://geobo…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Geobosque Forest     warn… TRUE                 Ministr… last… https://geobo…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 72 more rows</span></span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">layers_available</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_providers.html">get_providers</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">layers_available</span></span>
@@ -138,7 +138,7 @@ for my programming moments.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Senamhi             1</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> Serfor              1</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span> Sernanp            31</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">9</span> SIGRID              2</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">9</span> SIGRID              4</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="download-official-administrative-boundaries-by-inei">4. Download Official Administrative Boundaries by INEI<a class="anchor" aria-label="anchor" href="#download-official-administrative-boundaries-by-inei"></a>
