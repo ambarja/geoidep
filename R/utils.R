@@ -214,10 +214,12 @@ get_inaigem_link <-  \(type = NULL){
 get_hazard_link <-  \(type = NULL){
   peligros_layer <- c(
     "inundacion_inventario" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5010100/query",
+    "inundacion_tramos_criticos" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5010600/query",
+    "inundacion_puntos_criticos" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5010200/query",
     "movimiento_masa_inventario" = "https://sigrid.cenepred.gob.pe/arcgis/rest/services/Cartografia_Peligros/MapServer/5020100/query"
     )
   if (!type %in% names(peligros_layer) || is.null(type)) {
-    stop("Invalid type. Please choose one layer according INAIGEM layer. More information use `get_data_sources(providers = 'SIGRID')`")
+    stop("Invalid type. Please choose one layer according SIGRID layer. More information use `get_data_sources(providers = 'SIGRID')`")
   }
 
   return(peligros_layer[[type]])
