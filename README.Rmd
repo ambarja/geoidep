@@ -53,14 +53,14 @@ library(geoidep)
 ```
 
 ```r
-── Welcome to geoidep ───────────────────────────────────────────────────────────────────
+── Welcome to geoidep ─────────────────────────────────────────────────────────────────
 ℹ geoidep is a wrapper that enables you to download cartographic data for Peru directly from R.
 ℹ Currently, `geoidep` supports data from the following providers:
-✔ Geobosque
-✔ INAIGEM
-✔ INEI
-✔ Midagri
-✔ and more!
+• Geobosque
+• INAIGEM
+• INEI
+• Midagri
+• and more!
 ℹ For more information, please use the `get_data_sources()` function.
 ```
 

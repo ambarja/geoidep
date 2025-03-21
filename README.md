@@ -50,14 +50,14 @@ library(geoidep)
 ```
 
 ``` r
-── Welcome to geoidep ───────────────────────────────────────────────────────────────────
+── Welcome to geoidep ─────────────────────────────────────────────────────────────────
 ℹ geoidep is a wrapper that enables you to download cartographic data for Peru directly from R.
 ℹ Currently, `geoidep` supports data from the following providers:
-✔ Geobosque
-✔ INAIGEM
-✔ INEI
-✔ Midagri
-✔ and more!
+• Geobosque
+• INAIGEM
+• INEI
+• Midagri
+• and more!
 ℹ For more information, please use the `get_data_sources()` function.
 ```
 
@@ -68,14 +68,14 @@ geoidep and the layers they present.
 get_data_sources() |> 
   head()
 #> # A tibble: 6 × 7
-#>   provider  category    layer          layer_can_be_actived admin_en year  link 
-#>   <chr>     <chr>       <chr>          <lgl>                <chr>    <chr> <chr>
-#> 1 INEI      General     departamento   TRUE                 Nationa… 2019  http…
-#> 2 INEI      General     provincia      TRUE                 Nationa… 2019  http…
-#> 3 INEI      General     distritos      TRUE                 Nationa… 2019  http…
-#> 4 Midagri   Agriculture agriculture_s… TRUE                 Ministr… 2024  http…
-#> 5 Midagri   Agriculture oil_palm_areas TRUE                 Ministr… 2016… http…
-#> 6 Geobosque Forest      stock_bosque_… FALSE                Ministr… 2001… http…
+#>   provider  category    layer layer_can_be_actived admin_en year  link_geoportal
+#>   <chr>     <chr>       <chr> <lgl>                <chr>    <chr> <chr>         
+#> 1 INEI      General     depa… TRUE                 Nationa… 2019  https://ide.i…
+#> 2 INEI      General     prov… TRUE                 Nationa… 2019  https://ide.i…
+#> 3 INEI      General     dist… TRUE                 Nationa… 2019  https://ide.i…
+#> 4 Midagri   Agriculture agri… TRUE                 Ministr… 2024  https://siea.…
+#> 5 Midagri   Agriculture oil_… TRUE                 Ministr… 2016… https://siea.…
+#> 6 Geobosque Forest      stoc… FALSE                Ministr… 2001… https://geobo…
 ```
 
 In summary the suppliers and the number of available layers
@@ -93,7 +93,7 @@ get_providers()
 #> 6 Senamhi             1
 #> 7 Serfor              1
 #> 8 Sernanp            31
-#> 9 SIGRID              2
+#> 9 SIGRID              4
 ```
 
 ## Example 02: Download official INEI administrative boundaries
