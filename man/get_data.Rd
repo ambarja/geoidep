@@ -4,7 +4,7 @@
 \alias{get_data}
 \title{Reading a csv containing geoidep resources}
 \usage{
-get_data()
+get_data(url = NULL)
 }
 \description{
 Reading a csv containing geoidep resources

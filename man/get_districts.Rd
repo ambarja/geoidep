@@ -4,31 +4,53 @@
 \alias{get_districts}
 \title{Download INEI district boundaries}
 \usage{
-get_districts(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60)
+get_districts(
+  departamento = NULL,
+  provincia = NULL,
+  distrito = NULL,
+  dsn = NULL,
+  timeout = 60,
+  show_progress = TRUE,
+  quiet = TRUE
+)
 }
 \arguments{
+\item{departamento}{Character. Name of the level-1 administrative boundary (department) to query. The input is case-insensitive.}
+
+\item{provincia}{Character. Name of the level-2 administrative boundary (province) to query. The input is case-insensitive.}
+
+\item{distrito}{Character. Name of the level-3 administrative boundary (district) to query. The input is case-insensitive.}
+
 \item{dsn}{Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
 If a directory is provided, the file will be saved as \code{DISTRITO.gpkg} inside it.
 If \code{NULL}, a temporary file will be created.
 If the path contains multiple subdirectories, they will be created automatically if they do not exist.}
 
+\item{timeout}{Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 60.}
+
 \item{show_progress}{Logical. Suppress bar progress.}
 
 \item{quiet}{Logical. Suppress info message.}
-
-\item{timeout}{Seconds. Number of seconds to wait for a response until giving up. Cannot be less than 1 ms. Default is 60.}
 }
 \value{
 An sf object.
 }
 \description{
-This function allows you to download the latest version of the \bold{geometry} and \bold{ubigeos}
-corresponding to the \bold{official political division} of the district boundaries of Peru.
+This function allows you to download the latest version of the \strong{geometry} and \strong{ubigeos}
+corresponding to the \strong{official political division} of the district boundaries of Peru.
 For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}.
+}
+\details{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
+This function is considered stable and its API is unlikely to change in future versions.
+
+If no values are provided for the \code{departamento}, \code{provincia}, or \code{distrito} parameters, the function
+will download and return the complete dataset containing district boundaries for the entire country.
 }
 \examples{
 \donttest{
 library(geoidep)
+# Download all district boundaries (entire country)
 dist <- get_districts(show_progress = FALSE)
 head(dist)
 }

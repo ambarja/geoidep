@@ -2,7 +2,6 @@
 
 export(get_data_sources)
 export(get_departaments)
-export(get_districts)
 export(get_early_warning)
 export(get_forest_loss_data)
 export(get_hazard_data)
