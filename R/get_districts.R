@@ -6,10 +6,8 @@
 #' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}.
 #'
 #' @details
-#' `r lifecycle::badge("stable")`
-#' This function is considered stable and its API is unlikely to change in future versions.
-#'
-#' If no values are provided for the `departamento`, `provincia`, or `distrito` parameters, the function
+#' - `r lifecycle::badge("stable")`. This function is considered stable and its API is unlikely to change in future versions.
+#' - If no values are provided for the `departamento`, `provincia`, or `distrito` parameters, the function
 #' will download and return the complete dataset containing district boundaries for the entire country.
 #'
 #' @param departamento Character. Name of the level-1 administrative boundary (department) to query. The input is case-insensitive.
@@ -28,9 +26,18 @@
 #' @examples
 #' \donttest{
 #' library(geoidep)
+#' library(mapgl)
 #' # Download all district boundaries (entire country)
 #' dist <- get_districts(show_progress = FALSE)
 #' head(dist)
+#'
+#' # Download all district boundaries for Lima
+#' lima <-  get_districts(departamento = 'lima', provincia = 'lima',show_progress = FALSE)
+#' head(lima)
+#'
+#' # Visualization
+#' maplibre(bounds = lima) |>
+#'   add_fill_layer(id = "lima", source = lima, fill_color = "blue", fill_opacity = 0.5)
 #' }
 #' @export
 get_districts <- \(departamento = NULL, provincia = NULL, distrito = NULL,
