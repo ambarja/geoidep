@@ -32,6 +32,7 @@
 #' dist <- get_districts(show_progress = FALSE)
 #' head(dist)
 #' }
+#' @export
 get_districts <- \(departamento = NULL, provincia = NULL, distrito = NULL,
                    dsn = NULL, timeout = 60, show_progress = TRUE, quiet = TRUE) {
   primary_link <- get_inei_link("distrito")
