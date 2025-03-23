@@ -11,6 +11,13 @@ jobs:
             - r-pkg-cache-{{ arch }}-{{ .Branch }}
             - r-pkg-cache-{{ arch }}-
       - checkout
+
+      - run:
+          name: Instalar dependencias del sistema
+          command: |
+            apt-get update
+            apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev
+
       - run:
           name: Install package dependencies
           command: |
