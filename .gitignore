@@ -10,3 +10,4 @@ CRAN-SUBMISSION
 /doc/
 /Meta/
 /.quarto/
+data-raw/*

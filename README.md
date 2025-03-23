@@ -24,8 +24,10 @@ technical-scientific institutions, managed by the <b>Spatial Data
 Infrastructure of Peru</b>.
 </p>
 
-The package is currently available in **R** and Python (coming soon).
+*⚠️ The package accesses these datasets dynamically from official public
+servers, without redistributing data locally.*
 
+The package is currently available in **R** and Python (coming soon).
 <hr>
 
 ## Installation R

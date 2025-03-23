@@ -11,3 +11,5 @@
 .docs/*
 ^doc$
 ^ideas$
+^data-raw$
+^\.circleci$
