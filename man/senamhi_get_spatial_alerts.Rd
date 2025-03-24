@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_senamhi.R
 \name{senamhi_get_spatial_alerts}
 \alias{senamhi_get_spatial_alerts}
-\title{Download Meteorological Alerts from Senamhi}
+\title{Download Meteorological Alert Geometry from Senamhi}
 \usage{
 senamhi_get_spatial_alerts(
   data = NULL,
@@ -14,30 +14,21 @@ senamhi_get_spatial_alerts(
 )
 }
 \arguments{
-\item{data}{A data frame containing information on weather warnings provided by Senamhi.}
+\item{data}{A data frame with a single alert (with columns \code{nro} and \code{emision}), or NULL if you specify \code{nro} and \code{year}.}
 
-\item{nro}{A numeric value representing the weather warning number.}
+\item{nro}{A numeric value (optional if \code{data} is provided).}
 
-\item{year}{A numeric value indicating the year of publication of the weather warning.}
+\item{year}{A numeric value (optional if \code{data} is provided).}
 
-\item{dsn}{A character string specifying the output filename with the \bold{spatial format}. If missing, a temporary file will be created.}
+\item{dsn}{Path to save the downloaded .zip. If NULL, a temporary file is used.}
 
-\item{show_progress}{A logical value indicating whether to suppress the progress bar.}
+\item{show_progress}{Logical, show download progress.}
 
-\item{quiet}{A logical value indicating whether to suppress informational messages.}
+\item{quiet}{Logical, suppress messages from \code{sf::st_read()}.}
 }
 \value{
-An sf object containing the spatial geometries of the weather alerts.
+An sf object with the alert geometry.
 }
 \description{
-This function downloads and loads the spatial format of the weather warnings provided by Senamhi.
-These geometries represent preventive forecasts for severe events, indicating the areas that may be affected and the level of danger.
-For more information, please visit the following link: \url{https://www.Senamhi.gob.pe/?&p=aviso-meteorologico}
-}
-\examples{
-\donttest{
-library(geoidep)
-data <- senamhi_get_spatial_alerts(nro = 295, year = 2024, show_progress = FALSE)
-head(data)
-}
+This function downloads the spatial alert geometry (shapefile) from Senamhi for a given alert.
 }

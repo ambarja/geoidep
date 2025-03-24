@@ -10,12 +10,11 @@ senamhi_get_meteorological_table()
 A tibble object containing the weather alert data.
 }
 \description{
-This function downloads the table of weather warnings provided by Senamhi
+This function downloads the table of weather warnings provided by Senamhi.
 For more information, please visit the following link: \url{https://www.Senamhi.gob.pe/?&p=aviso-meteorologico}
 }
 \examples{
 \donttest{
-library(geoidep)
 data <- senamhi_get_meteorological_table()
 head(data)
 }

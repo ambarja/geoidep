@@ -2,25 +2,18 @@
 % Please edit documentation in R/get_senamhi.R
 \name{senamhi_alerts_by_year}
 \alias{senamhi_alerts_by_year}
-\title{Download Senamhi's Meteorological Alerts by year}
+\title{Filter Senamhi alerts by year}
 \usage{
-senamhi_alerts_by_year(data = NULL, year = NULL)
+senamhi_alerts_by_year(data, year)
 }
 \arguments{
-\item{data}{A tibble object containing the weather alert data.}
+\item{data}{A data frame of meteorological alerts.}
 
-\item{year}{A numeric value indicating the year of publication of the weather warning.}
+\item{year}{A numeric value indicating the year.}
 }
 \value{
-A tibble object containing the weather alert data.
+A filtered tibble.
 }
 \description{
-This function downloads the weather forecast table provided by Senamhi according to the specified year.
-}
-\examples{
-\donttest{
-library(geoidep)
-data <- senamhi_alerts_by_year(year = 2024)
-head(data)
-}
+Filter Senamhi alerts by year
 }

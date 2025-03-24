@@ -13,13 +13,6 @@ get_data <- \(url = NULL){
   })
 }
 
-
-#' Global variables for get_early_warning
-#' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
-#' @name global-variables
-#' @keywords internal
-utils::globalVariables(c(".internal_urls","X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data"))
-
 #' Retrieve links to SERNANP for information on natural protected areas.
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "sernanp")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
@@ -37,7 +30,6 @@ get_sernanp_link <- \(type = NULL){
 #' @param type A string. Select only one of the following layers; ‘distrito’, ‘provincia’, or ‘departamento’. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
-
 get_inei_link <- \(type = NULL) {
   inei_links <- getOption("inei", default = .internal_urls$inei)
   if (!type %in% names(inei_links) || is.null(type)) {
@@ -74,7 +66,6 @@ get_geobosque_link <- \(type = NULL){
 #' @param type A string. Only one layer; `warning_last_week`
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
-
 get_early_warning_link <- \(type = NULL){
   geobosque_early_warning_link <- getOption("geobosque", default = .internal_urls$geobosque)
   if (!type %in% names(geobosque_early_warning_link) || is.null(type)) {
@@ -122,7 +113,6 @@ get_mtc_link <- \(type = NULL){
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "INAIGEM")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
-
 get_inaigem_link <-  \(type = NULL){
   inaigem_layer <- getOption("inaigem", default = .internal_urls$inaigem)
   if (!type %in% names(inaigem_layer) || is.null(type)) {
@@ -135,7 +125,6 @@ get_inaigem_link <-  \(type = NULL){
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "INAIGEM")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
-
 get_hazard_link <-  \(type = NULL){
   peligros_layer <- getOption("sigrid", default = .internal_urls$sigrid)
   if (!type %in% names(peligros_layer) || is.null(type)) {
@@ -143,3 +132,9 @@ get_hazard_link <-  \(type = NULL){
   }
   return(peligros_layer[[type]])
 }
+
+#' Global variables for get_early_warning
+#' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
+#' @name global-variables
+#' @keywords internal
+utils::globalVariables(c("nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data"))

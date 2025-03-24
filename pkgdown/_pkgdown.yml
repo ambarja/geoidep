@@ -40,10 +40,11 @@ reference:
 
  - title: 'Download data from Senamhi'
    contents:
-   - senamhi_get_spatial_alerts
    - senamhi_get_meteorological_table
    - senamhi_alert_by_number
    - senamhi_alerts_by_year
+   - senamhi_get_spatial_alerts
+   - senamhi_geometry_by_level
 
  - title: 'Download data from MTC'
    contents:
