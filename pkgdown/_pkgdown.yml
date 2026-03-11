@@ -54,9 +54,9 @@ reference:
    contents:
    - get_inaigem_data
 
- - title: 'Download data from SIGRID'
-   contents:
-   - get_hazard_data
+ # - title: 'Download data from SIGRID'
+ #   contents:
+ #   - get_hazard_data
 
  - title: 'Utils'
    contents:
