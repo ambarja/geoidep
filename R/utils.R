@@ -1,6 +1,7 @@
 #' Reading a csv containing geoidep resources
 #' @importFrom utils read.csv
 #' @keywords internal
+#' @noRd
 get_data <- \(url = NULL){
   if(is.null(url)){
     url <- getOption(x = "geoidep", default = .internal_urls$geoidep)
@@ -17,6 +18,7 @@ get_data <- \(url = NULL){
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "sernanp")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_sernanp_link <- \(type = NULL){
   sernanp_link <- getOption("sernanp", default = .internal_urls$sernanp)
   if (!type %in% names(sernanp_link) || is.null(type)) {
@@ -30,6 +32,7 @@ get_sernanp_link <- \(type = NULL){
 #' @param type A string. Select only one of the following layers; ‘distrito’, ‘provincia’, or ‘departamento’. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_inei_link <- \(type = NULL) {
   inei_links <- getOption("inei", default = .internal_urls$inei)
   if (!type %in% names(inei_links) || is.null(type)) {
@@ -42,6 +45,7 @@ get_inei_link <- \(type = NULL) {
 #' @param type A string. Select only one of the following layers; 'vegetation cover', 'agriculture sector', 'oil palm'. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_midagri_link <- \(type = NULL){
   midagri_link <- getOption("midagri", default = .internal_urls$midagri)
   if (!type %in% names(midagri_link) || is.null(type)) {
@@ -54,6 +58,7 @@ get_midagri_link <- \(type = NULL){
 #' @param type A string. Select only one of the following layers; 'dist', 'pro', 'dep'. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_geobosque_link <- \(type = NULL){
   geobosque_link <- getOption("geobosque", default = .internal_urls$geobosque)
   if (!type %in% names(geobosque_link) || is.null(type)) {
@@ -66,6 +71,7 @@ get_geobosque_link <- \(type = NULL){
 #' @param type A string. Only one layer; `warning_last_week`
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_early_warning_link <- \(type = NULL){
   geobosque_early_warning_link <- getOption("geobosque", default = .internal_urls$geobosque)
   if (!type %in% names(geobosque_early_warning_link) || is.null(type)) {
@@ -78,6 +84,7 @@ get_early_warning_link <- \(type = NULL){
 #' @param type A string. Only one layer; `heat_spot`
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_heat_spot_link <- \(type = NULL){
   serfor_heat_spot_link <- getOption("geobosque", default = .internal_urls$geobosque)
   if (!type %in% names(serfor_heat_spot_link) || is.null(type)) {
@@ -89,6 +96,7 @@ get_heat_spot_link <- \(type = NULL){
 #' Time format units
 #' This code transforms the time from milliseconds to a calendar date format.
 #' @keywords internal
+#' @noRd
 as_data_time <- \(x){
   timestamp_ms <- x
   timestamp_s <- timestamp_ms / 1000
@@ -100,6 +108,7 @@ as_data_time <- \(x){
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "MTC")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_mtc_link <- \(type = NULL){
   mtc_layer <- getOption("mtc", default = .internal_urls$mtc)
   if (!type %in% names(mtc_layer) || is.null(type)) {
@@ -113,6 +122,7 @@ get_mtc_link <- \(type = NULL){
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "INAIGEM")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_inaigem_link <-  \(type = NULL){
   inaigem_layer <- getOption("inaigem", default = .internal_urls$inaigem)
   if (!type %in% names(inaigem_layer) || is.null(type)) {
@@ -125,6 +135,7 @@ get_inaigem_link <-  \(type = NULL){
 #' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "INAIGEM")`. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
+#' @noRd
 get_hazard_link <-  \(type = NULL){
   peligros_layer <- getOption("sigrid", default = .internal_urls$sigrid)
   if (!type %in% names(peligros_layer) || is.null(type)) {
@@ -133,8 +144,22 @@ get_hazard_link <-  \(type = NULL){
   return(peligros_layer[[type]])
 }
 
+#' Retrieve the links to MapBiomas Alerta Peru for deforestation alerts
+#' @param type A string. Select the layer type (e.g., 'dashboard_alerts', 'dashboard_alerts_wms'). Defaults to NULL.
+#' @return A string containing the URL of the WFS or WMS endpoint.
+#' @keywords internal
+#' @noRd
+get_mapbiomas_link <- \(type = NULL){
+  mapbiomas_link <- getOption("mapbiomas", default = .internal_urls$mapbiomas)
+  if (!type %in% names(mapbiomas_link) || is.null(type)) {
+    stop("Invalid type. Please choose from available MapBiomas layers: ", paste(names(mapbiomas_link), collapse = ", "))
+  }
+  return(mapbiomas_link[[type]])
+}
+
 #' Global variables for get_early_warning
 #' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
 #' @name global-variables
 #' @keywords internal
+#' @noRd
 utils::globalVariables(c("nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data"))

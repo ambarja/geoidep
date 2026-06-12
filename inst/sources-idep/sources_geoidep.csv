@@ -81,3 +81,4 @@ SIGRID,"Disaster, Risk, Vulnerability and Hazard",inundacion_inventario,TRUE,Min
 SIGRID,"Disaster, Risk, Vulnerability and Hazard",inundacion_tramos_criticos,TRUE,Ministry of Defense,2023,https://sigrid.cenepred.gob.pe/sigridv3/mapa
 SIGRID,"Disaster, Risk, Vulnerability and Hazard",inundacion_puntos_criticos,TRUE,Ministry of Defense,2016,https://sigrid.cenepred.gob.pe/sigridv3/mapa
 SIGRID,"Disaster, Risk, Vulnerability and Hazard",movimiento_masa_inventario,TRUE,Ministry of Defense,2013,https://sigrid.cenepred.gob.pe/sigridv3/mapa
+MapBiomas Alerta,Forest,dashboard_alert_shapefile_staging,TRUE,MapBiomas Initiative,2024,https://alerta.mapbiomas.org/

@@ -19,5 +19,10 @@ Useful links:
 \author{
 \strong{Maintainer}: antony barja \email{geografo.pe@gmail.com} (\href{https://orcid.org/0000-0001-5921-2858}{ORCID}) [copyright holder]
 
+Authors:
+\itemize{
+  \item antony barja \email{geografo.pe@gmail.com} (\href{https://orcid.org/0000-0001-5921-2858}{ORCID}) [copyright holder]
+}
+
 }
 \keyword{internal}

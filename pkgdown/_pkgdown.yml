@@ -58,6 +58,10 @@ reference:
  #   contents:
  #   - get_hazard_data
 
+ - title: 'Download data from MapBiomas Alert'
+   contents:
+   - get_mapbiomas_peru_alerta
+
  - title: 'Utils'
    contents:
    - get_providers
