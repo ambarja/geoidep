@@ -13,10 +13,10 @@ get_departaments(
 )
 }
 \arguments{
-\item{departamento}{Character. Name of the level-1 administrative boundary (department) to query. The input is case-insensitive.}
+\item{departamento}{Character. Name o names in a vector of the level-1 administrative boundary (department) to query. The input is case-insensitive.}
 
 \item{dsn}{Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
-If a directory is provided, the file will be saved as \code{DEPARTAMENTO.gpkg} inside it.
+If a directory is provided, the file will be saved as \code{departamento.gpkg} inside it.
 If \code{NULL}, a temporary file will be created.
 If the path contains multiple subdirectories, they will be created automatically if they do not exist.}
 
@@ -39,5 +39,11 @@ For more information, you can visit the following page \href{https://ide.inei.go
 library(geoidep)
 dep <- get_departaments(show_progress = FALSE)
 head(dep)
+
+loreto <- get_departaments(departamento = "loreto",show_progress = FALSE)
+head(loreto)
+
+ica_junin <- get_departaments(departamento = c("ica","junin"),show_progress = FALSE)
+head(ica_junin)
 }
 }
