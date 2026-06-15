@@ -21,9 +21,9 @@ reference:
    - get_provinces
    - get_departaments
 
- - title: 'Download of Midagri cartographic layer'
-   contents:
-   - get_midagri_data
+ # - title: 'Download of Midagri cartographic layer'
+ #   contents:
+ #   - get_midagri_data
 
  - title: 'Download data from Geobosque'
    contents:
