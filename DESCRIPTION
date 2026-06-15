@@ -32,7 +32,8 @@ Imports:
     sf,
     tidyr,
     geojsonio,
-    terra
+    terra,
+    tidyterra
 Suggests: 
     ggplot2,
     knitr,
