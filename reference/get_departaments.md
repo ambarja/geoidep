@@ -22,14 +22,14 @@ get_departaments(
 
 - departamento:
 
-  Character. Name of the level-1 administrative boundary (department) to
-  query. The input is case-insensitive.
+  Character. Name o names in a vector of the level-1 administrative
+  boundary (department) to query. The input is case-insensitive.
 
 - dsn:
 
   Character. Path to the output `.gpkg` file or a directory where the
   file will be saved. If a directory is provided, the file will be saved
-  as `DEPARTAMENTO.gpkg` inside it. If `NULL`, a temporary file will be
+  as `departamento.gpkg` inside it. If `NULL`, a temporary file will be
   created. If the path contains multiple subdirectories, they will be
   created automatically if they do not exist.
 
@@ -69,5 +69,26 @@ head(dep)
 #> 4   04  AREQUIPA V Censo Nacional Economico MULTIPOLYGON (((-71.98109 -...
 #> 5   05  AYACUCHO V Censo Nacional Economico MULTIPOLYGON (((-74.34843 -...
 #> 6   06 CAJAMARCA V Censo Nacional Economico MULTIPOLYGON (((-78.70034 -...
+
+loreto <- get_departaments(departamento = "loreto",show_progress = FALSE)
+head(loreto)
+#> Simple feature collection with 1 feature and 3 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: -77.82596 ymin: -8.715191 xmax: -69.94904 ymax: -0.03860597
+#> Geodetic CRS:  WGS 84
+#>   ccdd nombdep                     fuente                           geom
+#> 1   16  LORETO V Censo Nacional Economico MULTIPOLYGON (((-75.10004 -...
+
+ica_junin <- get_departaments(departamento = c("ica","junin"),show_progress = FALSE)
+head(ica_junin)
+#> Simple feature collection with 2 features and 3 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: -76.51923 ymin: -15.44337 xmax: -73.35513 ymax: -10.65289
+#> Geodetic CRS:  WGS 84
+#>   ccdd nombdep                     fuente                           geom
+#> 1   11     ICA V Censo Nacional Economico MULTIPOLYGON (((-75.61136 -...
+#> 2   12   JUNIN V Censo Nacional Economico MULTIPOLYGON (((-75.03564 -...
 # }
 ```

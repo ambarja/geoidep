@@ -66,12 +66,12 @@ For more information, you can visit the following page <a href="https://ide.inei
 
 
 <dl><dt id="arg-departamento">departamento<a class="anchor" aria-label="anchor" href="#arg-departamento"></a></dt>
-<dd><p>Character. Name of the level-1 administrative boundary (department) to query. The input is case-insensitive.</p></dd>
+<dd><p>Character. Name o names in a vector of the level-1 administrative boundary (department) to query. The input is case-insensitive.</p></dd>
 
 
 <dt id="arg-dsn">dsn<a class="anchor" aria-label="anchor" href="#arg-dsn"></a></dt>
 <dd><p>Character. Path to the output <code>.gpkg</code> file or a directory where the file will be saved.
-If a directory is provided, the file will be saved as <code>DEPARTAMENTO.gpkg</code> inside it.
+If a directory is provided, the file will be saved as <code>departamento.gpkg</code> inside it.
 If <code>NULL</code>, a temporary file will be created.
 If the path contains multiple subdirectories, they will be created automatically if they do not exist.</p></dd>
 
@@ -111,6 +111,27 @@ If the path contains multiple subdirectories, they will be created automatically
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4   04  AREQUIPA V Censo Nacional Economico MULTIPOLYGON (((-71.98109 -...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5   05  AYACUCHO V Censo Nacional Economico MULTIPOLYGON (((-74.34843 -...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6   06 CAJAMARCA V Censo Nacional Economico MULTIPOLYGON (((-78.70034 -...</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">loreto</span> <span class="op">&lt;-</span> <span class="fu">get_departaments</span><span class="op">(</span>departamento <span class="op">=</span> <span class="st">"loreto"</span>,show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">loreto</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 1 feature and 3 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -77.82596 ymin: -8.715191 xmax: -69.94904 ymax: -0.03860597</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ccdd nombdep                     fuente                           geom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   16  LORETO V Censo Nacional Economico MULTIPOLYGON (((-75.10004 -...</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">ica_junin</span> <span class="op">&lt;-</span> <span class="fu">get_departaments</span><span class="op">(</span>departamento <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ica"</span>,<span class="st">"junin"</span><span class="op">)</span>,show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ica_junin</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 2 features and 3 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -76.51923 ymin: -15.44337 xmax: -73.35513 ymax: -10.65289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ccdd nombdep                     fuente                           geom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   11     ICA V Censo Nacional Economico MULTIPOLYGON (((-75.61136 -...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   12   JUNIN V Censo Nacional Economico MULTIPOLYGON (((-75.03564 -...</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

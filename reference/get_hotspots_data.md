@@ -39,12 +39,12 @@ library(geoidep)
 library(sf)
 #> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
 hot_spots <- get_hotspots_data(show_progress = FALSE)
-#> Reading layer `file1e9328b30e2f' from data source 
-#>   `/tmp/Rtmp8iKxQ1/file1e9328b30e2f.geojson' using driver `GeoJSON'
-#> Simple feature collection with 155 features and 29 fields
+#> Reading layer `file1f396e1a56df' from data source 
+#>   `/tmp/RtmpcVvIKR/file1f396e1a56df.geojson' using driver `GeoJSON'
+#> Simple feature collection with 160 features and 29 fields
 #> Geometry type: POINT
 #> Dimension:     XY
-#> Bounding box:  xmin: -81.19237 ymin: -15.34127 xmax: -69.00619 ymax: -3.52901
+#> Bounding box:  xmin: -81.19237 ymin: -17.66986 xmax: -69.00619 ymax: -3.52901
 #> Geodetic CRS:  WGS 84
 head(hot_spots)
 #> Simple feature collection with 6 features and 29 fields
@@ -53,12 +53,12 @@ head(hot_spots)
 #> Bounding box:  xmin: -75.00967 ymin: -15.34127 xmax: -69.15167 ymax: -14.43423
 #> Geodetic CRS:  WGS 84
 #>   OBJECTID                                          FUENTE DOCREG
-#> 1 15026364 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 2 15026365 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 3 15026366 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 4 15026367 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 5 15026368 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 6 15026369 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 1 15026684 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 2 15026685 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 3 15026686 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 4 15026687 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 5 15026688 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 6 15026689 Servicio Nacional Forestal y de Fauna Silvestre       
 #>                FECREG
 #> 1 2026-06-15 05:00:00
 #> 2 2026-06-15 05:00:00
@@ -88,12 +88,12 @@ head(hot_spots)
 #> 5 01:37:00    30                         -14.98391 -75.00967 498960.3 8343454
 #> 6 12:49:00    30                         -14.43423 -69.15167 483652.2 8404244
 #>   created_user        created_date last_edited_user    last_edited_date
-#> 1       USUFMS 2026-06-15 22:09:47           USUFMS 2026-06-15 22:09:47
-#> 2       USUFMS 2026-06-15 22:09:47           USUFMS 2026-06-15 22:09:47
-#> 3       USUFMS 2026-06-15 22:09:47           USUFMS 2026-06-15 22:09:47
-#> 4       USUFMS 2026-06-15 22:09:47           USUFMS 2026-06-15 22:09:47
-#> 5       USUFMS 2026-06-15 22:09:47           USUFMS 2026-06-15 22:09:47
-#> 6       USUFMS 2026-06-15 22:09:47           USUFMS 2026-06-15 22:09:47
+#> 1       USUFMS 2026-06-16 00:09:29           USUFMS 2026-06-16 00:09:29
+#> 2       USUFMS 2026-06-16 00:09:29           USUFMS 2026-06-16 00:09:29
+#> 3       USUFMS 2026-06-16 00:09:29           USUFMS 2026-06-16 00:09:29
+#> 4       USUFMS 2026-06-16 00:09:29           USUFMS 2026-06-16 00:09:29
+#> 5       USUFMS 2026-06-16 00:09:29           USUFMS 2026-06-16 00:09:29
+#> 6       USUFMS 2026-06-16 00:09:29           USUFMS 2026-06-16 00:09:29
 #>               TIPCOB SENSAT PELIGRO CATDEP CATPRO CATDIS
 #> 1 Cobertura Forestal    N21       0     21   2106 210607
 #> 2 Cobertura Forestal    N21       0     21   2106 210607
