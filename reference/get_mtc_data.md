@@ -59,13 +59,13 @@ head(aerodromo)
 #> Dimension:     XY
 #> Bounding box:  xmin: -76.4666 ymin: -16.34061 xmax: -71.57079 ymax: -2.796108
 #> Geodetic CRS:  WGS 84
-#>                                                        gml_id id codaero
-#> 1 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_-74c6  4 0321ANS
-#> 2 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_-74c5  5 1642ADS
-#> 3 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_-74c4  6 1643ADS
-#> 4 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_-74c3  7 0411AQP
-#> 5 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_-74c2  8 2532ATY
-#> 6 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_-74c1  9 0521AYP
+#>                                                       gml_id id codaero
+#> 1 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_5eeb  4 0321ANS
+#> 2 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_5eec  5 1642ADS
+#> 3 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_5eed  6 1643ADS
+#> 4 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_5eee  7 0411AQP
+#> 5 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_5eef  8 2532ATY
+#> 6 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19eccc8e75a_5ef0  9 0521AYP
 #>                       tipo                      nombre
 #> 1               Aeropuerto                 Andahuaylas
 #> 2                Aeródromo                      Andoas

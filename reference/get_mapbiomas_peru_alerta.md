@@ -10,6 +10,8 @@ an sf object (bounding box or polygon). For more details, please visit:
 ``` r
 get_mapbiomas_peru_alerta(
   region = NULL,
+  from = NULL,
+  to = NULL,
   dsn = NULL,
   method = "within",
   show_progress = TRUE,
@@ -24,6 +26,16 @@ get_mapbiomas_peru_alerta(
 
   An sf object specifying the area of interest (must be in EPSG:4326 -
   WGS 84).
+
+- from:
+
+  Character. Start date for filtering, in `"YYYY-MM-DD"` format (e.g.
+  `"2024-01-01"`). If `NULL` (default), no lower bound is applied.
+
+- to:
+
+  Character. End date for filtering, in `"YYYY-MM-DD"` format (e.g.
+  `"2024-12-31"`). If `NULL` (default), no upper bound is applied.
 
 - dsn:
 
