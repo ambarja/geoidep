@@ -109,7 +109,7 @@ get_mapbiomas_peru_alerta <- function(region = NULL, dsn = NULL, method = 'withi
   spatial_formats <- httr2::resp_body_string(resp = resp) |>
     geojsonio::geojson_sf() |>
     dplyr::select(-bbox) |>
-    st_transform(crs = 4326)
+    sf::st_transform(crs = 4326)
 
 
   # Filter by Method
