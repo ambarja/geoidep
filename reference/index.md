@@ -9,11 +9,6 @@
 - [`get_departaments()`](https://geografo.pe/geoidep/reference/get_departaments.md)
   : Download INEI departmental boundaries
 
-## Download of Midagri cartographic layer
-
-- [`get_midagri_data()`](https://geografo.pe/geoidep/reference/get_midagri_data.md)
-  : Download Geographic Information from MIDAGRI
-
 ## Download data from Geobosque
 
 - [`get_forest_loss_data()`](https://geografo.pe/geoidep/reference/get_forest_loss_data.md)
@@ -55,6 +50,12 @@
 
 - [`get_inaigem_data()`](https://geografo.pe/geoidep/reference/get_inaigem_data.md)
   : Download the available data from INAIGEM
+
+## Download data from MapBiomas Alert
+
+- [`get_mapbiomas_peru_alerta()`](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_alerta.md)
+  : Download MapBiomas Alerta Peru deforestation alerts with spatial
+  filtering
 
 ## Utils
 

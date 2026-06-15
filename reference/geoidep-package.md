@@ -19,3 +19,8 @@ Useful links:
 
 **Maintainer**: antony barja <geografo.pe@gmail.com>
 ([ORCID](https://orcid.org/0000-0001-5921-2858)) \[copyright holder\]
+
+Authors:
+
+- antony barja <geografo.pe@gmail.com>
+  ([ORCID](https://orcid.org/0000-0001-5921-2858)) \[copyright holder\]

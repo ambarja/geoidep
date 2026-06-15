@@ -28,6 +28,7 @@ The package is currently available in **R** and Python (coming soon).
 You can install the development version of geoidep like so:
 
 ``` r
+
 install.packages('pak')
 pak::pkg_install('ambarja/geoidep')
 ```
@@ -35,12 +36,14 @@ pak::pkg_install('ambarja/geoidep')
 or also the official version available on CRAN:
 
 ``` r
+
 install.packages('geoidep')
 ```
 
 ## Example 01: Introduction
 
 ``` r
+
 library(geoidep)
 ```
 
@@ -60,6 +63,7 @@ In this example, we can identify the list of providers available in
 geoidep and the layers they present.
 
 ``` r
+
 get_data_sources() |> 
   head()
 #> # A tibble: 6 × 7
@@ -76,6 +80,7 @@ get_data_sources() |>
 In summary the suppliers and the number of available layers
 
 ``` r
+
 get_providers() 
 #> # A tibble: 9 × 2
 #>   provider  layer_count
@@ -97,12 +102,14 @@ This is a simple example of how to download Peru’s official
 administrative boundaries:
 
 ``` r
+
 dep <- get_departaments(show_progress = FALSE)
 ```
 
 The first 10 rows of the original data are displayed here:
 
 ``` r
+
 head(dep)
 #> Simple feature collection with 6 features and 6 fields
 #> Geometry type: MULTIPOLYGON

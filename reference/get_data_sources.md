@@ -26,7 +26,7 @@ A tibble object.
 # \donttest{
 library(geoidep)
 get_data_sources()
-#> # A tibble: 82 × 7
+#> # A tibble: 83 × 7
 #>    provider  category   layer layer_can_be_actived admin_en year  link_geoportal
 #>    <chr>     <chr>      <chr> <lgl>                <chr>    <chr> <chr>         
 #>  1 INEI      General    depa… TRUE                 Nationa… 2019  https://ide.i…
@@ -39,6 +39,6 @@ get_data_sources()
 #>  8 Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…
 #>  9 Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…
 #> 10 Geobosque Forest     warn… TRUE                 Ministr… last… https://geobo…
-#> # ℹ 72 more rows
+#> # ℹ 73 more rows
 # }
 ```

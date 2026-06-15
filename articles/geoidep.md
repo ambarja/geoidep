@@ -21,26 +21,30 @@ for my programming moments.
 ## 2. Package installation
 
 ``` r
+
 install.packages("geoidep")
 ```
 
 Also, you can install the development version as follows:
 
 ``` r
+
 install.packages('pak')
 pak::pkg_install('ambarja/geoidep')
 ```
 
 ``` r
+
 library(geoidep)
 ```
 
 ## 3. Basic usage
 
 ``` r
+
 providers <- get_data_sources()
 providers
-#> # A tibble: 82 × 7
+#> # A tibble: 83 × 7
 #>    provider  category   layer layer_can_be_actived admin_en year  link_geoportal
 #>    <chr>     <chr>      <chr> <lgl>                <chr>    <chr> <chr>         
 #>  1 INEI      General    depa… TRUE                 Nationa… 2019  https://ide.i…
@@ -53,35 +57,39 @@ providers
 #>  8 Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…
 #>  9 Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…
 #> 10 Geobosque Forest     warn… TRUE                 Ministr… last… https://geobo…
-#> # ℹ 72 more rows
+#> # ℹ 73 more rows
 ```
 
 ``` r
+
 layers_available <- get_providers()
 layers_available
-#> # A tibble: 9 × 2
-#>   provider  layer_count
-#>   <fct>           <int>
-#> 1 Geobosque           5
-#> 2 INAIGEM             5
-#> 3 INEI                7
-#> 4 Midagri             2
-#> 5 MTC                26
-#> 6 Senamhi             1
-#> 7 Serfor              1
-#> 8 Sernanp            31
-#> 9 SIGRID              4
+#> # A tibble: 10 × 2
+#>    provider         layer_count
+#>    <fct>                  <int>
+#>  1 Geobosque                  5
+#>  2 INAIGEM                    5
+#>  3 INEI                       7
+#>  4 MapBiomas Alerta           1
+#>  5 Midagri                    2
+#>  6 MTC                       26
+#>  7 Senamhi                    1
+#>  8 Serfor                     1
+#>  9 Sernanp                   31
+#> 10 SIGRID                     4
 ```
 
 ## 4. Download Official Administrative Boundaries by INEI
 
 ``` r
+
 # Region boundaries download 
 loreto_prov <- get_provinces(show_progress = FALSE) |> 
   subset(nombdep == 'LORETO')
 ```
 
 ``` r
+
 library(leaflet)
 #> 
 #> Attaching package: 'leaflet'
@@ -97,11 +105,13 @@ loreto_prov |>
 ```
 
 ``` r
+
 # Defined Ubigeo 
 loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["ccdd"]],loreto_prov[["ccpp"]])
 ```
 
 ``` r
+
 # The first five rows
 head(loreto_prov)
 #> Simple feature collection with 6 features and 6 fields
@@ -128,6 +138,7 @@ head(loreto_prov)
 ## 5. Working with Geobosque data
 
 ``` r
+
 my_fun <- function(x){
   data <- get_forest_loss_data(
     layer = 'stock_bosque_perdida_provincia',
@@ -140,6 +151,7 @@ historico_df <- do.call(rbind.data.frame,historico_list)
 ```
 
 ``` r
+
 # The first five rows
 head(historico_df)
 #>   anio perdida rango1 rango2 rango3  rango4  rango5 tipobosque ubigeo
@@ -154,6 +166,7 @@ head(historico_df)
 ## 6. Simple visualization with ggplot
 
 ``` r
+
 library(ggplot2)
 library(dplyr)
 #> 

@@ -24,17 +24,18 @@ An sf or tibble object.
 # \donttest{
 library(geoidep)
 get_providers()
-#> # A tibble: 9 × 2
-#>   provider  layer_count
-#>   <fct>           <int>
-#> 1 Geobosque           5
-#> 2 INAIGEM             5
-#> 3 INEI                7
-#> 4 MTC                26
-#> 5 Midagri             2
-#> 6 SIGRID              4
-#> 7 Senamhi             1
-#> 8 Serfor              1
-#> 9 Sernanp            31
+#> # A tibble: 10 × 2
+#>    provider         layer_count
+#>    <fct>                  <int>
+#>  1 Geobosque                  5
+#>  2 INAIGEM                    5
+#>  3 INEI                       7
+#>  4 MTC                       26
+#>  5 MapBiomas Alerta           1
+#>  6 Midagri                    2
+#>  7 SIGRID                     4
+#>  8 Senamhi                    1
+#>  9 Serfor                     1
+#> 10 Sernanp                   31
 # }
 ```

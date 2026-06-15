@@ -39,33 +39,33 @@ library(geoidep)
 library(sf)
 #> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
 hot_spots <- get_hotspots_data(show_progress = FALSE)
-#> Reading layer `file1f0e7f49284d' from data source 
-#>   `/tmp/RtmpH6aCmb/file1f0e7f49284d.geojson' using driver `GeoJSON'
-#> Simple feature collection with 55 features and 29 fields
+#> Reading layer `file200d20b83bb5' from data source 
+#>   `/tmp/RtmpZ4Yyfk/file200d20b83bb5.geojson' using driver `GeoJSON'
+#> Simple feature collection with 154 features and 29 fields
 #> Geometry type: POINT
 #> Dimension:     XY
-#> Bounding box:  xmin: -81.28606 ymin: -17.86464 xmax: -70.21046 ymax: -4.57511
+#> Bounding box:  xmin: -81.19237 ymin: -15.34127 xmax: -69.00619 ymax: -3.52901
 #> Geodetic CRS:  WGS 84
 head(hot_spots)
 #> Simple feature collection with 6 features and 29 fields
 #> Geometry type: POINT
 #> Dimension:     XY
-#> Bounding box:  xmin: -74.90163 ymin: -17.86464 xmax: -70.61704 ymax: -15.19325
+#> Bounding box:  xmin: -75.00967 ymin: -15.34127 xmax: -69.15167 ymax: -14.43423
 #> Geodetic CRS:  WGS 84
 #>   OBJECTID                                          FUENTE DOCREG
-#> 1 14798861 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 2 14798862 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 3 14798863 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 4 14798864 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 5 14798865 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 6 14798866 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 1 15026205 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 2 15026206 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 3 15026207 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 4 15026208 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 5 15026209 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 6 15026210 Servicio Nacional Forestal y de Fauna Silvestre       
 #>                FECREG
-#> 1 2026-03-11 05:00:00
-#> 2 2026-03-11 05:00:00
-#> 3 2026-03-11 05:00:00
-#> 4 2026-03-11 05:00:00
-#> 5 2026-03-11 05:00:00
-#> 6 2026-03-11 05:00:00
+#> 1 2026-06-15 05:00:00
+#> 2 2026-06-15 05:00:00
+#> 3 2026-06-15 05:00:00
+#> 4 2026-06-15 05:00:00
+#> 5 2026-06-15 05:00:00
+#> 6 2026-06-15 05:00:00
 #>                                                                                        OBSERV
 #> 1 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR
 #> 2 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR
@@ -73,33 +73,40 @@ head(hot_spots)
 #> 4 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR
 #> 5 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR
 #> 6 Información generada por la Unidad Funcional de Monitoreo Satelital de la DGIOFFS de SERFOR
-#>   ZONUTM ORIGEN   NOMDEP         NOMPRO   NOMDIS   CAPITAL               FECHA
-#> 1     19      2    TACNA          TACNA     SAMA LAS YARAS 2026-03-10 05:00:00
-#> 2     19      2 MOQUEGUA            ILO      ILO       ILO 2026-03-11 05:00:00
-#> 3     19      2 MOQUEGUA MARISCAL NIETO MOQUEGUA  MOQUEGUA 2026-03-10 05:00:00
-#> 4     19      2 AREQUIPA          ISLAY MOLLENDO  MOLLENDO 2026-03-11 05:00:00
-#> 5     18      2 AREQUIPA       CASTILLA    APLAO     APLAO 2026-03-11 05:00:00
-#> 6     18      2 AREQUIPA       CARAVELI    LOMAS     LOMAS 2026-03-11 05:00:00
-#>       HORA CATEG NOMCATEG   LATITUD  LONGITUD   COORES  COORNO created_user
-#> 1 14:08:00    30          -17.86464 -70.61704 328667.2 8024048       USUFMS
-#> 2 00:46:00    30          -17.77728 -71.18802 268035.2 8033102       USUFMS
-#> 3 01:05:00    30          -17.29446 -71.14857 271615.0 8086596       USUFMS
-#> 4 00:46:00    30          -17.03881 -71.97790 182969.0 8113736       USUFMS
-#> 5 00:46:00    30          -16.10023 -72.62702 753823.7 8218519       USUFMS
-#> 6 00:46:00    30          -15.19325 -74.90163 510566.0 8320297       USUFMS
-#>          created_date last_edited_user    last_edited_date             TIPCOB
-#> 1 2026-03-12 02:10:40           USUFMS 2026-03-12 02:10:40 Cobertura Forestal
-#> 2 2026-03-12 02:10:40           USUFMS 2026-03-12 02:10:40 Cobertura Forestal
-#> 3 2026-03-12 02:10:40           USUFMS 2026-03-12 02:10:40 Cobertura Forestal
-#> 4 2026-03-12 02:10:40           USUFMS 2026-03-12 02:10:40 Cobertura Agrícola
-#> 5 2026-03-12 02:10:40           USUFMS 2026-03-12 02:10:40 Cobertura Forestal
-#> 6 2026-03-12 02:10:40           USUFMS 2026-03-12 02:10:40 Cobertura Forestal
-#>   SENSAT PELIGRO CATDEP CATPRO CATDIS                    geometry
-#> 1      N       0     23   2301 230109 POINT (-70.61704 -17.86464)
-#> 2    N21       0     18   1803 180301 POINT (-71.18802 -17.77728)
-#> 3    N21       0     18   1801 180101 POINT (-71.14857 -17.29446)
-#> 4    N21       0     04   0407 040701  POINT (-71.9779 -17.03881)
-#> 5    N21       0     04   0404 040401 POINT (-72.62702 -16.10023)
-#> 6    N21       0     04   0403 040311 POINT (-74.90163 -15.19325)
+#>   ZONUTM ORIGEN   NOMDEP   NOMPRO    NOMDIS   CAPITAL               FECHA
+#> 1     19      2     PUNO HUANCANE    TARACO    TARACO 2026-06-14 05:00:00
+#> 2     19      2     PUNO HUANCANE    TARACO    TARACO 2026-06-14 05:00:00
+#> 3     18      2 AREQUIPA LA UNION      TORO      TORO 2026-06-14 05:00:00
+#> 4     18      2 AREQUIPA LA UNION      TORO      TORO 2026-06-14 05:00:00
+#> 5     18      2      ICA    NASCA     NASCA     NASCA 2026-06-14 05:00:00
+#> 6     19      2     PUNO   SANDIA YANAHUAYA YANAHUAYA 2026-06-14 05:00:00
+#>       HORA CATEG                NOMCATEG   LATITUD  LONGITUD   COORES  COORNO
+#> 1 13:36:00    13                    RN05 -15.34127 -69.84551 409244.3 8303750
+#> 2 13:36:00    13                    RN05 -15.34059 -69.84174 409648.7 8303827
+#> 3 13:36:00     6 Subcuenca del Cotahuasi -15.33309 -73.02268 712280.5 8303863
+#> 4 14:13:00     6 Subcuenca del Cotahuasi -15.33036 -73.01949 712625.9 8304162
+#> 5 01:37:00    30                         -14.98391 -75.00967 498960.3 8343454
+#> 6 12:49:00    30                         -14.43423 -69.15167 483652.2 8404244
+#>   created_user        created_date last_edited_user    last_edited_date
+#> 1       USUFMS 2026-06-15 20:09:39           USUFMS 2026-06-15 20:09:39
+#> 2       USUFMS 2026-06-15 20:09:39           USUFMS 2026-06-15 20:09:39
+#> 3       USUFMS 2026-06-15 20:09:39           USUFMS 2026-06-15 20:09:39
+#> 4       USUFMS 2026-06-15 20:09:39           USUFMS 2026-06-15 20:09:39
+#> 5       USUFMS 2026-06-15 20:09:39           USUFMS 2026-06-15 20:09:39
+#> 6       USUFMS 2026-06-15 20:09:39           USUFMS 2026-06-15 20:09:39
+#>               TIPCOB SENSAT PELIGRO CATDEP CATPRO CATDIS
+#> 1 Cobertura Forestal    N21       0     21   2106 210607
+#> 2 Cobertura Forestal    N21       0     21   2106 210607
+#> 3 Cobertura Forestal    N21       0     04   0408 040811
+#> 4 Cobertura Forestal      N       0     04   0408 040811
+#> 5 Cobertura Agrícola      N       0     11   1103 110301
+#> 6 Cobertura Forestal    N20       0     21   2112 211208
+#>                      geometry
+#> 1 POINT (-69.84551 -15.34127)
+#> 2 POINT (-69.84174 -15.34059)
+#> 3 POINT (-73.02268 -15.33309)
+#> 4 POINT (-73.01949 -15.33036)
+#> 5 POINT (-75.00967 -14.98391)
+#> 6 POINT (-69.15167 -14.43423)
 # }
 ```
