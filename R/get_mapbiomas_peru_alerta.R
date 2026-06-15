@@ -6,6 +6,10 @@
 #' For more details, please visit: \href{https://alerta.mapbiomas.org/}{MapBiomas Alerta Platform}
 #'
 #' @param region An sf object specifying the area of interest (must be in EPSG:4326 - WGS 84).
+#' @param from Character. Start date for filtering, in \code{"YYYY-MM-DD"} format (e.g. \code{"2024-01-01"}).
+#' If \code{NULL} (default), no lower bound is applied.
+#' @param to Character. End date for filtering, in \code{"YYYY-MM-DD"} format (e.g. \code{"2024-12-31"}).
+#' If \code{NULL} (default), no upper bound is applied.
 #' @param dsn Character. Output filename with spatial format. If missing, a temporary GeoJSON file is created.
 #' @param method A character string specifying the spatial predicate used to filter
 #'   the downloaded alerts against the \code{region}. Available options are:
@@ -45,7 +49,7 @@
 #' directly or download them programmatically if needed.
 #'
 #' @export
-get_mapbiomas_peru_alerta <- function(region = NULL, dsn = NULL, method = 'within', show_progress = TRUE,
+get_mapbiomas_peru_alerta <- \(region = NULL, from = NULL, to = NULL, dsn = NULL, method = 'within', show_progress = TRUE,
                                       quiet = TRUE, timeout = 60) {
 
   # Definir URL del servicio WFS
@@ -81,7 +85,7 @@ get_mapbiomas_peru_alerta <- function(region = NULL, dsn = NULL, method = 'withi
     sep = ","
   )
 
-  # 4. Construir la consulta con httr2
+  # Construir la consulta con httr2
   req <- httr2::request(primary_link) |>
     httr2::req_url_query(
       service = "WFS",
@@ -99,20 +103,42 @@ get_mapbiomas_peru_alerta <- function(region = NULL, dsn = NULL, method = 'withi
     req <- req |> httr2::req_progress()
   }
 
-  #     Ejecutar la petición con manejo de errores
   resp <- tryCatch({
     httr2::req_perform(req)
   }, error = function(e) {
     cli::cli_abort("Error during download: {conditionMessage(e)}")
   })
 
+  suppressMessages(sf::sf_use_s2(use_s2 = FALSE))
   spatial_formats <- httr2::resp_body_string(resp = resp) |>
     geojsonio::geojson_sf() |>
     dplyr::select(-bbox) |>
-    sf::st_transform(crs = 4326)
+    sf::st_transform(crs = 4326)|>
+    sf::st_make_valid()
 
+  # Filtro por fechas
+  from_date <- validate_date(from, "from")
+  to_date   <- validate_date(to, "to")
 
-  # Filter by Method
+  if (!is.null(from_date) && !is.null(to_date) && from_date > to_date) {
+    cli::cli_abort(c(
+      "{.arg from} must be earlier than or equal to {.arg to}.",
+      "x" = "from = {.val {from}}, to = {.val {to}}"
+    ))
+  }
+
+  if (is.null(from_date) && is.null(to_date)) {
+    spatial_formats
+  } else {
+    spatial_formats <- spatial_formats |>
+      dplyr::filter(
+        if (!is.null(from_date)) as.Date(detected_at) >= from_date else TRUE,
+        if (!is.null(to_date)) as.Date(detected_at) <= to_date else TRUE
+      )
+    spatial_formats
+  }
+
+  # Filtro por métodos
   spatial_fn <- switch(method,
                        "within"     = sf::st_within,
                        "intersects" = sf::st_intersects,
@@ -126,7 +152,7 @@ get_mapbiomas_peru_alerta <- function(region = NULL, dsn = NULL, method = 'withi
   spatial_info <- spatial_formats[spatial_fn(spatial_formats, region, sparse = FALSE), ]
   sf::st_write(spatial_info, dsn = dsn, delete_dsn = TRUE, quiet = TRUE)
 
-  # 6. Leer datos espaciales de manera limpia
+  # Leer datos espaciales de manera limpia
   sf_data <- tryCatch({
     sf::st_read(dsn, quiet = quiet)
   }, error = function(e) {

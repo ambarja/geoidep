@@ -58,11 +58,19 @@ reference:
  #   contents:
  #   - get_hazard_data
 
- - title: 'Download data from MapBiomas Alert'
+ - title: 'Download data from MapBiomas Peru'
    contents:
    - get_mapbiomas_peru_alerta
+   - get_mapbiomas_peru_lulc
+   - get_mapbiomas_peru_lulc_series
+   - get_mapbiomas_peru_fire
+   - get_mapbiomas_peru_fire_products
+   - get_mapbiomas_peru_fire_legend
+
 
  - title: 'Utils'
    contents:
    - get_providers
    - get_data_sources
+   - scale_fill_mapbiomas_peru_d
+   - scale_fill_mapbiomas_peru_fire_d

@@ -157,9 +157,74 @@ get_mapbiomas_link <- \(type = NULL){
   return(mapbiomas_link[[type]])
 }
 
+#' @keywords internal
+#' @noRd
+validate_date <- function(x, arg_name) {
+  if (is.null(x)) return(NULL)
+
+  if (!is.character(x) || !grepl("^\\d{4}-\\d{2}-\\d{2}$", x)) {
+    cli::cli_abort(c(
+      "Invalid {.arg {arg_name}} value.",
+      "x" = "You supplied: {.val {x}}",
+      "i" = "Expected format: {.code YYYY-MM-DD} (e.g. {.val 2024-01-31})"
+    ))
+  }
+
+  parsed <- suppressWarnings(as.Date(x, format = "%Y-%m-%d"))
+  if (is.na(parsed)) {
+    cli::cli_abort(c(
+      "Invalid {.arg {arg_name}} date.",
+      "x" = "{.val {x}} is not a real calendar date."
+    ))
+  }
+  parsed
+}
+
+#' Mapbiomas Peru legend
+#' @keywords internal
+#' @noRd
+get_mapbiomas_peru_legend <- function() {
+  tibble::tribble(
+    ~id, ~class_en,                            ~class_es,                              ~hex,
+    1,  "Forest formation",                    "Formación boscosa",                    "#1f8d49",
+    3,  "Forest",                              "Bosque",                               "#1f8d49",
+    4,  "Dry forest",                          "Bosque seco",                          "#7dc975",
+    5,  "Mangrove",                            "Manglar",                              "#04381d",
+    6,  "Flooded forest",                      "Bosque inundable",                     "#026975",
+    10, "Non-forest formation",                "Formación natural no boscosa",         "#d6bc74",
+    11, "Swamp or Flooded Grassland",          "Zona pantanosa o pastizal inundable",  "#519799",
+    12, "Grasslands / herbaceous",             "Pastizal / herbazal",                  "#d6bc74",
+    29, "Rocky Outcrop",                       "Afloramiento rocoso",                  "#ffaa5f",
+    66, "Scrubland",                           "Matorral",                             "#a89358",
+    70, "Fog oasis",                           "Loma costera",                         "#be9e00",
+    13, "Other non-forest formations",         "Otra formación no boscosa",            "#d89f5c",
+    14, "Agricultural area",                   "Área agropecuaria",                    "#ffefc3",
+    15, "Pasture",                             "Pasto",                                "#edde8e",
+    18, "Agriculture",                         "Agricultura",                          "#e974ed",
+    35, "Oil palm",                            "Palma aceitera",                       "#9065d0",
+    40, "Rice",                                "Arroz",                                "#c71585",
+    72, "Other crops",                         "Otros cultivos",                       "#910046",
+    9,  "Planted forest",                      "Plantación forestal",                  "#7a5900",
+    21, "Mosaic of agriculture and pasture",   "Mosaico agropecuario",                 "#ffefc3",
+    22, "Non-vegetated area",                  "Área sin vegetación",                  "#d4271e",
+    23, "Beach",                               "Playa",                                "#ffa07a",
+    24, "Infrastructure",                      "Infraestructura urbana",               "#d4271e",
+    30, "Mining",                              "Minería",                              "#9c0027",
+    32, "Coastal Salt flat",                   "Salina costera",                       "#fc8114",
+    61, "Salt flat",                           "Salar",                                "#f5d5d5",
+    68, "Other natural non vegetated area",    "Otra área natural sin vegetación",     "#E97A7A",
+    25, "Other non vegetated area",            "Otra área sin vegetación",             "#db4d4f",
+    26, "Water body",                          "Cuerpo de agua",                       "#2532e4",
+    33, "River, lake or ocean",                "Río, lago u océano",                   "#2532e4",
+    31, "Aquaculture",                         "Acuicultura",                          "#091077",
+    34, "Glacier",                             "Glaciar",                              "#93dfe6",
+    27, "Not observed",                        "No observado",                         "#ffffff"
+  )
+}
+
 #' Global variables for get_early_warning
 #' This code declares global variables used in the `get_early_warning` function to avoid R CMD check warnings.
 #' @name global-variables
 #' @keywords internal
 #' @noRd
-utils::globalVariables(c("nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data","nombdep"))
+utils::globalVariables(c("nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data","nombdep","setNames","detected_at"))

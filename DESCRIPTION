@@ -31,7 +31,8 @@ Imports:
     rvest,
     sf,
     tidyr,
-    geojsonio
+    geojsonio,
+    terra
 Suggests: 
     ggplot2,
     knitr,

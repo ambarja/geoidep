@@ -6,6 +6,8 @@
 \usage{
 get_mapbiomas_peru_alerta(
   region = NULL,
+  from = NULL,
+  to = NULL,
   dsn = NULL,
   method = "within",
   show_progress = TRUE,
@@ -15,6 +17,12 @@ get_mapbiomas_peru_alerta(
 }
 \arguments{
 \item{region}{An sf object specifying the area of interest (must be in EPSG:4326 - WGS 84).}
+
+\item{from}{Character. Start date for filtering, in \code{"YYYY-MM-DD"} format (e.g. \code{"2024-01-01"}).
+If \code{NULL} (default), no lower bound is applied.}
+
+\item{to}{Character. End date for filtering, in \code{"YYYY-MM-DD"} format (e.g. \code{"2024-12-31"}).
+If \code{NULL} (default), no upper bound is applied.}
 
 \item{dsn}{Character. Output filename with spatial format. If missing, a temporary GeoJSON file is created.}
 
