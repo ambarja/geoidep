@@ -72,5 +72,5 @@ reference:
    contents:
    - get_providers
    - get_data_sources
-   - scale_fill_mapbiomas_peru_d
+   - scale_fill_mapbiomas_peru_lulc_d
    - scale_fill_mapbiomas_peru_fire_d
