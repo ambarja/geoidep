@@ -64,7 +64,8 @@ get_mapbiomas_peru_lulc <- \(year, crop_to = NULL, collection = 3) {
     ))
   }
 
-  r <- terra::rast(paste0("/vsicurl/", url))
+  r <- terra::rast(paste0("/vsicurl/", url)) |>
+    terra::as.factor()
 
   if (!is.null(crop_to)) {
     if (inherits(crop_to, c("sf", "sfc"))) {

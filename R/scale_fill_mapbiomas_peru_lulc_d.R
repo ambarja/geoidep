@@ -24,12 +24,12 @@
 #'
 #' ggplot() +
 #'   geom_spatraster(data = as.factor(lulc_2024)) +
-#'   scale_fill_mapbiomas_peru_d(lang = "es") +
+#'   scale_fill_mapbiomas_peru_lulc_d(lang = "es") +
 #'   theme_minimal() +
 #'   labs(fill = "Cobertura/Uso", title = "MapBiomas Perú 2024")
 #' }
 #' @export
-scale_fill_mapbiomas_peru_d <- function(..., lang = c("en", "es"), na.translate = FALSE) {
+scale_fill_mapbiomas_peru_lulc_d <- function(..., lang = c("en", "es"), na.translate = FALSE) {
   lang <- match.arg(lang)
   label_col <- if (lang == "en") "class_en" else "class_es"
 

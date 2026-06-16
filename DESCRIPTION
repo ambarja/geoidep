@@ -32,12 +32,14 @@ Imports:
     sf,
     tidyr,
     geojsonio,
-    terra
+    terra,
+    tibble
 Suggests: 
     ggplot2,
     knitr,
     mapgl,
     leaflet,
+    tidyterra,
     rmarkdown,
     testthat (>= 3.0.0)
 VignetteBuilder: 

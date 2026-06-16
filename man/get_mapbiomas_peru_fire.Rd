@@ -8,7 +8,7 @@ get_mapbiomas_peru_fire(product, year, crop_to = NULL, collection = 1)
 }
 \arguments{
 \item{product}{Character. One of the products listed in
-\code{\link{get_mapbiomas_peru_fire_products}}, e.g. \code{"annual_burned"},
+\code{get_mapbiomas_peru_fire_products}, e.g. \code{"annual_burned"},
 \code{"year_last_fire"}, \code{"frequency_burned"}.}
 
 \item{year}{Integer. For \code{"annual"} products (see

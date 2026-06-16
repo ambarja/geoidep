@@ -16,14 +16,14 @@
 get_mapbiomas_peru_fire_products <- function() {
   tibble::tribble(
     ~product,                          ~description_en,                    ~description_es,                       ~temporal,
-    "annual_burned",                   "Annual burned area",                "Área quemada anual",                   "annual",
-    "annual_burned_coverage",          "Annual burned area by land cover",  "Área quemada anual por cobertura",     "annual",
-    "monthly_burned",                  "Monthly burned area",               "Área quemada mensual",                 "annual",
-    "accumulated_burned",              "Accumulated burned area",           "Área quemada acumulada",               "range",
-    "accumulated_burned_coverage",     "Accumulated burned area by cover",  "Área quemada acumulada por cobertura", "range",
-    "frequency_burned",                "Burned area frequency",             "Frecuencia de área quemada",           "range",
-    "annual_burned_scar_size_range",   "Annual burned scar size",           "Tamaño de cicatriz anual",             "annual",
-    "year_last_fire",                  "Year of last fire",                 "Año del último fuego",                 "annual"
+    "annual_burned",                   "Annual burned area",                "\u00c1rea quemada anual",                      "annual",
+    "annual_burned_coverage",          "Annual burned area by land cover",  "\u00c1rea quemada anual por cobertura",         "annual",
+    "monthly_burned",                  "Monthly burned area",               "\u00c1rea quemada mensual",                     "annual",
+    "accumulated_burned",              "Accumulated burned area",           "\u00c1rea quemada acumulada",                    "range",
+    "accumulated_burned_coverage",     "Accumulated burned area by cover",  "\u00c1rea quemada acumulada por cobertura",      "range",
+    "frequency_burned",                "Burned area frequency",             "Frecuencia de \u00e1rea quemada",                "range",
+    "annual_burned_scar_size_range",   "Annual burned scar size",           "Tama\u00f1o de cicatriz anual",                  "annual",
+    "year_last_fire",                  "Year of last fire",                 "A\u00f1o del \u00faltimo fuego",                 "annual"
   )
 }
 
@@ -37,7 +37,7 @@ get_mapbiomas_peru_fire_products <- function() {
 #' area of interest.
 #'
 #' @param product Character. One of the products listed in
-#' \code{\link{get_mapbiomas_peru_fire_products}}, e.g. \code{"annual_burned"},
+#' \code{get_mapbiomas_peru_fire_products}, e.g. \code{"annual_burned"},
 #' \code{"year_last_fire"}, \code{"frequency_burned"}.
 #' @param year Integer. For \code{"annual"} products (see
 #' \code{\link{get_mapbiomas_peru_fire_products}}), the year of the map
@@ -148,7 +148,8 @@ get_mapbiomas_peru_fire <- \(product, year, crop_to = NULL, collection = 1) {
     ))
   }
 
-  r <- terra::rast(paste0("/vsicurl/", url))
+  r <- terra::rast(paste0("/vsicurl/", url)) |>
+    terra::as.factor()
 
   if (!is.null(crop_to)) {
     if (inherits(crop_to, c("sf", "sfc"))) {

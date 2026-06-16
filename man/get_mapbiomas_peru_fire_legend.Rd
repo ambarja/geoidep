@@ -25,7 +25,7 @@ sub-product (Collection 1). Useful for building color scales (see
 \item \code{annual_burned} and \code{accumulated_burned}: binary
 classification (\code{1 = "Burned area"}).
 \item \code{annual_burned_coverage} and \code{accumulated_burned_coverage}:
-share the LULC legend (see \code{\link{get_mapbiomas_peru_legend}}),
+share the LULC legend (see \code{get_mapbiomas_peru_legend}),
 since these products classify the burned pixels by land cover class.
 \item \code{monthly_burned}: pixel values \code{1-12} represent the
 month (January-December) in which the pixel burned.

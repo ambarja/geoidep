@@ -17,7 +17,7 @@
 #'   \item \code{annual_burned} and \code{accumulated_burned}: binary
 #'   classification (\code{1 = "Burned area"}).
 #'   \item \code{annual_burned_coverage} and \code{accumulated_burned_coverage}:
-#'   share the LULC legend (see \code{\link{get_mapbiomas_peru_legend}}),
+#'   share the LULC legend (see \code{get_mapbiomas_peru_legend}),
 #'   since these products classify the burned pixels by land cover class.
 #'   \item \code{monthly_burned}: pixel values \code{1-12} represent the
 #'   month (January-December) in which the pixel burned.
@@ -50,7 +50,7 @@ get_mapbiomas_peru_fire_legend <- function(product) {
          annual_burned = ,
          accumulated_burned = tibble::tribble(
            ~id, ~class_en,     ~class_es,       ~hex,
-           1,   "Burned area", "Área quemada",  "#ff5340"
+           1,   "Burned area", "\u00c1rea quemada",  "#ff5340"
          ),
 
          annual_burned_coverage = ,
@@ -74,18 +74,18 @@ get_mapbiomas_peru_fire_legend <- function(product) {
 
          frequency_burned = tibble::tribble(
            ~id, ~class_en,           ~class_es,                  ~hex,
-           1,  "Burned once",        "Quemado una vez",          "#FAF3CD",
-           2,  "Burned twice",       "Quemado dos veces",        "#F9E676",
-           3,  "Burned 3 times",     "Quemado tres veces",       "#F1CD38",
-           4,  "Burned 4 times",     "Quemado cuatro veces",     "#DDA71C",
-           5,  "Burned 5 times",     "Quemado cinco veces",      "#C77E14",
-           6,  "Burned 6 times",     "Quemado seis veces",       "#B0540F",
-           7,  "Burned 7 times",     "Quemado siete veces",      "#992A0A",
-           8,  "Burned 8 times",     "Quemado ocho veces",       "#7B1208",
-           9,  "Burned 9 times",     "Quemado nueve veces",      "#5C0407",
-           10, "Burned 10 times",    "Quemado diez veces",       "#440508",
-           11, "Burned 11 times",    "Quemado once veces",       "#260405",
-           12, "Burned 12+ times",   "Quemado doce o más veces", "#040101"
+           1,  "Burned once",        "Quemado 1 vez",        "#FAF3CD",
+           2,  "Burned twice",       "Quemado 2 veces",      "#F9E676",
+           3,  "Burned 3 times",     "Quemado 3 veces",      "#F1CD38",
+           4,  "Burned 4 times",     "Quemado 4 veces",      "#DDA71C",
+           5,  "Burned 5 times",     "Quemado 5 veces",      "#C77E14",
+           6,  "Burned 6 times",     "Quemado 6 veces",      "#B0540F",
+           7,  "Burned 7 times",     "Quemado 7 veces",      "#992A0A",
+           8,  "Burned 8 times",     "Quemado 8 veces",      "#7B1208",
+           9,  "Burned 9 times",     "Quemado 9 veces",      "#5C0407",
+           10, "Burned 10 times",    "Quemado 10 veces",     "#440508",
+           11, "Burned 11 times",    "Quemado 11 veces",     "#260405",
+           12, "Burned 12+ times",   "Quemado 12+ veces",    "#040101"
          ),
 
          year_last_fire = tibble::tribble(
