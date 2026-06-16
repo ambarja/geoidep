@@ -73,7 +73,7 @@
   : List resources and count layers of IDEP
 - [`get_data_sources()`](https://geografo.pe/geoidep/reference/get_data_sources.md)
   : List providers, description, year and link
-- [`scale_fill_mapbiomas_peru_d()`](https://geografo.pe/geoidep/reference/scale_fill_mapbiomas_peru_d.md)
+- [`scale_fill_mapbiomas_peru_lulc_d()`](https://geografo.pe/geoidep/reference/scale_fill_mapbiomas_peru_lulc_d.md)
   : Discrete fill scale for MapBiomas Peru LULC classes
 - [`scale_fill_mapbiomas_peru_fire_d()`](https://geografo.pe/geoidep/reference/scale_fill_mapbiomas_peru_fire_d.md)
   : Discrete fill scale for MapBiomas Peru Fire products
