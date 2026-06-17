@@ -94,25 +94,18 @@ For more information, you can visit the following web page: <a href="https://geo
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">aerodromo</span> <span class="op">&lt;-</span> <span class="fu">get_mtc_data</span><span class="op">(</span>layer <span class="op">=</span> <span class="st">"aerodromos_2023"</span> , show_progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">aerodromo</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 14 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 6 features and 13 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -76.4666 ymin: -16.34061 xmax: -71.57079 ymax: -2.796108</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                        gml_id id codaero</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-4161  4 0321ANS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-4160  5 1642ADS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-415f  6 1643ADS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-415e  7 0411AQP</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-415d  8 2532ATY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-415c  9 0521AYP</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                       tipo                      nombre</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1               Aeropuerto                 Andahuaylas</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                Aeródromo                      Andoas</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Helipuerto de superficie                      Andoas</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 Aeropuerto Internacional    Alfredo Rodríguez Ballon</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                Aeródromo                     Atalaya</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6               Aeropuerto Crnl. FAP. Alfredo Mendivil</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   id codaero                     tipo                      nombre</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  4 0321ANS               Aeropuerto                 Andahuaylas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  5 1642ADS                Aeródromo                      Andoas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  6 1643ADS Helipuerto de superficie                      Andoas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  7 0411AQP Aeropuerto Internacional    Alfredo Rodríguez Ballon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  8 2532ATY                Aeródromo                     Atalaya</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  9 0521AYP               Aeropuerto Crnl. FAP. Alfredo Mendivil</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                               label iddpto   feccorte</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                            Aeropuerto Andahuaylas     03 31/12/2023</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                  Aeródromo Andoas     16 31/12/2023</span>

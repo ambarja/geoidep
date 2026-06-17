@@ -54,25 +54,18 @@ library(geoidep)
 library(sf)
 aerodromo <- get_mtc_data(layer = "aerodromos_2023" , show_progress = FALSE)
 head(aerodromo)
-#> Simple feature collection with 6 features and 14 fields
+#> Simple feature collection with 6 features and 13 fields
 #> Geometry type: POINT
 #> Dimension:     XY
 #> Bounding box:  xmin: -76.4666 ymin: -16.34061 xmax: -71.57079 ymax: -2.796108
 #> Geodetic CRS:  WGS 84
-#>                                                        gml_id id codaero
-#> 1 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-4161  4 0321ANS
-#> 2 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-4160  5 1642ADS
-#> 3 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-415f  6 1643ADS
-#> 4 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-415e  7 0411AQP
-#> 5 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-415d  8 2532ATY
-#> 6 pe_mtc_018_aerodromos_dic23.fid--5a575ed3_19ed431f3d2_-415c  9 0521AYP
-#>                       tipo                      nombre
-#> 1               Aeropuerto                 Andahuaylas
-#> 2                Aeródromo                      Andoas
-#> 3 Helipuerto de superficie                      Andoas
-#> 4 Aeropuerto Internacional    Alfredo Rodríguez Ballon
-#> 5                Aeródromo                     Atalaya
-#> 6               Aeropuerto Crnl. FAP. Alfredo Mendivil
+#>   id codaero                     tipo                      nombre
+#> 1  4 0321ANS               Aeropuerto                 Andahuaylas
+#> 2  5 1642ADS                Aeródromo                      Andoas
+#> 3  6 1643ADS Helipuerto de superficie                      Andoas
+#> 4  7 0411AQP Aeropuerto Internacional    Alfredo Rodríguez Ballon
+#> 5  8 2532ATY                Aeródromo                     Atalaya
+#> 6  9 0521AYP               Aeropuerto Crnl. FAP. Alfredo Mendivil
 #>                                               label iddpto   feccorte
 #> 1                            Aeropuerto Andahuaylas     03 31/12/2023
 #> 2                                  Aeródromo Andoas     16 31/12/2023
