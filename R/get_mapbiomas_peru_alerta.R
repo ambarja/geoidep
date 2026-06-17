@@ -96,18 +96,28 @@ get_mapbiomas_peru_alerta <- \(region = NULL, from = NULL, to = NULL, dsn = NULL
       bbox = bbox_str
     ) |>
     httr2::req_timeout(timeout) |>
-    httr2::req_options(ssl_verifypeer = FALSE)
+    httr2::req_options(ssl_verifypeer = FALSE) |>
+    httr2::req_retry(
+      max_tries = 3,
+      retry_on_failure = TRUE
+    )
 
-  # Activar barra de progreso si es solicitado
   if (isTRUE(show_progress)) {
     req <- req |> httr2::req_progress()
   }
 
-  resp <- tryCatch({
-    httr2::req_perform(req)
-  }, error = function(e) {
-    cli::cli_abort("Error during download: {conditionMessage(e)}")
-  })
+  resp <- tryCatch(
+    {
+      httr2::req_perform(req)
+    },
+    error = function(e) {
+      cli::cli_abort(c(
+        "Unable to retrieve MapBiomas alerts.",
+        "x" = "The MapBiomas service may be temporarily unavailable.",
+        "i" = "Please try again later."
+      ))
+    }
+  )
 
   suppressMessages(sf::sf_use_s2(use_s2 = FALSE))
   spatial_formats <- httr2::resp_body_string(resp = resp) |>
@@ -127,15 +137,21 @@ get_mapbiomas_peru_alerta <- \(region = NULL, from = NULL, to = NULL, dsn = NULL
     ))
   }
 
-  if (is.null(from_date) && is.null(to_date)) {
-    spatial_formats
-  } else {
+  # Convertir una sola vez
+  spatial_formats <- spatial_formats |>
+    dplyr::mutate(
+      detected_at = as.Date(detected_at)
+    )
+
+  # Aplicar filtros
+  if (!is.null(from_date)) {
     spatial_formats <- spatial_formats |>
-      dplyr::filter(
-        if (!is.null(from_date)) as.Date(detected_at) >= from_date else TRUE,
-        if (!is.null(to_date)) as.Date(detected_at) <= to_date else TRUE
-      )
-    spatial_formats
+      dplyr::filter(detected_at >= from_date)
+  }
+
+  if (!is.null(to_date)) {
+    spatial_formats <- spatial_formats |>
+      dplyr::filter(detected_at <= to_date)
   }
 
   # Filtro por métodos
