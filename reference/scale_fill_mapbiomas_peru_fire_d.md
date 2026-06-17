@@ -45,18 +45,12 @@ A `ggplot2` discrete scale object.
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
 library(geoidep)
 library(ggplot2)
 library(tidyterra)
-#> 
-#> Attaching package: ‘tidyterra’
-#> The following object is masked from ‘package:stats’:
-#> 
-#>     filter
 
-lima <- get_departaments("LIMA")
-#>   |                                                                              |                                                                      |   0%  |                                                                              |=                                                                     |   1%  |                                                                              |==                                                                    |   3%  |                                                                              |=====                                                                 |   7%  |                                                                              |===========                                                           |  16%  |                                                                              |====================                                                  |  29%  |                                                                              |======================                                                |  32%  |                                                                              |===============================                                       |  44%  |                                                                              |=======================================                               |  56%  |                                                                              |=============================================                         |  65%  |                                                                              |================================================                      |  69%  |                                                                              |=========================================================             |  81%  |                                                                              |==================================================================    |  94%  |                                                                              |======================================================================| 100%
+lima <- get_departaments("LIMA", show_progress = FALSE)
 
 # Frecuencia de área quemada
 freq <- get_mapbiomas_peru_fire(
@@ -64,14 +58,12 @@ freq <- get_mapbiomas_peru_fire(
   year = 2024,
   crop_to = lima
 )
-#> |---------|---------|---------|---------|=========================================                                          
 
 ggplot() +
   geom_spatraster(data = as.factor(freq)) +
   scale_fill_mapbiomas_peru_fire_d("frequency_burned", lang = "es") +
   theme_minimal() +
   labs(fill = "N° de quemas", title = "Frecuencia de área quemada 2013-2024")
-#> Error in unique.default(x, nmax = nmax): unique() applies only to vectors
 
 # Año del último fuego
 last_fire <- get_mapbiomas_peru_fire(
@@ -79,13 +71,11 @@ last_fire <- get_mapbiomas_peru_fire(
   year = 2024,
   crop_to = lima
 )
-#> |---------|---------|---------|---------|=========================================                                          
 
 ggplot() +
   geom_spatraster(data = as.factor(last_fire)) +
   scale_fill_mapbiomas_peru_fire_d("year_last_fire", lang = "es") +
   theme_minimal() +
   labs(fill = "Año", title = "Año del último fuego")
-#> Error in unique.default(x, nmax = nmax): unique() applies only to vectors
-# }
+} # }
 ```

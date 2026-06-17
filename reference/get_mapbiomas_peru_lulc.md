@@ -36,28 +36,15 @@ A `SpatRaster` with one layer named `classification_<year>`.
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
 library(geoidep)
 
 # Download departmental boundaries
-lima <- get_departaments("LIMA")
-#>   |                                                                              |                                                                      |   0%  |                                                                              |=                                                                     |   1%  |                                                                              |==                                                                    |   3%  |                                                                              |====                                                                  |   6%  |                                                                              |=====                                                                 |   7%  |                                                                              |======                                                                |   9%  |                                                                              |=========                                                             |  13%  |                                                                              |===========                                                           |  16%  |                                                                              |==============                                                        |  20%  |                                                                              |===============                                                       |  21%  |                                                                              |================                                                      |  23%  |                                                                              |=====================                                                 |  29%  |                                                                              |========================                                              |  35%  |                                                                              |=============================                                         |  41%  |                                                                              |===============================                                       |  45%  |                                                                              |================================                                      |  45%  |                                                                              |==================================                                    |  49%  |                                                                              |===================================                                   |  50%  |                                                                              |======================================                                |  54%  |                                                                              |==============================================                        |  66%  |                                                                              |================================================                      |  68%  |                                                                              |====================================================                  |  74%  |                                                                              |============================================================          |  86%  |                                                                              |=================================================================     |  93%  |                                                                              |==================================================================    |  94%  |                                                                              |===================================================================== |  99%  |                                                                              |======================================================================| 100%
+lima <- get_departaments("LIMA", show_progress = FALSE)
 
 # Download and crop MapBiomas Peru LULC for 2024
 lulc_2024 <- get_mapbiomas_peru_lulc(year = 2024, crop_to = lima)
-#> |---------|---------|---------|---------|=========================================                                          
 lulc_2024
-#> class       : SpatRaster
-#> size        : 11315, 8827, 1  (nrow, ncol, nlyr)
-#> resolution  : 0.0002694946, 0.0002694946  (x, y)
-#> extent      : -77.88636, -75.50753, -13.32354, -10.27421  (xmin, xmax, ymin, ymax)
-#> coord. ref. : lon/lat WGS 84 (EPSG:4326)
-#> source(s)   : memory
-#> varname     : peru_collection3_integration_v1-classification_2024
-#> categories  : peru_collection3_integration_v1-classification_2024
-#> name        : classification_2024
-#> min value   :                   0
-#> max value   :                  72
 #> class       : SpatRaster
 #> dimensions  : 4521, 5103, 1  (nrow, ncol, nlyr)
 #> resolution  : 0.00025, 0.00025  (x, y)
@@ -65,5 +52,5 @@ lulc_2024
 #> coord. ref. : lon/lat WGS 84
 #> source      : peru_collection3_integration_v1-classification_2024.tif
 #> name        : classification_2024
-# }
+} # }
 ```
