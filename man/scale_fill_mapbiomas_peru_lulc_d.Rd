@@ -28,7 +28,7 @@ Peru Collection 3 color palette to a classified \code{SpatRaster} (as a
 factor), for use with \code{tidyterra::geom_spatraster()}.
 }
 \examples{
-\donttest{
+\dontrun{
 library(geoidep)
 library(ggplot2)
 library(tidyterra)

@@ -14,7 +14,7 @@
 #' @returns A \code{ggplot2} discrete scale object.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(geoidep)
 #' library(ggplot2)
 #' library(tidyterra)

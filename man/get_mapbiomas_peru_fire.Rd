@@ -35,7 +35,7 @@ required for the requested extent are downloaded (via GDAL's
 area of interest.
 }
 \examples{
-\donttest{
+\dontrun{
 library(geoidep)
 
 lima <- get_departaments("LIMA")

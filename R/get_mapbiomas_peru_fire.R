@@ -53,7 +53,7 @@ get_mapbiomas_peru_fire_products <- function() {
 #' @returns A \code{SpatRaster} with one layer.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(geoidep)
 #'
 #' lima <- get_departaments("LIMA")

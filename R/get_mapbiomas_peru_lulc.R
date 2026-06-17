@@ -18,11 +18,11 @@
 #' @returns A \code{SpatRaster} with one layer named \code{classification_<year>}.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(geoidep)
 #'
 #' # Download departmental boundaries
-#' lima <- get_departaments("LIMA")
+#' lima <- get_departaments("LIMA", show_progress = FALSE)
 #'
 #' # Download and crop MapBiomas Peru LULC for 2024
 #' lulc_2024 <- get_mapbiomas_peru_lulc(year = 2024, crop_to = lima)

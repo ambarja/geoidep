@@ -33,12 +33,12 @@ to a classified \code{SpatRaster} (as a factor), for use with
 \code{tidyterra::geom_spatraster()}.
 }
 \examples{
-\donttest{
+\dontrun{
 library(geoidep)
 library(ggplot2)
 library(tidyterra)
 
-lima <- get_departaments("LIMA")
+lima <- get_departaments("LIMA", show_progress = FALSE)
 
 # Frecuencia de área quemada
 freq <- get_mapbiomas_peru_fire(

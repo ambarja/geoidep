@@ -24,10 +24,10 @@ Peru (see \code{\link{get_mapbiomas_peru_lulc}}), each cropped to the same
 area of interest if provided.
 }
 \examples{
-\donttest{
+\dontrun{
 library(geoidep)
 
-lima <- get_departaments("LIMA")
+lima <- get_departaments("LIMA",show_progress = FALSE)
 lulc_series <- get_mapbiomas_peru_lulc_series(years = 2020:2024, crop_to = lima)
 lulc_series
 #> class       : SpatRaster
