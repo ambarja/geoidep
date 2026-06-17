@@ -22,64 +22,71 @@
 #' }
 #' @export
 
-get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60){
+get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE,
+                         quiet = TRUE, timeout = 5) {
+  # CRAN check detection
+  if (!interactive() && identical(Sys.getenv("NOT_CRAN"), "false")) {
+    cli::cli_abort(
+      c(
+        "!" = "Internet access not available in CRAN checks.",
+        "i" = "This function requires download from {.url swmapas.mtc.gob.pe}",
+        ">" = "Use {.code get_mtc_data()} interactively to download data."
+      )
+    )
+  }
 
   primary_link <- get_mtc_link(type = layer)
-
   if (is.null(dsn)) {
     dsn <- tempfile(pattern = layer, fileext = ".gpkg")
   }
 
+  # Single attempt, short timeout (no retries)
   data.download <- tryCatch(
-    httr::RETRY(
-      verb = "GET",
+    httr::GET(
       url = primary_link,
-      times = 3,
-      pause_base = 1,
-      pause_cap = 5,
-      terminate_on = c(400, 401, 403, 404),
       config = httr::config(ssl_verifypeer = FALSE),
-      httr::timeout(timeout),
+      httr::timeout(timeout),  # 5 segundos máximo
       httr::write_disk(dsn, overwrite = TRUE)
     ),
     error = function(e) {
-      stop(
-        paste(
-          "Unable to download data from the MTC server.",
-          "The service may be temporarily unavailable.",
-          "Please try again later.",
-          "\n\nOriginal error:",
-          conditionMessage(e)
+      cli::cli_abort(
+        c(
+          "x" = "Unable to download from MTC server",
+          "!" = "The service may be temporarily unavailable",
+          ">" = "Please try again later",
+          "i" = "Error: {conditionMessage(e)}"
         ),
-        call. = FALSE
+        call = NULL
       )
     }
   )
 
-  # Check if the download was successful
+  # Check HTTP status
   if (httr::http_error(data.download)) {
-    stop("Error downloading the file. Check the URL or connection")
+    cli::cli_abort(
+      "HTTP {httr::status_code(data.download)} error downloading {.url {primary_link}}",
+      call = NULL
+    )
   }
 
+  # Rest of the function stays the same
   extract_dir <- file.path(tempdir(), paste0("geoidep_data_mtc_", layer))
   dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
   suppressMessages(invisible(file.copy(from = dsn, to = extract_dir)))
-  gpkg_files <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
 
+  gpkg_files <- list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE)
   if (length(gpkg_files) == 0) {
-    stop("No .gpkg file was found after extraction in: ", extract_dir)
+    cli::cli_abort("No .gpkg file found after download in {.path {extract_dir}}")
   }
 
   gpkg_file <- dplyr::first(gpkg_files)
-
   if (!file.exists(gpkg_file)) {
-    stop("Extracted file does not exist: ", gpkg_file)
+    cli::cli_abort("Extracted file does not exist: {.path {gpkg_file}}")
   }
 
   new_gpkg_file <- file.path(dirname(gpkg_file), tolower(basename(gpkg_file)))
-
   if (!file.rename(from = gpkg_file, to = new_gpkg_file)) {
-    stop("Error renaming file from: ", gpkg_file, " to: ", new_gpkg_file)
+    cli::cli_abort("Failed to rename {.path {gpkg_file}}")
   }
 
   if (file.exists(dsn)) {
@@ -87,8 +94,11 @@ get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE, 
   }
 
   sf_data <- suppressWarnings(sf::st_read(new_gpkg_file, quiet = quiet))
+
+  # Normalize column names
   non_geom_idx <- which(!grepl("^(geom|geometry)$", names(sf_data), ignore.case = TRUE))
   names(sf_data)[non_geom_idx] <- tolower(names(sf_data)[non_geom_idx])
+
   sf::st_crs(sf_data) <- 4326
 
   # Remove gml_id
