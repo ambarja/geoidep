@@ -4,9 +4,20 @@
 \alias{get_provinces}
 \title{Download INEI province boundaries}
 \usage{
-get_provinces(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60)
+get_provinces(
+  departamento = NULL,
+  provincia = NULL,
+  dsn = NULL,
+  show_progress = TRUE,
+  quiet = TRUE,
+  timeout = 60
+)
 }
 \arguments{
+\item{departamento}{Character. Name of the level-1 administrative boundary (department) to query. The input is case-insensitive.}
+
+\item{provincia}{Character. Name of the level-2 administrative boundary (province) to query. The input is case-insensitive.}
+
 \item{dsn}{Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
 If a directory is provided, the file will be saved as \code{PROVINCIA.gpkg} inside it.
 If \code{NULL}, a temporary file will be created.

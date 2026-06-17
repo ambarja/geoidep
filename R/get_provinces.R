@@ -5,6 +5,8 @@
 #' corresponding to the \bold{official political division} of the province boundaries of Peru.
 #' For more information, you can visit the following page \href{https://ide.inei.gob.pe/}{INEI Spatial Data Portal}.
 #'
+#' @param departamento Character. Name of the level-1 administrative boundary (department) to query. The input is case-insensitive.
+#' @param provincia Character. Name of the level-2 administrative boundary (province) to query. The input is case-insensitive.
 #' @param dsn Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
 #' If a directory is provided, the file will be saved as \code{PROVINCIA.gpkg} inside it.
 #' If \code{NULL}, a temporary file will be created.
@@ -23,16 +25,24 @@
 #' }
 #' @export
 
-get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60){
+get_provinces <- \(
+  departamento = NULL,
+  provincia = NULL,
+  dsn = NULL,
+  show_progress = TRUE,
+  quiet = TRUE,
+  timeout = 60
+  ) {
+
     primary_link <- get_inei_link("provincia")
 
     if (is.null(dsn)) {
-      dsn <-  tempfile(pattern = "provincia", fileext = ".rar")
+      dsn_rar <-  tempfile(pattern = "provincia", fileext = ".rar")
     } else {
       if (!dir.exists(dsn)) {
         dir.create(dsn, recursive = TRUE, showWarnings = FALSE)
       }
-      dsn <- file.path(dsn, "provincia.rar")
+      dsn_rar <- file.path(dsn, "provincia.rar")
     }
 
     rar.download <- tryCatch({
@@ -42,7 +52,7 @@ get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60)
           config = c(
             httr::config(ssl_verifypeer = FALSE),
             httr::timeout(seconds = timeout)),
-          httr::write_disk(dsn, overwrite = TRUE),
+          httr::write_disk(dsn_rar, overwrite = TRUE),
           httr::progress()
         )
       } else {
@@ -51,46 +61,91 @@ get_provinces <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60)
           config = c(
             httr::config(ssl_verifypeer = FALSE),
             httr::timeout(seconds = timeout)),
-          httr::write_disk(dsn, overwrite = TRUE)
+          httr::write_disk(dsn_rar, overwrite = TRUE)
         )
       }
-    },error = function(e){
-      stop("Error during download:", conditionMessage(e))
+    }, error = function(e) {
+      cli::cli_abort(c(
+        "Error during download.",
+        "x" = "{conditionMessage(e)}"
+      ))
     }
     )
 
-    # Check if the download was successful
     if (httr::http_error(rar.download)) {
-      stop("Error downloading the file. Check the URL or connection")
+      cli::cli_abort(c(
+        "Download failed.",
+        "x" = "Status code: {httr::status_code(rar.download)}",
+        "i" = "Check the URL or your internet connection."
+      ))
     }
 
-    extract_dir <- file.path(tempdir(), paste0("geoidep_data_","provincia"))
-    dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
-    archive::archive_extract(archive = dsn, dir = extract_dir)
+    if(is.null(dsn)){
+      extract_dir <- file.path(tempdir(), paste0("geoidep_data_","provincia"))
+      dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
+      archive::archive_extract(archive = dsn_rar, dir = extract_dir)
+    } else {
+      extract_dir <- gsub(".rar","",file.path(getwd(), dsn))
+      dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
+      archive::archive_extract(archive = dsn_rar, dir = extract_dir)
+    }
+
     gpkg_files <- dplyr::first(list.files(extract_dir, pattern = "\\.gpkg$", full.names = TRUE))
 
     if (length(gpkg_files) == 0) {
-      stop("No .gpkg file was found after extraction in: ", extract_dir)
+      cli::cli_abort(c(
+        "No {.field .gpkg} file was found after extraction.",
+        "x" = "Directory checked: {.path {extract_dir}}"
+      ))
     }
 
     gpkg_file <- dplyr::first(gpkg_files)
 
     if (!file.exists(gpkg_file)) {
-      stop("Extracted file does not exist: ", gpkg_file)
+      cli::cli_abort(c(
+        "Extracted file does not exist.",
+        "x" = "Expected file: {.path {gpkg_file}}"
+      ))
     }
 
     new_gpkg_file <- file.path(dirname(gpkg_file), tolower(basename(gpkg_file)))
 
     if (!file.rename(from = gpkg_file, to = new_gpkg_file)) {
-      stop("Error renaming file from: ", gpkg_file, " to: ", new_gpkg_file)
+      cli::cli_abort(c(
+        "Failed to rename the extracted file.",
+        "x" = "From: {.path {gpkg_file}}",
+        "x" = "To: {.path {new_gpkg_file}}"
+      ))
     }
 
-    if (file.exists(dsn)) {
-      suppressMessages(invisible(file.remove(dsn)))
+    if (file.exists(dsn_rar)) {
+      suppressMessages(invisible(file.remove(dsn_rar)))
     }
 
     sf_data <- sf::st_read(new_gpkg_file, quiet = quiet)
     non_geom_idx <- which(!grepl("^(geom|geometry)$", names(sf_data), ignore.case = TRUE))
     names(sf_data)[non_geom_idx] <- tolower(names(sf_data)[non_geom_idx])
-    return(sf_data)
+
+    if (!is.null(departamento) & !is.null(provincia)) {
+      name_departamento <- toupper(departamento)
+      name_provincia    <- toupper(provincia)
+      sf_data <- sf_data |> dplyr::filter(nombdep %in% name_departamento & nombprov %in% name_provincia)
+      sf::write_sf(obj = sf_data, dsn = new_gpkg_file, delete_dsn = TRUE)
+    }
+
+    # Conditions and error message
+    if (is.null(departamento) && !is.null(provincia)) {
+      cli::cli_abort(
+        "Must specify {.arg departamento} to filter by {.arg provincia}",
+        call = NULL
+      )
+    }
+
+    if(!is.null(departamento)){
+      name_departamento <- toupper(departamento)
+      sf_data <- sf_data |> dplyr::filter(nombdep %in% name_departamento)
+      sf::write_sf(obj = sf_data, dsn = new_gpkg_file, delete_dsn = TRUE)
+    }
+
+   return(sf_data)
 }
