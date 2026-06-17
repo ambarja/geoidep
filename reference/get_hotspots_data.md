@@ -39,8 +39,8 @@ library(geoidep)
 library(sf)
 #> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
 hot_spots <- get_hotspots_data(show_progress = FALSE)
-#> Reading layer `file1f2a6531c308' from data source 
-#>   `/tmp/RtmpCuXpXM/file1f2a6531c308.geojson' using driver `GeoJSON'
+#> Reading layer `file1fb930c576d2' from data source 
+#>   `/tmp/RtmpjbWPH9/file1fb930c576d2.geojson' using driver `GeoJSON'
 #> Simple feature collection with 169 features and 29 fields
 #> Geometry type: POINT
 #> Dimension:     XY
@@ -53,12 +53,12 @@ head(hot_spots)
 #> Bounding box:  xmin: -71.84528 ymin: -17.51561 xmax: -69.09737 ymax: -16.32551
 #> Geodetic CRS:  WGS 84
 #>   OBJECTID                                          FUENTE DOCREG
-#> 1 15033784 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 2 15033785 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 3 15033786 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 4 15033787 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 5 15033788 Servicio Nacional Forestal y de Fauna Silvestre       
-#> 6 15033789 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 1 15033953 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 2 15033954 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 3 15033955 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 4 15033956 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 5 15033957 Servicio Nacional Forestal y de Fauna Silvestre       
+#> 6 15033958 Servicio Nacional Forestal y de Fauna Silvestre       
 #>                FECREG
 #> 1 2026-06-17 05:00:00
 #> 2 2026-06-17 05:00:00
@@ -88,19 +88,19 @@ head(hot_spots)
 #> 5 2026-06-16 05:00:00 15:02:00    30                                  
 #> 6 2026-06-16 05:00:00 12:58:00     5 Reserva Paisajística Cerro Khapia
 #>     LATITUD  LONGITUD   COORES  COORNO created_user        created_date
-#> 1 -17.51561 -70.57429 332875.1 8062713       USUFMS 2026-06-17 20:10:22
-#> 2 -17.13727 -71.81108 200898.4 8103096       USUFMS 2026-06-17 20:10:22
-#> 3 -17.13230 -71.84528 197248.9 8103593       USUFMS 2026-06-17 20:10:22
-#> 4 -17.11487 -71.78090 204076.2 8105623       USUFMS 2026-06-17 20:10:22
-#> 5 -16.51920 -69.22974 475484.2 8173618       USUFMS 2026-06-17 20:10:22
-#> 6 -16.32551 -69.09737 489599.3 8195055       USUFMS 2026-06-17 20:10:22
+#> 1 -17.51561 -70.57429 332875.1 8062713       USUFMS 2026-06-17 22:10:07
+#> 2 -17.13727 -71.81108 200898.4 8103096       USUFMS 2026-06-17 22:10:07
+#> 3 -17.13230 -71.84528 197248.9 8103593       USUFMS 2026-06-17 22:10:07
+#> 4 -17.11487 -71.78090 204076.2 8105623       USUFMS 2026-06-17 22:10:07
+#> 5 -16.51920 -69.22974 475484.2 8173618       USUFMS 2026-06-17 22:10:07
+#> 6 -16.32551 -69.09737 489599.3 8195055       USUFMS 2026-06-17 22:10:07
 #>   last_edited_user    last_edited_date             TIPCOB SENSAT PELIGRO CATDEP
-#> 1           USUFMS 2026-06-17 20:10:22 Cobertura Forestal    N21       0     23
-#> 2           USUFMS 2026-06-17 20:10:22 Cobertura Agrícola      N       0     04
-#> 3           USUFMS 2026-06-17 20:10:22 Cobertura Agrícola      N       0     04
-#> 4           USUFMS 2026-06-17 20:10:22 Cobertura Agrícola    N21       0     04
-#> 5           USUFMS 2026-06-17 20:10:22 Cobertura Forestal      A       0     21
-#> 6           USUFMS 2026-06-17 20:10:22 Cobertura Agrícola    N21       0     21
+#> 1           USUFMS 2026-06-17 22:10:07 Cobertura Forestal    N21       0     23
+#> 2           USUFMS 2026-06-17 22:10:07 Cobertura Agrícola      N       0     04
+#> 3           USUFMS 2026-06-17 22:10:07 Cobertura Agrícola      N       0     04
+#> 4           USUFMS 2026-06-17 22:10:07 Cobertura Agrícola    N21       0     04
+#> 5           USUFMS 2026-06-17 22:10:07 Cobertura Forestal      A       0     21
+#> 6           USUFMS 2026-06-17 22:10:07 Cobertura Agrícola    N21       0     21
 #>   CATPRO CATDIS                    geometry
 #> 1   2303 230302 POINT (-70.57429 -17.51561)
 #> 2   0407 040703 POINT (-71.81108 -17.13727)

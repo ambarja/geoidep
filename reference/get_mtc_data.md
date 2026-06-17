@@ -12,7 +12,7 @@ get_mtc_data(
   dsn = NULL,
   show_progress = TRUE,
   quiet = TRUE,
-  timeout = 60
+  timeout = 5
 )
 ```
 

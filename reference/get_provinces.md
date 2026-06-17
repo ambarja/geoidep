@@ -9,10 +9,27 @@ Portal](https://ide.inei.gob.pe/).
 ## Usage
 
 ``` r
-get_provinces(dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60)
+get_provinces(
+  departamento = NULL,
+  provincia = NULL,
+  dsn = NULL,
+  show_progress = TRUE,
+  quiet = TRUE,
+  timeout = 60
+)
 ```
 
 ## Arguments
+
+- departamento:
+
+  Character. Name of the level-1 administrative boundary (department) to
+  query. The input is case-insensitive.
+
+- provincia:
+
+  Character. Name of the level-2 administrative boundary (province) to
+  query. The input is case-insensitive.
 
 - dsn:
 
