@@ -14,7 +14,7 @@
 #' @param provincia Character. Name of the level-2 administrative boundary (province) to query. The input is case-insensitive.
 #' @param distrito Character. Name of the level-3 administrative boundary (district) to query. The input is case-insensitive.
 #' @param dsn Character. Path to the output \code{.gpkg} file or a directory where the file will be saved.
-#' If a directory is provided, the file will be saved as \code{DISTRITO.gpkg} inside it.
+#' If a directory is provided, the file will be saved as \code{distrito.gpkg} inside it.
 #' If \code{NULL}, a temporary file will be created.
 #' If the path contains multiple subdirectories, they will be created automatically if they do not exist.
 #' @param show_progress Logical. Suppress bar progress.
