@@ -30,27 +30,30 @@ get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE, 
     dsn <- tempfile(pattern = layer, fileext = ".gpkg")
   }
 
-  data.download <- tryCatch({
-    if (isTRUE(show_progress)) {
-      httr::GET(
-        primary_link,
-        config = c(
-          httr::config(ssl_verifypeer = FALSE),
-          httr::timeout(seconds = timeout)),
-        httr::write_disk(dsn, overwrite = TRUE),
-        httr::progress()
-      )
-    } else {
-      httr::GET(
-        primary_link,
-        config = c(
-          httr::config(ssl_verifypeer = FALSE),
-          httr::timeout(seconds = timeout)),
-        httr::write_disk(dsn, overwrite = TRUE)
+  data.download <- tryCatch(
+    httr::RETRY(
+      verb = "GET",
+      url = primary_link,
+      times = 3,
+      pause_base = 1,
+      pause_cap = 5,
+      terminate_on = c(400, 401, 403, 404),
+      config = httr::config(ssl_verifypeer = FALSE),
+      httr::timeout(timeout),
+      httr::write_disk(dsn, overwrite = TRUE)
+    ),
+    error = function(e) {
+      stop(
+        paste(
+          "Unable to download data from the MTC server.",
+          "The service may be temporarily unavailable.",
+          "Please try again later.",
+          "\n\nOriginal error:",
+          conditionMessage(e)
+        ),
+        call. = FALSE
       )
     }
-  },error = function(e){
-    stop("Error during download:", conditionMessage(e))}
   )
 
   # Check if the download was successful
@@ -83,10 +86,15 @@ get_mtc_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE, 
     suppressMessages(invisible(file.remove(dsn)))
   }
 
-  sf_data <- sf::st_read(new_gpkg_file, quiet = quiet)
+  sf_data <- suppressWarnings(sf::st_read(new_gpkg_file, quiet = quiet))
   non_geom_idx <- which(!grepl("^(geom|geometry)$", names(sf_data), ignore.case = TRUE))
   names(sf_data)[non_geom_idx] <- tolower(names(sf_data)[non_geom_idx])
   sf::st_crs(sf_data) <- 4326
+
+  # Remove gml_id
+  if ("gml_id" %in% names(sf_data)) {
+    sf_data$gml_id <- NULL
+  }
 
   return(sf_data)
 }
