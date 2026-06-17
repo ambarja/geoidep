@@ -39,8 +39,8 @@ library(geoidep)
 library(sf)
 #> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
 hot_spots <- get_hotspots_data(show_progress = FALSE)
-#> Reading layer `file1fb930c576d2' from data source 
-#>   `/tmp/RtmpjbWPH9/file1fb930c576d2.geojson' using driver `GeoJSON'
+#> Reading layer `file1f4944e6b00e' from data source 
+#>   `/tmp/Rtmp3GDgWY/file1f4944e6b00e.geojson' using driver `GeoJSON'
 #> Simple feature collection with 169 features and 29 fields
 #> Geometry type: POINT
 #> Dimension:     XY

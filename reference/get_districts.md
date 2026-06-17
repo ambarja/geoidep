@@ -41,7 +41,7 @@ get_districts(
 
   Character. Path to the output `.gpkg` file or a directory where the
   file will be saved. If a directory is provided, the file will be saved
-  as `DISTRITO.gpkg` inside it. If `NULL`, a temporary file will be
+  as `distrito.gpkg` inside it. If `NULL`, a temporary file will be
   created. If the path contains multiple subdirectories, they will be
   created automatically if they do not exist.
 
