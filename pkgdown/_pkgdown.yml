@@ -66,6 +66,7 @@ reference:
    - get_mapbiomas_peru_fire
    - get_mapbiomas_peru_fire_products
    - get_mapbiomas_peru_fire_legend
+   - get_mapbiomas_alert_images
 
 
  - title: 'Utils'
