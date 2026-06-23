@@ -76,6 +76,8 @@ aoi <- get_departaments(show_progress = FALSE) |>
   subset(nombdep == "UCAYALI")
 
 alerts <- get_mapbiomas_peru_alerta(region = aoi, show_progress = FALSE)
+#> Waiting 4s for retry backoff ■■■■■■■■■■■■■                   
+#> Waiting 4s for retry backoff ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 
 #> Error in value[[3L]](cond): Unable to retrieve MapBiomas alerts.
 #> ✖ The MapBiomas service may be temporarily unavailable.
 #> ℹ Please try again later.

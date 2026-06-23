@@ -37,6 +37,6 @@ senamhi_get_meteorological_table() |>
 #> Reading data from the website...
 #> Data successfully uploaded.
 #> Error in curl::curl_fetch_disk(url, x$path, handle = handle): Timeout was reached [idesep.Senamhi.gob.pe]:
-#> Failed to connect to idesep.Senamhi.gob.pe port 443 after 10000 ms: Timeout was reached
+#> SSL connection timeout
 # }
 ```
