@@ -36,7 +36,7 @@ senamhi_get_meteorological_table() |>
   plot()
 #> Reading data from the website...
 #> Data successfully uploaded.
-#> Warning: plotting the first 10 out of 13 attributes; use max.plot = 13 to plot all
-
+#> Error in curl::curl_fetch_disk(url, x$path, handle = handle): Timeout was reached [idesep.Senamhi.gob.pe]:
+#> Failed to connect to idesep.Senamhi.gob.pe port 443 after 10000 ms: Timeout was reached
 # }
 ```

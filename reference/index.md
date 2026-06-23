@@ -66,6 +66,9 @@
   : Get available MapBiomas Peru Fire products
 - [`get_mapbiomas_peru_fire_legend()`](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_fire_legend.md)
   : Get the MapBiomas Peru Fire legend for a given product
+- [`get_mapbiomas_alert_images()`](https://geografo.pe/geoidep/reference/get_mapbiomas_alert_images.md)
+  : Download before/after deforestation images from MapBiomas Alerta
+  Peru
 
 ## Utils
 

@@ -40,16 +40,16 @@ head(warning_point)
 #> Simple feature collection with 6 features and 1 field
 #> Geometry type: POINT
 #> Dimension:     XY
-#> Bounding box:  xmin: -74.68272 ymin: -0.3967784 xmax: -74.6469 ymax: -0.396507
+#> Bounding box:  xmin: -76.02536 ymin: -2.711665 xmax: -75.99904 ymax: -2.70054
 #> Geodetic CRS:  WGS 84
 #> # A tibble: 6 × 2
-#>   descrip                      geometry
-#>   <chr>                     <POINT [°]>
-#> 1 Warning points  (-74.68245 -0.396507)
-#> 2 Warning points  (-74.68218 -0.396507)
-#> 3 Warning points (-74.68272 -0.3967784)
-#> 4 Warning points (-74.68245 -0.3967784)
-#> 5 Warning points (-74.68218 -0.3967784)
-#> 6 Warning points  (-74.6469 -0.3967784)
+#>   descrip                     geometry
+#>   <chr>                    <POINT [°]>
+#> 1 Warning points  (-76.01695 -2.70054)
+#> 2 Warning points (-76.02536 -2.706781)
+#> 3 Warning points (-76.02455 -2.709223)
+#> 4 Warning points  (-76.01614 -2.71058)
+#> 5 Warning points (-75.99904 -2.711665)
+#> 6 Warning points (-76.01641 -2.700811)
 # }
 ```
