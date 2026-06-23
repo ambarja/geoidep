@@ -1,13 +1,46 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-docs/*
-docs
-inst/doc
-cran-comments.md
-CRAN-SUBMISSION
-/doc/
-/Meta/
-/.quarto/
-data-raw/*
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+wheels/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.envrc
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editor
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (no comitear descargas)
+*.gpkg
+*.rar
+*.geojson
+*.tif
+*.tiff
+data/
+downloads/

@@ -1,133 +1,191 @@
+# geoidep (Python)
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+📥 Puerto Python del paquete R [`geoidep`](https://github.com/ambarja/geoidep) — descarga datos cartográficos oficiales del Perú gestionados por la **Infraestructura de Datos Espaciales del Perú (IDEP)**.
 
-# geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
+> ⚠️ Esta versión Python no redistribuye datos: consulta los servicios públicos oficiales dinámicamente, igual que el paquete R original.
 
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
-[![CircleCI build
-status](https://circleci.com/gh/ambarja/geoidep.svg?style=svg)](https://circleci.com/gh/ambarja/geoidep)
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-<!-- badges: end -->
-<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="124" style="margin-left: 5px;margin-right: 5px;">
-<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="124" style="margin-left: 5px;margin-right: 5px;">
-<p align="justify">
-The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible
-way to obtain official cartographic data on various topics, such as
-<b>society</b>🏛️,<b> transport</b>🚗, <b>environment</b>🌱,
-<b>agriculture</b>🌾, <b>climate</b>⛅️,among others.This includes
-information provided by regional government entities and
-technical-scientific institutions, managed by the <b>Spatial Data
-Infrastructure of Peru</b>.
-</p>
+## Proveedores soportados
 
-*⚠️ The package accesses these datasets dynamically from official public
-servers, without redistributing data locally.*
+| Proveedor     | Funciones                                                                                   |
+|---------------|---------------------------------------------------------------------------------------------|
+| **INEI**      | `get_departaments`, `get_provinces`, `get_districts`                                        |
+| **Geobosque** | `get_forest_loss_data`, `get_early_warning`                                                 |
+| **Sernanp**   | `get_sernanp_data`, `list_sernanp_layers`                                                   |
+| **Serfor**    | `get_hotspots_data`, `get_forest_fire_data`                                                 |
+| **MTC**       | `get_mtc_data`, `list_mtc_layers`                                                           |
+| **INAIGEM**   | `get_inaigem_data`, `list_inaigem_layers`                                                   |
+| **SENAMHI**   | `senamhi_get_meteorological_table`, `senamhi_get_spatial_alerts`                            |
+| **SIGRID**    | `get_hazard_data`, `list_sigrid_layers`                                                     |
+| **MIDAGRI**   | `get_midagri_data`                                                                          |
+| **MapBiomas Perú** | `get_mapbiomas_peru_lulc`, `get_mapbiomas_peru_alerta`, `get_mapbiomas_peru_fire` (extras opcionales) |
 
-The package is currently available in **R** and Python (coming soon).
-<hr>
+## Instalación
 
-## Installation R
-
-You can install the development version of geoidep like so:
-
-``` r
-install.packages('pak')
-pak::pkg_install('ambarja/geoidep')
+```bash
+pip install geoidep                               # núcleo (todos los proveedores vectoriales)
+pip install "geoidep[mapbiomas]"                  # añade rioxarray/rasterio para rásters MapBiomas
 ```
 
-or also the official version available on CRAN:
+### Dependencia binaria de INEI
 
-``` r
-install.packages('geoidep')
+Las capas oficiales de INEI vienen empaquetadas en `.rar`. Necesitas además el binario `unrar`:
+
+```bash
+# Ubuntu / Debian
+sudo apt install unrar
+
+# macOS
+brew install unrar
+
+# Windows
+# Descargar unrar.exe de https://www.rarlab.com/ y agregarlo al PATH
 ```
 
-## Example 01: Introduction
+## Uso rápido
 
-``` r
-library(geoidep)
+### Catálogo de fuentes
+
+```python
+import geoidep as gd
+
+gd.get_providers()     # cuenta de capas por proveedor
+gd.get_data_sources()  # tabla completa
+gd.get_data_sources(query="INEI")
 ```
 
-``` r
-── Welcome to geoidep ─────────────────────────────────────────────────────────────────
-ℹ geoidep is a wrapper that enables you to download cartographic data for Peru directly from R.
-ℹ Currently, `geoidep` supports data from the following providers:
-• Geobosque
-• INAIGEM
-• INEI
-• Midagri
-• and more!
-ℹ For more information, please use the `get_data_sources()` function.
+### Límites político-administrativos (INEI)
+
+```python
+dep    = gd.get_departaments()                  # los 24 departamentos + Callao
+loreto = gd.get_departaments("LORETO")          # filtra por nombre (case-insensitive)
+prov   = gd.get_provinces()
+dist   = gd.get_districts("MIRAFLORES")
 ```
 
-In this example, we can identify the list of providers available in
-geoidep and the layers they present.
+Devuelve un `geopandas.GeoDataFrame` en **EPSG:4326**.
 
-``` r
-get_data_sources() |> 
-  head()
-#> # A tibble: 6 × 7
-#>   provider  category    layer layer_can_be_actived admin_en year  link_geoportal
-#>   <chr>     <chr>       <chr> <lgl>                <chr>    <chr> <chr>         
-#> 1 INEI      General     depa… TRUE                 Nationa… 2019  https://ide.i…
-#> 2 INEI      General     prov… TRUE                 Nationa… 2019  https://ide.i…
-#> 3 INEI      General     dist… TRUE                 Nationa… 2019  https://ide.i…
-#> 4 Midagri   Agriculture agri… TRUE                 Ministr… 2024  https://siea.…
-#> 5 Midagri   Agriculture oil_… TRUE                 Ministr… 2016… https://siea.…
-#> 6 Geobosque Forest      stoc… FALSE                Ministr… 2001… https://geobo…
+### Pérdida histórica de bosque (Geobosque – MINAM)
+
+```python
+serie = gd.get_forest_loss_data(
+    layer="stock_bosque_perdida_distrito",
+    ubigeo="010101",          # 6 dígitos: distrito · 4: provincia · 2: departamento
+)
+serie.head()
 ```
 
-In summary the suppliers and the number of available layers
+### Alertas tempranas de deforestación
 
-``` r
-get_providers() 
-#> # A tibble: 9 × 2
-#>   provider  layer_count
-#>   <fct>           <int>
-#> 1 Geobosque           5
-#> 2 INAIGEM             5
-#> 3 INEI                7
-#> 4 Midagri             2
-#> 5 MTC                26
-#> 6 Senamhi             1
-#> 7 Serfor              1
-#> 8 Sernanp            31
-#> 9 SIGRID              4
+```python
+amazonas = gd.get_departaments("AMAZONAS")
+alertas  = gd.get_early_warning(amazonas, as_sf=True)
 ```
 
-## Example 02: Download official INEI administrative boundaries
+### Áreas Naturales Protegidas (SERNANP)
 
-This is a simple example of how to download Peru’s official
-administrative boundaries:
-
-``` r
-dep <- get_departaments(show_progress = FALSE)
+```python
+gd.list_sernanp_layers()[:5]
+anp = gd.get_sernanp_data("anp_nacional")
 ```
 
-The first 10 rows of the original data are displayed here:
+### Puntos de calor e incendios (SERFOR)
 
-``` r
-head(dep)
-#> Simple feature collection with 6 features and 6 fields
-#> Geometry type: MULTIPOLYGON
-#> Dimension:     XY
-#> Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125
-#> Geodetic CRS:  WGS 84
-#>   id objectid ccdd   nombdep shape_length shape_area
-#> 1  1        1   01  AMAZONAS    13.059047   3.199147
-#> 2  2        2   02    ANCASH    11.788249   2.954697
-#> 3  3        3   03  APURIMAC     7.730154   1.765933
-#> 4  4        4   04  AREQUIPA    17.459435   5.330125
-#> 5  5        5   05  AYACUCHO    17.127166   3.643705
-#> 6  6        6   06 CAJAMARCA    12.540288   2.688386
-#>                             geom
-#> 1 MULTIPOLYGON (((-77.81399 -...
-#> 2 MULTIPOLYGON (((-77.64697 -...
-#> 3 MULTIPOLYGON (((-73.74655 -...
-#> 4 MULTIPOLYGON (((-71.98109 -...
-#> 5 MULTIPOLYGON (((-74.34843 -...
-#> 6 MULTIPOLYGON (((-78.70034 -...
+```python
+calor      = gd.get_hotspots_data()
+incendios  = gd.get_forest_fire_data()
 ```
+
+### Transporte y comunicaciones (MTC)
+
+```python
+gd.list_mtc_layers()[:5]
+aerodromos = gd.get_mtc_data("aerodromos_2023")
+red_vial   = gd.get_mtc_data("red_vial_nacional_2024")
+```
+
+### Glaciares y lagunas (INAIGEM)
+
+```python
+gd.list_inaigem_layers()
+glaciares = gd.get_inaigem_data("glaciares_2023")
+lagunas   = gd.get_inaigem_data("lagunas_con_riesgo_desborde")
+```
+
+### Alertas meteorológicas (SENAMHI)
+
+```python
+avisos = gd.senamhi_get_meteorological_table()
+avisos.head()
+
+# Filtrar por número y descargar geometría
+aviso = gd.senamhi_alert_by_number(avisos, 295)
+geom  = gd.senamhi_get_spatial_alerts(data=aviso)
+```
+
+### Peligros y riesgos (SIGRID)
+
+```python
+gd.list_sigrid_layers()
+inundaciones = gd.get_hazard_data("inundacion_inventario")
+```
+
+### Alertas de deforestación MapBiomas Alerta
+
+```python
+# Requiere `pip install "geoidep[mapbiomas]"`
+ucayali = gd.get_departaments("UCAYALI")
+alertas = gd.get_mapbiomas_peru_alerta(ucayali, from_date="2024-01-01")
+alertas.head()
+```
+
+### Cobertura y uso de suelo (MapBiomas Perú LULC)
+
+```python
+# Requiere `pip install "geoidep[mapbiomas]"`
+lima  = gd.get_departaments("LIMA")
+lulc  = gd.get_mapbiomas_peru_lulc(year=2024, crop_to=lima)
+serie = gd.get_mapbiomas_peru_lulc_series([2018, 2020, 2024], crop_to=lima)
+```
+
+Los rásters se leen de forma **perezosa** vía GDAL `/vsicurl/` — solo se descargan los bytes del extent solicitado.
+
+### Incendios (MapBiomas Fuego Perú)
+
+```python
+gd.get_mapbiomas_peru_fire_products()
+freq = gd.get_mapbiomas_peru_fire("frequency_burned", year=2024, crop_to=lima)
+```
+
+### Paletas de colores oficiales
+
+```python
+# Para visualización con matplotlib / plotly
+lulc_palette = gd.mapbiomas_peru_lulc_palette("es")
+fire_palette = gd.mapbiomas_peru_fire_palette("frequency_burned")
+```
+
+## Diferencias respecto al paquete R
+
+| R (`sf` / `tibble`)                  | Python (este paquete)                       |
+|--------------------------------------|---------------------------------------------|
+| `sf` objects                         | `geopandas.GeoDataFrame`                    |
+| `tibble`                             | `pandas.DataFrame`                          |
+| `SpatRaster` (`terra`)               | `xarray.DataArray` (`rioxarray` + `rasterio`) |
+| `httr::GET` / `httr::POST`           | `requests`                                  |
+| `archive::archive_extract`           | `rarfile` (+ binario `unrar`)               |
+| `rvest::read_html`                   | `beautifulsoup4`                            |
+
+Los nombres de funciones se preservan para minimizar el costo de cambio entre R y Python.
+
+## Desarrollo
+
+```bash
+git clone https://github.com/<tu-fork>/geoidep.git
+cd geoidep
+pip install -e ".[dev,mapbiomas]"
+pytest
+```
+
+## Licencia
+
+Apache-2.0. Trabajo derivado del paquete R `geoidep` de **Antony Barja** (ORCID: 0000-0001-5921-2858), redistribuido bajo la misma licencia.

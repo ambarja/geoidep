@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [python]
+  pull_request:
+    branches: [python]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install GDAL system deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgdal-dev unrar
+
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,mapbiomas]"
+
+      - name: Lint
+        run: |
+          ruff check src tests
+
+      - name: Test
+        run: |
+          pytest -ra
