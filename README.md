@@ -3,6 +3,11 @@
 
 # geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
 
+<div align="right" style="display: flex; align-items: center; gap: 10px; float: right; margin-left: 10px;">
+<img src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" height="110">
+<img src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" height="110">
+</div>
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
@@ -13,10 +18,6 @@ status](https://circleci.com/gh/ambarja/geoidep.svg?style=svg)](https://app.circ
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
-<div align="right" style="display: flex; align-items: center; gap: 10px; float: right; margin-left: 10px;">
-<img src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" height="110">
-<img src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" height="110">
-</div>
 <p align="justify">
 
 The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible
