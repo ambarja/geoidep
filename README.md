@@ -3,13 +3,8 @@
 
 # geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
 
-<div align="right"
-style="display: flex; align-items: center; gap: 10px; float: right; margin-left: 10px;">
-
-<img src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" height="110">
-<img src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" height="110">
-
-</div>
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="140">
+<img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="140">
 
 <!-- badges: start -->
 
