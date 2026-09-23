@@ -13,6 +13,7 @@ development:
 navbar:
   bg: custom
   structure:
+    left: [intro, reference, news]
     right: [search, github, lightswitch]
 
 articles:
