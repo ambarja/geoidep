@@ -160,15 +160,14 @@ promedio_loreto <- historico_prov |>
 ``` r
 
 ggplot(historico_prov, aes(x = anio, y = perdida)) +
-  geom_line(aes(group = nombprov), color = "red", linewidth = 0.6) +
+  geom_line(aes(group = nombprov, color = "Provincia"), linewidth = 0.6) +
   geom_line(
     data = promedio_loreto,
-    aes(linetype = "Promedio Loreto"),
-    color = "black",
+    aes(color = "Promedio Loreto"),
     linewidth = 0.6,
-    linetype = "dashed"
+    linetype = "dashed",
     ) +
-  scale_linetype_manual(name = NULL, values = c("Promedio Loreto" = "solid")) +
+  scale_color_manual(name = NULL, values = c("Provincia" = "red", "Promedio Loreto" = "black")) +
   facet_wrap(nombprov ~ .) +
   theme_minimal(base_size = 12) +
   theme(legend.position = "bottom") +
@@ -177,8 +176,6 @@ ggplot(historico_prov, aes(x = anio, y = perdida)) +
     caption = "Fuente: Geobosque",
     x = "",
     y = "")
-#> Warning: No shared levels found between `names(values)` of the manual scale and the
-#> data's linetype values.
 ```
 
 ![](geoidep_files/figure-html/unnamed-chunk-12-1.png)
