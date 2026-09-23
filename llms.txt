@@ -1,5 +1,7 @@
 # geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure
 
+![logo](https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png)![logo](https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png)
+
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
@@ -7,8 +9,6 @@ coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.co
 status](https://circleci.com/gh/ambarja/geoidep.svg?style=svg)](https://app.circleci.com/pipelines/github/ambarja/geoidep)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-
-![logo](https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png)![logo](https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png)
 
 The goal of **geoidep**📦 is to offers R users an easy and accessible
 way to obtain official cartographic data on various topics, such as
