@@ -68,14 +68,14 @@ geoidep and the layers they present.
 get_data_sources() |> 
   head()
 #> # A tibble: 6 × 7
-#>   provider  category    layer layer_can_be_actived admin_en year  link_geoportal
-#>   <chr>     <chr>       <chr> <lgl>                <chr>    <chr> <chr>         
-#> 1 INEI      General     depa… TRUE                 Nationa… 2019  https://ide.i…
-#> 2 INEI      General     prov… TRUE                 Nationa… 2019  https://ide.i…
-#> 3 INEI      General     dist… TRUE                 Nationa… 2019  https://ide.i…
-#> 4 Midagri   Agriculture agri… TRUE                 Ministr… 2024  https://siea.…
-#> 5 Midagri   Agriculture oil_… TRUE                 Ministr… 2016… https://siea.…
-#> 6 Geobosque Forest      stoc… FALSE                Ministr… 2001… https://geobo…
+#>   provider  category layer    layer_can_be_actived admin_en year  link_geoportal
+#>   <chr>     <chr>    <chr>    <lgl>                <chr>    <chr> <chr>         
+#> 1 INEI      General  departa… TRUE                 Nationa… 2019  https://ide.i…
+#> 2 INEI      General  provinc… TRUE                 Nationa… 2019  https://ide.i…
+#> 3 INEI      General  distrit… TRUE                 Nationa… 2019  https://ide.i…
+#> 4 Geobosque Forest   stock_b… FALSE                Ministr… 2001… https://geobo…
+#> 5 Geobosque Forest   stock_b… TRUE                 Ministr… 2001… https://geobo…
+#> 6 Geobosque Forest   stock_b… TRUE                 Ministr… 2001… https://geobo…
 ```
 
 In summary the suppliers and the number of available layers
@@ -83,19 +83,17 @@ In summary the suppliers and the number of available layers
 ``` r
 
 get_providers() 
-#> # A tibble: 10 × 2
-#>    provider         layer_count
-#>    <fct>                  <int>
-#>  1 Geobosque                  5
-#>  2 INAIGEM                    5
-#>  3 INEI                       7
-#>  4 MapBiomas Alerta           1
-#>  5 Midagri                    2
-#>  6 MTC                       26
-#>  7 Senamhi                    1
-#>  8 Serfor                     1
-#>  9 Sernanp                   31
-#> 10 SIGRID                     4
+#> # A tibble: 8 × 2
+#>   provider         layer_count
+#>   <fct>                  <int>
+#> 1 Geobosque                  5
+#> 2 INAIGEM                    5
+#> 3 INEI                       7
+#> 4 MapBiomas Alerta           1
+#> 5 MTC                       26
+#> 6 Senamhi                    1
+#> 7 Serfor                     1
+#> 8 Sernanp                   31
 ```
 
 ## Example 02: Download official INEI administrative boundaries
