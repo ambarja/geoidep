@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">geoidep</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../articles/geoidep.html">Get started</a></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
@@ -36,7 +37,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Download Meteorological Alert Geometry from Senamhi</h1>
-      <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/R/get_senamhi.R" class="external-link"><code>R/get_senamhi.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/R/senamhi.R" class="external-link"><code>R/senamhi.R</code></a></small>
       <div class="d-none name"><code>senamhi_get_spatial_alerts.Rd</code></div>
     </div>
 
@@ -52,7 +53,8 @@
 <span>  year <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dsn <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  show_progress <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  quiet <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  quiet <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  timeout <span class="op">=</span> <span class="fl">60</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -77,11 +79,15 @@
 
 
 <dt id="arg-show-progress">show_progress<a class="anchor" aria-label="anchor" href="#arg-show-progress"></a></dt>
-<dd><p>Logical, show download progress.</p></dd>
+<dd><p>Logical, show cli progress bar.</p></dd>
 
 
 <dt id="arg-quiet">quiet<a class="anchor" aria-label="anchor" href="#arg-quiet"></a></dt>
 <dd><p>Logical, suppress messages from <code><a href="https://r-spatial.github.io/sf/reference/st_read.html" class="external-link">sf::st_read()</a></code>.</p></dd>
+
+
+<dt id="arg-timeout">timeout<a class="anchor" aria-label="anchor" href="#arg-timeout"></a></dt>
+<dd><p>Numeric. Seconds to wait for a response. Default 60.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -98,7 +104,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>

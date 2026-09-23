@@ -16,27 +16,23 @@ get_mapbiomas_peru_fire(product, year, crop_to = NULL, collection = 1)
 - product:
 
   Character. One of the products listed in
-  `get_mapbiomas_peru_fire_products`, e.g. `"annual_burned"`,
-  `"year_last_fire"`, `"frequency_burned"`.
+  `get_mapbiomas_peru_fire_products`, e.g. `"annual_burned"`.
 
 - year:
 
-  Integer. For `"annual"` products (see
-  [`get_mapbiomas_peru_fire_products`](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_fire_products.md)),
-  the year of the map (available from `1999`). For `"range"` products
-  (`accumulated_*`, `frequency_burned`), the **end year** of the
-  accumulated period, which always starts in `2013`.
+  Integer. For `"annual"` products, the map year (from `1999`). For
+  `"range"` products (`accumulated_*`, `frequency_burned`), the **end
+  year** (from `2014`, range starts 2013).
 
 - crop_to:
 
-  Optional. An `sf`/`sfc` object, `SpatVector`, or `SpatExtent` defining
-  the area of interest. If `NULL` (default), the full raster for Peru is
-  returned.
+  Optional. An `sf`/`sfc` object, `SpatVector`, or `SpatExtent`. If
+  `NULL`, the full raster is returned.
 
 - collection:
 
-  Integer. MapBiomas Fuego Peru collection number. Default is `1`
-  (currently the only collection available).
+  Integer. MapBiomas Fuego Peru collection. Default `1` (only one
+  available).
 
 ## Value
 
@@ -47,21 +43,7 @@ A `SpatRaster` with one layer.
 ``` r
 if (FALSE) { # \dontrun{
 library(geoidep)
-
 lima <- get_departaments("LIMA")
-
-# Annual burned area for 2024, cropped to Lima
-burned_2024 <- get_mapbiomas_peru_fire(
-  product = "annual_burned",
-  year = 2024,
-  crop_to = lima
-)
-
-# Accumulated burned area 2013-2024
-accumulated <- get_mapbiomas_peru_fire(
-  product = "accumulated_burned",
-  year = 2024,
-  crop_to = lima
-)
+burned_2024 <- get_mapbiomas_peru_fire(product = "annual_burned", year = 2024, crop_to = lima)
 } # }
 ```

@@ -28,20 +28,16 @@ A tibble with columns `id`, `class_en`, `class_es`, and `hex`.
   (`1 = "Burned area"`).
 
 - `annual_burned_coverage` and `accumulated_burned_coverage`: share the
-  LULC legend (see `get_mapbiomas_peru_legend`), since these products
-  classify the burned pixels by land cover class.
+  LULC legend.
 
-- `monthly_burned`: pixel values `1-12` represent the month
-  (January-December) in which the pixel burned.
+- `monthly_burned`: values `1-12` = month of burning.
 
-- `frequency_burned`: pixel values `1-12` represent the number of times
-  a pixel burned during the period (`12` = "12 or more times").
+- `frequency_burned`: values `1-12` = burn count (`12` = "12 or more
+  times").
 
-- `year_last_fire`: pixel values are the actual years (`2013-2024`) of
-  the most recent fire.
+- `year_last_fire`: values are years (`2013-2024`).
 
-- `annual_burned_scar_size_range`: pixel values `1-5` represent burned
-  scar size classes (from `< 25 ha` to `> 5000 ha`).
+- `annual_burned_scar_size_range`: values `1-5` = scar size class.
 
 ## Examples
 

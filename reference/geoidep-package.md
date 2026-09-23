@@ -5,7 +5,7 @@ Peru across a range of topics, including society, transport,
 environment, agriculture, climate, and more. It also includes data from
 regional government entities and technical-scientific institutions, all
 managed by Peru's Spatial Data Infrastructure. For more information,
-please visit: <https://www.geoidep.gob.pe/catalogos-de-metadatos>.
+please visit: <https://www.geoidep.gob.pe/>.
 
 ## See also
 

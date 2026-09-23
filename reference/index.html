@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">geoidep</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../articles/geoidep.html">Get started</a></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
@@ -39,7 +40,7 @@
     </div>
 
     <div class="section level2">
-      <h2 id="download-of-inei-cartographic-layer">Download of INEI cartographic layer<a class="anchor" aria-label="anchor" href="#download-of-inei-cartographic-layer"></a></h2>
+      <h2 id="inei-administrative-boundaries">INEI administrative boundaries<a class="anchor" aria-label="anchor" href="#inei-administrative-boundaries"></a></h2>
 
 
 
@@ -50,10 +51,17 @@
 
       <dl><dt>
 
-          <code><a href="get_districts.html">get_districts()</a></code>
+          <code><a href="inei.html">inei</a></code>
 
         </dt>
-        <dd>Download INEI district boundaries</dd>
+        <dd>INEI administrative boundaries</dd>
+
+        <dt>
+
+          <code><a href="get_departaments.html">get_departaments()</a></code>
+
+        </dt>
+        <dd>Download INEI departmental boundaries</dd>
 
         <dt>
 
@@ -64,12 +72,12 @@
 
         <dt>
 
-          <code><a href="get_departaments.html">get_departaments()</a></code>
+          <code><a href="get_districts.html">get_districts()</a></code>
 
         </dt>
-        <dd>Download INEI departmental boundaries</dd>
+        <dd>Download INEI district boundaries</dd>
       </dl></div><div class="section level2">
-      <h2 id="download-data-from-geobosque">Download data from Geobosque<a class="anchor" aria-label="anchor" href="#download-data-from-geobosque"></a></h2>
+      <h2 id="geobosque-forest-monitoring">Geobosque forest monitoring<a class="anchor" aria-label="anchor" href="#geobosque-forest-monitoring"></a></h2>
 
 
 
@@ -79,6 +87,13 @@
 
 
       <dl><dt>
+
+          <code><a href="geobosque.html">geobosque</a></code>
+
+        </dt>
+        <dd>Geobosque data (MINAM)</dd>
+
+        <dt>
 
           <code><a href="get_forest_loss_data.html">get_forest_loss_data()</a></code>
 
@@ -92,7 +107,7 @@
         </dt>
         <dd>Download information on the latest deforestation alerts detected by Geobosque</dd>
       </dl></div><div class="section level2">
-      <h2 id="download-data-from-sernanp">Download data from Sernanp<a class="anchor" aria-label="anchor" href="#download-data-from-sernanp"></a></h2>
+      <h2 id="serfor-fire-hotspots">SERFOR fire hotspots<a class="anchor" aria-label="anchor" href="#serfor-fire-hotspots"></a></h2>
 
 
 
@@ -103,28 +118,19 @@
 
       <dl><dt>
 
-          <code><a href="get_sernanp_data.html">get_sernanp_data()</a></code>
+          <code><a href="serfor.html">serfor</a></code>
 
         </dt>
-        <dd>Download the available data from Sernanp</dd>
-      </dl></div><div class="section level2">
-      <h2 id="download-data-from-serfor">Download data from Serfor<a class="anchor" aria-label="anchor" href="#download-data-from-serfor"></a></h2>
+        <dd>SERFOR hotspots (SAMI)</dd>
 
-
-
-      <dl></dl></div><div class="section level2">
-
-
-
-
-      <dl><dt>
+        <dt>
 
           <code><a href="get_hotspots_data.html">get_hotspots_data()</a></code>
 
         </dt>
         <dd>Download available hot spot data from Serfor's Satellite Monitoring Unit</dd>
       </dl></div><div class="section level2">
-      <h2 id="download-data-from-senamhi">Download data from Senamhi<a class="anchor" aria-label="anchor" href="#download-data-from-senamhi"></a></h2>
+      <h2 id="mtc-transport-network">MTC transport network<a class="anchor" aria-label="anchor" href="#mtc-transport-network"></a></h2>
 
 
 
@@ -135,10 +141,79 @@
 
       <dl><dt>
 
-          <code><a href="senamhi_get_meteorological_table.html">senamhi_get_meteorological_table()</a></code>
+          <code><a href="mtc.html">mtc</a></code>
 
         </dt>
-        <dd>Download Weather Alert Table from Senamhi</dd>
+        <dd>MTC transport data</dd>
+
+        <dt>
+
+          <code><a href="get_mtc_data.html">get_mtc_data()</a></code>
+
+        </dt>
+        <dd>Download the available data from MTC</dd>
+      </dl></div><div class="section level2">
+      <h2 id="sernanp-protected-areas">SERNANP protected areas<a class="anchor" aria-label="anchor" href="#sernanp-protected-areas"></a></h2>
+
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="sernanp.html">sernanp</a></code>
+
+        </dt>
+        <dd>SERNANP protected areas</dd>
+
+        <dt>
+
+          <code><a href="get_sernanp_data.html">get_sernanp_data()</a></code>
+
+        </dt>
+        <dd>Download the available data from Sernanp</dd>
+      </dl></div><div class="section level2">
+      <h2 id="inaigem-glacier-data">INAIGEM glacier data<a class="anchor" aria-label="anchor" href="#inaigem-glacier-data"></a></h2>
+
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="inaigem.html">inaigem</a></code>
+
+        </dt>
+        <dd>INAIGEM mountain ecosystems</dd>
+
+        <dt>
+
+          <code><a href="get_inaigem_data.html">get_inaigem_data()</a></code>
+
+        </dt>
+        <dd>Download the available data from INAIGEM</dd>
+      </dl></div><div class="section level2">
+      <h2 id="senamhi-weather-alerts">SENAMHI weather alerts<a class="anchor" aria-label="anchor" href="#senamhi-weather-alerts"></a></h2>
+
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="senamhi.html">senamhi</a></code>
+
+        </dt>
+        <dd>SENAMHI weather alerts</dd>
 
         <dt>
 
@@ -167,24 +242,15 @@
 
         </dt>
         <dd>Filter alert geometry by danger level</dd>
-      </dl></div><div class="section level2">
-      <h2 id="download-data-from-mtc">Download data from MTC<a class="anchor" aria-label="anchor" href="#download-data-from-mtc"></a></h2>
 
+        <dt>
 
-
-      <dl></dl></div><div class="section level2">
-
-
-
-
-      <dl><dt>
-
-          <code><a href="get_mtc_data.html">get_mtc_data()</a></code>
+          <code><a href="senamhi_get_meteorological_table.html">senamhi_get_meteorological_table()</a></code>
 
         </dt>
-        <dd>Download the available data from MTC</dd>
+        <dd>Download Weather Alert Table from Senamhi</dd>
       </dl></div><div class="section level2">
-      <h2 id="download-data-from-inaigem">Download data from INAIGEM<a class="anchor" aria-label="anchor" href="#download-data-from-inaigem"></a></h2>
+      <h2 id="mapbiomas-peru">MapBiomas Peru<a class="anchor" aria-label="anchor" href="#mapbiomas-peru"></a></h2>
 
 
 
@@ -195,26 +261,38 @@
 
       <dl><dt>
 
-          <code><a href="get_inaigem_data.html">get_inaigem_data()</a></code>
+          <code><a href="mapbiomas-alerta.html">mapbiomas-alerta</a></code>
 
         </dt>
-        <dd>Download the available data from INAIGEM</dd>
-      </dl></div><div class="section level2">
-      <h2 id="download-data-from-mapbiomas-peru">Download data from MapBiomas Peru<a class="anchor" aria-label="anchor" href="#download-data-from-mapbiomas-peru"></a></h2>
+        <dd>MapBiomas Alerta Peru: deforestation alerts and imagery</dd>
 
+        <dt>
 
+          <code><a href="mapbiomas-lulc.html">mapbiomas-lulc</a></code>
 
-      <dl></dl></div><div class="section level2">
+        </dt>
+        <dd>MapBiomas Peru LULC rasters</dd>
 
+        <dt>
 
+          <code><a href="mapbiomas-fire.html">mapbiomas-fire</a></code>
 
+        </dt>
+        <dd>MapBiomas Peru Fire (Fuego) rasters</dd>
 
-      <dl><dt>
+        <dt>
 
           <code><a href="get_mapbiomas_peru_alerta.html">get_mapbiomas_peru_alerta()</a></code>
 
         </dt>
         <dd>Download MapBiomas Alerta Peru deforestation alerts with spatial filtering</dd>
+
+        <dt>
+
+          <code><a href="get_mapbiomas_alert_images.html">get_mapbiomas_alert_images()</a></code>
+
+        </dt>
+        <dd>Download before/after deforestation images from MapBiomas Alerta Peru</dd>
 
         <dt>
 
@@ -253,12 +331,19 @@
 
         <dt>
 
-          <code><a href="get_mapbiomas_alert_images.html">get_mapbiomas_alert_images()</a></code>
+          <code><a href="scale_fill_mapbiomas_peru_lulc_d.html">scale_fill_mapbiomas_peru_lulc_d()</a></code>
 
         </dt>
-        <dd>Download before/after deforestation images from MapBiomas Alerta Peru</dd>
+        <dd>Discrete fill scale for MapBiomas Peru LULC classes</dd>
+
+        <dt>
+
+          <code><a href="scale_fill_mapbiomas_peru_fire_d.html">scale_fill_mapbiomas_peru_fire_d()</a></code>
+
+        </dt>
+        <dd>Discrete fill scale for MapBiomas Peru Fire products</dd>
       </dl></div><div class="section level2">
-      <h2 id="utils">Utils<a class="anchor" aria-label="anchor" href="#utils"></a></h2>
+      <h2 id="data-catalogue-helpers">Data catalogue helpers<a class="anchor" aria-label="anchor" href="#data-catalogue-helpers"></a></h2>
 
 
 
@@ -268,6 +353,13 @@
 
 
       <dl><dt>
+
+          <code><a href="providers.html">providers</a></code>
+
+        </dt>
+        <dd>Catalogue helpers: providers and data sources</dd>
+
+        <dt>
 
           <code><a href="get_providers.html">get_providers()</a></code>
 
@@ -280,20 +372,6 @@
 
         </dt>
         <dd>List providers, description, year and link</dd>
-
-        <dt>
-
-          <code><a href="scale_fill_mapbiomas_peru_lulc_d.html">scale_fill_mapbiomas_peru_lulc_d()</a></code>
-
-        </dt>
-        <dd>Discrete fill scale for MapBiomas Peru LULC classes</dd>
-
-        <dt>
-
-          <code><a href="scale_fill_mapbiomas_peru_fire_d.html">scale_fill_mapbiomas_peru_fire_d()</a></code>
-
-        </dt>
-        <dd>Discrete fill scale for MapBiomas Peru Fire products</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
@@ -304,7 +382,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>

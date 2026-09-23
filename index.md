@@ -4,9 +4,10 @@
 [![Codecov test
 coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
 [![CircleCI build
-status](https://circleci.com/gh/ambarja/geoidep.svg?style=svg)](https://circleci.com/gh/ambarja/geoidep)
+status](https://circleci.com/gh/ambarja/geoidep.svg?style=svg)](https://app.circleci.com/pipelines/github/ambarja/geoidep)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
 ![logo](https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png)![logo](https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png)
 
 The goal of **geoidep**📦 is to offers R users an easy and accessible
@@ -82,18 +83,19 @@ In summary the suppliers and the number of available layers
 ``` r
 
 get_providers() 
-#> # A tibble: 9 × 2
-#>   provider  layer_count
-#>   <fct>           <int>
-#> 1 Geobosque           5
-#> 2 INAIGEM             5
-#> 3 INEI                7
-#> 4 Midagri             2
-#> 5 MTC                26
-#> 6 Senamhi             1
-#> 7 Serfor              1
-#> 8 Sernanp            31
-#> 9 SIGRID              4
+#> # A tibble: 10 × 2
+#>    provider         layer_count
+#>    <fct>                  <int>
+#>  1 Geobosque                  5
+#>  2 INAIGEM                    5
+#>  3 INEI                       7
+#>  4 MapBiomas Alerta           1
+#>  5 Midagri                    2
+#>  6 MTC                       26
+#>  7 Senamhi                    1
+#>  8 Serfor                     1
+#>  9 Sernanp                   31
+#> 10 SIGRID                     4
 ```
 
 ## Example 02: Download official INEI administrative boundaries
@@ -111,23 +113,16 @@ The first 10 rows of the original data are displayed here:
 ``` r
 
 head(dep)
-#> Simple feature collection with 6 features and 6 fields
+#> Simple feature collection with 6 features and 3 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
 #> Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125
 #> Geodetic CRS:  WGS 84
-#>   id objectid ccdd   nombdep shape_length shape_area
-#> 1  1        1   01  AMAZONAS    13.059047   3.199147
-#> 2  2        2   02    ANCASH    11.788249   2.954697
-#> 3  3        3   03  APURIMAC     7.730154   1.765933
-#> 4  4        4   04  AREQUIPA    17.459435   5.330125
-#> 5  5        5   05  AYACUCHO    17.127166   3.643705
-#> 6  6        6   06 CAJAMARCA    12.540288   2.688386
-#>                             geom
-#> 1 MULTIPOLYGON (((-77.81399 -...
-#> 2 MULTIPOLYGON (((-77.64697 -...
-#> 3 MULTIPOLYGON (((-73.74655 -...
-#> 4 MULTIPOLYGON (((-71.98109 -...
-#> 5 MULTIPOLYGON (((-74.34843 -...
-#> 6 MULTIPOLYGON (((-78.70034 -...
+#>   ccdd   nombdep                     fuente                           geom
+#> 1   01  AMAZONAS V Censo Nacional Economico MULTIPOLYGON (((-77.81399 -...
+#> 2   02    ANCASH V Censo Nacional Economico MULTIPOLYGON (((-77.64697 -...
+#> 3   03  APURIMAC V Censo Nacional Economico MULTIPOLYGON (((-73.74655 -...
+#> 4   04  AREQUIPA V Censo Nacional Economico MULTIPOLYGON (((-71.98109 -...
+#> 5   05  AYACUCHO V Censo Nacional Economico MULTIPOLYGON (((-74.34843 -...
+#> 6   06 CAJAMARCA V Censo Nacional Economico MULTIPOLYGON (((-78.70034 -...
 ```

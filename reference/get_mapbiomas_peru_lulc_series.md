@@ -3,12 +3,18 @@
 Downloads and stacks multiple single-year LULC rasters from MapBiomas
 Peru (see
 [`get_mapbiomas_peru_lulc`](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_lulc.md)),
-each cropped to the same area of interest if provided.
+each cropped to the same area of interest if provided. Progress uses
+[cli](https://cli.r-lib.org/reference/cli_progress_bar.html).
 
 ## Usage
 
 ``` r
-get_mapbiomas_peru_lulc_series(years, crop_to = NULL, collection = 3)
+get_mapbiomas_peru_lulc_series(
+  years,
+  crop_to = NULL,
+  collection = 4,
+  show_progress = TRUE
+)
 ```
 
 ## Arguments
@@ -19,13 +25,17 @@ get_mapbiomas_peru_lulc_series(years, crop_to = NULL, collection = 3)
 
 - crop_to:
 
-  Optional. An `sf`/`sfc` object, `SpatVector`, or `SpatExtent` defining
-  the area of interest. If `NULL` (default), each raster is returned at
-  full extent.
+  Optional. An `sf`/`sfc` object, `SpatVector`, or `SpatExtent`. If
+  `NULL`, each raster is returned at full extent.
 
 - collection:
 
-  Integer. MapBiomas Peru collection number. Default is `3`.
+  Integer. MapBiomas Peru collection number (`1`, `2`, `3`, `4`).
+  Default `3`.
+
+- show_progress:
+
+  Logical. Show a cli progress bar. Default `TRUE`.
 
 ## Value
 
@@ -36,12 +46,8 @@ A `SpatRaster` with one layer per year, named `classification_<year>`.
 ``` r
 if (FALSE) { # \dontrun{
 library(geoidep)
-
-lima <- get_departaments("LIMA",show_progress = FALSE)
+lima <- get_departaments("LIMA", show_progress = FALSE)
 lulc_series <- get_mapbiomas_peru_lulc_series(years = 2020:2024, crop_to = lima)
 lulc_series
-#> class       : SpatRaster
-#> dimensions  : 4521, 5103, 5  (nrow, ncol, nlyr)
-#> names       : classification_2020, classification_2021, ..., classification_2024
 } # }
 ```

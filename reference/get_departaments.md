@@ -1,9 +1,8 @@
 # Download INEI departmental boundaries
 
-This function allows you to download the latest version of the
-**geometry** and **ubigeos** corresponding to the **official political
-division** of the departament boundaries of Peru. For more information,
-you can visit the following page [INEI Spatial Data
+Download the latest version of the **geometry** and **ubigeos**
+corresponding to the official political division of the departament
+boundaries of Peru. For more information, visit [INEI Spatial Data
 Portal](https://ide.inei.gob.pe/).
 
 ## Usage
@@ -22,73 +21,41 @@ get_departaments(
 
 - departamento:
 
-  Character. Name o names in a vector of the level-1 administrative
-  boundary (department) to query. The input is case-insensitive.
+  Character. Name or names in a vector of the level-1 administrative
+  boundary (department) to query. Case-insensitive.
 
 - dsn:
 
-  Character. Path to the output `.gpkg` file or a directory where the
-  file will be saved. If a directory is provided, the file will be saved
-  as `departamento.gpkg` inside it. If `NULL`, a temporary file will be
-  created. If the path contains multiple subdirectories, they will be
-  created automatically if they do not exist.
+  Character. Directory where the file will be saved. If `NULL`, a
+  temporary file is used.
 
 - show_progress:
 
-  Logical. Suppress bar progress.
+  Logical. Show a
+  [cli](https://cli.r-lib.org/reference/cli_progress_bar.html) progress
+  bar. Default `TRUE`.
 
 - quiet:
 
-  Logical. Suppress info message.
+  Logical. Suppress info message from
+  [`sf::st_read()`](https://r-spatial.github.io/sf/reference/st_read.html).
 
 - timeout:
 
-  Seconds. Number of seconds to wait for a response until giving up.
-  Cannot be less than 1 ms. Default is 60.
+  Numeric. Seconds to wait for a response. Default 60.
 
 ## Value
 
-An sf or tibble object.
+An sf object.
 
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
 library(geoidep)
 dep <- get_departaments(show_progress = FALSE)
 head(dep)
-#> Simple feature collection with 6 features and 3 fields
-#> Geometry type: MULTIPOLYGON
-#> Dimension:     XY
-#> Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125
-#> Geodetic CRS:  WGS 84
-#>   ccdd   nombdep                     fuente                           geom
-#> 1   01  AMAZONAS V Censo Nacional Economico MULTIPOLYGON (((-77.81399 -...
-#> 2   02    ANCASH V Censo Nacional Economico MULTIPOLYGON (((-77.64697 -...
-#> 3   03  APURIMAC V Censo Nacional Economico MULTIPOLYGON (((-73.74655 -...
-#> 4   04  AREQUIPA V Censo Nacional Economico MULTIPOLYGON (((-71.98109 -...
-#> 5   05  AYACUCHO V Censo Nacional Economico MULTIPOLYGON (((-74.34843 -...
-#> 6   06 CAJAMARCA V Censo Nacional Economico MULTIPOLYGON (((-78.70034 -...
-
-loreto <- get_departaments(departamento = "loreto",show_progress = FALSE)
+loreto <- get_departaments(departamento = "loreto", show_progress = FALSE)
 head(loreto)
-#> Simple feature collection with 1 feature and 3 fields
-#> Geometry type: MULTIPOLYGON
-#> Dimension:     XY
-#> Bounding box:  xmin: -77.82596 ymin: -8.715191 xmax: -69.94904 ymax: -0.03860597
-#> Geodetic CRS:  WGS 84
-#>   ccdd nombdep                     fuente                           geom
-#> 1   16  LORETO V Censo Nacional Economico MULTIPOLYGON (((-75.10004 -...
-
-ica_junin <- get_departaments(departamento = c("ica","junin"),show_progress = FALSE)
-head(ica_junin)
-#> Simple feature collection with 2 features and 3 fields
-#> Geometry type: MULTIPOLYGON
-#> Dimension:     XY
-#> Bounding box:  xmin: -76.51923 ymin: -15.44337 xmax: -73.35513 ymax: -10.65289
-#> Geodetic CRS:  WGS 84
-#>   ccdd nombdep                     fuente                           geom
-#> 1   11     ICA V Censo Nacional Economico MULTIPOLYGON (((-75.61136 -...
-#> 2   12   JUNIN V Censo Nacional Economico MULTIPOLYGON (((-75.03564 -...
-# }
+} # }
 ```

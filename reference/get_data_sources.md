@@ -1,7 +1,6 @@
 # List providers, description, year and link
 
-This function allows you to list the list of available providers of the
-geoidep package.
+List the available providers of the geoidep package.
 
 ## Usage
 
@@ -13,8 +12,9 @@ get_data_sources(query = NULL)
 
 - query:
 
-  A string. Default is NULL. List of available providers. For more
-  details, use the `get_providers` function.
+  A string. Default is NULL. Filter by provider name(s). For valid
+  values use
+  [`get_providers()`](https://geografo.pe/geoidep/reference/get_providers.md).
 
 ## Value
 
@@ -23,22 +23,8 @@ A tibble object.
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
 library(geoidep)
 get_data_sources()
-#> # A tibble: 83 × 7
-#>    provider  category   layer layer_can_be_actived admin_en year  link_geoportal
-#>    <chr>     <chr>      <chr> <lgl>                <chr>    <chr> <chr>         
-#>  1 INEI      General    depa… TRUE                 Nationa… 2019  https://ide.i…
-#>  2 INEI      General    prov… TRUE                 Nationa… 2019  https://ide.i…
-#>  3 INEI      General    dist… TRUE                 Nationa… 2019  https://ide.i…
-#>  4 Midagri   Agricultu… agri… TRUE                 Ministr… 2024  https://siea.…
-#>  5 Midagri   Agricultu… oil_… TRUE                 Ministr… 2016… https://siea.…
-#>  6 Geobosque Forest     stoc… FALSE                Ministr… 2001… https://geobo…
-#>  7 Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…
-#>  8 Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…
-#>  9 Geobosque Forest     stoc… TRUE                 Ministr… 2001… https://geobo…
-#> 10 Geobosque Forest     warn… TRUE                 Ministr… last… https://geobo…
-#> # ℹ 73 more rows
-# }
+} # }
 ```

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">geoidep</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../articles/geoidep.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="active nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
@@ -39,6 +40,15 @@
       <small>Source: <a href="https://github.com/ambarja/geoidep/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.4.0" id="geoidep-040">geoidep 0.4.0<a class="anchor" aria-label="anchor" href="#geoidep-040"></a></h2>
+<ul><li>Full refactor: scripts reorganised by provider (<code>inei.R</code>, <code>geobosque.R</code>, <code>serfor.R</code>, <code>mtc.R</code>, <code>sernanp.R</code>, <code>inaigem.R</code>, <code>senamhi.R</code>, <code>mapbiomas-alerta.R</code>, <code>mapbiomas-lulc.R</code>, <code>mapbiomas-fire.R</code>); dead MIDAGRI/SIGRID code removed.</li>
+<li>CRAN compliance: timeouts on every internet request, all network examples moved to <code>\dontrun{}</code>, tests skip gracefully offline/on CRAN, vignette builds without internet access.</li>
+<li>Dropped dependencies: <code>httr</code>, <code>progress</code>, <code>geojsonio</code>, <code>glue</code>; progress bars now use <code>cli</code>/<code><a href="https://httr2.r-lib.org/reference/req_progress.html" class="external-link">httr2::req_progress()</a></code>.</li>
+<li>New: MapBiomas Peru Collection 4 support in <code><a href="../reference/get_mapbiomas_peru_lulc.html">get_mapbiomas_peru_lulc()</a></code>.</li>
+<li>Geobosques backend migration: the legacy <code>geobosques.minam.gob.pe/.../ws/rest</code> API is offline (HTTP 404), so <code><a href="../reference/get_forest_loss_data.html">get_forest_loss_data()</a></code> now queries the current Geobosques platform (<code>bosques-app.pe</code>, <code>GET /api/forest-loss/wet-forest-list?ubigeoCode=</code>). Same arguments and same output columns (<code>anio</code>, <code>perdida</code>, <code>rango1</code>-<code>rango5</code>, <code>ubigeo</code>), now with the 2001-2025 wet-forest series at district, province and department level.</li>
+<li>Vignette: section 6 now compares each Loreto province against the departmental mean in a faceted line chart.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.0" id="geoidep-030">geoidep 0.3.0<a class="anchor" aria-label="anchor" href="#geoidep-030"></a></h2><p class="text-muted">CRAN release: 2024-09-22</p>
 <ul><li>New functions for download Serfor data (<a href="https://github.com/ambarja/geoidep/issues/6" class="external-link">#6</a> y <a href="https://github.com/ambarja/geoidep/issues/7" class="external-link">#7</a>)
@@ -87,7 +97,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>

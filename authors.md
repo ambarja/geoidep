@@ -12,12 +12,12 @@ Source:
 
 barja a (2026). *geoidep: Download Geographic Data on Various Topics
 Provided and Managed by the Spatial Data Infrastructure of Peru*. R
-package version 0.3.1, <https://geografo.pe/geoidep/>.
+package version 0.4.0, <https://geografo.pe/geoidep/>.
 
     @Manual{,
       title = {geoidep: Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru},
       author = {antony barja},
       year = {2026},
-      note = {R package version 0.3.1},
+      note = {R package version 0.4.0},
       url = {https://geografo.pe/geoidep/},
     }

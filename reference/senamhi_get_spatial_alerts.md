@@ -12,7 +12,8 @@ senamhi_get_spatial_alerts(
   year = NULL,
   dsn = NULL,
   show_progress = TRUE,
-  quiet = TRUE
+  quiet = TRUE,
+  timeout = 60
 )
 ```
 
@@ -37,12 +38,16 @@ senamhi_get_spatial_alerts(
 
 - show_progress:
 
-  Logical, show download progress.
+  Logical, show cli progress bar.
 
 - quiet:
 
   Logical, suppress messages from
   [`sf::st_read()`](https://r-spatial.github.io/sf/reference/st_read.html).
+
+- timeout:
+
+  Numeric. Seconds to wait for a response. Default 60.
 
 ## Value
 

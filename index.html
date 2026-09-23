@@ -11,8 +11,8 @@
 <script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Download Peruvian data managed by the Spatial Data Infrastructure (SDI) of the National Institute of Statistics and Informatics (INEI) of Peru">
-<meta name="description" content="Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more. It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure. For more information, please visit: &lt;https://www.geoidep.gob.pe/catalogos-de-metadatos&gt;.">
-<meta property="og:description" content="Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more. It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure. For more information, please visit: &lt;https://www.geoidep.gob.pe/catalogos-de-metadatos&gt;.">
+<meta name="description" content="Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more. It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure. For more information, please visit: &lt;https://www.geoidep.gob.pe/&gt;.">
+<meta property="og:description" content="Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more. It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure. For more information, please visit: &lt;https://www.geoidep.gob.pe/&gt;.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">geoidep</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,7 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="articles/geoidep.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -59,7 +60,11 @@
 <div class="page-header"><h1 id="geoidep-download-geographic-data-managed-by-perus-spatial-data-infrastructure">geoidep: Download Geographic Data Managed by Peru’s Spatial Data Infrastructure<a class="anchor" aria-label="anchor" href="#geoidep-download-geographic-data-managed-by-perus-spatial-data-infrastructure"></a>
 </h1></div>
 <!-- badges: start -->
-<a href="https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <a href="https://app.codecov.io/gh/ambarja/geoidep" class="external-link"><img src="https://codecov.io/gh/ambarja/geoidep/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://circleci.com/gh/ambarja/geoidep" class="external-link"><img src="https://circleci.com/gh/ambarja/geoidep.svg?style=svg" alt="CircleCI build status"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> <!-- badges: end --> <img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" width="124" style="margin-left: 5px;margin-right: 5px;"><img align="right" src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" width="124" style="margin-left: 5px;margin-right: 5px;"><p align="justify">
+<a href="https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <a href="https://app.codecov.io/gh/ambarja/geoidep" class="external-link"><img src="https://codecov.io/gh/ambarja/geoidep/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://app.circleci.com/pipelines/github/ambarja/geoidep" class="external-link"><img src="https://circleci.com/gh/ambarja/geoidep.svg?style=svg" alt="CircleCI build status"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> <!-- badges: end -->
+<div align="right" style="display: flex; align-items: center; gap: 10px; float: right; margin-left: 10px;">
+<p><img src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_b.png" alt="logo" height="110"><img src="https://raw.githubusercontent.com/ambarja/geoidep/refs/heads/main/man/figures/geoidep_logo_o.png" alt="logo" height="110"></p>
+</div>
+<p align="justify">
 The goal of <b>geoidep</b>📦 is to offers R users an easy and accessible way to obtain official cartographic data on various topics, such as <b>society</b>🏛️,<b> transport</b>🚗, <b>environment</b>🌱, <b>agriculture</b>🌾, <b>climate</b>⛅️,among others.This includes information provided by regional government entities and technical-scientific institutions, managed by the <b>Spatial Data Infrastructure of Peru</b>.
 </p>
 <p><em>⚠️ The package accesses these datasets dynamically from official public servers, without redistributing data locally.</em></p>
@@ -106,18 +111,19 @@ The package is currently available in <strong>R</strong> and Python (coming soon
 <p>In summary the suppliers and the number of available layers</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_providers.html">get_providers</a></span><span class="op">(</span><span class="op">)</span> </span>
-<span><span class="co">#&gt; # A tibble: 9 × 2</span></span>
-<span><span class="co">#&gt;   provider  layer_count</span></span>
-<span><span class="co">#&gt;   &lt;fct&gt;           &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1 Geobosque           5</span></span>
-<span><span class="co">#&gt; 2 INAIGEM             5</span></span>
-<span><span class="co">#&gt; 3 INEI                7</span></span>
-<span><span class="co">#&gt; 4 Midagri             2</span></span>
-<span><span class="co">#&gt; 5 MTC                26</span></span>
-<span><span class="co">#&gt; 6 Senamhi             1</span></span>
-<span><span class="co">#&gt; 7 Serfor              1</span></span>
-<span><span class="co">#&gt; 8 Sernanp            31</span></span>
-<span><span class="co">#&gt; 9 SIGRID              4</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 10 × 2</span></span>
+<span><span class="co">#&gt;    provider         layer_count</span></span>
+<span><span class="co">#&gt;    &lt;fct&gt;                  &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1 Geobosque                  5</span></span>
+<span><span class="co">#&gt;  2 INAIGEM                    5</span></span>
+<span><span class="co">#&gt;  3 INEI                       7</span></span>
+<span><span class="co">#&gt;  4 MapBiomas Alerta           1</span></span>
+<span><span class="co">#&gt;  5 Midagri                    2</span></span>
+<span><span class="co">#&gt;  6 MTC                       26</span></span>
+<span><span class="co">#&gt;  7 Senamhi                    1</span></span>
+<span><span class="co">#&gt;  8 Serfor                     1</span></span>
+<span><span class="co">#&gt;  9 Sernanp                   31</span></span>
+<span><span class="co">#&gt; 10 SIGRID                     4</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example-02-download-official-inei-administrative-boundaries">Example 02: Download official INEI administrative boundaries<a class="anchor" aria-label="anchor" href="#example-02-download-official-inei-administrative-boundaries"></a>
@@ -128,25 +134,18 @@ The package is currently available in <strong>R</strong> and Python (coming soon
 <p>The first 10 rows of the original data are displayed here:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dep</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Simple feature collection with 6 features and 6 fields</span></span>
+<span><span class="co">#&gt; Simple feature collection with 6 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
 <span><span class="co">#&gt; Dimension:     XY</span></span>
 <span><span class="co">#&gt; Bounding box:  xmin: -79.45857 ymin: -17.28501 xmax: -70.80408 ymax: -2.986125</span></span>
 <span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
-<span><span class="co">#&gt;   id objectid ccdd   nombdep shape_length shape_area</span></span>
-<span><span class="co">#&gt; 1  1        1   01  AMAZONAS    13.059047   3.199147</span></span>
-<span><span class="co">#&gt; 2  2        2   02    ANCASH    11.788249   2.954697</span></span>
-<span><span class="co">#&gt; 3  3        3   03  APURIMAC     7.730154   1.765933</span></span>
-<span><span class="co">#&gt; 4  4        4   04  AREQUIPA    17.459435   5.330125</span></span>
-<span><span class="co">#&gt; 5  5        5   05  AYACUCHO    17.127166   3.643705</span></span>
-<span><span class="co">#&gt; 6  6        6   06 CAJAMARCA    12.540288   2.688386</span></span>
-<span><span class="co">#&gt;                             geom</span></span>
-<span><span class="co">#&gt; 1 MULTIPOLYGON (((-77.81399 -...</span></span>
-<span><span class="co">#&gt; 2 MULTIPOLYGON (((-77.64697 -...</span></span>
-<span><span class="co">#&gt; 3 MULTIPOLYGON (((-73.74655 -...</span></span>
-<span><span class="co">#&gt; 4 MULTIPOLYGON (((-71.98109 -...</span></span>
-<span><span class="co">#&gt; 5 MULTIPOLYGON (((-74.34843 -...</span></span>
-<span><span class="co">#&gt; 6 MULTIPOLYGON (((-78.70034 -...</span></span></code></pre></div>
+<span><span class="co">#&gt;   ccdd   nombdep                     fuente                           geom</span></span>
+<span><span class="co">#&gt; 1   01  AMAZONAS V Censo Nacional Economico MULTIPOLYGON (((-77.81399 -...</span></span>
+<span><span class="co">#&gt; 2   02    ANCASH V Censo Nacional Economico MULTIPOLYGON (((-77.64697 -...</span></span>
+<span><span class="co">#&gt; 3   03  APURIMAC V Censo Nacional Economico MULTIPOLYGON (((-73.74655 -...</span></span>
+<span><span class="co">#&gt; 4   04  AREQUIPA V Censo Nacional Economico MULTIPOLYGON (((-71.98109 -...</span></span>
+<span><span class="co">#&gt; 5   05  AYACUCHO V Censo Nacional Economico MULTIPOLYGON (((-74.34843 -...</span></span>
+<span><span class="co">#&gt; 6   06 CAJAMARCA V Censo Nacional Economico MULTIPOLYGON (((-78.70034 -...</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -192,7 +191,7 @@ The package is currently available in <strong>R</strong> and Python (coming soon
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

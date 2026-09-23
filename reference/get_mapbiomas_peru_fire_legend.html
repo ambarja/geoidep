@@ -13,7 +13,7 @@ scale_fill_mapbiomas_peru_fire_d)."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">geoidep</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +23,7 @@ scale_fill_mapbiomas_peru_fire_d)."></head><body>
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../articles/geoidep.html">Get started</a></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
@@ -42,7 +43,7 @@ scale_fill_mapbiomas_peru_fire_d)."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Get the MapBiomas Peru Fire legend for a given product</h1>
-      <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/R/get_mapbiomas_peru_fire_legend.R" class="external-link"><code>R/get_mapbiomas_peru_fire_legend.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ambarja/geoidep/blob/main/R/mapbiomas-fire.R" class="external-link"><code>R/mapbiomas-fire.R</code></a></small>
       <div class="d-none name"><code>get_mapbiomas_peru_fire_legend.Rd</code></div>
     </div>
 
@@ -69,25 +70,17 @@ sub-product (Collection 1). Useful for building color scales (see
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble with columns <code>id</code>, <code>class_en</code>, <code>class_es</code>,
-and <code>hex</code>.</p>
+    <p>A tibble with columns <code>id</code>, <code>class_en</code>, <code>class_es</code>, and <code>hex</code>.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
-<ul><li><p><code>annual_burned</code> and <code>accumulated_burned</code>: binary
-classification (<code>1 = "Burned area"</code>).</p></li>
-<li><p><code>annual_burned_coverage</code> and <code>accumulated_burned_coverage</code>:
-share the LULC legend (see <code>get_mapbiomas_peru_legend</code>),
-since these products classify the burned pixels by land cover class.</p></li>
-<li><p><code>monthly_burned</code>: pixel values <code>1-12</code> represent the
-month (January-December) in which the pixel burned.</p></li>
-<li><p><code>frequency_burned</code>: pixel values <code>1-12</code> represent the
-number of times a pixel burned during the period (<code>12</code> = "12 or more times").</p></li>
-<li><p><code>year_last_fire</code>: pixel values are the actual years (<code>2013-2024</code>)
-of the most recent fire.</p></li>
-<li><p><code>annual_burned_scar_size_range</code>: pixel values <code>1-5</code>
-represent burned scar size classes (from <code>&lt; 25 ha</code> to <code>&gt; 5000 ha</code>).</p></li>
+<ul><li><p><code>annual_burned</code> and <code>accumulated_burned</code>: binary classification (<code>1 = "Burned area"</code>).</p></li>
+<li><p><code>annual_burned_coverage</code> and <code>accumulated_burned_coverage</code>: share the LULC legend.</p></li>
+<li><p><code>monthly_burned</code>: values <code>1-12</code> = month of burning.</p></li>
+<li><p><code>frequency_burned</code>: values <code>1-12</code> = burn count (<code>12</code> = "12 or more times").</p></li>
+<li><p><code>year_last_fire</code>: values are years (<code>2013-2024</code>).</p></li>
+<li><p><code>annual_burned_scar_size_range</code>: values <code>1-5</code> = scar size class.</p></li>
 </ul></div>
 
     <div class="section level2">
@@ -120,7 +113,7 @@ represent burned scar size classes (from <code>&lt; 25 ha</code> to <code>&gt; 5
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>

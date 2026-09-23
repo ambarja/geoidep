@@ -1,5 +1,30 @@
 # Changelog
 
+## geoidep 0.4.0
+
+- Full refactor: scripts reorganised by provider (`inei.R`,
+  `geobosque.R`, `serfor.R`, `mtc.R`, `sernanp.R`, `inaigem.R`,
+  `senamhi.R`, `mapbiomas-alerta.R`, `mapbiomas-lulc.R`,
+  `mapbiomas-fire.R`); dead MIDAGRI/SIGRID code removed.
+- CRAN compliance: timeouts on every internet request, all network
+  examples moved to `\dontrun{}`, tests skip gracefully offline/on CRAN,
+  vignette builds without internet access.
+- Dropped dependencies: `httr`, `progress`, `geojsonio`, `glue`;
+  progress bars now use
+  `cli`/[`httr2::req_progress()`](https://httr2.r-lib.org/reference/req_progress.html).
+- New: MapBiomas Peru Collection 4 support in
+  [`get_mapbiomas_peru_lulc()`](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_lulc.md).
+- Geobosques backend migration: the legacy
+  `geobosques.minam.gob.pe/.../ws/rest` API is offline (HTTP 404), so
+  [`get_forest_loss_data()`](https://geografo.pe/geoidep/reference/get_forest_loss_data.md)
+  now queries the current Geobosques platform (`bosques-app.pe`,
+  `GET /api/forest-loss/wet-forest-list?ubigeoCode=`). Same arguments
+  and same output columns (`anio`, `perdida`, `rango1`-`rango5`,
+  `ubigeo`), now with the 2001-2025 wet-forest series at district,
+  province and department level.
+- Vignette: section 6 now compares each Loreto province against the
+  departmental mean in a faceted line chart.
+
 ## geoidep 0.3.0
 
 CRAN release: 2024-09-22
