@@ -1,0 +1,57 @@
+#' SERNANP protected areas
+#'
+#' @description
+#' Natural protected-area layers from the SERNANP geoviewer:
+#' \url{https://geo.sernanp.gob.pe/visorsernanp/}.
+#'
+#' @name sernanp
+NULL
+
+#' Download the available data from Sernanp
+#'
+#' @description
+#' Download the latest version of data available on the sernanp geoviewer.
+#' For more information, visit \href{https://geo.sernanp.gob.pe/visorsernanp/}{Sernanp Platform}.
+#'
+#' @param layer Select only one from the list of available layers, for more information please use `get_data_sources(provider = "sernanp")`. Defaults to NULL.
+#' @param dsn Character. Output filename. If missing, a temporary file is created.
+#' @param show_progress Logical. Show a cli progress bar. Default `TRUE`.
+#' @param quiet Logical. Suppress info message. Default `TRUE`.
+#' @param timeout Numeric. Seconds to wait for a response. Default 60.
+#' @returns An sf object.
+#' @examples
+#' \dontrun{
+#' library(geoidep)
+#' library(sf)
+#' anp <- get_sernanp_data(layer = "zonificacion_anp", show_progress = FALSE)
+#' plot(st_geometry(anp))
+#' }
+#' @export
+get_sernanp_data <- \(layer = NULL, dsn = NULL, show_progress = TRUE, quiet = TRUE, timeout = 60){
+  primary_link <- get_sernanp_link(type = layer)
+
+  if (is.null(dsn)) {
+    dsn <- tempfile(fileext = ".geojson")
+  }
+
+  if (isTRUE(show_progress)) {
+    cli::cli_progress_step("Downloading SERNANP layer {.val {layer}}", spinner = TRUE)
+  }
+
+  req <- httr2::request(primary_link) |>
+    httr2::req_url_query(where = "1=1", outFields = "*", f = "geojson") |>
+    httr2::req_timeout(timeout) |>
+    httr2::req_options(ssl_verifypeer = FALSE) |>
+    httr2::req_retry(max_tries = 3, retry_on_failure = TRUE)
+  if (isTRUE(show_progress)) req <- req |> httr2::req_progress()
+
+  tryCatch(
+    httr2::req_perform(req, path = dsn),
+    error = function(e) {
+      cli::cli_abort(c("Error downloading the file.", "x" = "{conditionMessage(e)}"))
+    }
+  )
+
+  sf_data <- .read_spatial_normalised(dsn, quiet = quiet)
+  return(sf_data)
+}

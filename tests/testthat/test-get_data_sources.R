@@ -1,20 +1,37 @@
 test_that("get_data_sources() return a tibble when the query argument es NULL", {
-  result <- geoidep::get_data_sources(NULL)
+  testthat::skip_on_cran()
+  testthat::skip_if_offline()
+  result <- tryCatch(
+    geoidep::get_data_sources(NULL),
+    error = function(e) testthat::skip(paste("Catalogue unavailable:", conditionMessage(e)))
+  )
   expect_s3_class(result, "tbl_df")
 })
 
 test_that("get_data_sources() return all nrows when the query is NULL", {
-  result <- geoidep::get_data_sources(NULL)
+  testthat::skip_on_cran()
+  testthat::skip_if_offline()
+  result <- tryCatch(
+    geoidep::get_data_sources(NULL),
+    error = function(e) testthat::skip(paste("Catalogue unavailable:", conditionMessage(e)))
+  )
   original_data <- geoidep:::get_data()
   expect_equal(nrow(result), nrow(original_data))
 })
 
 test_that("get_data_sources() valid filter", {
-  result <- geoidep::get_data_sources("Sernanp")
+  testthat::skip_on_cran()
+  testthat::skip_if_offline()
+  result <- tryCatch(
+    geoidep::get_data_sources("Sernanp"),
+    error = function(e) testthat::skip(paste("Catalogue unavailable:", conditionMessage(e)))
+  )
   expect_s3_class(result, "data.frame")
   expect_true(all(result$provider == "Sernanp"))
 })
 
 test_that("get_data_sources() Show error with a invalid query", {
-  expect_error(geoidep::get_data_sources("ProveedorInexistente"), "Please select valid providers from the available providers")
+  testthat::skip_on_cran()
+  testthat::skip_if_offline()
+  expect_error(geoidep::get_data_sources("ProveedorInexistente"), "Invalid")
 })

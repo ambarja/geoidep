@@ -2,16 +2,55 @@
 #' @importFrom utils read.csv
 #' @keywords internal
 #' @noRd
-get_data <- \(url = NULL){
+get_data <- \(url = NULL, timeout = 60){
   if(is.null(url)){
     url <- getOption(x = "geoidep", default = .internal_urls$geoidep)
   }
+  # Bound the connection wait explicitly (CRAN: never hang on downloads).
+  # Restored on exit so no global state leaks.
+  old_timeout <- getOption("timeout")
+  options(timeout = timeout)
+  on.exit(options(timeout = old_timeout), add = TRUE)
   tryCatch({
     data <- read.csv(url) |> tidyr::as_tibble()
     return(data)
   }, error = function(e) {
-    stop("The file could not be read. Check that the link is valid and your Internet connection.")
+    cli::cli_abort(c(
+      "The catalogue could not be read.",
+      "x" = "Check the URL and your internet connection.",
+      "i" = "Details: {conditionMessage(e)}"
+    ))
   })
+}
+
+#' Resolve a download URL for a provider/layer pair
+#'
+#' Single source of truth that replaces the historical `get_*_link()` family.
+#' The historical wrappers are kept below for backward compatibility and are
+#' tested in `tests/testthat/test-utils.R`.
+#'
+#' @param provider One of "inei", "sernanp", "midagri", "geobosque", "mtc",
+#'   "inaigem", "sigrid", "mapbiomas".
+#' @param layer Layer key inside `.internal_urls[[provider]]`.
+#' @keywords internal
+#' @noRd
+.get_layer_url <- \(provider, layer = NULL) {
+  valid_providers <- c("inei", "sernanp", "midagri", "geobosque", "mtc",
+                       "inaigem", "sigrid", "mapbiomas", "senamhi")
+
+  provider <- match.arg(provider, valid_providers)
+
+  urls <- getOption(provider, default = .internal_urls[[provider]])
+
+  if (is.null(layer) || !layer %in% names(urls)) {
+    cli::cli_abort(c(
+      "Invalid {.arg layer} for provider {.val {provider}}.",
+      "i" = "Available layers: {.val {names(urls)}}",
+      "i" = "Tip: run {.code get_data_sources(query = \"{provider}\")} to inspect them."
+    ))
+  }
+
+  urls[[layer]]
 }
 
 #' Retrieve links to SERNANP for information on natural protected areas.
@@ -20,25 +59,26 @@ get_data <- \(url = NULL){
 #' @keywords internal
 #' @noRd
 get_sernanp_link <- \(type = NULL){
-  sernanp_link <- getOption("sernanp", default = .internal_urls$sernanp)
-  if (!type %in% names(sernanp_link) || is.null(type)) {
-    stop("Invalid type. Please choose one layer according sernanp layer. More information use `get_data_sources(providers = 'Sernanp')`")
-  }
-
-  return(sernanp_link[[type]])
+  tryCatch(
+    .get_layer_url("sernanp", type),
+    error = function(e) {
+      stop("Invalid type. Please choose one layer")
+    }
+  )
 }
 
 #' Gets the links to the INEI's basic cartographic information.
-#' @param type A string. Select only one of the following layers; ‘distrito’, ‘provincia’, or ‘departamento’. Defaults to NULL.
+#' @param type A string. Select only one of the following layers; 'distrito', 'provincia', or 'departamento'. Defaults to NULL.
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 #' @noRd
 get_inei_link <- \(type = NULL) {
-  inei_links <- getOption("inei", default = .internal_urls$inei)
-  if (!type %in% names(inei_links) || is.null(type)) {
-    stop("Invalid type. Please choose from 'districto', 'provincia', or 'departmento'.")
-  }
-  return(inei_links[[type]])
+  tryCatch(
+    .get_layer_url("inei", type),
+    error = function(e) {
+      stop("Invalid type. Please choose from 'districto', 'provincia', or 'departmento'.")
+    }
+  )
 }
 
 #' MIDAGRI links for obtaining cartographic information
@@ -47,11 +87,12 @@ get_inei_link <- \(type = NULL) {
 #' @keywords internal
 #' @noRd
 get_midagri_link <- \(type = NULL){
-  midagri_link <- getOption("midagri", default = .internal_urls$midagri)
-  if (!type %in% names(midagri_link) || is.null(type)) {
-    stop("Invalid type. Please choose from 'agriculture_sector' or 'oil_palm'")
-  }
-  return(midagri_link[[type]])
+  tryCatch(
+    .get_layer_url("midagri", type),
+    error = function(e) {
+      stop("Invalid type. Please choose from 'agriculture_sector' or 'oil_palm'")
+    }
+  )
 }
 
 #' Geobosque API that returns data on forest stock, forest loss, forest loss by ranges for a given department, province and district.
@@ -60,11 +101,12 @@ get_midagri_link <- \(type = NULL){
 #' @keywords internal
 #' @noRd
 get_geobosque_link <- \(type = NULL){
-  geobosque_link <- getOption("geobosque", default = .internal_urls$geobosque)
-  if (!type %in% names(geobosque_link) || is.null(type)) {
-    stop("Invalid type. Please choose from 'dist', 'prov' or 'dep'")
-  }
-  return(geobosque_link[[type]])
+  tryCatch(
+    .get_layer_url("geobosque", type),
+    error = function(e) {
+      stop("Invalid type. Please choose from 'dist', 'prov' or 'dep'")
+    }
+  )
 }
 
 #' Geobosque API to get deforestation hot-spots for the last week
@@ -73,11 +115,12 @@ get_geobosque_link <- \(type = NULL){
 #' @keywords internal
 #' @noRd
 get_early_warning_link <- \(type = NULL){
-  geobosque_early_warning_link <- getOption("geobosque", default = .internal_urls$geobosque)
-  if (!type %in% names(geobosque_early_warning_link) || is.null(type)) {
-    stop("Invalid type. Please choose 'warning_last_week'")
-  }
-  return(geobosque_early_warning_link[[type]])
+  tryCatch(
+    .get_layer_url("geobosque", type),
+    error = function(e) {
+      stop("Invalid type. Please choose 'warning_last_week'")
+    }
+  )
 }
 
 #' Serfor API to get heat spot
@@ -86,11 +129,12 @@ get_early_warning_link <- \(type = NULL){
 #' @keywords internal
 #' @noRd
 get_heat_spot_link <- \(type = NULL){
-  serfor_heat_spot_link <- getOption("geobosque", default = .internal_urls$geobosque)
-  if (!type %in% names(serfor_heat_spot_link) || is.null(type)) {
-    stop("Invalid type. Please choose 'heat_spot'")
-  }
-  return(serfor_heat_spot_link[[type]])
+  tryCatch(
+    .get_layer_url("geobosque", type),
+    error = function(e) {
+      stop("Invalid type. Please choose 'heat_spot'")
+    }
+  )
 }
 
 #' Time format units
@@ -110,12 +154,7 @@ as_data_time <- \(x){
 #' @keywords internal
 #' @noRd
 get_mtc_link <- \(type = NULL){
-  mtc_layer <- getOption("mtc", default = .internal_urls$mtc)
-  if (!type %in% names(mtc_layer) || is.null(type)) {
-    stop("Invalid type. Please choose one layer according sernanp layer. More information use `get_data_sources(providers = 'MTC')`")
-  }
-  return(mtc_layer[[type]])
-
+  .get_layer_url("mtc", type)
 }
 
 #' Retrieve the links to INAIGEM for information on Mountain High Ecosystems.
@@ -124,11 +163,7 @@ get_mtc_link <- \(type = NULL){
 #' @keywords internal
 #' @noRd
 get_inaigem_link <-  \(type = NULL){
-  inaigem_layer <- getOption("inaigem", default = .internal_urls$inaigem)
-  if (!type %in% names(inaigem_layer) || is.null(type)) {
-    stop("Invalid type. Please choose one layer according INAIGEM layer. More information use `get_data_sources(providers = 'INAIGEM')`")
-  }
-  return(inaigem_layer[[type]])
+  .get_layer_url("inaigem", type)
 }
 
 #' Retrieve the links of the SIGRID for information on Disaster Risk Management.
@@ -137,11 +172,7 @@ get_inaigem_link <-  \(type = NULL){
 #' @keywords internal
 #' @noRd
 get_hazard_link <-  \(type = NULL){
-  peligros_layer <- getOption("sigrid", default = .internal_urls$sigrid)
-  if (!type %in% names(peligros_layer) || is.null(type)) {
-    stop("Invalid type. Please choose one layer according SIGRID layer. More information use `get_data_sources(providers = 'SIGRID')`")
-  }
-  return(peligros_layer[[type]])
+  .get_layer_url("sigrid", type)
 }
 
 #' Retrieve the links to MapBiomas Alerta Peru for deforestation alerts
@@ -150,11 +181,96 @@ get_hazard_link <-  \(type = NULL){
 #' @keywords internal
 #' @noRd
 get_mapbiomas_link <- \(type = NULL){
-  mapbiomas_link <- getOption("mapbiomas", default = .internal_urls$mapbiomas)
-  if (!type %in% names(mapbiomas_link) || is.null(type)) {
-    stop("Invalid type. Please choose from available MapBiomas layers: ", paste(names(mapbiomas_link), collapse = ", "))
+  urls <- getOption("mapbiomas", default = .internal_urls$mapbiomas)
+  if (is.null(type) || !type %in% names(urls)) {
+    stop("Invalid type. Please choose from available MapBiomas layers: ", paste(names(urls), collapse = ", "))
   }
-  return(mapbiomas_link[[type]])
+  urls[[type]]
+}
+
+#' Download a file with a cli progress bar
+#'
+#' Central helper for every provider. Uses `httr2::req_progress()` so the
+#' progress bar is rendered with cli aesthetics. Falls back to a
+#' `cli::cli_progress_step()` spinner when the server does not report a
+#' content length.
+#'
+#' @param url URL to download.
+#' @param dest Destination file path.
+#' @param show_progress Logical. Show the cli progress bar.
+#' @param timeout Numeric. Seconds to wait for the server response.
+#' @keywords internal
+#' @noRd
+.download_with_cli <- \(url, dest, show_progress = TRUE, timeout = 60) {
+  req <- httr2::request(url) |>
+    httr2::req_timeout(timeout) |>
+    httr2::req_options(ssl_verifypeer = FALSE) |>
+    httr2::req_retry(max_tries = 3, retry_on_failure = TRUE)
+
+  if (isTRUE(show_progress)) {
+    req <- req |> httr2::req_progress()
+  }
+
+  tryCatch(
+    httr2::req_perform(req, path = dest),
+    error = function(e) {
+      cli::cli_abort(c(
+        "Error during download.",
+        "x" = "{conditionMessage(e)}",
+        "i" = "URL: {.url {url}}"
+      ))
+    }
+  )
+}
+
+#' Read a spatial file and normalise column names
+#' @keywords internal
+#' @noRd
+.read_spatial_normalised <- \(path, quiet = TRUE) {
+  sf_data <- sf::st_read(path, quiet = quiet)
+  non_geom_idx <- which(!grepl("^(geom|geometry)$", names(sf_data), ignore.case = TRUE))
+  if (length(non_geom_idx) > 0) {
+    names(sf_data)[non_geom_idx] <- tolower(names(sf_data)[non_geom_idx])
+  }
+  sf_data
+}
+
+#' Download an ArcGIS REST `f = "geojson"` layer with cli progress
+#'
+#' Shared by SERNANP, INAIGEM, SERFOR and (when reactivated) SIGRID/MIDAGRI.
+#'
+#' @keywords internal
+#' @noRd
+.download_wfs_geojson <- \(url, dsn = NULL, fileext = ".geojson",
+                           show_progress = TRUE, quiet = TRUE, timeout = 60) {
+  if (is.null(dsn)) {
+    dsn <- tempfile(fileext = fileext)
+  }
+
+  # Single real cli progress bar via httr2::req_progress()
+  .download_with_cli(url, dest = dsn, show_progress = show_progress, timeout = timeout)
+
+  # ArcGIS servers expect the query string; re-request with query if needed
+  # (the direct URL already contains the layer endpoint)
+  sf_data <- tryCatch(
+    {
+      req <- httr2::request(url) |>
+        httr2::req_url_query(where = "1=1", outFields = "*", f = "geojson") |>
+        httr2::req_timeout(timeout) |>
+        httr2::req_options(ssl_verifypeer = FALSE)
+      if (isTRUE(show_progress)) req <- req |> httr2::req_progress()
+      httr2::req_perform(req, path = dsn)
+      .read_spatial_normalised(dsn, quiet = quiet)
+    },
+    error = function(e) {
+      cli::cli_abort(c(
+        "Error downloading the layer.",
+        "x" = "{conditionMessage(e)}"
+      ))
+    }
+  )
+
+  sf_data
 }
 
 #' @keywords internal
@@ -227,4 +343,4 @@ get_mapbiomas_peru_legend <- function() {
 #' @name global-variables
 #' @keywords internal
 #' @noRd
-utils::globalVariables(c("nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data","nombdep","setNames","detected_at","nombprov","error_message"))
+utils::globalVariables(c("anio","range5","range4","range3","range2","range1","loss","year","id","nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data","nombdep","setNames","detected_at","nombprov","error_message"))

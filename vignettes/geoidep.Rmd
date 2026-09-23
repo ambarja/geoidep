@@ -48,47 +48,52 @@ pak::pkg_install('ambarja/geoidep')
 library(geoidep)
 ```
 
-## 3. Basic usage 
+```{r include=FALSE}
+providers <- get_data_sources()
+layers_available <- get_providers()
+
+loreto_prov <- get_provinces(show_progress = FALSE) |>
+    subset(nombdep == "LORETO")
+  
+loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["ccdd"]], loreto_prov[["ccpp"]])
+
+```
+
+
+
+## 3. Basic usage
 
 ```{r}
-providers <- get_data_sources()
 providers
 ```
 
 ```{r}
-layers_available <- get_providers()
 layers_available
 ```
 
 ## 4. Download Official Administrative Boundaries by INEI
 ```{r}
-# Region boundaries download 
-loreto_prov <- get_provinces(show_progress = FALSE) |> 
-  subset(nombdep == 'LORETO')
+# Region boundaries download (done once in the setup chunk above)
+head(loreto_prov, 3)
 ```
 
-```{r out.width='100%', out.height=250}
-library(leaflet)
+```{r, out.width='100%', out.height=250}
+library(mapgl)
 library(sf)
-loreto_prov |> 
-  leaflet() |> 
-  addTiles() |> 
-  addPolygons()
-```
-
-
-```{r}
-# Defined Ubigeo 
-loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["ccdd"]],loreto_prov[["ccpp"]])
-```
-
-
-```{r}
-# The first five rows
-head(loreto_prov)
+maplibre_view(data = loreto_prov)
 ```
 
 ## 5. Working with Geobosque data
+
+```{r,include=FALSE}
+probe <- get_forest_loss_data(
+  layer = "stock_bosque_perdida_provincia",
+  ubigeo = loreto_prov[["ubigeo"]][1],
+  show_progress = FALSE
+  )
+
+```
+
 
 ```{r}
 my_fun <- function(x){
@@ -109,19 +114,36 @@ head(historico_df)
 
 ## 6. Simple visualization with ggplot
 
-```{r ,fig.align='center'}
+```{r , fig.align='center'}
 library(ggplot2)
 library(dplyr)
-historico_df |> 
-  inner_join(y = loreto_prov,by = "ubigeo") |> 
-  ggplot(aes(x = anio,y = perdida)) + 
-  geom_point(size = 1) + 
-  geom_line() + 
-  facet_wrap(nombprov~.,ncol = 3) + 
-  theme_minimal(base_size = 5) + 
+
+historico_prov <- historico_df |>
+  inner_join(y = loreto_prov, by = "ubigeo")
+
+promedio_loreto <- historico_prov |>
+  group_by(anio) |>
+  summarise(perdida = mean(perdida), .groups = "drop")
+```
+
+
+```{r, fig.align='center', fig.height=7,fig.width=12}
+ggplot(historico_prov, aes(x = anio, y = perdida)) +
+  geom_line(aes(group = nombprov), color = "red", linewidth = 0.6) +
+  geom_line(
+    data = promedio_loreto,
+    aes(linetype = "Promedio Loreto"),
+    color = "black",
+    linewidth = 0.6,
+    linetype = "dashed"
+    ) +
+  scale_linetype_manual(name = NULL, values = c("Promedio Loreto" = "solid")) +
+  facet_wrap(nombprov ~ .) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom") +
   labs(
-    title = "Pérdida de bosque histórico del 2001-2023 \npara las provincias de Loreto",
+    title = "Pérdida de bosque 2001-2025: provincias de Loreto vs. promedio departamental",
     caption = "Fuente: Geobosque",
     x = "",
-    y = "") 
+    y = "")
 ```

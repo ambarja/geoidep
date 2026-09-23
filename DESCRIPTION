@@ -2,7 +2,7 @@ Type: Package
 Package: geoidep
 Title: Download Geographic Data on Various Topics Provided and Managed by
     the Spatial Data Infrastructure of Peru
-Version: 0.3.1
+Version: 0.4.0
 Authors@R: 
     person("antony", "barja", , "geografo.pe@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-5921-2858"))
@@ -12,7 +12,7 @@ Description: Provides R users with easy access to official cartographic
     from regional government entities and technical-scientific
     institutions, all managed by Peru's Spatial Data Infrastructure.  For
     more information, please visit:
-    <https://www.geoidep.gob.pe/catalogos-de-metadatos>.
+    <https://www.geoidep.gob.pe/>.
 License: Apache License (>= 2)
 URL: https://geografo.pe/geoidep/
 BugReports: https://github.com/ambarja/geoidep/issues
@@ -22,30 +22,25 @@ Imports:
     archive,
     cli,
     dplyr,
-    glue,
-    httr,
-    httr2,
+    httr2 (>= 1.0.0),
     jsonlite,
     lifecycle,
-    progress,
     rvest,
     sf,
+    stats,
     tidyr,
-    geojsonio,
     terra,
-    tibble
+    tibble,
+    utils
 Suggests: 
     ggplot2,
     knitr,
     mapgl,
-    leaflet,
-    tidyterra,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.2.0)
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
-Config/roxygen2/version: 8.0.0
+Config/roxygen2/version: 8.1.0

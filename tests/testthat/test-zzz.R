@@ -1,21 +1,11 @@
-test_that(".onAttach prints welcome messages in interactive mode (snapshot)", {
-  # Forzamos modo interactivo y reiniciamos la opción para mostrar el mensaje
-  orig_interactive <- base::interactive
-  unlockBinding("interactive", baseenv())
-  assign("interactive", function() TRUE, envir = baseenv())
-  on.exit({
-    assign("interactive", orig_interactive, envir = baseenv())
-    lockBinding("interactive", baseenv())
-  })
-
-  old_opt <- getOption("geoidep.shownWelcome")
-  options(geoidep.shownWelcome = NULL)
-  on.exit({
-    options(geoidep.shownWelcome = old_opt)
-  }, add = TRUE)
-
-  # Usamos snapshot para capturar toda la salida
-  expect_snapshot_output(geoidep:::.onAttach(libname = NULL, pkgname = "geoidep"))
+test_that(".onAttach prints welcome messages in interactive mode", {
+  # .welcome_message() holds the printing logic so it can be tested
+  # directly (mocking interactive() is unreliable across R versions)
+  # NOTE: cli >= 3.x sends all output (including cli_h1) to the message
+  # stream, so type = "message" is required here.
+  out <- utils::capture.output(geoidep:::.welcome_message(), type = "message")
+  expect_true(any(grepl("Welcome to geoidep", out, fixed = TRUE)))
+  expect_true(any(grepl("get_data_sources", out, fixed = TRUE)))
 })
 
 test_that(".onAttach does not print messages when non-interactive", {
@@ -32,4 +22,3 @@ test_that(".onAttach does not print messages when non-interactive", {
   out <- capture.output(geoidep:::.onAttach(libname = NULL, pkgname = "geoidep"))
   expect_equal(out, character(0))
 })
-

@@ -6,7 +6,7 @@
 \alias{geoidep-package}
 \title{geoidep: Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru}
 \description{
-Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more. It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure. For more information, please visit: \url{https://www.geoidep.gob.pe/catalogos-de-metadatos}.
+Provides R users with easy access to official cartographic data from Peru across a range of topics, including society, transport, environment, agriculture, climate, and more. It also includes data from regional government entities and technical-scientific institutions, all managed by Peru's Spatial Data Infrastructure. For more information, please visit: \url{https://www.geoidep.gob.pe/}.
 }
 \seealso{
 Useful links:

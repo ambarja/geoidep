@@ -9,7 +9,7 @@
 ^docs$
 ^Meta$
 .docs/*
-^doc$
+^docs$
 ^ideas$
 ^data-raw$
 ^\.circleci$

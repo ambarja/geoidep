@@ -2,12 +2,10 @@ provider,category,layer,layer_can_be_actived,admin_en,year,link_geoportal
 INEI,General,departamento,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
 INEI,General,provincia,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
 INEI,General,distritos,TRUE,National Institute of Statistics and Informatics,2019,https://ide.inei.gob.pe/
-Midagri,Agriculture,agriculture_sector,TRUE,Ministry of Agrarian Development and Irrigation,2024,https://siea.midagri.gob.pe/portal/
-Midagri,Agriculture,oil_palm_areas,TRUE,Ministry of Agrarian Development and Irrigation,2016 - 2020,https://siea.midagri.gob.pe/portal/
-Geobosque,Forest,stock_bosque_perdida_nacional,FALSE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
-Geobosque,Forest,stock_bosque_perdida_departamento,TRUE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
-Geobosque,Forest,stock_bosque_perdida_provincia,TRUE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
-Geobosque,Forest,stock_bosque_perdida_distrito,TRUE,Ministry of Environment,2001 - 2023,https://geobosques.minam.gob.pe/
+Geobosque,Forest,stock_bosque_perdida_nacional,FALSE,Ministry of Environment,2001 - 2025,https://geobosques.minam.gob.pe/
+Geobosque,Forest,stock_bosque_perdida_departamento,TRUE,Ministry of Environment,2001 - 2025,https://geobosques.minam.gob.pe/
+Geobosque,Forest,stock_bosque_perdida_provincia,TRUE,Ministry of Environment,2001 - 2025,https://geobosques.minam.gob.pe/
+Geobosque,Forest,stock_bosque_perdida_distrito,TRUE,Ministry of Environment,2001 - 2025,https://geobosques.minam.gob.pe/
 Geobosque,Forest,warning_last_week,TRUE,Ministry of Environment,last week,https://geobosques.minam.gob.pe/
 Sernanp,Enviroment,anp_nacional,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
 Sernanp,Enviroment,zona_reservada,TRUE,Ministry of Environment,Not specified,https://geo.sernanp.gob.pe/visorsernanp/
@@ -77,8 +75,4 @@ INAIGEM,Enviroment,glaciares_2018,TRUE,Ministry of Environment,2018,https://geop
 INAIGEM,Enviroment,glaciares_2023,TRUE,Ministry of Environment,2023,https://geoportal.inaigem.gob.pe/
 INAIGEM,Enviroment,lagunas_con_riesgo_desborde,TRUE,Ministry of Environment,2024,https://geoportal.inaigem.gob.pe/
 INAIGEM,Enviroment,glaciares_2020,TRUE,Ministry of Environment,2018,https://geoportal.inaigem.gob.pe/
-SIGRID,"Disaster, Risk, Vulnerability and Hazard",inundacion_inventario,TRUE,Ministry of Defense,Not specified,https://sigrid.cenepred.gob.pe/sigridv3/mapa
-SIGRID,"Disaster, Risk, Vulnerability and Hazard",inundacion_tramos_criticos,TRUE,Ministry of Defense,2023,https://sigrid.cenepred.gob.pe/sigridv3/mapa
-SIGRID,"Disaster, Risk, Vulnerability and Hazard",inundacion_puntos_criticos,TRUE,Ministry of Defense,2016,https://sigrid.cenepred.gob.pe/sigridv3/mapa
-SIGRID,"Disaster, Risk, Vulnerability and Hazard",movimiento_masa_inventario,TRUE,Ministry of Defense,2013,https://sigrid.cenepred.gob.pe/sigridv3/mapa
 MapBiomas Alerta,Forest,dashboard_alert_shapefile_staging,TRUE,MapBiomas Initiative,2024,https://alerta.mapbiomas.org/

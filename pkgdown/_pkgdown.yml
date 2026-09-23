@@ -1,4 +1,5 @@
 url: https://geografo.pe/geoidep/
+
 home:
   title: Download Peruvian data managed by the Spatial Data Infrastructure (SDI) of the National Institute of Statistics and Informatics (INEI) of Peru
 
@@ -10,68 +11,75 @@ development:
   mode: auto
 
 navbar:
-   bg: custom
-   structure:
+  bg: custom
+  structure:
     right: [search, github, lightswitch]
 
+articles:
+  - title: Get started
+    contents:
+      - geoidep
+
 reference:
- - title: 'Download of INEI cartographic layer'
-   contents:
-   - get_districts
-   - get_provinces
-   - get_departaments
+  - title: INEI administrative boundaries
+    contents:
+      - inei
+      - get_departaments
+      - get_provinces
+      - get_districts
 
- # - title: 'Download of Midagri cartographic layer'
- #   contents:
- #   - get_midagri_data
+  - title: Geobosque forest monitoring
+    contents:
+      - geobosque
+      - get_forest_loss_data
+      - get_early_warning
 
- - title: 'Download data from Geobosque'
-   contents:
-   - get_forest_loss_data
-   - get_early_warning
+  - title: SERFOR fire hotspots
+    contents:
+      - serfor
+      - get_hotspots_data
 
- - title: 'Download data from Sernanp'
-   contents:
-   - get_sernanp_data
+  - title: MTC transport network
+    contents:
+      - mtc
+      - get_mtc_data
 
- - title: 'Download data from Serfor'
-   contents:
-   - get_hotspots_data
+  - title: SERNANP protected areas
+    contents:
+      - sernanp
+      - get_sernanp_data
 
- - title: 'Download data from Senamhi'
-   contents:
-   - senamhi_get_meteorological_table
-   - senamhi_alert_by_number
-   - senamhi_alerts_by_year
-   - senamhi_get_spatial_alerts
-   - senamhi_geometry_by_level
+  - title: INAIGEM glacier data
+    contents:
+      - inaigem
+      - get_inaigem_data
 
- - title: 'Download data from MTC'
-   contents:
-   - get_mtc_data
+  - title: SENAMHI weather alerts
+    contents:
+      - senamhi
+      - senamhi_alert_by_number
+      - senamhi_alerts_by_year
+      - senamhi_get_spatial_alerts
+      - senamhi_geometry_by_level
+      - senamhi_get_meteorological_table
 
- - title: 'Download data from INAIGEM'
-   contents:
-   - get_inaigem_data
+  - title: MapBiomas Peru
+    contents:
+      - mapbiomas-alerta
+      - mapbiomas-lulc
+      - mapbiomas-fire
+      - get_mapbiomas_peru_alerta
+      - get_mapbiomas_alert_images
+      - get_mapbiomas_peru_lulc
+      - get_mapbiomas_peru_lulc_series
+      - get_mapbiomas_peru_fire
+      - get_mapbiomas_peru_fire_products
+      - get_mapbiomas_peru_fire_legend
+      - scale_fill_mapbiomas_peru_lulc_d
+      - scale_fill_mapbiomas_peru_fire_d
 
- # - title: 'Download data from SIGRID'
- #   contents:
- #   - get_hazard_data
-
- - title: 'Download data from MapBiomas Peru'
-   contents:
-   - get_mapbiomas_peru_alerta
-   - get_mapbiomas_peru_lulc
-   - get_mapbiomas_peru_lulc_series
-   - get_mapbiomas_peru_fire
-   - get_mapbiomas_peru_fire_products
-   - get_mapbiomas_peru_fire_legend
-   - get_mapbiomas_alert_images
-
-
- - title: 'Utils'
-   contents:
-   - get_providers
-   - get_data_sources
-   - scale_fill_mapbiomas_peru_lulc_d
-   - scale_fill_mapbiomas_peru_fire_d
+  - title: Data catalogue helpers
+    contents:
+      - providers
+      - get_providers
+      - get_data_sources
