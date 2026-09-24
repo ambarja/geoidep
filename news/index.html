@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">geoidep</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,9 +36,13 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/ambarja/geoidep/blob/v.0.4.0/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/ambarja/geoidep/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.5.0" id="geoidep-050">geoidep 0.5.0<a class="anchor" aria-label="anchor" href="#geoidep-050"></a></h2>
+<ul><li>New: IGP seismic catalogs via <code><a href="../reference/get_igp_seismic_data.html">get_igp_seismic_data()</a></code> — downloads the <code>instrumental</code> (1960-present) and <code>historic</code> (1471-1959) catalogs from the IGP seismic data repository (<a href="https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos" class="external-link uri">https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos</a>) with the same filters as the web form (dates, magnitude, depth) and returns an <code>sf</code> POINT layer (EPSG:4326) clipped to any user-supplied polygon (its bounding box is used internally to narrow the download). The XLSX response is parsed with base R only, so no additional package is required.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.0" id="geoidep-040">geoidep 0.4.0<a class="anchor" aria-label="anchor" href="#geoidep-040"></a></h2>
 <ul><li>Full refactor: scripts reorganised by provider (<code>inei.R</code>, <code>geobosque.R</code>, <code>serfor.R</code>, <code>mtc.R</code>, <code>sernanp.R</code>, <code>inaigem.R</code>, <code>senamhi.R</code>, <code>mapbiomas-alerta.R</code>, <code>mapbiomas-lulc.R</code>, <code>mapbiomas-fire.R</code>); dead MIDAGRI/SIGRID code removed.</li>

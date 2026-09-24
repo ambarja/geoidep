@@ -1,5 +1,18 @@
 # Changelog
 
+## geoidep 0.5.0
+
+- New: IGP seismic catalogs via
+  [`get_igp_seismic_data()`](https://geografo.pe/geoidep/reference/get_igp_seismic_data.md)
+  — downloads the `instrumental` (1960-present) and `historic`
+  (1471-1959) catalogs from the IGP seismic data repository
+  (<https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos>) with the
+  same filters as the web form (dates, magnitude, depth) and returns an
+  `sf` POINT layer (EPSG:4326) clipped to any user-supplied polygon (its
+  bounding box is used internally to narrow the download). The XLSX
+  response is parsed with base R only, so no additional package is
+  required.
+
 ## geoidep 0.4.0
 
 - Full refactor: scripts reorganised by provider (`inei.R`,
