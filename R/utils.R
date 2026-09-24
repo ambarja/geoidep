@@ -30,13 +30,13 @@ get_data <- \(url = NULL, timeout = 60){
 #' tested in `tests/testthat/test-utils.R`.
 #'
 #' @param provider One of "inei", "sernanp", "midagri", "geobosque", "mtc",
-#'   "inaigem", "sigrid", "mapbiomas".
+#'   "inaigem", "sigrid", "mapbiomas", "senamhi", "igp".
 #' @param layer Layer key inside `.internal_urls[[provider]]`.
 #' @keywords internal
 #' @noRd
 .get_layer_url <- \(provider, layer = NULL) {
   valid_providers <- c("inei", "sernanp", "midagri", "geobosque", "mtc",
-                       "inaigem", "sigrid", "mapbiomas", "senamhi")
+                       "inaigem", "sigrid", "mapbiomas", "senamhi", "igp")
 
   provider <- match.arg(provider, valid_providers)
 
@@ -343,4 +343,4 @@ get_mapbiomas_peru_legend <- function() {
 #' @name global-variables
 #' @keywords internal
 #' @noRd
-utils::globalVariables(c("anio","range5","range4","range3","range2","range1","loss","year","id","nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data","nombdep","setNames","detected_at","nombprov","error_message"))
+utils::globalVariables(c("anio","range5","range4","range3","range2","range1","loss","year","id","nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data","nombdep","setNames","detected_at","nombprov","error_message","fecha_utc","hora_utc","latitud","longitud","profundidad_km","magnitud","magnitud_mb","magnitud_ms","magnitud_mw"))

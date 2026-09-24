@@ -2,7 +2,7 @@ Type: Package
 Package: geoidep
 Title: Download Geographic Data on Various Topics Provided and Managed by
     the Spatial Data Infrastructure of Peru
-Version: 0.4.0
+Version: 0.5.0
 Authors@R: 
     person("antony", "barja", , "geografo.pe@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-5921-2858"))
@@ -14,7 +14,7 @@ Description: Provides R users with easy access to official cartographic
     more information, please visit:
     <https://www.geoidep.gob.pe/>.
 License: Apache License (>= 2)
-URL: https://geografo.pe/geoidep/
+URL: https://geografo.pe/geoidep/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAbElEQVR4Xs2RQQrAMAgEfZgf7W9LAguybljJpR3wEse5JOL3ZObDb4x1loDhHbBOFU6i2Ddnw2KNiXcdAXygJlwE8OFVBHDgKrLgSInN4WMe9iXiqIVsTMjH7z/GhNTEibOxQswcYIWYOR/zAjBJfiXh3jZ6AAAAAElFTkSuQmCC
 BugReports: https://github.com/ambarja/geoidep/issues
 Depends: 
     R (>= 4.1.0)

@@ -76,3 +76,5 @@ INAIGEM,Enviroment,glaciares_2023,TRUE,Ministry of Environment,2023,https://geop
 INAIGEM,Enviroment,lagunas_con_riesgo_desborde,TRUE,Ministry of Environment,2024,https://geoportal.inaigem.gob.pe/
 INAIGEM,Enviroment,glaciares_2020,TRUE,Ministry of Environment,2018,https://geoportal.inaigem.gob.pe/
 MapBiomas Alerta,Forest,dashboard_alert_shapefile_staging,TRUE,MapBiomas Initiative,2024,https://alerta.mapbiomas.org/
+IGP,Hazard,sismicidad_historica,TRUE,Geophysical Institute of Peru,1471 - 1959,https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos
+IGP,Hazard,sismicidad_instrumental,TRUE,Geophysical Institute of Peru,1960 - present,https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos

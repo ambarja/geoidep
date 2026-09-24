@@ -69,6 +69,10 @@ reference:
       - scale_fill_mapbiomas_peru_lulc_d
       - scale_fill_mapbiomas_peru_fire_d
 
+  - title: IGP seismic catalogs
+    contents:
+      - get_igp_seismic_data
+
   - title: Data catalogue helpers
     contents:
       - get_providers
