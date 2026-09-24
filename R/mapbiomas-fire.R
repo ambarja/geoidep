@@ -1,13 +1,3 @@
-#' MapBiomas Peru Fire (Fuego) rasters
-#'
-#' @description
-#' Annual / accumulated burned-area products from MapBiomas Fuego Peru
-#' (Collection 1), hosted as GeoTIFFs on Google Cloud Storage and read
-#' lazily via GDAL `/vsicurl/`.
-#'
-#' @name mapbiomas-fire
-NULL
-
 #' Get available MapBiomas Peru Fire products
 #'
 #' @description

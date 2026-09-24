@@ -1,13 +1,3 @@
-#' SERFOR hotspots (SAMI)
-#'
-#' @description
-#' Active fire / heat-spot data from the Satellite Monitoring Unit (SAMI) of
-#' the National Forestry and Wildlife Service:
-#' \url{https://sniffs.serfor.gob.pe/monitoreo/sami/index.html}.
-#'
-#' @name serfor
-NULL
-
 #' Download available hot spot data from Serfor's Satellite Monitoring Unit
 #'
 #' @description
@@ -58,6 +48,9 @@ get_hotspots_data <- \(dsn = NULL, show_progress = TRUE, quiet = TRUE){
         ~ as_data_time(.)
       )
     )
+
+  # The WFS sometimes returns features with empty geometries; drop them
+  sf_data <- sf_data[!sf::st_is_empty(sf_data), , drop = FALSE]
 
   return(sf_data)
 }

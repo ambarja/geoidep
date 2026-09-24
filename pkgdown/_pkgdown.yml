@@ -24,40 +24,33 @@ articles:
 reference:
   - title: INEI administrative boundaries
     contents:
-      - inei
       - get_departaments
       - get_provinces
       - get_districts
 
   - title: Geobosque forest monitoring
     contents:
-      - geobosque
       - get_forest_loss_data
       - get_early_warning
 
   - title: SERFOR fire hotspots
     contents:
-      - serfor
       - get_hotspots_data
 
   - title: MTC transport network
     contents:
-      - mtc
       - get_mtc_data
 
   - title: SERNANP protected areas
     contents:
-      - sernanp
       - get_sernanp_data
 
   - title: INAIGEM glacier data
     contents:
-      - inaigem
       - get_inaigem_data
 
   - title: SENAMHI weather alerts
     contents:
-      - senamhi
       - senamhi_alert_by_number
       - senamhi_alerts_by_year
       - senamhi_get_spatial_alerts
@@ -66,9 +59,6 @@ reference:
 
   - title: MapBiomas Peru
     contents:
-      - mapbiomas-alerta
-      - mapbiomas-lulc
-      - mapbiomas-fire
       - get_mapbiomas_peru_alerta
       - get_mapbiomas_alert_images
       - get_mapbiomas_peru_lulc
@@ -81,6 +71,6 @@ reference:
 
   - title: Data catalogue helpers
     contents:
-      - providers
       - get_providers
       - get_data_sources
+

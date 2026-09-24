@@ -1,14 +1,3 @@
-#' MapBiomas Alerta Peru: deforestation alerts and imagery
-#'
-#' @description
-#' WFS download of MapBiomas Alerta Peru alerts
-#' (\url{https://alerta.mapbiomas.org/}) plus bulk download of the
-#' before/after deforestation PNGs stored in public Google Cloud Storage.
-#' Progress uses [cli][cli::cli_progress_bar()].
-#'
-#' @name mapbiomas-alerta
-NULL
-
 #' Download MapBiomas Alerta Peru deforestation alerts with spatial filtering
 #'
 #' @description

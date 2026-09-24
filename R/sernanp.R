@@ -1,12 +1,3 @@
-#' SERNANP protected areas
-#'
-#' @description
-#' Natural protected-area layers from the SERNANP geoviewer:
-#' \url{https://geo.sernanp.gob.pe/visorsernanp/}.
-#'
-#' @name sernanp
-NULL
-
 #' Download the available data from Sernanp
 #'
 #' @description

@@ -1,16 +1,3 @@
-#' Geobosque data (MINAM)
-#'
-#' @description
-#' Forest stock / loss statistics (`get_forest_loss_data()`) and last-week
-#' deforestation alerts (`get_early_warning()`) from the Geobosque platform:
-#' \url{https://geobosques.minam.gob.pe}. The forest-loss endpoint is a `GET`
-#' JSON API served by the current Geobosques backend
-#' (\url{https://bosques-app.pe/geobosques/api-bosques}), so progress is
-#' reported with a [cli][cli::cli_progress_step()] spinner.
-#'
-#' @name geobosque
-NULL
-
 #' Download the forest and loss information from Geobosque
 #'
 #' @description

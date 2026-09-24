@@ -1,14 +1,3 @@
-#' MapBiomas Peru LULC rasters
-#'
-#' @description
-#' Single-year and multi-year Land Use / Land Cover (LULC) classifications
-#' from MapBiomas Peru, hosted as Cloud Optimised GeoTIFFs on Google Cloud
-#' Storage and read lazily via GDAL `/vsicurl/`. Multi-year stacks report
-#' progress with [cli][cli::cli_progress_bar()].
-#'
-#' @name mapbiomas-lulc
-NULL
-
 #' Get MapBiomas Peru land use / land cover raster
 #'
 #' @description

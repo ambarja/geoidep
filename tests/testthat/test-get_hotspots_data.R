@@ -9,4 +9,7 @@ test_that("R/get_hotspots_data return a sf object", {
   expect_true(all(sf::st_geometry_type(resultado) %in% c("POINT", "MULTIPOINT")))
   expect_true(all(!sf::st_is_empty(resultado)))
   expect_gt(nrow(resultado), 0)
+  expect_true(all(
+    c("FECREG", "FECHA", "created_date", "last_edited_date") %in% names(resultado)
+  ))
 })

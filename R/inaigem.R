@@ -1,12 +1,3 @@
-#' INAIGEM mountain ecosystems
-#'
-#' @description
-#' Glacier and high-mountain layers from the INAIGEM geoportal:
-#' \url{https://geoportal.inaigem.gob.pe/}.
-#'
-#' @name inaigem
-NULL
-
 #' Download the available data from INAIGEM
 #'
 #' @description

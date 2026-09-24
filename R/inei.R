@@ -1,22 +1,3 @@
-#' INEI administrative boundaries
-#'
-#' @description
-#' Download the official political-division geometries published by the
-#' National Institute of Statistics and Informatics (INEI):
-#' \url{https://ide.inei.gob.pe/}. All three helpers share the same
-#' download / extract / read pipeline with a [cli][cli::cli_progress_bar()]
-#' progress bar.
-#'
-#' @details
-#' * `get_departaments()` — level-1 (departamento).
-#' * `get_provinces()` — level-2 (provincia).
-#' * `get_districts()` — level-3 (distrito).
-#'
-#' Column names are normalised to lowercase (except the geometry column).
-#'
-#' @name inei
-NULL
-
 #' Shared INEI download pipeline with cli progress
 #' @keywords internal
 #' @noRd

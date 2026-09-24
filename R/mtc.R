@@ -1,12 +1,3 @@
-#' MTC transport data
-#'
-#' @description
-#' Transport and telecommunications layers from the MTC geoportal:
-#' \url{https://geoportal.mtc.gob.pe/}.
-#'
-#' @name mtc
-NULL
-
 #' Download the available data from MTC
 #'
 #' @description

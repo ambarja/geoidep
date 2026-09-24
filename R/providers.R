@@ -1,11 +1,3 @@
-#' Catalogue helpers: providers and data sources
-#'
-#' @description
-#' List the providers and layers indexed in `inst/sources-idep/sources_geoidep.csv`.
-#'
-#' @name providers
-NULL
-
 #' List providers, description, year and link
 #'
 #' @description
