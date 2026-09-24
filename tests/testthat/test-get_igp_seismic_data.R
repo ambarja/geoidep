@@ -1,3 +1,38 @@
+test_that("get_igp_seismic_data validates its arguments (offline)", {
+  expect_error(
+    geoidep::get_igp_seismic_data(catalog = "foo"),
+    "should be one of"
+  )
+  expect_error(
+    geoidep::get_igp_seismic_data(start_date = "2024/01/01", end_date = "2024-02-01"),
+    "Invalid"
+  )
+  expect_error(
+    geoidep::get_igp_seismic_data(start_date = "2024-02-30", end_date = "2024-03-01"),
+    "not a real calendar date"
+  )
+  expect_error(
+    geoidep::get_igp_seismic_data(start_date = "2024-03-01", end_date = "2024-02-01"),
+    "Invalid date range"
+  )
+  expect_error(
+    geoidep::get_igp_seismic_data(min_magnitude = "4"),
+    "Invalid"
+  )
+  expect_error(
+    geoidep::get_igp_seismic_data(min_magnitude = 6, max_magnitude = 4),
+    "must not exceed"
+  )
+  expect_error(
+    geoidep::get_igp_seismic_data(min_depth = 500, max_depth = 100),
+    "must not exceed"
+  )
+  expect_error(
+    geoidep::get_igp_seismic_data(polygon = data.frame(x = 1)),
+    "Invalid"
+  )
+})
+
 test_that("get_igp_seismic_data returns a valid sf object", {
   testthat::skip_on_cran()
   testthat::skip_if_offline()

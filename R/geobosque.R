@@ -30,6 +30,16 @@
 #' }
 #' @export
 get_forest_loss_data <- \(layer = NULL, ubigeo = NULL, show_progress = TRUE) {
+  valid_layers <- c("stock_bosque_perdida_distrito",
+                    "stock_bosque_perdida_provincia",
+                    "stock_bosque_perdida_departamento")
+  if (is.null(layer) || length(layer) != 1L || !layer %in% valid_layers) {
+    cli::cli_abort(c(
+      "Invalid {.arg layer}.",
+      "i" = "Choose one of {.val stock_bosque_perdida_distrito}, {.val stock_bosque_perdida_provincia}, {.val stock_bosque_perdida_departamento}."
+    ))
+  }
+
   expected_nchar <- switch(layer,
     "stock_bosque_perdida_distrito" = 6L,
     "stock_bosque_perdida_provincia" = 4L,

@@ -135,7 +135,81 @@ test_that("get_heat_spot_link returns the correct URL or raises an error", {
   )
 })
 
-# Extra -------------------------------------------------------------------
+# validate_date -----------------------------------------------------------
+test_that("validate_date accepts real dates and rejects the rest (offline)", {
+  expect_equal(
+    geoidep:::validate_date("2024-01-31", "start_date"),
+    as.Date("2024-01-31")
+  )
+  expect_null(geoidep:::validate_date(NULL, "start_date"))
+  expect_error(
+    geoidep:::validate_date("2024/01/01", "start_date"),
+    "Invalid"
+  )
+  expect_error(
+    geoidep:::validate_date("2024-02-30", "start_date"),
+    "not a real calendar date"
+  )
+})
+
+# .get_layer_url ----------------------------------------------------------
+test_that(".get_layer_url resolves known pairs and rejects the rest (offline)", {
+  expect_match(
+    geoidep:::.get_layer_url("igp", "descargar_datos"),
+    "ultimosismo.igp.gob.pe"
+  )
+  expect_error(geoidep:::.get_layer_url("nope", "x"), "should be one of")
+  expect_error(geoidep:::.get_layer_url("igp", "foo"), "Invalid")
+  expect_error(geoidep:::.get_layer_url("igp"), "Invalid")
+})
+
+# mtc / inaigem / mapbiomas links ------------------------------------------
+test_that("provider link wrappers resolve and reject (offline)", {
+  for (provider in c("mtc", "inaigem")) {
+    keys <- names(geoidep:::.internal_urls[[provider]])
+    link_fn <- get(paste0("get_", provider, "_link"))
+    expect_match(link_fn(keys[1]), "^https?://")
+    expect_error(link_fn("foo"), "Invalid")
+    expect_error(link_fn(NULL), "Invalid")
+  }
+
+  mb_keys <- names(geoidep:::.internal_urls$mapbiomas)
+  expect_match(geoidep:::get_mapbiomas_link(mb_keys[1]), "^https?://")
+  expect_error(geoidep:::get_mapbiomas_link("foo"), "Invalid type")
+  expect_error(geoidep:::get_mapbiomas_link(NULL), "Invalid type")
+})
+
+# mapbiomas legend ----------------------------------------------------------
+test_that("get_mapbiomas_peru_legend returns the class table (offline)", {
+  legend <- geoidep:::get_mapbiomas_peru_legend()
+  expect_s3_class(legend, "tbl_df")
+  expect_gt(nrow(legend), 0)
+  expect_true(all(c("id", "class_en", "class_es", "hex") %in% names(legend)))
+  expect_true(all(grepl("^#[0-9a-fA-F]{6}$", legend$hex)))
+})
+
+# .read_spatial_normalised --------------------------------------------------
+test_that(".read_spatial_normalised lowercases column names (offline)", {
+  pts <- sf::st_sf(
+    NAME = c("a", "b"),
+    VALUE = c(1, 2),
+    geometry = sf::st_sfc(sf::st_point(c(-77, -12)), sf::st_point(c(-76, -11)), crs = 4326)
+  )
+  path <- file.path(tempdir(), "geoidep_norm_test.geojson")
+  suppressMessages(sf::st_write(pts, path, delete_dsn = TRUE, quiet = TRUE))
+  out <- geoidep:::.read_spatial_normalised(path, quiet = TRUE)
+  expect_s3_class(out, "sf")
+  expect_equal(nrow(out), 2)
+  expect_true(all(c("name", "value") %in% names(out)))
+})
+
+# get_data ------------------------------------------------------------------
+test_that("get_data aborts gracefully on an unreachable catalogue (offline)", {
+  expect_error(
+    geoidep:::get_data(url = "http://127.0.0.1:1/nope.csv", timeout = 5),
+    "The catalogue could not be read"
+  )
+})
 test_that("as_data_time converts milliseconds to correct POSIXct date", {
   # Caso base: 0 ms corresponde a la fecha origen
   expect_equal(

@@ -6,6 +6,7 @@ test_that("get_data_sources() return a tibble when the query argument es NULL", 
     error = function(e) testthat::skip(paste("Catalogue unavailable:", conditionMessage(e)))
   )
   expect_s3_class(result, "tbl_df")
+  expect_true(all(c("provider", "category", "layer") %in% names(result)))
 })
 
 test_that("get_data_sources() return all nrows when the query is NULL", {

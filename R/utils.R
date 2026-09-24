@@ -12,7 +12,9 @@ get_data <- \(url = NULL, timeout = 60){
   options(timeout = timeout)
   on.exit(options(timeout = old_timeout), add = TRUE)
   tryCatch({
-    data <- read.csv(url) |> tidyr::as_tibble()
+    # read.csv() warns ("status was ...") before failing on unreachable URLs;
+    # silence it so only the friendly abort below is shown.
+    data <- suppressWarnings(read.csv(url)) |> tidyr::as_tibble()
     return(data)
   }, error = function(e) {
     cli::cli_abort(c(
