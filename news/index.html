@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">geoidep</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.5.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,8 +40,20 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.5.0" id="geoidep-050">geoidep 0.5.0<a class="anchor" aria-label="anchor" href="#geoidep-050"></a></h2>
-<ul><li>New: IGP seismic catalogs via <code><a href="../reference/get_igp_seismic_data.html">get_igp_seismic_data()</a></code> — downloads the <code>instrumental</code> (1960-present) and <code>historic</code> (1471-1959) catalogs from the IGP seismic data repository (<a href="https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos" class="external-link uri">https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos</a>) with the same filters as the web form (dates, magnitude, depth) and returns an <code>sf</code> POINT layer (EPSG:4326) clipped to any user-supplied polygon (its bounding box is used internally to narrow the download). The XLSX response is parsed with base R only, so no additional package is required.</li>
+<h2 class="pkg-version" data-toc-text="0.4.1" id="geoidep-041">geoidep 0.4.1<a class="anchor" aria-label="anchor" href="#geoidep-041"></a></h2>
+<ul><li><p>New: IGP seismic catalogs via <code><a href="../reference/get_igp_seismic_data.html">get_igp_seismic_data()</a></code> — downloads the <code>instrumental</code> (1960-present) and <code>historic</code> (1471-1959) catalogs from the IGP seismic data repository (<a href="https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos" class="external-link uri">https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos</a>) with the same filters as the web form (dates, magnitude, depth) and returns an <code>sf</code> POINT layer (EPSG:4326) clipped to any user-supplied polygon (its bounding box is used internally to narrow the download). The XLSX response is parsed with base R only, so no additional package is required.</p></li>
+<li>
+<p>Refreshed README badges and registered the new Zenodo DOI.</p>
+<ul><li><a href="https://shields.io/" class="external-link">Shields</a></li>
+<li><a href="https://github.com/matt-dray/badgr" class="external-link">{badgr}</a></li>
+</ul></li>
+<li><p><a href="https://docs.ropensci.org/cffr/" class="external-link">cffr</a> for a correct citation together with GitHub Actions.</p></li>
+<li>
+<p>Updated of MapBiomas LULC function the documentation.</p>
+<ul><li><a href="https://geografo.pe/geoidep/reference/get_mapbiomas_peru_lulc.html">get_mapbiomas_peru_lulc</a></li>
+<li><a href="https://geografo.pe/geoidep/reference/get_mapbiomas_peru_lulc_series.html">get_mapbiomas_peru_lulc_series</a></li>
+</ul></li>
+<li><p>New <a href="https://github.com/dieghernan/cran-status-check" class="external-link">CRAN status</a> with GitHub Actions. This action checks the CRAN status of a R package and optionally creates an issue or make the action fail.</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.0" id="geoidep-040">geoidep 0.4.0<a class="anchor" aria-label="anchor" href="#geoidep-040"></a></h2><p class="text-muted">CRAN release: 2026-09-27</p>

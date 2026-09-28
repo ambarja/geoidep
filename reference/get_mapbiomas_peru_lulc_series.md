@@ -31,7 +31,7 @@ get_mapbiomas_peru_lulc_series(
 - collection:
 
   Integer. MapBiomas Peru collection number (`1`, `2`, `3`, `4`).
-  Default `3`.
+  Default `4`.
 
 - show_progress:
 

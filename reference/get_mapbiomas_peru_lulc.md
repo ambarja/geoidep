@@ -25,7 +25,7 @@ get_mapbiomas_peru_lulc(year, crop_to = NULL, collection = 4)
 - collection:
 
   Integer. MapBiomas Peru collection number (`1`, `2`, `3`, `4`).
-  Default `3`.
+  Default `4`.
 
 ## Value
 
