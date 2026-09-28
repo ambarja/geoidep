@@ -8,7 +8,7 @@
 #'
 #' @param year Integer. Year of the classification (e.g. `2024`).
 #' @param crop_to Optional. An `sf`/`sfc` object, `SpatVector`, or `SpatExtent`. If `NULL`, the full raster for Peru is returned.
-#' @param collection Integer. MapBiomas Peru collection number (`1`, `2`, `3`, `4`). Default `3`.
+#' @param collection Integer. MapBiomas Peru collection number (`1`, `2`, `3`, `4`). Default `4`.
 #' @returns A `SpatRaster` with one layer named `classification_<year>`.
 #' @examples
 #' \dontrun{
@@ -88,7 +88,7 @@ get_mapbiomas_peru_lulc <- \(year, crop_to = NULL, collection = 4) {
 #'
 #' @param years Integer vector. Years to download (e.g. `2018:2024`).
 #' @param crop_to Optional. An `sf`/`sfc` object, `SpatVector`, or `SpatExtent`. If `NULL`, each raster is returned at full extent.
-#' @param collection Integer. MapBiomas Peru collection number (`1`, `2`, `3`, `4`). Default `3`.
+#' @param collection Integer. MapBiomas Peru collection number (`1`, `2`, `3`, `4`). Default `4`.
 #' @param show_progress Logical. Show a cli progress bar. Default `TRUE`.
 #' @returns A `SpatRaster` with one layer per year, named `classification_<year>`.
 #' @examples

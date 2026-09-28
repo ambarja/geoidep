@@ -9,7 +9,7 @@
 ^docs$
 ^Meta$
 .docs/*
-^docs$
 ^ideas$
 ^data-raw$
 ^\.circleci$
+^CITATION\.cff$

@@ -11,7 +11,7 @@ get_mapbiomas_peru_lulc(year, crop_to = NULL, collection = 4)
 
 \item{crop_to}{Optional. An \code{sf}/\code{sfc} object, \code{SpatVector}, or \code{SpatExtent}. If \code{NULL}, the full raster for Peru is returned.}
 
-\item{collection}{Integer. MapBiomas Peru collection number (\code{1}, \code{2}, \code{3}, \code{4}). Default \code{3}.}
+\item{collection}{Integer. MapBiomas Peru collection number (\code{1}, \code{2}, \code{3}, \code{4}). Default \code{4}.}
 }
 \value{
 A \code{SpatRaster} with one layer named \verb{classification_<year>}.

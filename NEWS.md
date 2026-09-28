@@ -1,4 +1,4 @@
-# geoidep 0.5.0
+# geoidep 0.4.1
 * New: IGP seismic catalogs via `get_igp_seismic_data()` — downloads the
   `instrumental` (1960-present) and `historic` (1471-1959) catalogs from the
   IGP seismic data repository
@@ -7,6 +7,21 @@
   layer (EPSG:4326) clipped to any user-supplied polygon (its
   bounding box is used internally to narrow the download). The XLSX response
   is parsed with base R only, so no additional package is required.
+  
+* Refreshed README badges and registered the new Zenodo DOI.
+  - [Shields](https://shields.io/)
+  - [{badgr}](https://github.com/matt-dray/badgr)
+
+* [cffr](https://docs.ropensci.org/cffr/) for a correct citation together with GitHub Actions.
+  
+
+* Updated of MapBiomas LULC function the documentation.
+  - [get_mapbiomas_peru_lulc](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_lulc.html)
+  - [get_mapbiomas_peru_lulc_series](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_lulc_series.html)
+
+* New [CRAN status](https://github.com/dieghernan/cran-status-check) with GitHub Actions.
+  This action checks the CRAN status of a R package and optionally creates an issue or make the action fail.
+  
 
 # geoidep 0.4.0
 * Full refactor: scripts reorganised by provider (`inei.R`, `geobosque.R`,
