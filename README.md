@@ -8,6 +8,8 @@
 
 <!-- badges: start -->
 
+![CRAN/METACRAN Version](https://img.shields.io/cran/v/geoidep) [![CRAN
+results](https://badges.cranchecks.info/worst/geoidep.svg)](https://cran.r-project.org/web/checks/check_results_geoidep.html)
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
@@ -15,6 +17,7 @@ coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.co
 status](https://circleci.com/gh/ambarja/geoidep.svg?style=svg)](https://app.circleci.com/pipelines/github/ambarja/geoidep)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CodeFactor](https://www.codefactor.io/repository/github/ambarja/geoidep/badge)](https://www.codefactor.io/repository/github/ambarja/geoidep)
 <!-- badges: end -->
 <p align="justify">
 
@@ -87,17 +90,18 @@ In summary the suppliers and the number of available layers
 
 ``` r
 get_providers() 
-#> # A tibble: 8 × 2
+#> # A tibble: 9 × 2
 #>   provider         layer_count
 #>   <fct>                  <int>
 #> 1 Geobosque                  5
-#> 2 INAIGEM                    5
-#> 3 INEI                       7
-#> 4 MapBiomas Alerta           1
-#> 5 MTC                       26
-#> 6 Senamhi                    1
-#> 7 Serfor                     1
-#> 8 Sernanp                   31
+#> 2 IGP                        2
+#> 3 INAIGEM                    5
+#> 4 INEI                       7
+#> 5 MapBiomas Alerta           1
+#> 6 MTC                       26
+#> 7 Senamhi                    1
+#> 8 Serfor                     1
+#> 9 Sernanp                   31
 ```
 
 ## Example 02: Download official INEI administrative boundaries
