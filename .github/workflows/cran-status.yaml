@@ -1,0 +1,33 @@
+name: Check CRAN Status
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 6 * * 1,4"
+
+jobs:
+  cran-check:
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check CRAN status of the package
+        uses: dieghernan/cran-status-check@v2
+        with:
+
+          package: "geoidep"
+
+          statuses: "WARN,ERROR"
+
+          create-issue: true
+
+          fail-on-error: false
