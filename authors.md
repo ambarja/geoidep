@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/ambarja/geoidep/blob/0.4.1/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/ambarja/geoidep/blob/main/DESCRIPTION)
 
 barja a (2026). *geoidep: Download Geographic Data on Various Topics
 Provided and Managed by the Spatial Data Infrastructure of Peru*. R
