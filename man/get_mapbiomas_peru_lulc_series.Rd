@@ -16,7 +16,7 @@ get_mapbiomas_peru_lulc_series(
 
 \item{crop_to}{Optional. An \code{sf}/\code{sfc} object, \code{SpatVector}, or \code{SpatExtent}. If \code{NULL}, each raster is returned at full extent.}
 
-\item{collection}{Integer. MapBiomas Peru collection number (\code{1}, \code{2}, \code{3}, \code{4}). Default \code{3}.}
+\item{collection}{Integer. MapBiomas Peru collection number (\code{1}, \code{2}, \code{3}, \code{4}). Default \code{4}.}
 
 \item{show_progress}{Logical. Show a cli progress bar. Default \code{TRUE}.}
 }
