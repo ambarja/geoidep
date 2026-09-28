@@ -15,6 +15,8 @@
 
 ## geoidep 0.4.0
 
+CRAN release: 2026-09-27
+
 - Full refactor: scripts reorganised by provider (`inei.R`,
   `geobosque.R`, `serfor.R`, `mtc.R`, `sernanp.R`, `inaigem.R`,
   `senamhi.R`, `mapbiomas-alerta.R`, `mapbiomas-lulc.R`,
