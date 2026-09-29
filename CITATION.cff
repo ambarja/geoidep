@@ -9,7 +9,7 @@ type: software
 license: Apache-2.0
 title: 'geoidep: Download Geographic Data on Various Topics Provided and Managed by
   the Spatial Data Infrastructure of Peru'
-version: 0.4.1
+version: 0.5.0
 doi: 10.32614/CRAN.package.geoidep
 abstract: 'Provides R users with easy access to official cartographic data from Peru
   across a range of topics, including society, transport, environment, agriculture,
@@ -23,7 +23,7 @@ authors:
   orcid: https://orcid.org/0000-0001-5921-2858
 repository: https://CRAN.R-project.org/package=geoidep
 repository-code: https://github.com/ambarja/geoidep
-url: https://geografo.pe/geoidep/data:image/png;base64
+url: https://geografo.pe/geoidep
 contact:
 - family-names: barja
   given-names: antony
