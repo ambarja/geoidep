@@ -44,10 +44,44 @@ test_that("mapbiomas fire scale builds without raster or network (offline)", {
   expect_error(geoidep::scale_fill_mapbiomas_peru_fire_d("foo"), "Invalid")
 })
 
+test_that(".mapbiomas_fire_url builds exact URLs without downloading (offline)", {
+  annual <- geoidep:::.mapbiomas_fire_url("annual_burned", 2024)
+  expect_identical(
+    annual$url,
+    "https://storage.googleapis.com/shared-development-storage/COLLECTIONS/PERU/FIRE/COLLECTION1/mbfire_col1_peru_annual_burned/mbfire_col1_peru_annual_burned-burned_area_2024.tif"
+  )
+  expect_identical(annual$temporal, "annual")
+
+  range <- geoidep:::.mapbiomas_fire_url("frequency_burned", 2024)
+  expect_identical(
+    range$url,
+    "https://storage.googleapis.com/shared-development-storage/COLLECTIONS/PERU/FIRE/COLLECTION1/mbfire_col1_peru_frequency_burned/mbfire_col1_peru_frequency_burned-fire_frequency_2013_2024.tif"
+  )
+  expect_identical(range$temporal, "range")
+
+  expect_error(geoidep:::.mapbiomas_fire_url("foo", 2024), "Invalid")
+  expect_error(
+    geoidep:::.mapbiomas_fire_url("annual_burned", 2024, collection = 2),
+    "only collection"
+  )
+  expect_error(
+    geoidep:::.mapbiomas_fire_url("annual_burned", 1990),
+    "1999"
+  )
+  expect_error(
+    geoidep:::.mapbiomas_fire_url("frequency_burned", 2000),
+    "2014"
+  )
+})
+
 test_that("get_mapbiomas_peru_fire returns a cropped SpatRaster (live)", {
   testthat::skip_on_cran()
   testthat::skip_if_offline()
   testthat::skip_if_not_installed("terra")
+  testthat::skip_if_not(
+    identical(Sys.getenv("GEOIDEP_RUN_HEAVY"), "1"),
+    "Heavy raster download skipped (set GEOIDEP_RUN_HEAVY=1 to run)."
+  )
   lima <- sf::st_sf(geometry = sf::st_sfc(
     sf::st_bbox(c(xmin = -77.2, ymin = -12.6, xmax = -76.6, ymax = -11.7),
                 crs = sf::st_crs(4326)) |>

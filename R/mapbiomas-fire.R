@@ -136,30 +136,15 @@ get_mapbiomas_peru_fire_legend <- function(product) {
   )
 }
 
-#' Get a MapBiomas Peru Fire raster
+#' Build the MapBiomas Peru Fire download URL
 #'
-#' @description
-#' Lazily reads a MapBiomas Fuego (Fire) Peru raster from a given
-#' sub-product, hosted as a GeoTIFF on Google Cloud Storage. Only the bytes
-#' required for the requested extent are downloaded (via GDAL's
-#' `/vsicurl/` driver). Optionally crops and masks the raster to an
-#' area of interest.
+#' Internal: validated URL construction without any download, so the
+#' URL logic can be unit-tested offline. Returns a list with `url` and
+#' `temporal` (`"annual"` or `"range"`).
 #'
-#' @param product Character. One of the products listed in
-#' `get_mapbiomas_peru_fire_products`, e.g. `"annual_burned"`.
-#' @param year Integer. For `"annual"` products, the map year (from `1999`). For `"range"`
-#' products (`accumulated_*`, `frequency_burned`), the **end year** (from `2014`, range starts 2013).
-#' @param crop_to Optional. An `sf`/`sfc` object, `SpatVector`, or `SpatExtent`. If `NULL`, the full raster is returned.
-#' @param collection Integer. MapBiomas Fuego Peru collection. Default `1` (only one available).
-#' @returns A `SpatRaster` with one layer.
-#' @examples
-#' \dontrun{
-#' library(geoidep)
-#' lima <- get_departaments("LIMA")
-#' burned_2024 <- get_mapbiomas_peru_fire(product = "annual_burned", year = 2024, crop_to = lima)
-#' }
-#' @export
-get_mapbiomas_peru_fire <- \(product, year, crop_to = NULL, collection = 1) {
+#' @keywords internal
+#' @noRd
+.mapbiomas_fire_url <- \(product, year, collection = 1) {
   products <- get_mapbiomas_peru_fire_products()
 
   if (!product %in% products$product) {
@@ -219,6 +204,37 @@ get_mapbiomas_peru_fire <- \(product, year, crop_to = NULL, collection = 1) {
     url <- sprintf("%s_%d.tif", base_url, year)
   }
 
+  list(url = url, temporal = temporal)
+}
+
+#' Get a MapBiomas Peru Fire raster
+#'
+#' @description
+#' Lazily reads a MapBiomas Fuego (Fire) Peru raster from a given
+#' sub-product, hosted as a GeoTIFF on Google Cloud Storage. Only the bytes
+#' required for the requested extent are downloaded (via GDAL's
+#' `/vsicurl/` driver). Optionally crops and masks the raster to an
+#' area of interest.
+#'
+#' @param product Character. One of the products listed in
+#' `get_mapbiomas_peru_fire_products`, e.g. `"annual_burned"`.
+#' @param year Integer. For `"annual"` products, the map year (from `1999`). For `"range"`
+#' products (`accumulated_*`, `frequency_burned`), the **end year** (from `2014`, range starts 2013).
+#' @param crop_to Optional. An `sf`/`sfc` object, `SpatVector`, or `SpatExtent`. If `NULL`, the full raster is returned.
+#' @param collection Integer. MapBiomas Fuego Peru collection. Default `1` (only one available).
+#' @returns A `SpatRaster` with one layer.
+#' @examples
+#' \dontrun{
+#' library(geoidep)
+#' lima <- get_departaments("LIMA")
+#' burned_2024 <- get_mapbiomas_peru_fire(product = "annual_burned", year = 2024, crop_to = lima)
+#' }
+#' @export
+get_mapbiomas_peru_fire <- \(product, year, crop_to = NULL, collection = 1) {
+  info <- .mapbiomas_fire_url(product, year, collection)
+  url <- info$url
+  temporal <- info$temporal
+
   resp <- tryCatch(
     httr2::request(url) |>
       httr2::req_method("HEAD") |>
@@ -245,20 +261,13 @@ get_mapbiomas_peru_fire <- \(product, year, crop_to = NULL, collection = 1) {
   r <- terra::rast(paste0("/vsicurl/", url)) |>
     terra::as.factor()
 
-  if (!is.null(crop_to)) {
-    if (inherits(crop_to, c("sf", "sfc"))) {
-      crop_to <- terra::vect(sf::st_transform(crop_to, terra::crs(r)))
-    }
-    r <- terra::crop(r, crop_to, mask = TRUE)
-  }
-
-  names(r) <- if (temporal == "range") {
+  layer_name <- if (temporal == "range") {
     sprintf("%s_2013_%d", product, year)
   } else {
     sprintf("%s_%d", product, year)
   }
 
-  r
+  .crop_mapbiomas_raster(r, crop_to, layer_name)
 }
 
 #' Discrete fill scale for MapBiomas Peru Fire products
