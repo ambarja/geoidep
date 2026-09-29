@@ -1,5 +1,17 @@
 # Changelog
 
+## geoidep 0.5.0
+
+- New: CEPLAN geoserver layers via
+  [`get_ceplan_data()`](https://geografo.pe/geoidep/reference/get_ceplan_data.md)
+  — downloads any of the 83 public WFS layers from
+  `geo.ceplan.gob.pe/geoserver` with the same design as the other
+  providers (`region` + `layer`, no new dependencies). When `region` is
+  supplied, its bounding box narrows the download and the features are
+  filtered to those inside the polygon; when `region` is `NULL`, the
+  full layer is downloaded with a cli progress bar. If the server is
+  down, a friendly “CEPLAN server is inactive.” message is shown.
+
 ## geoidep 0.4.1
 
 - New: IGP seismic catalogs via

@@ -43,7 +43,7 @@ library(geoidep)
 ``` r
 
 providers
-#> # A tibble: 79 × 7
+#> # A tibble: 162 × 7
 #>    provider  category   layer layer_can_be_actived admin_en year  link_geoportal
 #>    <chr>     <chr>      <chr> <lgl>                <chr>    <chr> <chr>         
 #>  1 INEI      General    depa… TRUE                 Nationa… 2019  https://ide.i…
@@ -56,24 +56,25 @@ providers
 #>  8 Geobosque Forest     warn… TRUE                 Ministr… last… https://geobo…
 #>  9 Sernanp   Enviroment anp_… TRUE                 Ministr… Not … https://geo.s…
 #> 10 Sernanp   Enviroment zona… TRUE                 Ministr… Not … https://geo.s…
-#> # ℹ 69 more rows
+#> # ℹ 152 more rows
 ```
 
 ``` r
 
 layers_available
-#> # A tibble: 9 × 2
-#>   provider         layer_count
-#>   <fct>                  <int>
-#> 1 Geobosque                  5
-#> 2 IGP                        2
-#> 3 INAIGEM                    5
-#> 4 INEI                       7
-#> 5 MapBiomas Alerta           1
-#> 6 MTC                       26
-#> 7 Senamhi                    1
-#> 8 Serfor                     1
-#> 9 Sernanp                   31
+#> # A tibble: 10 × 2
+#>    provider         layer_count
+#>    <fct>                  <int>
+#>  1 Ceplan                    83
+#>  2 Geobosque                  5
+#>  3 IGP                        2
+#>  4 INAIGEM                    5
+#>  5 INEI                       7
+#>  6 MapBiomas Alerta           1
+#>  7 MTC                       26
+#>  8 Senamhi                    1
+#>  9 Serfor                     1
+#> 10 Sernanp                   31
 ```
 
 ## 4. Download Official Administrative Boundaries by INEI
