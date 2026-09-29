@@ -32,14 +32,14 @@ get_data <- \(url = NULL, timeout = 60){
 #' tested in `tests/testthat/test-utils.R`.
 #'
 #' @param provider One of "inei", "sernanp", "midagri", "geobosque", "mtc",
-#'   "inaigem", "sigrid", "mapbiomas", "senamhi", "igp", "ceplan".
+#'   "inaigem", "sigrid", "mapbiomas", "senamhi", "igp", "ceplan", "ana".
 #' @param layer Layer key inside `.internal_urls[[provider]]`.
 #' @keywords internal
 #' @noRd
 .get_layer_url <- \(provider, layer = NULL) {
   valid_providers <- c("inei", "sernanp", "midagri", "geobosque", "mtc",
                        "inaigem", "sigrid", "mapbiomas", "senamhi", "igp",
-                       "ceplan")
+                       "ceplan", "ana")
 
   provider <- match.arg(provider, valid_providers)
 
@@ -198,6 +198,15 @@ get_mapbiomas_link <- \(type = NULL){
 #' @noRd
 get_ceplan_link <- \(type = NULL){
   .get_layer_url("ceplan", type)
+}
+
+#' Retrieve the links to ANA-SNIRH WFS layers.
+#' @param type A string. Select only one from the list of available layers, for more information please use `get_data_sources(provider = "Ana")`. Defaults to NULL.
+#' @return A string containing the URL of the requested file.
+#' @keywords internal
+#' @noRd
+get_ana_link <- \(type = NULL){
+  .get_layer_url("ana", type)
 }
 
 #' Download a file with a cli progress bar

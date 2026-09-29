@@ -77,6 +77,10 @@ reference:
     contents:
       - get_ceplan_data
 
+  - title: ANA water resources (SNIRH)
+    contents:
+      - get_ana_data
+
   - title: Data catalogue helpers
     contents:
       - get_providers
