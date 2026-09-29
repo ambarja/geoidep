@@ -8,6 +8,7 @@ results](https://badges.cranchecks.info/worst/geoidep.svg)](https://cran.r-proje
 CRAN
 Status](https://github.com/ambarja/geoidep/actions/workflows/cran-status.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/cran-status.yaml)
 [![](https://img.shields.io/badge/DOI-10.32614/CRAN.package.geoidep-1f57b6?style=flat&link=https://doi.org/10.32614/CRAN.package.geoidep)](https://doi.org/10.32614/CRAN.package.geoidep)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23021164.svg)](https://doi.org/10.5281/zenodo.23021164)
 [![R-CMD-check](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ambarja/geoidep/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/ambarja/geoidep/graph/badge.svg)](https://app.codecov.io/gh/ambarja/geoidep)
