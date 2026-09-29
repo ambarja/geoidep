@@ -1,10 +1,10 @@
 # Download CEPLAN geoserver layers with spatial filtering
 
 Download any public layer from the CEPLAN geoserver
-([geo.ceplan.gob.pe/geoserver](https://geo.ceplan.gob.pe/geoserver)).
-When `region` is supplied, its bounding box is used to query the WFS
-service and the downloaded features are then filtered to those falling
-inside `region`. When `region` is `NULL`, the whole layer is downloaded.
+(<https://geo.ceplan.gob.pe/>). When `region` is supplied, its bounding
+box is used to query the WFS service and the downloaded features are
+then filtered to those falling inside `region`. When `region` is `NULL`,
+the whole layer is downloaded.
 
 ## Usage
 

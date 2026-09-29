@@ -63,18 +63,18 @@ providers
 
 layers_available
 #> # A tibble: 10 × 2
-#>    provider         layer_count
-#>    <fct>                  <int>
-#>  1 Ceplan                    83
-#>  2 Geobosque                  5
-#>  3 IGP                        2
-#>  4 INAIGEM                    5
-#>  5 INEI                       7
-#>  6 MapBiomas Alerta           1
-#>  7 MTC                       26
-#>  8 Senamhi                    1
-#>  9 Serfor                     1
-#> 10 Sernanp                   31
+#>    provider  layer_count
+#>    <fct>           <int>
+#>  1 Ceplan             83
+#>  2 Geobosque           5
+#>  3 IGP                 2
+#>  4 INAIGEM             5
+#>  5 INEI                7
+#>  6 MapBiomas           1
+#>  7 MTC                26
+#>  8 Senamhi             1
+#>  9 Serfor              1
+#> 10 Sernanp            31
 ```
 
 ## 4. Download Official Administrative Boundaries by INEI
