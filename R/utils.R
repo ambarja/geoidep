@@ -1,5 +1,5 @@
 #' Reading a csv containing geoidep resources
-#' @importFrom utils read.csv
+#' @importFrom utils read.csv2
 #' @keywords internal
 #' @noRd
 get_data <- \(url = NULL, timeout = 60){
@@ -14,7 +14,7 @@ get_data <- \(url = NULL, timeout = 60){
   tryCatch({
     # read.csv() warns ("status was ...") before failing on unreachable URLs;
     # silence it so only the friendly abort below is shown.
-    data <- suppressWarnings(read.csv(url)) |> tidyr::as_tibble()
+    data <- suppressWarnings(read.csv2(url)) |> tidyr::as_tibble()
     return(data)
   }, error = function(e) {
     cli::cli_abort(c(

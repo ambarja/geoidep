@@ -1,4 +1,4 @@
-provider;category;layer;layer_can_be_actived;admin_en;year;link_geoportal
+﻿provider;category;layer;layer_can_be_actived;admin_en;year;link_geoportal
 INEI;General;departamento;TRUE;National Institute of Statistics and Informatics;2019;https://ide.inei.gob.pe/
 INEI;General;provincia;TRUE;National Institute of Statistics and Informatics;2019;https://ide.inei.gob.pe/
 INEI;General;distritos;TRUE;National Institute of Statistics and Informatics;2019;https://ide.inei.gob.pe/
@@ -172,9 +172,9 @@ Ana;General;presas;TRUE;National Water Authority - ANA;2025;https://snirh.ana.go
 Ana;General;riosquebradas;TRUE;National Water Authority - ANA;2024;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
 Ana;General;acuiferosveda;TRUE;National Water Authority - ANA;2024;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
 Ana;General;glaciares;TRUE;National Water Authority - ANA;2025;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
-Ana;General;puntos_críticos;TRUE;National Water Authority - ANA;2026;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
+Ana;General;puntos_crÃ­ticos;TRUE;National Water Authority - ANA;2026;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
 Ana;General;acuiferos;TRUE;National Water Authority - ANA;2022;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
-Ana;General;puntos_críticos_inicial_priorizados_2026_;TRUE;National Water Authority - ANA;2026;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
+Ana;General;puntos_crÃ­ticos_inicial_priorizados_2026_;TRUE;National Water Authority - ANA;2026;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
 Ana;General;fajamarginal;TRUE;National Water Authority - ANA;2025;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
 Ana;General;bocatomas;TRUE;National Water Authority - ANA;2021;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
 Ana;General;lagunas;TRUE;National Water Authority - ANA;2024;https://snirh.ana.gob.pe/ConsultaIDE/Index.aspx
