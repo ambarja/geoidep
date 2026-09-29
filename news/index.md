@@ -2,6 +2,12 @@
 
 ## geoidep 0.5.0
 
+- New: ANA-SNIRH water layers via
+  [`get_ana_data()`](https://geografo.pe/geoidep/reference/get_ana_data.md)
+  — downloads any of the 50 public WFS layers from the ANA water
+  resources IDE (`snirh.ana.gob.pe/ConsultaIDE`) with the same design as
+  CEPLAN (`region` + `layer`).
+
 - New: CEPLAN geoserver layers via
   [`get_ceplan_data()`](https://geografo.pe/geoidep/reference/get_ceplan_data.md)
   — downloads any of the 83 public WFS layers from `geo.ceplan.gob.pe`

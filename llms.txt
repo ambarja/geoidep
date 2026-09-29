@@ -218,6 +218,11 @@ head(dep)
 - [`get_ceplan_data()`](https://geografo.pe/geoidep/reference/get_ceplan_data.md)
   : Download CEPLAN geoserver layers with spatial filtering
 
+## ANA water resources (SNIRH)
+
+- [`get_ana_data()`](https://geografo.pe/geoidep/reference/get_ana_data.md)
+  : Download ANA-SNIRH geospatial layers with spatial filtering
+
 ## Data catalogue helpers
 
 - [`get_providers()`](https://geografo.pe/geoidep/reference/get_providers.md)
