@@ -2,7 +2,7 @@
 #'
 #' @description
 #' Download any public layer from the CEPLAN geoserver
-#' (\href{https://geo.ceplan.gob.pe/geoserver}{geo.ceplan.gob.pe/geoserver}).
+#' (\href{https://geo.ceplan.gob.pe/}{https://geo.ceplan.gob.pe/}).
 #' When `region` is supplied, its bounding box is used to query the WFS
 #' service and the downloaded features are then filtered to those falling
 #' inside `region`. When `region` is `NULL`, the whole layer is downloaded.
