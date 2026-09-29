@@ -73,6 +73,10 @@ reference:
     contents:
       - get_igp_seismic_data
 
+  - title: CEPLAN geographics database
+    contents:
+      - get_ceplan_data
+
   - title: Data catalogue helpers
     contents:
       - get_providers
