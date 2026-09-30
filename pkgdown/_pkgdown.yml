@@ -81,6 +81,10 @@ reference:
     contents:
       - get_ana_data
 
+  - title: OEFA environmental enforcement (PIFA)
+    contents:
+      - get_oefa_data
+
   - title: Data catalogue helpers
     contents:
       - get_providers

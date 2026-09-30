@@ -1,12 +1,12 @@
 # geoidep 0.5.0
-* New: ANA-SNIRH water layers via `get_ana_data()` — downloads any of the
-  50 public WFS layers from the ANA water resources IDE
-  (`snirh.ana.gob.pe/ConsultaIDE`) with the same design as CEPLAN
-  (`region` + `layer`).
+
+* Now you can downloads the **68 public WFS layers** of the OEFA (`sistemas.oefa.gob.pe/pifa/mfe`) with the new function `get_oefa_data()`.
+
+* ANA-SNIRH water layers via `get_ana_data()` — downloads any of the
+  **50 public WFS layers** from the ANA water resources IDE.
+  (`snirh.ana.gob.pe/ConsultaIDE`)
   
-* New: CEPLAN geoserver layers via `get_ceplan_data()` — downloads any of the
-  83 public WFS layers from `geo.ceplan.gob.pe` with the same design
-  as the other providers (`region` + `layer`).
+* Integration of CEPLAN into geoidep, you can now donwloads  the **83 public WFS layers** from `geo.ceplan.gob.pe` with the function `get_ceplan_data()`.
   
 
 # geoidep 0.4.1
@@ -27,8 +27,8 @@
   
 
 * Updated of MapBiomas LULC function the documentation.
-  - [get_mapbiomas_peru_lulc](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_lulc.html)
-  - [get_mapbiomas_peru_lulc_series](https://geografo.pe/geoidep/reference/get_mapbiomas_peru_lulc_series.html)
+  - `get_mapbiomas_peru_lulc()`
+  - `get_mapbiomas_peru_lulc_series()`
 
 * New [CRAN status](https://github.com/dieghernan/cran-status-check) with GitHub Actions.
   This action checks the CRAN status of a R package and optionally creates an issue or make the action fail.
