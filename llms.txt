@@ -223,6 +223,11 @@ head(dep)
 - [`get_ana_data()`](https://geografo.pe/geoidep/reference/get_ana_data.md)
   : Download ANA-SNIRH geospatial layers with spatial filtering
 
+## OEFA environmental enforcement (PIFA)
+
+- [`get_oefa_data()`](https://geografo.pe/geoidep/reference/get_oefa_data.md)
+  : Download OEFA-PIFA geospatial layers with spatial filtering
+
 ## Data catalogue helpers
 
 - [`get_providers()`](https://geografo.pe/geoidep/reference/get_providers.md)
