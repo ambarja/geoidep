@@ -1,7 +1,11 @@
 # Download information on the latest deforestation alerts detected by Geobosque
 
 Download deforestation alert information detected by Geobosque for any
-polygon in Peru. For more details, visit [Geobosque
+polygon in Peru. The points come from the official vector service
+`alertas_tempranas_pt_2026` (interop layer "Ultima semana") published at
+[Geobosque
+Interoperability](https://geobosques.minam.gob.pe/geobosque/view/servicios.php).
+For more details, visit [Geobosque
 Platform](https://geobosques.minam.gob.pe).
 
 ## Usage
@@ -26,7 +30,8 @@ get_early_warning(region, sf = TRUE, show_progress = TRUE)
 
 ## Value
 
-A tibble or sf object.
+A tibble or sf object with the alert points (`lng`, `lat`,
+`fecha_alerta`, `dia_jul`, `mes_alerta`, `ubigeo`).
 
 ## Examples
 

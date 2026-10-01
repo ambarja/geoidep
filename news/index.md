@@ -2,6 +2,10 @@
 
 ## geoidep 0.5.0
 
+- Updated
+  [`get_early_warning()`](https://geografo.pe/geoidep/reference/get_early_warning.md)
+  of Geobosques with new API of interoperability only of year 2026.
+
 - Now you can downloads the **68 public WFS layers** of the OEFA
   (`sistemas.oefa.gob.pe/pifa/mfe`) with the new function
   [`get_oefa_data()`](https://geografo.pe/geoidep/reference/get_oefa_data.md).
