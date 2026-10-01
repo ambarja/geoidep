@@ -1,7 +1,7 @@
 # Download ANA-SNIRH geospatial layers with spatial filtering
 
 Download any public layer from the water resources IDE of the National
-Water Authority - ANA (<https://snirh.ana.gob.pe>). When `region` is
+Water Authority - ANA (<https://www.gob.pe/ana>). When `region` is
 supplied, its bounding box is used to query the WFS service and the
 downloaded features are then filtered to those falling inside `region`.
 When `region` is `NULL`, the whole layer is downloaded.

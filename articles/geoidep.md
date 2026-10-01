@@ -85,26 +85,14 @@ layers_available
 
 # Region boundaries download (done once in the setup chunk above)
 head(loreto_prov, 3)
-#> Simple feature collection with 3 features and 6 fields
-#> Geometry type: MULTIPOLYGON
-#> Dimension:     XY
-#> Bounding box:  xmin: -76.89454 ymin: -6.14773 xmax: -72.11719 ymax: -0.63937
-#> Geodetic CRS:  WGS 84
-#>     ccdd ccpp      nombprov                     fuente nombdep
-#> 138   16   01        MAYNAS V Censo Nacional Economico  LORETO
-#> 139   16   02 ALTO AMAZONAS V Censo Nacional Economico  LORETO
-#> 140   16   03        LORETO V Censo Nacional Economico  LORETO
-#>                               geom ubigeo
-#> 138 MULTIPOLYGON (((-75.24086 -...   1601
-#> 139 MULTIPOLYGON (((-76.30752 -...   1602
-#> 140 MULTIPOLYGON (((-75.74592 -...   1603
 ```
+
+    #> Live INEI/Geobosque examples were skipped: the data services are unreachable from this machine.
 
 ``` r
 
 library(mapgl)
 library(sf)
-#> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
 maplibre_view(data = loreto_prov)
 ```
 
@@ -127,15 +115,6 @@ historico_df <- do.call(rbind.data.frame,historico_list)
 
 # The first five rows
 head(historico_df)
-#> # A tibble: 6 × 8
-#>    anio perdida rango1 rango2 rango3 rango4 rango5 ubigeo
-#>   <int>   <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <chr> 
-#> 1  2001   4112.  2436.  1387.  289.     0        0 1601  
-#> 2  2002   2014.  1374.   539.  101.     0        0 1601  
-#> 3  2003   1448.  1000.   387.   60.7    0        0 1601  
-#> 4  2004   3741.  2257.  1344.  140.     0        0 1601  
-#> 5  2005   3749.  2269.  1213.  267.     0        0 1601  
-#> 6  2006   1405.   956.   347.   43.4   58.7      0 1601
 ```
 
 ## 6. Simple visualization with ggplot
@@ -144,14 +123,6 @@ head(historico_df)
 
 library(ggplot2)
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 
 historico_prov <- historico_df |>
   inner_join(y = loreto_prov, by = "ubigeo")
@@ -181,5 +152,3 @@ ggplot(historico_prov, aes(x = anio, y = perdida)) +
     x = "",
     y = "")
 ```
-
-![](geoidep_files/figure-html/unnamed-chunk-13-1.png)
