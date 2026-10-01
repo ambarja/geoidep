@@ -104,12 +104,16 @@ get_forest_loss_data <- \(layer = NULL, ubigeo = NULL, show_progress = TRUE) {
 #'
 #' @description
 #' Download deforestation alert information detected by Geobosque for any polygon in Peru.
+#' The points come from the official vector service
+#' `alertas_tempranas_pt_2026` (interop layer "Ultima semana") published at
+#' \href{https://geobosques.minam.gob.pe/geobosque/view/servicios.php}{Geobosque Interoperability}.
 #' For more details, visit \href{https://geobosques.minam.gob.pe}{Geobosque Platform}.
 #'
 #' @param region An sf object. Area of interest (must be EPSG:4326).
 #' @param sf Logical. Return an `sf` object (`TRUE`) or a tibble (`FALSE`).
 #' @param show_progress Logical. Show cli progress. Default `TRUE`.
-#' @return A tibble or sf object.
+#' @return A tibble or sf object with the alert points (`lng`, `lat`,
+#'   `fecha_alerta`, `dia_jul`, `mes_alerta`, `ubigeo`).
 #' @examples
 #' \dontrun{
 #' library(geoidep)
@@ -119,30 +123,57 @@ get_forest_loss_data <- \(layer = NULL, ubigeo = NULL, show_progress = TRUE) {
 #' }
 #' @export
 get_early_warning <- \(region, sf = TRUE, show_progress = TRUE) {
-  url <- get_early_warning_link(type = "warning_last_week")
+  base_url <- get_early_warning_link(type = "alertas_pt_2026")
+
+  if (!inherits(region, "sf")) {
+    cli::cli_abort(c(
+      "Invalid {.arg region}.",
+      "x" = "Expected an {.cls sf} object."
+    ))
+  }
 
   if (sf::st_crs(region)$epsg != 4326) {
     cli::cli_abort("The layer must be in CRS: EPSG 4326 (WGS 84).")
   }
 
-  coords_str <- sf::st_geometry(region) |>
-    sf::st_cast("POINT") |>
-    sf::st_coordinates() |>
-    as.data.frame() |>
-    dplyr::mutate(coords = paste(X, Y, sep = " ")) |>
-    dplyr::summarise(all_coords = paste(coords, collapse = ", ")) |>
-    dplyr::pull(all_coords)
+  bbox <- sf::st_bbox(region)
+  envelope <- paste(
+    format(as.numeric(bbox[["xmin"]]), scientific = FALSE),
+    format(as.numeric(bbox[["ymin"]]), scientific = FALSE),
+    format(as.numeric(bbox[["xmax"]]), scientific = FALSE),
+    format(as.numeric(bbox[["ymax"]]), scientific = FALSE),
+    sep = ","
+  )
 
-  if (isTRUE(show_progress)) {
-    cli::cli_progress_step("Requesting last-week deforestation alerts", spinner = TRUE)
+  query_base <- list(
+    where = "1=1",
+    geometry = envelope,
+    geometryType = "esriGeometryEnvelope",
+    inSR = "4326",
+    spatialRel = "esriSpatialRelIntersects",
+    outFields = "*",
+    returnGeometry = "true",
+    outSR = "4326",
+    f = "geojson"
+  )
+
+  build_req <- function(query) {
+    req <- httr2::request(paste0(base_url, "/0/query")) |>
+      httr2::req_timeout(120) |>
+      httr2::req_retry(max_tries = 3, retry_on_failure = TRUE)
+    req <- do.call(httr2::req_url_query, c(list(req), query))
+    if (isTRUE(show_progress)) {
+      req <- req |> httr2::req_progress()
+    }
+    req
   }
 
-  data_raw <- tryCatch(
-    httr2::request(url) |>
-      httr2::req_body_json(list(coords = coords_str)) |>
-      httr2::req_timeout(120) |>
-      httr2::req_retry(max_tries = 3, retry_on_failure = TRUE) |>
-      httr2::req_perform() |>
+  count_query <- query_base
+  count_query$f <- "pjson"
+  count_query$returnCountOnly <- "true"
+
+  count_text <- tryCatch(
+    httr2::req_perform(build_req(count_query)) |>
       httr2::resp_body_string(),
     error = function(e) {
       cli::cli_abort(c(
@@ -152,31 +183,70 @@ get_early_warning <- \(region, sf = TRUE, show_progress = TRUE) {
       ))
     }
   )
+  total <- suppressWarnings(as.integer(jsonlite::fromJSON(count_text)$count))
+  if (is.null(total) || length(total) == 0L || is.na(total)) total <- 0L
 
-  data_clean <- sub("\ufeff", "", data_raw)
+  page_size <- 2000L
+  pages <- list()
+  if (total > 0L) {
+    offsets <- seq(0L, by = page_size, length.out = ceiling(total / page_size))
+    if (isTRUE(show_progress)) {
+      cli::cli_progress_bar("Downloading alert points", total = length(offsets))
+    }
+    for (i in seq_along(offsets)) {
+      page_query <- c(query_base, list(resultOffset = offsets[i],
+                                       resultRecordCount = page_size))
+      page_text <- tryCatch(
+        httr2::req_perform(build_req(page_query)) |>
+          httr2::resp_body_string(),
+        error = function(e) {
+          cli::cli_abort(c(
+            "Geobosque service request failed.",
+            "x" = conditionMessage(e),
+            "i" = "The Geobosque API may be temporarily unavailable. Try again later."
+          ))
+        }
+      )
+      pages[[i]] <- sf::st_read(page_text, quiet = TRUE,
+                                stringsAsFactors = FALSE)
+      if (isTRUE(show_progress)) cli::cli_progress_update()
+    }
+    if (isTRUE(show_progress)) cli::cli_progress_done()
+  }
 
-  tidydata <- data_clean |>
-    jsonlite::fromJSON() |>
-    tidyr::as_tibble()
-
-  tidydata <- tidydata[["datos"]]
-  names(tidydata) <- gsub("_$", "", names(tidydata))
-
-  if (length(unlist(tidydata)) == 0) {
+  if (length(pages) == 0L) {
     cli::cli_abort("No coordinate points corresponding to the latest deforestation alerts detected by {.strong Geobosques} have been found.")
   }
 
-  geobosque <- tidydata |>
-    as.data.frame() |>
-    dplyr::mutate_if(is.character, as.numeric)
+  alerts <- do.call(rbind, pages) |>
+    sf::st_transform(crs = 4326) |>
+    sf::st_make_valid()
 
-  data <- geobosque |>
-    dplyr::rename_with(~ c("lng", "lat"), everything()) |>
-    dplyr::mutate(
-      lng = as.double(lng),
-      lat = as.double(lat),
-      descrip = "Warning points") |>
-    tidyr::as_tibble()
+  inside <- sf::st_intersects(
+    alerts,
+    sf::st_union(sf::st_geometry(region)),
+    sparse = FALSE
+  )[, 1]
+  alerts <- alerts[inside, , drop = FALSE]
+
+  if (nrow(alerts) == 0L) {
+    cli::cli_abort("No coordinate points corresponding to the latest deforestation alerts detected by {.strong Geobosques} have been found.")
+  }
+
+  coords <- sf::st_coordinates(alerts)
+  data <- alerts |>
+    sf::st_drop_geometry() |>
+    dplyr::transmute(
+      lng = as.double(coords[, 1]),
+      lat = as.double(coords[, 2]),
+      fecha_alerta = as.Date(as.POSIXct(fe_alerta / 1000,
+                                        origin = "1970-01-01", tz = "UTC")),
+      dia_jul = as.integer(dia_jul),
+      mes_alerta = as.integer(mes_alerta),
+      ubigeo = as.character(ubigeo),
+      descrip = "Warning points"
+    ) |>
+    tibble::as_tibble()
 
   if (isTRUE(sf)) {
     data_output <- data |> sf::st_as_sf(coords = c("lng", "lat"), crs = 4326)

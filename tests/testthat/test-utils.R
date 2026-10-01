@@ -103,18 +103,18 @@ test_that("get_geobosque_link returns the correct URL or raises an error", {
 
 test_that("get_early_warning_link returns the correct URL or raises an error", {
   expect_equal(
-    get_early_warning_link("warning_last_week"),
-    "http://geobosques.minam.gob.pe/geobosque/ws/rest/ALERTAS/ultimasByCobertura"
+    get_early_warning_link("alertas_pt_2026"),
+    "https://gis.bosques.gob.pe/server/rest/services/Interoperabilidad/alertas_tempranas_pt_2026/MapServer"
   )
 
   expect_error(
     get_early_warning_link("foo"),
-    "Invalid type. Please choose 'warning_last_week'"
+    "Invalid type. Please choose 'alertas_pt_2026'"
   )
 
   expect_error(
     get_early_warning_link(NULL),
-    "Invalid type. Please choose 'warning_last_week'"
+    "Invalid type. Please choose 'alertas_pt_2026'"
   )
 })
 

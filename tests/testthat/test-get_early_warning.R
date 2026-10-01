@@ -1,3 +1,10 @@
+test_that("get_early_warning requires an sf region (offline)", {
+  expect_error(
+    geoidep::get_early_warning(region = "Loreto", show_progress = FALSE),
+    "sf"
+  )
+})
+
 test_that("get_early_warning requires EPSG:4326 (offline)", {
   pt <- sf::st_sfc(sf::st_point(c(-77, -12)), crs = 4326)
   bad_crs <- sf::st_sf(geometry = sf::st_transform(pt, 3857))

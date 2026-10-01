@@ -14,10 +14,14 @@ get_early_warning(region, sf = TRUE, show_progress = TRUE)
 \item{show_progress}{Logical. Show cli progress. Default \code{TRUE}.}
 }
 \value{
-A tibble or sf object.
+A tibble or sf object with the alert points (\code{lng}, \code{lat},
+\code{fecha_alerta}, \code{dia_jul}, \code{mes_alerta}, \code{ubigeo}).
 }
 \description{
 Download deforestation alert information detected by Geobosque for any polygon in Peru.
+The points come from the official vector service
+\code{alertas_tempranas_pt_2026} (interop layer "Ultima semana") published at
+\href{https://geobosques.minam.gob.pe/geobosque/view/servicios.php}{Geobosque Interoperability}.
 For more details, visit \href{https://geobosques.minam.gob.pe}{Geobosque Platform}.
 }
 \examples{

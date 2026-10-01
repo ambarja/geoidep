@@ -1,5 +1,7 @@
 # geoidep 0.5.0
 
+* Updated `get_early_warning()` of Geobosques with new API of interoperatibility only of year 2026.
+
 * Now you can downloads the **68 public WFS layers** of the OEFA (`sistemas.oefa.gob.pe/pifa/mfe`) with the new function `get_oefa_data()`.
 
 * ANA-SNIRH water layers via `get_ana_data()` — downloads any of the

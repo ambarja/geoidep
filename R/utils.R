@@ -1,5 +1,5 @@
 #' Reading a csv containing geoidep resources
-#' @importFrom utils read.csv2
+#' @importFrom utils read.csv
 #' @keywords internal
 #' @noRd
 get_data <- \(url = NULL, timeout = 60){
@@ -12,9 +12,11 @@ get_data <- \(url = NULL, timeout = 60){
   options(timeout = timeout)
   on.exit(options(timeout = old_timeout), add = TRUE)
   tryCatch({
-    # read.csv() warns ("status was ...") before failing on unreachable URLs;
-    # silence it so only the friendly abort below is shown.
-    data <- suppressWarnings(read.csv2(url)) |> tidyr::as_tibble()
+    # The catalogue has historically used ";" but some published copies use
+    # ","; detect the separator from the header so both keep working.
+    header <- suppressWarnings(readLines(url, n = 1L))
+    sep <- if (length(header) == 1L && grepl(";", header, fixed = TRUE)) ";" else ","
+    data <- suppressWarnings(utils::read.csv(url, sep = sep)) |> tidyr::as_tibble()
     return(data)
   }, error = function(e) {
     cli::cli_abort(c(
@@ -113,7 +115,7 @@ get_geobosque_link <- \(type = NULL){
 }
 
 #' Geobosque API to get deforestation hot-spots for the last week
-#' @param type A string. Only one layer; `warning_last_week`
+#' @param type A string. Only one layer; `alertas_pt_2026`
 #' @return A string containing the URL of the requested file.
 #' @keywords internal
 #' @noRd
@@ -121,7 +123,7 @@ get_early_warning_link <- \(type = NULL){
   tryCatch(
     .get_layer_url("geobosque", type),
     error = function(e) {
-      stop("Invalid type. Please choose 'warning_last_week'")
+      stop("Invalid type. Please choose 'alertas_pt_2026'")
     }
   )
 }
@@ -373,4 +375,4 @@ get_mapbiomas_peru_legend <- function() {
 #' @name global-variables
 #' @keywords internal
 #' @noRd
-utils::globalVariables(c("anio","range5","range4","range3","range2","range1","loss","year","id","nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data","nombdep","setNames","detected_at","nombprov","error_message","fecha_utc","hora_utc","latitud","longitud","profundidad_km","magnitud","magnitud_mb","magnitud_ms","magnitud_mw"))
+utils::globalVariables(c("anio","range5","range4","range3","range2","range1","loss","year","id","nro_clean","nivel", ".internal_urls", "X", "Y", "coords", "all_coords", "everything", "lng", "lat","provider","available_providers","loreto_prov",".","FECREG","FECHA","created_date","last_edited_date","emision","extract_meteorological_table","data","nombdep","setNames","detected_at","nombprov","error_message","fecha_utc","hora_utc","latitud","longitud","profundidad_km","magnitud","magnitud_mb","magnitud_ms","magnitud_mw","fecha_alerta","dia_jul","mes_alerta","ubigeo"))
