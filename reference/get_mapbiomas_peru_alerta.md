@@ -2,8 +2,8 @@
 
 Download the latest deforestation alerts detected by MapBiomas Alerta
 Peru for a specific geographic area using an sf object (bounding box or
-polygon). For more details, please visit: [MapBiomas Alerta
-Platform](https://alerta.mapbiomas.org/)
+polygon). For more details, please visit: [MapBiomas Peru
+Platform](https://peru.mapbiomas.org/)
 
 ## Usage
 

@@ -2,6 +2,18 @@
 
 ## geoidep 0.5.0
 
+- The data catalogue (`get_data()` /
+  [`get_data_sources()`](https://geografo.pe/geoidep/reference/get_data_sources.md)
+  /
+  [`get_providers()`](https://geografo.pe/geoidep/reference/get_providers.md))
+  now reads the CSV bundled with the package instead of the remote copy,
+  so catalogue queries always match the installed code and work offline
+  (CRAN-safe); use `options(geoidep = <url>)` for a custom catalogue.
+  The reader also accepts both `;`- and `,`-separated files.
+
+- The vignette degrades gracefully when the INEI/Geobosque services are
+  unreachable (live chunks are skipped with a note instead of failing).
+
 - Updated
   [`get_early_warning()`](https://geografo.pe/geoidep/reference/get_early_warning.md)
   of Geobosques with new API of interoperability only of year 2026.

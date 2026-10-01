@@ -11,7 +11,7 @@ please visit: <https://www.geoidep.gob.pe/>.
 
 Useful links:
 
-- <https://geografo.pe/geoidep>
+- <https://geografo.pe/geoidep/>
 
 - Report bugs at <https://github.com/ambarja/geoidep/issues>
 

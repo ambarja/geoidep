@@ -182,4 +182,4 @@ ggplot(historico_prov, aes(x = anio, y = perdida)) +
     y = "")
 ```
 
-![](geoidep_files/figure-html/unnamed-chunk-12-1.png)
+![](geoidep_files/figure-html/unnamed-chunk-13-1.png)

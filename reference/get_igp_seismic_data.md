@@ -7,7 +7,7 @@ repository](https://ultimosismo.igp.gob.pe/repositorio/datos-sismicos):
 a `GET` request filtered by bounding box, magnitude and depth that
 returns an XLSX file. The epicentres are returned as an `sf` POINT layer
 (EPSG:4326) and, optionally, clipped to any user-supplied polygon with
-`sf`. For more information, visit [IGP](https://www.igp.gob.pe/).
+`sf`. For more information, visit [IGP](https://www.gob.pe/igp).
 
 ## Usage
 
