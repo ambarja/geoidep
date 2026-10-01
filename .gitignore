@@ -2,6 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+*.tar.gz
 docs/*
 docs
 inst/doc

@@ -23,7 +23,7 @@ authors:
   orcid: https://orcid.org/0000-0001-5921-2858
 repository: https://CRAN.R-project.org/package=geoidep
 repository-code: https://github.com/ambarja/geoidep
-url: https://geografo.pe/geoidep
+url: https://geografo.pe/geoidep/
 contact:
 - family-names: barja
   given-names: antony

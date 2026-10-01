@@ -59,7 +59,7 @@ through the same endpoint used by the
 a \code{GET} request filtered by bounding box, magnitude and depth that returns
 an XLSX file. The epicentres are returned as an \code{sf} POINT layer
 (EPSG:4326) and, optionally, clipped to any user-supplied polygon with \code{sf}.
-For more information, visit \href{https://www.igp.gob.pe/}{IGP}.
+For more information, visit \href{https://www.gob.pe/igp}{IGP}.
 }
 \details{
 The XLSX response is parsed with base R only (\code{utils::unzip()} plus a small

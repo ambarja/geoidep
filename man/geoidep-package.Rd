@@ -11,7 +11,7 @@ Provides R users with easy access to official cartographic data from Peru across
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://geografo.pe/geoidep}
+  \item \url{https://geografo.pe/geoidep/}
   \item Report bugs at \url{https://github.com/ambarja/geoidep/issues}
 }
 

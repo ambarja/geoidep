@@ -1,10 +1,27 @@
 #' Reading a csv containing geoidep resources
+#'
+#' By default the catalogue bundled with the package is used
+#' (`system.file("sources-idep", "sources_geoidep.csv", package = "geoidep")`),
+#' so the catalogue always matches the installed code and works offline
+#' (CRAN-safe). Pass `url` (or set `options(geoidep = ...)`) to read a
+#' remote or custom catalogue instead.
 #' @importFrom utils read.csv
 #' @keywords internal
 #' @noRd
 get_data <- \(url = NULL, timeout = 60){
-  if(is.null(url)){
-    url <- getOption(x = "geoidep", default = .internal_urls$geoidep)
+  if (is.null(url)) {
+    url <- getOption(x = "geoidep", default = "")
+    if (!is.character(url) || length(url) != 1L || !nzchar(url)) {
+      bundled <- system.file("sources-idep", "sources_geoidep.csv",
+                             package = "geoidep")
+      if (nzchar(bundled)) {
+        url <- bundled
+      } else {
+        # Development fallback (package not installed, e.g. load_all):
+        # use the last published catalogue.
+        url <- .internal_urls$geoidep
+      }
+    }
   }
   # Bound the connection wait explicitly (CRAN: never hang on downloads).
   # Restored on exit so no global state leaks.

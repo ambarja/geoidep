@@ -52,10 +52,14 @@ library(geoidep)
 providers <- get_data_sources()
 layers_available <- get_providers()
 
-loreto_prov <- get_provinces(show_progress = FALSE) |>
+# Network-dependent fixture: must never break the vignette build
+# (CRAN policy: fail gracefully when the resource is unavailable).
+vignette_ok <- tryCatch({
+  loreto_prov <- get_provinces(show_progress = FALSE) |>
     subset(nombdep == "LORETO")
-  
-loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["ccdd"]], loreto_prov[["ccpp"]])
+  loreto_prov[["ubigeo"]] <- paste0(loreto_prov[["ccdd"]], loreto_prov[["ccpp"]])
+  TRUE
+}, error = function(e) FALSE)
 
 ```
 
@@ -72,12 +76,16 @@ layers_available
 ```
 
 ## 4. Download Official Administrative Boundaries by INEI
-```{r}
+```{r, eval=vignette_ok}
 # Region boundaries download (done once in the setup chunk above)
 head(loreto_prov, 3)
 ```
 
-```{r, out.width='100%', out.height=250}
+```{r, eval=!vignette_ok, echo=FALSE}
+cat("Live INEI/Geobosque examples were skipped: the data services are unreachable from this machine.")
+```
+
+```{r, out.width='100%', out.height=250, eval=vignette_ok}
 library(mapgl)
 library(sf)
 maplibre_view(data = loreto_prov)
@@ -85,7 +93,7 @@ maplibre_view(data = loreto_prov)
 
 ## 5. Working with Geobosque data
 
-```{r,include=FALSE}
+```{r,include=FALSE, eval=vignette_ok}
 probe <- get_forest_loss_data(
   layer = "stock_bosque_perdida_provincia",
   ubigeo = loreto_prov[["ubigeo"]][1],
@@ -95,7 +103,7 @@ probe <- get_forest_loss_data(
 ```
 
 
-```{r}
+```{r, eval=vignette_ok}
 my_fun <- function(x){
   data <- get_forest_loss_data(
     layer = 'stock_bosque_perdida_provincia',
@@ -107,14 +115,14 @@ historico_list <- lapply(X = 1:nrow(loreto_prov),FUN = my_fun)
 historico_df <- do.call(rbind.data.frame,historico_list)
 ```
 
-```{r}
+```{r, eval=vignette_ok}
 # The first five rows
 head(historico_df)
 ```
 
 ## 6. Simple visualization with ggplot
 
-```{r , fig.align='center'}
+```{r, fig.align='center', eval=vignette_ok}
 library(ggplot2)
 library(dplyr)
 
@@ -127,7 +135,7 @@ promedio_loreto <- historico_prov |>
 ```
 
 
-```{r , fig.align='center', fig.height=7, fig.width=12}
+```{r, fig.align='center', fig.height=7, fig.width=12, eval=vignette_ok}
 ggplot(historico_prov, aes(x = anio, y = perdida)) +
   geom_line(aes(group = nombprov, color = "Provincia"), linewidth = 0.6) +
   geom_line(

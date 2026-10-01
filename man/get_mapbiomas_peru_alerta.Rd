@@ -39,7 +39,7 @@ An sf object with alert geometries, attributes and image URLs.
 \description{
 Download the latest deforestation alerts detected by MapBiomas Alerta Peru
 for a specific geographic area using an sf object (bounding box or polygon).
-For more details, please visit: \href{https://alerta.mapbiomas.org/}{MapBiomas Alerta Platform}
+For more details, please visit: \href{https://peru.mapbiomas.org/}{MapBiomas Peru Platform}
 }
 \details{
 The bounding box of \code{region} is used to query the WFS service. Image URLs

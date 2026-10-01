@@ -1,7 +1,7 @@
 .welcome_message <- function() {
   cli::cli_h1("Welcome to geoidep")
   name.project <- cli::bg_black(cli::style_bold(cli::col_white("geoidep")))
-  cli::cli_alert_info("{.emph {.href [{name.project}](https://geografo.pe/geoidep)} is a wrapper that enables you to download cartographic data for Peru directly from R.}")
+  cli::cli_alert_info("{.emph {.href [{name.project}](https://geografo.pe/geoidep/)} is a wrapper that enables you to download cartographic data for Peru directly from R.}")
   cli::cli_alert_info("{.emph Currently, `geoidep` supports data from the following providers:}")
   cli::cli_li("{.emph Geobosque}")
   cli::cli_li("{.emph INAIGEM}")

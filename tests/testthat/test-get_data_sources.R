@@ -1,3 +1,19 @@
+test_that("bundled catalogue loads offline without network (CRAN-safe)", {
+  # No skip_*: must pass on CRAN with no internet. Uses the catalogue
+  # shipped inside the package, never the remote copy.
+  result <- geoidep:::get_data()
+  expect_s3_class(result, "tbl_df")
+  expect_true(all(c("provider", "category", "layer") %in% names(result)))
+  expect_gt(nrow(result), 0)
+
+  providers <- geoidep::get_providers()
+  expect_s3_class(providers, "tbl_df")
+  expect_true(all(c("provider", "layer_count") %in% names(providers)))
+
+  sources <- geoidep::get_data_sources(NULL)
+  expect_equal(nrow(sources), nrow(result))
+})
+
 test_that("get_data_sources() return a tibble when the query argument es NULL", {
   testthat::skip_on_cran()
   testthat::skip_if_offline()

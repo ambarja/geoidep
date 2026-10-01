@@ -3,7 +3,7 @@
 #' @description
 #' Download the latest deforestation alerts detected by MapBiomas Alerta Peru
 #' for a specific geographic area using an sf object (bounding box or polygon).
-#' For more details, please visit: \href{https://alerta.mapbiomas.org/}{MapBiomas Alerta Platform}
+#' For more details, please visit: \href{https://peru.mapbiomas.org/}{MapBiomas Peru Platform}
 #'
 #' @param region An sf object specifying the area of interest (must be in EPSG:4326 - WGS 84).
 #' @param from Character. Start date in `"YYYY-MM-DD"` format. If `NULL`, no lower bound.
